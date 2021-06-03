@@ -5,13 +5,12 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Medilab Bootstrap Template - Index</title>
+    <title>Pendaftaran Online RSUD Kota Banjar</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="icon" href="<?= base_url('assets/img/logo rsu.png'); ?>" type="image/png" sizes="16x16">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -38,21 +37,21 @@
 </head>
 
 <body>
-
     <!-- ======= Top Bar ======= -->
     <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
         <div class="container d-flex">
-            <div class="contact-info mr-auto">
-                <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-                <i class="icofont-phone"></i> +1 5589 55488 55
-                <i class="icofont-google-map"></i> A108 Adam Street, NY
+            <!-- <div class="social-links contact-info"> -->
+            <div class="social-links contact-info mr-auto">
+                <a href="mailto:contact@example.com"><i class="icofont-envelope"> rsu_kotabanjar@yahoo.co.id</i> </a>
+                <a href="tel:0265741032"><i class="icofont-ui-dial-phone"> 0265-741032</i></a>
+                <a href="https://api.whatsapp.com/send?phone=628112111146"><i class="icofont-whatsapp"> Whatsapp: 08112111146</i></a>
+                <a href="tel:02657482204 "><i class="icofont-phone"> Ponek 24 Jam : 0265-7482204 </i></a>
+                <i class="icofont-fax"> Fax : 0265-744730</i>
             </div>
             <div class="social-links">
                 <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
                 <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
                 <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                <a href="#" class="skype"><i class="icofont-skype"></i></a>
-                <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
             </div>
         </div>
     </div>
@@ -61,40 +60,26 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo mr-auto"><a href="index.html">Medilab</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            <h1 class="logo mr-auto">
+                <marquee>RSUD Kota Banjar</marquee>
+            </h1>
 
-            <nav class="nav-menu d-none d-lg-block">
+            <nav class="nav-menu d-none d-lg-block mr-auto">
                 <ul>
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li class="active"><a href="">Home</a></li>
+                    <li><a href="#about">Tentang Kita</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#departments">Departments</a></li>
-                    <li><a href="#doctors">Doctors</a></li>
-                    <li class="drop-down"><a href="">Drop Down</a>
-                        <ul>
-                            <li><a href="#">Drop Down 1</a></li>
-                            <li class="drop-down"><a href="#">Deep Drop Down</a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#departments">Alur</a></li>
+                    <li><a href="#doctors">Dokter</a></li>
+
+                    <li><a href="#contact">Kontak</a></li>
 
                 </ul>
-            </nav><!-- .nav-menu -->
+            </nav>
 
-            <a href="#appointment" class="appointment-btn scrollto">Make an Appointment</a>
+            <!-- .nav-menu -->
+
+            <a href="#appointment" class="appointment-btn scrollto">Daftar</a>
 
         </div>
     </header><!-- End Header -->
@@ -102,9 +87,9 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
-            <h1>Welcome to Medilab</h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <h1>Selamat Datang</h1>
+            <h2>Di Pendaftaran Pasien Rawat Jalan</h2>
+            <a href="#about" class="btn-get-started scrollto">Cek Alur</a>
         </div>
     </section><!-- End Hero -->
 
@@ -117,10 +102,9 @@
                 <div class="row">
                     <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="content">
-                            <h3>Why Choose Medilab?</h3>
+                            <h3>Kenapa RSUD Kota Banjar?</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                                Under Construction
                             </p>
                             <div class="text-center">
                                 <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
@@ -133,22 +117,22 @@
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-receipt"></i>
-                                        <h4>Corporis voluptates sit</h4>
-                                        <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                                        <h4>Visi</h4>
+                                        <p>Acan di ketik di koding na</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-cube-alt"></i>
-                                        <h4>Ullamco laboris ladore pan</h4>
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                                        <h4>Misi</h4>
+                                        <p>Acan di ketik di koding na</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-images"></i>
-                                        <h4>Labore consequatur</h4>
-                                        <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                                        <h4>Motto</h4>
+                                        <p>Acan di ketik di koding na</p>
                                     </div>
                                 </div>
                             </div>
@@ -160,7 +144,7 @@
         </section><!-- End Why Us Section -->
 
         <!-- ======= About Section ======= -->
-        <section id="about" class="about">
+        <!-- <section id="about" class="about">
             <div class="container-fluid">
 
                 <div class="row">
@@ -194,10 +178,11 @@
                 </div>
 
             </div>
-        </section><!-- End About Section -->
+        </section> -->
+        <!-- End About Section -->
 
         <!-- ======= Counts Section ======= -->
-        <section id="counts" class="counts">
+        <!-- <section id="counts" class="counts">
             <div class="container">
 
                 <div class="row">
@@ -237,10 +222,11 @@
                 </div>
 
             </div>
-        </section><!-- End Counts Section -->
+        </section> -->
+        <!-- End Counts Section -->
 
         <!-- ======= Services Section ======= -->
-        <section id="services" class="services">
+        <!-- <section id="services" class="services">
             <div class="container">
 
                 <div class="section-title">
@@ -300,10 +286,11 @@
                 </div>
 
             </div>
-        </section><!-- End Services Section -->
+        </section> -->
+        <!-- End Services Section -->
 
         <!-- ======= Appointment Section ======= -->
-        <section id="appointment" class="appointment section-bg">
+        <!-- <section id="appointment" class="appointment section-bg">
             <div class="container">
 
                 <div class="section-title">
@@ -364,18 +351,21 @@
                 </form>
 
             </div>
-        </section><!-- End Appointment Section -->
+        </section> -->
+        <!-- End Appointment Section -->
 
-        <!-- ======= Departments Section ======= -->
+        <!-- ======= Departments/alur Section ======= -->
         <section id="departments" class="departments">
-            <div class="container">
+            <div class="container align-center">
 
                 <div class="section-title">
-                    <h2>Departments</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Alur</h2>
+                    <p>Sementara ieu mah bari ngantosan proses bisnisna rapih</p>
+                    <img src="<?= base_url('assets/'); ?>img/construction.png">
                 </div>
 
-                <div class="row">
+
+                <!-- <div class="row">
                     <div class="col-lg-3">
                         <ul class="nav nav-tabs flex-column">
                             <li class="nav-item">
@@ -459,7 +449,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </section><!-- End Departments Section -->
@@ -469,87 +459,82 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Doctors</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Dokter</h2>
+                    <p>Berikut adalah list dokter :</p>
                 </div>
-
+                <!-- Buka Row -->
                 <div class="row">
-
+                    <!-- DOKTER Eman Sulaeman -->
                     <div class="col-lg-6">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/dalam/emansulaeman.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Chief Medical Officer</span>
-                                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
+                                <h4>dr. Eman Sulaeman, Sp.PD</h4>
+                                <span>Dokter Spesialis Dalam (Internist)</span>
                             </div>
                         </div>
                     </div>
-
+                    <!-- DOKTER Siska Dewi Roslani -->
                     <div class="col-lg-6 mt-4 mt-lg-0">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/dalam/siskadewiroslani.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
-                                <h4>Sarah Jhonson</h4>
-                                <span>Anesthesiologist</span>
-                                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
+                                <h4>dr. Siska Dewi Roslani, Sp.PD</h4>
+                                <span>Dokter Spesialis Dalam (Internist)</span>
                             </div>
                         </div>
                     </div>
-
+                    <!-- DOKTER Julian Karundeng -->
                     <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/dalam/juliankarundeng.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
-                                <h4>William Anderson</h4>
-                                <span>Cardiology</span>
-                                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
+                                <h4>dr. Julian Karundeng, Sp.D</h4>
+                                <span>Dokter Spesialis Dalam - Mitra RS (Internist)</span>
                             </div>
                         </div>
                     </div>
-
+                    <!-- DOKTER Dany Erlangga -->
                     <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-start">
-                            <div class="pic"><img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/saraf/danyerlangga.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
-                                <h4>Amanda Jepson</h4>
-                                <span>Neurosurgeon</span>
-                                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                                <div class="social">
-                                    <a href=""><i class="ri-twitter-fill"></i></a>
-                                    <a href=""><i class="ri-facebook-fill"></i></a>
-                                    <a href=""><i class="ri-instagram-fill"></i></a>
-                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                                </div>
+                                <h4>dr. R. Dany Erlangga, Sp.BS</h4>
+                                <span>Dokter Spesialis Bedah Saraf</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Fuad Hanif -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/saraf/fuadhanif.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Fuad Hanif, Sp.S.,M.Kes</h4>
+                                <span>Dokter Spesialis Saraf (Neurolog)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Marissa Ayu Anindyta -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/saraf/marisaayu.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Marissa Ayu Anindyta, Sp.S</h4>
+                                <span>Dokter Spesialis Saraf (Neurolog)</span>
                             </div>
                         </div>
                     </div>
 
                 </div>
+                <!-- Tutup Row -->
+
+
 
             </div>
         </section><!-- End Doctors Section -->
 
         <!-- ======= Frequently Asked Questions Section ======= -->
-        <section id="faq" class="faq section-bg">
+        <!-- <section id="faq" class="faq section-bg">
             <div class="container">
 
                 <div class="section-title">
@@ -608,10 +593,11 @@
                 </div>
 
             </div>
-        </section><!-- End Frequently Asked Questions Section -->
+        </section> -->
+        <!-- End Frequently Asked Questions Section -->
 
         <!-- ======= Testimonials Section ======= -->
-        <section id="testimonials" class="testimonials">
+        <!-- <section id="testimonials" class="testimonials">
             <div class="container">
 
                 <div class="owl-carousel testimonials-carousel">
@@ -684,10 +670,11 @@
                 </div>
 
             </div>
-        </section><!-- End Testimonials Section -->
+        </section> -->
+        <!-- End Testimonials Section -->
 
         <!-- ======= Gallery Section ======= -->
-        <section id="gallery" class="gallery">
+        <!-- <section id="gallery" class="gallery">
             <div class="container">
 
                 <div class="section-title">
@@ -766,83 +753,84 @@
                 </div>
 
             </div>
-        </section><!-- End Gallery Section -->
+        </section>End Gallery Section -->
 
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="contact">
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Contact</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                    <h2>Lokasi RSUD Kota Banjar</h2>
                 </div>
             </div>
-
-            <div>
-                <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
             </div>
 
-            <div class="container">
-                <div class="row mt-5">
-
-                    <div class="col-lg-4">
-                        <div class="info">
-                            <div class="address">
-                                <i class="icofont-google-map"></i>
-                                <h4>Location:</h4>
-                                <p>A108 Adam Street, New York, NY 535022</p>
-                            </div>
-
-                            <div class="email">
-                                <i class="icofont-envelope"></i>
-                                <h4>Email:</h4>
-                                <p>info@example.com</p>
-                            </div>
-
-                            <div class="phone">
-                                <i class="icofont-phone"></i>
-                                <h4>Call:</h4>
-                                <p>+1 5589 55488 55s</p>
+            <section id="counts" class="counts">
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col col-lg-3 mt-5">
+                            <div class="count-box">
+                                <i class="icofont-ui-dial-phone"></i>
+                                <a href="tel:0265741032">
+                                    <span>0265-741032</span>
+                                </a>
+                                <p>Telpon</p>
                             </div>
 
                         </div>
 
+                        <div class="col-md-auto mt-5">
+                            <div class="count-box">
+                                <i class="icofont-envelope"></i>
+                                <a href="mailto:contact@example.com">
+                                    <span>rsu_kotabanjar@yahoo.co.id</span>
+                                </a>
+                                <p>Email</p>
+                            </div>
+
+                        </div>
+
+                        <div class="col col-lg-3 mt-5">
+
+                            <div class="count-box">
+                                <i class="icofont-ui-dial-phone"></i>
+                                <a href="tel:0265741032">
+                                    <span>0265-7482204</span>
+                                </a>
+                                <p>Ponek 24 Jam</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-lg-8 mt-5 mt-lg-0">
+                    <div class="row justify-content-md-center">
+                        <div class="col col-lg-2 mt-5">
+                            <div class="count-box">
+                                <i class="icofont-whatsapp"></i>
+                                <a href="https://api.whatsapp.com/send?phone=628112111146">
+                                    <span>08112111146</span>
+                                </a>
+                                <p>Whatsapp</p>
+                            </div>
 
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                            <div class="form-row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                                    <div class="validate"></div>
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                                    <div class="validate"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                                <div class="validate"></div>
-                            </div>
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                                <div class="validate"></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
-                            <div class="text-center"><button type="submit">Send Message</button></div>
-                        </form>
+                        </div>
 
+                        <div class="col col-lg-2 mt-5">
+
+                            <div class="count-box">
+                                <i class="icofont-fax"></i>
+                                <a href="tel:02657482204 ">
+                                    <span>0265744730</span>
+                                </a>
+                                <p>Fax</p>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
-
+            </section>
+            <div>
+                <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?q=RSU%20KOTA%20BANJAR&t=m&z=10&output=embed&iwloc=near" frameborder="0" allowfullscreen></iframe>
             </div>
+            <!-- End Counts Section -->
         </section><!-- End Contact Section -->
 
     </main><!-- End #main -->
@@ -852,44 +840,42 @@
 
         <div class="footer-top">
             <div class="container">
-                <div class="row">
+                <!-- <div class="row">
 
                     <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>Medilab</h3>
+                        <h3>RSUD Kota Banjar</h3>
                         <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
-                            <strong>Phone:</strong> +1 5589 55488 55<br>
-                            <strong>Email:</strong> info@example.com<br>
+                            Jln. Rumah Sakit No.5 <br>
+                            Kelurahan Hegarsari<br><br>
+                            <strong>Telpon :</strong> 0265-741032<br>
+                            <strong>Email:</strong> rsu_kotabanjar@yahoo.co.id<br>
                         </p>
                     </div>
 
                     <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
+                        <h4>Rekomendasi</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang Kita</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Alur</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Dokter</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Kontak</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Kamu tau bulan?</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Jawaban nya: Ya, itu Kamu</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Our Services</h4>
+                        <h4>Pelayanan</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Daftar</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Cari Rekamedik</a></li>
                         </ul>
                     </div>
 
                     <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Join Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                        <h4>Mendapatkan info terkini</h4>
+                        <p>Wa Gateway kudu na mah</p>
                         <form action="" method="post">
                             <input type="email" name="email"><input type="submit" value="Subscribe">
                         </form>
@@ -897,30 +883,20 @@
 
                 </div>
             </div>
-        </div>
+        </div> -->
 
-        <div class="container d-md-flex py-4">
+                <div class="mr-md-auto text-center text-md-left">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; SIMRS RSU KOTA BANJAR <?= date('Y'); ?></span>
+                    </div>
+                </div>
 
-            <div class="mr-md-auto text-center text-md-left">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
-                </div>
-                <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-                </div>
-            </div>
-            <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-        </div>
+                <!-- <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                </div> -->
+
     </footer><!-- End Footer -->
 
     <div id="preloader"></div>
