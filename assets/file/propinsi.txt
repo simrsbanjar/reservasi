@@ -1,0 +1,42 @@
+01	Aceh
+17	Bali
+55	Bali
+42	Banten
+04	Bengkulu
+53	Bengkulu
+15	DI.YOGYAKARTA
+36	Dki Jakarta
+60	Gorontalo
+57	Jambi
+45	Jambi
+12	Jawa Barat
+14	JAWA TENGAH
+16	Jawa Timur
+20	Kalimantan Barat
+38	Kalimantan Barat
+49	Kalimantan Selatan
+21	KALIMANTAN TENGAH
+23	KALIMANTAN TIMUR
+10	Kepulauan Bangka Belitung
+06	Kepulauan Riau
+51	Kota Tanjung Pinang
+09	Lampung
+30	MALUKU
+18	Nusa Tenggara Barat
+37	Nusa Tenggara Barat
+19	Nusa Tenggara Timur
+33	PAPUA  (IRIAN JAYA)
+61	Papua Barat
+41	Riau
+05	Riau
+54	Singapore
+59	Sulawesi Barat
+56	Sulawesi Selatan
+48	Sulawesi Tengah
+28	SULAWESI TENGGARA
+44	Sulawesi Utara
+03	Sumatera Barat
+08	Sumatera Selatan
+02	Sumatera Utara
+58	Sumatra Timur
+39	Sumatra Utara
