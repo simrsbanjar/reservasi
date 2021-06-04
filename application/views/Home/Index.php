@@ -71,9 +71,8 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#departments">Alur</a></li>
                     <li><a href="#doctors">Dokter</a></li>
-
                     <li><a href="#contact">Kontak</a></li>
-
+                    <li><a href="#lokasi">Lokasi</a></li>
                 </ul>
             </nav>
 
@@ -624,18 +623,147 @@
                             </div>
                         </div>
                     </div>
-                    <!-- DOKTER Anesthesi Teguh Budiman -->
+                    <!-- DOKTER Kandungan dan Kebidanan Imam Wahyudi -->
                     <div class="col-lg-6 mt-4">
                         <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/anestesi/teguhbudiman.jpg" class="img-fluid" alt=""></div>
+                            <div class="pic"><img src="assets/img/doctors/kandungan/imamwahyudi.jpg" class="img-fluid" alt=""></div>
                             <div class="member-info">
-                                <h4>dr. M. Teguh Budiman, Sp.An</h4>
-                                <span>Dokter Spesialis Anesthesi</span>
+                                <h4>dr. M. Imam Wahyudi, Sp.OG</h4>
+                                <span>Dokter Spesialis Kandungan & Kebidanan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Kandungan dan Kebidanan Dennis Fachmi -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/kandungan/dennis.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Dennis Fachmi A, Sp.OG</h4>
+                                <span>Dokter Spesialis Kandungan & Kebidanan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Kandungan dan Kebidanan Dennis Fachmi -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/kandungan/aguskurnia.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Agus Kurnia, Sp.OG</h4>
+                                <span>Dokter Spesialis Kandungan & Kebidanan</span>
                             </div>
                         </div>
                     </div>
 
-
+                    <!-- DOKTER Rehabilitasi Medik Tina Susilawati -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/rm/tinasusilawati.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Tina Susilawati, Sp.KFR</h4>
+                                <span>Dokter Spesialis Rehabilitasi Medik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Radiologi Nunu Heryana -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/radiologi/nunuheryana.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Nunu Heryana, Sp.R</h4>
+                                <span>Dokter Spesialis Radiologi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Mata Rety Sugiarti -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/mata/retysugiarti.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Rety Sugiarti, Sp.M</h4>
+                                <span>Dokter Spesialis Mata</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Orthopedi Isa Ridwan -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/ortopedi/isaridwan.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Isa Ridwan, Sp.OT</h4>
+                                <span>Dokter Spesialis Orthopedi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Akupuntur Felicia Adriani -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/akupuntur/feliciaadriani.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Felicia Adriani, Sp.Ak</h4>
+                                <span>Dokter Spesialis Akupuntur</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Forensik & Medikolegal Hendrik Septiana -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/forensik/hendrik.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Hendrik Septiana, Sp.F.M</h4>
+                                <span>Dokter Spesialis Forensik & Medikolegal</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Paru Dilla Laswantina -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/paru/dilalaswantina.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Dilla Laswantina, Sp.P</h4>
+                                <span>Dokter Spesialis Paru</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Patologi Anatomi Yuke Ireka -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/pa/yukeireka.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Yuke Ireka, Sp.PA</h4>
+                                <span>Dokter Spesialis Patologi Anatomi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Patologi Klinis Ade Novita Saragih -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/pk/adenovita.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Ade Novita Saragih, Sp.PK</h4>
+                                <span>Dokter Spesialis Patologi Klinis</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Penyakit Mulut Mega Rafika -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/mulut/megarafika.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Mega Rafika, Sp.PM</h4>
+                                <span>Dokter Spesialis Penyakit Mulut</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Telinga Hidung Tenggorokan Rini Febrianti -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/tht/rini.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Rini Febrianti, Sp.THT</h4>
+                                <span>Dokter Spesialis Telinga Hidung Tenggorokan</span>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <!-- Tutup Row -->
@@ -872,7 +1000,7 @@
             <div class="container">
 
                 <div class="section-title">
-                    <h2>Lokasi RSUD Kota Banjar</h2>
+                    <h2>Kontak</h2>
                 </div>
             </div>
             </div>
@@ -939,11 +1067,25 @@
                     </div>
                 </div>
             </section>
+            <!-- End Counts Section -->
+        </section><!-- End Contact Section -->
+
+        <section id="lokasi" class="contact">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Lokasi RSUD Kota Banjar</h2>
+                </div>
+            </div>
+            </div>
+
+
             <div>
                 <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?q=RSU%20KOTA%20BANJAR&t=m&z=10&output=embed&iwloc=near" frameborder="0" allowfullscreen></iframe>
             </div>
             <!-- End Counts Section -->
         </section><!-- End Contact Section -->
+
 
     </main><!-- End #main -->
 
@@ -999,7 +1141,7 @@
 
                 <div class="mr-md-auto text-center text-md-left">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; SIMRS RSU KOTA BANJAR <?= date('Y'); ?></span>
+                        <span>Copyright &copy; <strong> RSUD KOTA BANJAR </strong> <?= date('Y'); ?>. All Rights Reserved</span>
                     </div>
                 </div>
 
