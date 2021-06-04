@@ -1,0 +1,12 @@
+01	Datang Sendiri
+13	Haemodialisa
+08	IGD
+11	Intern
+12	Kasus Polisi
+07	Kecelakaan
+09	Poliklinik
+05	Praktek Swasta
+02	Puskesmas
+10	Rawat Inap
+03	RS Pemerintah
+04	RS Swasta
