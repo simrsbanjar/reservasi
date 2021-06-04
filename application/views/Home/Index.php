@@ -464,7 +464,7 @@
                 </div>
                 <!-- Buka Row -->
                 <div class="row">
-                    <!-- DOKTER Eman Sulaeman -->
+                    <!-- DOKTER Dalam Eman Sulaeman -->
                     <div class="col-lg-6">
                         <div class="member d-flex align-items-center">
                             <div class="pic"><img src="assets/img/doctors/dalam/emansulaeman.jpg" class="img-fluid" alt=""></div>
@@ -474,7 +474,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- DOKTER Siska Dewi Roslani -->
+                    <!-- DOKTER Dalam Siska Dewi Roslani -->
                     <div class="col-lg-6 mt-4 mt-lg-0">
                         <div class="member d-flex align-items-center">
                             <div class="pic"><img src="assets/img/doctors/dalam/siskadewiroslani.jpg" class="img-fluid" alt=""></div>
@@ -484,7 +484,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- DOKTER Julian Karundeng -->
+                    <!-- DOKTER Spesialis Dalam - Mitra RS Julian Karundeng -->
                     <div class="col-lg-6 mt-4">
                         <div class="member d-flex align-items-center">
                             <div class="pic"><img src="assets/img/doctors/dalam/juliankarundeng.jpg" class="img-fluid" alt=""></div>
@@ -494,7 +494,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- DOKTER Dany Erlangga -->
+                    <!-- DOKTER Bedah Saraf Dany Erlangga -->
                     <div class="col-lg-6 mt-4">
                         <div class="member d-flex align-items-center">
                             <div class="pic"><img src="assets/img/doctors/saraf/danyerlangga.jpg" class="img-fluid" alt=""></div>
@@ -504,7 +504,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- DOKTER Fuad Hanif -->
+                    <!-- DOKTER Saraf Fuad Hanif -->
                     <div class="col-lg-6 mt-4">
                         <div class="member d-flex align-items-center">
                             <div class="pic"><img src="assets/img/doctors/saraf/fuadhanif.jpg" class="img-fluid" alt=""></div>
@@ -514,7 +514,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- DOKTER Marissa Ayu Anindyta -->
+                    <!-- DOKTER Saraf Marissa Ayu Anindyta -->
                     <div class="col-lg-6 mt-4">
                         <div class="member d-flex align-items-center">
                             <div class="pic"><img src="assets/img/doctors/saraf/marisaayu.jpg" class="img-fluid" alt=""></div>
@@ -524,6 +524,118 @@
                             </div>
                         </div>
                     </div>
+                    <!-- DOKTER Anak Mahesa Suryanagara -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/anak/mahesa.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. R.Mahesa Suryanagara, Sp.A.,M.Kes</h4>
+                                <span>Dokter Spesialis Anak</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Anak Nia Adriani -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/anak/niaadriani.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Nia Adriani, Sp.A.,M.Kes</h4>
+                                <span>Dokter Spesialis Anak</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Jiwa Nunu Nurkholis -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/jiwa/nununurkholis.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Nunu Nurkholis Majid, Sp.KJ</h4>
+                                <span>Dokter Spesialis Jiwa (Psikiater)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Jiwa Rara Dyah -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/jiwa/dyah.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. RR Rara Dyah R.N, Sp.KJ</h4>
+                                <span>Dokter Spesialis Jiwa (Psikiater)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Bedah Juliawan Perminanto -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/bedah/juliawan.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Juliawan Perminanto, Sp.B.,M.Si.Med</h4>
+                                <span>Dokter Spesialis Bedah</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Bedah Rendy Fitra -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/bedah/rendifitra.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Rendy Fitra, Sp.B</h4>
+                                <span>Dokter Spesialis Bedah</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Kulit Kelamin Bowo Wahyudi -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/kulitkelamin/bowo.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Bowo Wahyudi, Sp.KK</h4>
+                                <span>Dokter Spesialis Kulit & Kelamin</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Dermatovenereologi Andini Dwikenia Anjani -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/kulitkelamin/andini.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Andini Dwikenia Anjani, Sp.DV</h4>
+                                <span>Dokter Spesialis Dermatovenereologi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Anesthesi Doni Arief -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/anestesi/doniarif.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. Doni Arief R, Sp.An</h4>
+                                <span>Dokter Spesialis Anesthesi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Anesthesi Teguh Budiman -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/anestesi/teguhbudiman.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. M. Teguh Budiman, Sp.An</h4>
+                                <span>Dokter Spesialis Anesthesi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DOKTER Anesthesi Teguh Budiman -->
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-center">
+                            <div class="pic"><img src="assets/img/doctors/anestesi/teguhbudiman.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>dr. M. Teguh Budiman, Sp.An</h4>
+                                <span>Dokter Spesialis Anesthesi</span>
+                            </div>
+                        </div>
+                    </div>
+
+
 
                 </div>
                 <!-- Tutup Row -->
@@ -806,7 +918,7 @@
                         <div class="col col-lg-2 mt-5">
                             <div class="count-box">
                                 <i class="icofont-whatsapp"></i>
-                                <a href="https://api.whatsapp.com/send?phone=628112111146">
+                                <a href="https://api.whatsapp.com/send?phone=628112111146" target="_blank">
                                     <span>08112111146</span>
                                 </a>
                                 <p>Whatsapp</p>
