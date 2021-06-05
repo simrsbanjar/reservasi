@@ -1815,3 +1815,138 @@ section {
 	max-width: 100%;
 	width: 100%;
 }
+
+/*--------------------------------------------------------------
+# Featured Services 1
+--------------------------------------------------------------*/
+.featured-services1{
+	border: 1px solid #e1ecff;
+  }
+  .featured-services1 .icon-box {
+	padding: 30px;
+	position: relative;
+	overflow: hidden;
+	background: #fff;
+	box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+	transition: all 0.3s ease-in-out;
+	border-radius: 8px;
+	z-index: 1;
+  
+  }
+  
+  
+  .featured-services1 h4 {
+	font-family: "Open Sans", sans-serif;
+  }
+  .featured-services1 a {
+	color: #4154f1;
+  }
+  
+  
+  .featured-services1 h2 {
+	color: #444444;
+	font-size: 48px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 30px;
+  }
+  .featured-services1 .icon-box::before {
+	content: '';
+	position: absolute;
+	background: #d9f1f2;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top: 100%;
+	transition: all 0.3s;
+	z-index: -1;
+  }
+  
+  /*.featured-services1 .icon-box:hover::before {*/
+  /*  background: #fdbe29;*/
+  /*  top: 0;*/
+  /*  border-radius: 0px;*/
+  /*}*/
+  
+  .featured-services1 .icon {
+	margin-bottom: 15px;
+  }
+  .featured-services1 .icon {
+	color:  #f21565;
+  }
+  .featured-services1 .icon i {
+	font-size: 48px;
+	line-height: 1;
+	color:#00C3CD;
+	transition: all 0.3s ease-in-out;
+  }
+  .featured-services1 p{
+	color: #4154f1;
+	font-size: 14px;
+  }
+  .featured-services1 .title {
+	font-weight: 700;
+	margin-bottom: 15px;
+	font-size: 18px;
+  }
+  
+  .featured-services1 .title a {
+	color: #111;
+  }
+  .featured-services1 a:hover {
+	color: #919ae3;
+  }
+  .featured-services1 .description {
+	font-size: 15px;
+	line-height: 18px;
+	margin-bottom: 0;
+	color: #444444;
+	font-family: "Open Sans", sans-serif;
+	margin-left: 10px;
+  }
+  
+  
+  .featured-services1 .btn-get-started {
+	margin-top: 30px;
+	line-height: 0;
+	padding: 10px 15px;
+	border-radius: 4px;
+	transition: 0.5s;
+	color: #fff;
+	background: #4154f1;
+  
+  
+  }
+  
+  .featured-services1 .btn-get-started span {
+	font-family: "Nunito", sans-serif;
+	font-weight:600;
+	font-size: 14px;
+	letter-spacing: 1px;
+  }
+  
+  .featured-services1 .btn-get-started i {
+	margin-left: 5px;
+	font-size: 18px;
+	transition: 0.3s;
+  }
+  
+  .featured-services1 .btn-get-started:hover i {
+	transform: translateY(5px);
+  }
+
+  .form-group small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 15px;
+	top: 67px;
+	visibility: hidden;
+}
+.form-group.error input {
+	border-color: #e74c3c;
+}
+
+.form-group.error small {
+	visibility: visible;
+}
