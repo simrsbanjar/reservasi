@@ -1215,13 +1215,13 @@ section {
 .doctors .member h4 {
 	font-weight: 700;
 	margin-bottom: 5px;
-	font-size: 20px;
+	font-size: 16px;
 	color: #2c4964;
 }
 
 .doctors .member span {
 	display: block;
-	font-size: 15px;
+	font-size: 14px;
 	padding-bottom: 10px;
 	position: relative;
 	font-weight: 500;
