@@ -1943,7 +1943,11 @@ section {
 	top: 67px;
 	visibility: hidden;
 }
-.form-group.error input {
+.form-group.error  input {
+	border-color: #e74c3c;
+}
+
+.form-group.error select {
 	border-color: #e74c3c;
 }
 

@@ -88,28 +88,20 @@
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="row mt-3" id="pasienlama">
-                                            <div class="col-md-3">
+                                        <div class="row mt-4" id="pasienlama">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
                                                     <input type="number" placeholder="Nomor RM" class="input" name="norm" id="norm">
-                                                    <small></small>
+                                                    <small>Error Message</small>
                                                     <!---->
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Tanggal Lahir</strong></label>
                                                     <input type="date" value="<?= date("Y-m-d") ?>" class="input" name="tgllahir" id="tgllahir">
-                                                    <small></small>
-                                                    <!---->
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="form-group">
-                                                    <label class="label-control"><strong>Nomor Peserta BPJS / Rujukan</strong></label>
-                                                    <input placeholder="Nomor Peserta BPJS / Rujukan" class="input">
+                                                    <small>Error Message</small>
                                                     <!---->
                                                 </div>
                                             </div>
@@ -119,7 +111,7 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Nama Depan</strong></label>
-                                                    <select name="gelar" id="gelar" class="form-control form-control-user" title="Pilih Gelar">
+                                                    <select name="gelar" id="gelar" class="input" title="Pilih Gelar">
                                                         <option value="">-PILIH-</option>
                                                         <option value="Bayi">Bayi</option>
                                                         <option value="Anak">Anak</option>
@@ -127,13 +119,15 @@
                                                         <option value="Ny.">Ny.</option>
                                                         <option value="Nn.">Nn.</option>
                                                     </select>
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                                    <input type="text" placeholder="Nama Pasien" class="input" maxlength="50">
+                                                    <input type="text" placeholder="Nama Pasien" class="input" maxlength="50" name="namalengkap" id="namalengkap">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -144,69 +138,73 @@
                                                         <option value="L">Laki-laki</option>
                                                         <option value="P">Perempuan</option>
                                                     </select>
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                                    <input type="text" placeholder="Tempat Lahir" class="input" maxlength="50">
+                                                    <input type="text" placeholder="Tempat Lahir" class="input" maxlength="50" id="tempatlahir" name="tempatlahir">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                                    <input type="date" placeholder="dd/mm/yyyy" class="input" value="<?= date("Y-m-d") ?>">
+                                                    <input type="date" placeholder="dd/mm/yyyy" class="input" value="<?= date("Y-m-d") ?>" id="tgllahir" name="tgllahir">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-1">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Tahun</strong></label>
                                                     <input type="text" placeholder="Thn" class="input" disabled>
-                                                    <!---->
                                                 </div>
                                             </div>
                                             <div class="col-md-1">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Bulan</strong></label>
                                                     <input type="text" placeholder="Bln" class="input" disabled>
-                                                    <!---->
                                                 </div>
                                             </div>
                                             <div class="col-md-1">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Hari</strong></label>
                                                     <input type="text" placeholder="Hari" class="input" disabled>
-                                                    <!---->
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                                    <input type="number" placeholder="No. Identitas" class="input" maxlength="20">
+                                                    <input type="number" placeholder="No. Identitas" class="input" maxlength="20" id="noidentitas" name="noidentitas">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Alamat</strong></label>
-                                                    <input type="text" placeholder="Alamat" class="input" maxlength="100">
+                                                    <input type="text" placeholder="Alamat" class="input" maxlength="100" id="alamat" name="alamat">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-1">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>RT</strong></label>
-                                                    <input type="number" placeholder="RT" class="input" onKeyPress="if(this.value.length==3) return false;">
+                                                    <input type="number" placeholder="RT" class="input" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-1">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>RW</strong></label>
-                                                    <input type="number" placeholder="RW" class="input" onKeyPress="if(this.value.length==3) return false;">
+                                                    <input type="number" placeholder="RW" class="input" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -215,6 +213,7 @@
                                                     <select name="propinsi" id="propinsi" class="form-control form-control-user" title="Pilih Propinsi">
                                                         <option value="">-PILIH-</option>
                                                     </select>
+                                                    <small>Error Message</small>
                                                     <!---->
                                                 </div>
                                             </div>
@@ -224,6 +223,7 @@
                                                     <select name="kota" id="kota" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
                                                         <option value="">-PILIH-</option>
                                                     </select>
+                                                    <small>Error Message</small>
                                                     <!---->
                                                 </div>
                                             </div>
@@ -233,6 +233,7 @@
                                                     <select name="kecamatan" id="kecamatan" class="form-control form-control-user" title="Pilih Kecamatan">
                                                         <option value="">-PILIH-</option>
                                                     </select>
+                                                    <small>Error Message</small>
                                                     <!---->
                                                 </div>
                                             </div>
@@ -242,14 +243,16 @@
                                                     <select name="kelurahan" id="kelurahan" class="form-control form-control-user" title="Pilih Kelurahan">
                                                         <option value="">-PILIH-</option>
                                                     </select>
+                                                    <small>Error Message</small>
                                                     <!---->
                                                 </div>
                                             </div>
                                             <div class="col-md-5">
                                                 <div class=" form-group">
                                                     <label class="label-control"><strong>Telepon</strong></label>
-                                                    <input type="number" placeholder="Telepon" class="input" onKeyPress="if(this.value.length==15) return false;">
+                                                    <input type="number" placeholder="Telepon" class="input" onKeyPress="if(this.value.length==15) return false;" id="notlp" name="notlp">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-2">
@@ -257,6 +260,7 @@
                                                     <label class="label-control"><strong>Kode Pos</strong></label>
                                                     <input type="number" placeholder="Kode Pos" class="input" onKeyPress="if(this.value.length==5) return false;">
                                                     <!---->
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -277,9 +281,11 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="label-control"><strong>Poli</strong></label>
-                                                    <select name="poli" id="propinsi" class="form-control form-control-user" title="Pilih Poli">
+                                                    <select name="poli" id="poli" class="form-control form-control-user" title="Pilih Poli">
                                                         <option value="">-PILIH-</option>
+                                                        <option value="01">MATA</option>
                                                     </select>
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -288,69 +294,56 @@
                                                     <select name="rujukanasal" id="rujukanasal" class="form-control form-control-user" title="Pilih Rujukan Asal">
                                                         <option value="">-PILIH-</option>
                                                     </select>
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class=" form-group">
                                                     <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                                    <input type="number" placeholder="No Peserta" class="input" onKeyPress="if(this.value.length==20) return false;">
-                                                    <!---->
+                                                    <input type="number" placeholder="No Peserta" class="input" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4">
                                                 <div class=" form-group">
                                                     <label class="label-control"><strong>No. Surat Rujukan</strong></label>
-                                                    <input type="number" placeholder="No. Surat Rujukan" class="input" onKeyPress="if(this.value.length==20) return false;">
-                                                    <!---->
+                                                    <input type="number" placeholder="No. Surat Rujukan" class="input" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan">
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class=" form-group">
+                                                <div class="form-group">
                                                     <label class="label-control"><strong>Jenis Kunjungan</strong></label>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadionew" value="1" id="flexRadionew1" onclick="checkRadio(value)">
-                                                        <label class="form-check-label mr-5" for="flexRadionew1">
-                                                            Kontrol
-                                                        </label>
-                                                        <input class="form-check-input" type="radio" name="flexRadionew" value="2" id="flexRadionew2" onclick="checkRadio(value)">
-                                                        <label class="form-check-label" for="flexRadionew2">
-                                                            Berdasarkan Rujukan
-                                                        </label>
-                                                    </div>
+                                                    <select name="jeniskunjungan" id="jeniskunjungan" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Kontrol</option>
+                                                        <option value="2">Berdasarkan Rujukan</option>
+                                                    </select>
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
-                                                <div class=" form-group">
+                                                <div class="form-group">
                                                     <label class="label-control"><strong>Jenis Permintaan</strong></label>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadionew" value="1" id="flexRadionew1" onclick="checkRadio(value)">
-                                                        <label class="form-check-label mr-5" for="flexRadionew1">
-                                                            Ambil Antrian Pendaftaran
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadionew" value="2" id="flexRadionew2" onclick="checkRadio(value)">
-                                                        <label class="form-check-label" for="flexRadionew2">
-                                                            Pendaftaran Poli
-                                                        </label>
-                                                    </div>
+                                                    <select name="jenispermintaan" id="jenispermintaan" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Ambil Antrian Pendaftaran</option>
+                                                        <option value="2">Pendaftaran Poli</option>
+                                                    </select>
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-4">
-                                                <div class=" form-group">
+                                                <div class="form-group">
                                                     <label class="label-control"><strong>Jenis Poli</strong></label>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadionew" value="1" id="flexRadionew1" onclick="checkRadio(value)">
-                                                        <label class="form-check-label mr-5" for="flexRadionew1">
-                                                            Eksekutif
-                                                        </label>
-                                                        <input class="form-check-input" type="radio" name="flexRadionew" value="2" id="flexRadionew2" onclick="checkRadio(value)">
-                                                        <label class="form-check-label" for="flexRadionew2">
-                                                            Reguler
-                                                        </label>
-                                                    </div>
+                                                    <select name="jenispoli" id="jenispoli" class="form-control form-control-user" title="Pilih Jenis POli">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Eksekutif</option>
+                                                        <option value="2">Reguler</option>
+                                                    </select>
+                                                    <small>Error Message</small>
                                                 </div>
                                             </div>
                                         </div>
@@ -749,26 +742,27 @@
                 $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             }
             document.getElementById("nilai").value = Number(nilai) - 1;
+
             setSuccessFor(norm);
         }
 
         function prosesLanjut() {
-            if (validasi() == false) {
-                return
-            }
-
             var nilai = $("[name='nilai']").val();
-            $("#headerdatapasien").hide();
-            $("#isidatapasien").hide();
-            $("#headerreservasi").show();
-            $("#isireservasi").show();
-            $("#btnkembali").show();
             var hasilnum = Number(nilai) + 1;
             if (nilai > '2') {
                 hasilnum = '2';
             } else {
                 hasilnum = Number(nilai) + 1;
             }
+            if (validasi() == false) {
+                return
+            }
+
+            $("#headerdatapasien").hide();
+            $("#isidatapasien").hide();
+            $("#headerreservasi").show();
+            $("#isireservasi").show();
+            $("#btnkembali").show();
 
             if (nilai == '1') {
                 $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
@@ -783,23 +777,171 @@
 
         function validasi() {
             var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
-            var norm = document.getElementById('norm');
-            var normValue = norm.value.trim();
-            var tgllahir = document.getElementById('tgllahir');
-            var tgllahirValue = tgllahir.value.trim();
+            var nilai = $("[name='nilai']").val();
 
-            if (statuspasien == '1') {
-                if (normValue === '') {
-                    setErrorFor(norm, 'No.RM Tidak Boleh Kosong');
-                    return false;
-                } else {
-                    setSuccessFor(norm);
+            if (nilai == '1') {
+                if (statuspasien == '1') { //jika pasien lama
+                    var norm = document.getElementById('norm');
+                    var normValue = norm.value.trim();
+                    var tgllahir = document.getElementById('tgllahir');
+                    var tgllahirValue = tgllahir.value.trim();
+                    if (normValue === '') {
+                        setErrorFor(norm, 'No.RM Tidak Boleh Kosong');
+                        return false;
+                    } else {
+                        setSuccessFor(norm);
+                    }
+                    if (tgllahirValue === '') {
+                        setErrorFor(tgllahir, 'Tgl. Lahir Tidak Boleh Kosong');
+                        return false;
+                    } else {
+                        setSuccessFor(tgllahir);
+                    }
+                } else { //jika pasien baru
+
+                    var gelarValue = gelar.value.trim();
+                    if (gelarValue === '') {
+                        setErrorFor(gelar, 'Nama Depan Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(gelar);
+                    }
+                    var namalengkapValue = namalengkap.value.trim();
+                    if (namalengkapValue === '') {
+                        setErrorFor(namalengkap, 'Nama Lengkap Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(namalengkap);
+                    }
+                    var kelaminValue = kelamin.value.trim();
+                    if (kelaminValue === '') {
+                        setErrorFor(kelamin, 'Jenis Kelamin Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(kelamin);
+                    }
+                    var tempatlahirValue = tempatlahir.value.trim();
+                    if (tempatlahirValue === '') {
+                        setErrorFor(tempatlahir, 'Tempat Lahir Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(tempatlahir);
+                    }
+                    var noidentitasValue = noidentitas.value.trim();
+                    if (noidentitasValue === '') {
+                        setErrorFor(noidentitas, 'No. Identitas Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(noidentitas);
+                    }
+                    var alamatValue = alamat.value.trim();
+                    if (alamatValue === '') {
+                        setErrorFor(alamat, 'Alamat Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(alamat);
+                    }
+                    var rtValue = rt.value.trim();
+                    if (rtValue === '') {
+                        setErrorFor(rt, 'RT Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(rt);
+                    }
+                    var rwValue = rw.value.trim();
+                    if (rwValue === '') {
+                        setErrorFor(rw, 'RW Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(rw);
+                    }
+                    var propinsiValue = propinsi.value.trim();
+                    if (propinsiValue === '') {
+                        setErrorFor(propinsi, 'Propinsi Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(propinsi);
+                    }
+                    var kotaValue = kota.value.trim();
+                    if (kotaValue === '') {
+                        setErrorFor(kota, 'Kota Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(kota);
+                    }
+                    var kecamatanValue = kecamatan.value.trim();
+                    if (kecamatanValue === '') {
+                        setErrorFor(kecamatan, 'Kecamatan Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(kecamatan);
+                    }
+                    var kelurahanValue = kelurahan.value.trim();
+                    if (kelurahanValue === '') {
+                        setErrorFor(kelurahan, 'Kelurahan Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(kelurahan);
+                    }
+                    var notlpValue = notlp.value.trim();
+                    if (notlpValue === '') {
+                        setErrorFor(notlp, 'No. Telp Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(notlp);
+                    }
+
                 }
-                if (tgllahirValue === '') {
-                    setErrorFor(tgllahir, 'Tgl. Lahir Tidak Boleh Kosong');
+
+            } else {
+                var poliValue = poli.value.trim();
+                if (poliValue === '') {
+                    setErrorFor(poli, 'Poli Tidak Boleh Kosong');
                     return false;
                 } else {
-                    setSuccessFor(tgllahir);
+                    setSuccessFor(poli);
+                }
+                var rujukanasalValue = rujukanasal.value.trim();
+                if (rujukanasalValue === '') {
+                    setErrorFor(rujukanasal, 'Rujukan Asal Tidak Boleh Kosong');
+                    return false;
+                } else {
+                    setSuccessFor(rujukanasal);
+                }
+                var nopesertaValue = nopeserta.value.trim();
+                if (nopesertaValue === '') {
+                    setErrorFor(nopeserta, 'No. Peserta Tidak Boleh Kosong');
+                    return false;
+                } else {
+                    setSuccessFor(nopeserta);
+                }
+                var nosuratrujukanValue = nosuratrujukan.value.trim();
+                if (nosuratrujukanValue === '') {
+                    setErrorFor(nosuratrujukan, 'No. Surat Rujukan Tidak Boleh Kosong');
+                    return false;
+                } else {
+                    setSuccessFor(nosuratrujukan);
+                }
+                var jeniskunjunganValue = jeniskunjungan.value.trim();
+                if (jeniskunjunganValue === '') {
+                    setErrorFor(jeniskunjungan, 'Jenis Kunjungan Harus Dipilih.');
+                    return false;
+                } else {
+                    setSuccessFor(jeniskunjungan);
+                }
+                var jenispermintaanValue = jenispermintaan.value.trim();
+                if (jenispermintaanValue === '') {
+                    setErrorFor(jenispermintaan, 'Jenis Permintaan Harus Dipilih.');
+                    return false;
+                } else {
+                    setSuccessFor(jenispermintaan);
+                }
+                var jenispoliValue = jenispoli.value.trim();
+                if (jenispoliValue === '') {
+                    setErrorFor(jenispoli, 'Jenis Poli Harus Dipilih.');
+                    return false;
+                } else {
+                    setSuccessFor(jenispoli);
                 }
             }
         }
