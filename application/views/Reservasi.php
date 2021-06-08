@@ -32,327 +32,331 @@
 
                 </div>
                 <br>
-                <h4 style="text-align: center;">Silakan pilih dan klik cara bayar.</h4>
-                <br>
-                <ul class="nav nav-pills nav-justified row justify-content-md-center d-flex ">
-                    <li class="nav-item col-lg-3 mt-5 ">
-                        <a class="nav-link active show" data-toggle="tab" href="#tab-1">
-                            <div class="icon"><img src="<?= base_url("assets/img/BPJS.png"); ?>" width="200px" height="200px"></div>
-                            <h4 style="text-align: center;">BPJS</h4>
-                        </a>
-                    </li>
-                    <li class="nav-item col-lg-3 mt-5">
-                        <a class="nav-link " data-toggle="tab" href="#tab-2">
-                            <div class="icon"><img src="<?= base_url("assets/img/ASURANSI.png"); ?>" width="200px" height="200px"></div>
-                            <h4 style="text-align: center;">JAMINAN LAIN</h4>
-                        </a>
-                    </li>
-                    <li class="nav-item col-lg-3 mt-5">
-                        <a class="nav-link" data-toggle="tab" href="#tab-3">
-                            <div class="icon"><img src="<?= base_url("assets/img/AVATAR_CEKLIS.png"); ?>" width="200px" height="200px"></div>
-                            <h4 style="text-align: center;">UMUM (MANDIRI)</h4>
-                        </a>
-                    </li>
-                </ul>
+                <div class="card" id="carabayar">
+                    <div class="card-body">
+                        <h4 style="text-align: center;">Silakan pilih dan klik cara bayar.</h4>
+                        <br>
+                        <ul class="nav nav-pills nav-justified row justify-content-md-center d-flex ">
+                            <li class="nav-item col-lg-3 mt-5 ">
+                                <a class="nav-link active show" data-toggle="tab" href="#tab-1">
+                                    <div class="icon"><img src="<?= base_url("assets/img/BPJS.png"); ?>" width="200px" height="200px"></div>
+                                    <h4 style="text-align: center;">BPJS</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item col-lg-3 mt-5">
+                                <a class="nav-link " data-toggle="tab" href="#tab-2">
+                                    <div class="icon"><img src="<?= base_url("assets/img/ASURANSI.png"); ?>" width="200px" height="200px"></div>
+                                    <h4 style="text-align: center;">JAMINAN LAIN</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item col-lg-3 mt-5">
+                                <a class="nav-link" data-toggle="tab" href="#tab-3">
+                                    <div class="icon"><img src="<?= base_url("assets/img/AVATAR_CEKLIS.png"); ?>" width="200px" height="200px"></div>
+                                    <h4 style="text-align: center;">UMUM (MANDIRI)</h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer d-flex flex-row-reverse">
+                        <button id="btnlanjutcarabayar" name="btnlanjutcarabayar" type="button" onclick="prosesLanjutcarabayar()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-alt-circle-right"></i></i> Lanjut</button>
+                    </div>
+                </div>
 
                 <div class="tab-content">
                     <div class="tab-pane active show" id="tab-1">
                         <div class="row justify-content-md-center">
-                            <section id="featured-services1" class="featured-services1">
-                                <div style="padding: 2rem 3rem; text-align: left;">
-                                    <div class="card ">
-                                        <div class="card-header bg-primary  text-white" id="headerdatapasien">
-                                            Data Pasien
-                                        </div>
-                                        <div class="card-body" id="isidatapasien">
-                                            <div class="row">
-                                                <div class="col-md-9">
-                                                    <label class="label-control"><strong>Status Pasien</strong></label>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="1" id="flexRadioDefault1" onclick="checkRadio(value)">
-                                                        <label class="form-check-label mr-5" for="flexRadioDefault1">
-                                                            Pasien Lama
-                                                        </label>
-                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="2" id="flexRadioDefault2" checked onclick="checkRadio(value)">
-                                                        <label class="form-check-label" for="flexRadioDefault2">
-                                                            Pasien Baru
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row mt-3" id="pasienlama">
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
-                                                        <input type="text" placeholder="Nomor RM" class="input">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                                        <input type="text" placeholder="dd/mm/yyyy" class="input">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Nomor Peserta BPJS / Rujukan</strong></label>
-                                                        <input placeholder="Nomor Peserta BPJS / Rujukan" class="input">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row mt-3" id="pasienbaru">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Nama Depan</strong></label>
-                                                        <select name="gelar" id="gelar" class="form-control form-control-user" title="Pilih Gelar">
-                                                            <option value="">-PILIH-</option>
-                                                            <option value="Bayi">Bayi</option>
-                                                            <option value="Anak">Anak</option>
-                                                            <option value="Tn.">Tn.</option>
-                                                            <option value="Ny.">Ny.</option>
-                                                            <option value="Nn.">Nn.</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                                        <input type="text" placeholder="Nama Pasien" class="input" maxlength="50">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Jenis Kelamin</strong></label>
-                                                        <select name="kelamin" id="kelamin" class="form-control form-control-user" title="Pilih Jenis Kelamin">
-                                                            <option value="">-PILIH-</option>
-                                                            <option value="L">Laki-laki</option>
-                                                            <option value="P">Perempuan</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                                        <input type="text" placeholder="Tempat Lahir" class="input" maxlength="50">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                                        <input type="date" placeholder="dd/mm/yyyy" class="input" value="<?= date("Y-m-d") ?>">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Tahun</strong></label>
-                                                        <input type="text" placeholder="Thn" class="input" disabled>
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Bulan</strong></label>
-                                                        <input type="text" placeholder="Bln" class="input" disabled>
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Hari</strong></label>
-                                                        <input type="text" placeholder="Hari" class="input" disabled>
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                                        <input type="number" placeholder="No. Identitas" class="input" maxlength="20">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Alamat</strong></label>
-                                                        <input type="text" placeholder="Alamat" class="input" maxlength="100">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>RT</strong></label>
-                                                        <input type="number" placeholder="RT" class="input" onKeyPress="if(this.value.length==3) return false;">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>RW</strong></label>
-                                                        <input type="number" placeholder="RW" class="input" onKeyPress="if(this.value.length==3) return false;">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Propinsi</strong></label>
-                                                        <select name="propinsi" id="propinsi" class="form-control form-control-user" title="Pilih Propinsi">
-                                                            <option value="">-PILIH-</option>
-                                                        </select>
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
-                                                        <select name="kota" id="kota" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
-                                                            <option value="">-PILIH-</option>
-                                                        </select>
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Kecamatan</strong></label>
-                                                        <select name="kecamatan" id="kecamatan" class="form-control form-control-user" title="Pilih Kecamatan">
-                                                            <option value="">-PILIH-</option>
-                                                        </select>
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
-                                                        <select name="kelurahan" id="kelurahan" class="form-control form-control-user" title="Pilih Kelurahan">
-                                                            <option value="">-PILIH-</option>
-                                                        </select>
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <div class=" form-group">
-                                                        <label class="label-control"><strong>Telepon</strong></label>
-                                                        <input type="number" placeholder="Telepon" class="input" onKeyPress="if(this.value.length==15) return false;">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Kode Pos</strong></label>
-                                                        <input type="number" placeholder="Kode Pos" class="input" onKeyPress="if(this.value.length==5) return false;">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-header bg-primary  text-white" id="headerreservasi">
-                                            Data Reservasi
-                                        </div>
-                                        <div class="card-body" id="isireservasi">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Tgl. Reservasi</strong></label>
-                                                        <input type="date" placeholder="Tanggal Reservasi" class="input" value="<?= date("Y-m-d") ?>">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Poli</strong></label>
-                                                        <select name="poli" id="propinsi" class="form-control form-control-user" title="Pilih Poli">
-                                                            <option value="">-PILIH-</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="label-control"><strong>Rujukan Asal</strong></label>
-                                                        <select name="rujukanasal" id="rujukanasal" class="form-control form-control-user" title="Pilih Rujukan Asal">
-                                                            <option value="">-PILIH-</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class=" form-group">
-                                                        <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                                        <input type="number" placeholder="No Peserta" class="input" onKeyPress="if(this.value.length==20) return false;">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <div class=" form-group">
-                                                        <label class="label-control"><strong>No. Surat Rujukan</strong></label>
-                                                        <input type="number" placeholder="No. Surat Rujukan" class="input" onKeyPress="if(this.value.length==20) return false;">
-                                                        <!---->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class=" form-group">
-                                                        <label class="label-control"><strong>Jenis Kunjungan</strong></label>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="1" id="flexRadioDefault1" onclick="checkRadio(value)">
-                                                            <label class="form-check-label mr-5" for="flexRadioDefault1">
-                                                                Kontrol
-                                                            </label>
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="2" id="flexRadioDefault2" onclick="checkRadio(value)">
-                                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                                Berdasarkan Rujukan
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class=" form-group">
-                                                        <label class="label-control"><strong>Jenis Permintaan</strong></label>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="1" id="flexRadioDefault1" onclick="checkRadio(value)">
-                                                            <label class="form-check-label mr-5" for="flexRadioDefault1">
-                                                                Ambil Antrian Pendaftaran
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="2" id="flexRadioDefault2" onclick="checkRadio(value)">
-                                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                                Pendaftaran Poli
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <div class=" form-group">
-                                                        <label class="label-control"><strong>Jenis Poli</strong></label>
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="1" id="flexRadioDefault1" onclick="checkRadio(value)">
-                                                            <label class="form-check-label mr-5" for="flexRadioDefault1">
-                                                                Eksekutif
-                                                            </label>
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="2" id="flexRadioDefault2" onclick="checkRadio(value)">
-                                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                                Reguler
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-footer d-flex">
-                                            <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button>
-                                            <button id="btnkembali" name="btnkembali" type="button" onclick="prosesKembali()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-circle-left"></i></i> Kembali</button>
-                                            <button id="btnlanjut" name="btnlanjut" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i></i> Lanjut</button>
-                                        </div>
-
+                            <!-- <section id="featured-services1" class="featured-services1"> -->
+                            <div style="padding: 2rem 3rem; text-align: left;">
+                                <div class="card" id="carddata">
+                                    <div class="card-header bg-primary  text-white" id="headerdatapasien">
+                                        Data Pasien
                                     </div>
+                                    <div class="card-body" id="isidatapasien">
+                                        <input type="hidden" name="nilai" id="nilai" value="1">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <label class="label-control"><strong>Status Pasien</strong></label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" value="1" id="flexRadioDefault1" checked onclick="checkRadio(value)">
+                                                    <label class="form-check-label mr-5" for="flexRadioDefault1">
+                                                        Pasien Lama
+                                                    </label>
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" value="2" id="flexRadioDefault2" onclick="checkRadio(value)">
+                                                    <label class="form-check-label" for="flexRadioDefault2">
+                                                        Pasien Baru
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4" id="pasienlama">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
+                                                    <input type="number" placeholder="Nomor RM" class="input" name="norm" id="norm">
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tanggal Lahir</strong></label>
+                                                    <input type="date" value="<?= date("Y-m-d") ?>" class="input" name="tgllahir" id="tgllahir">
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mt-3" id="pasienbaru">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nama Depan</strong></label>
+                                                    <select name="gelar" id="gelar" class="input" title="Pilih Gelar">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="Bayi">Bayi</option>
+                                                        <option value="Anak">Anak</option>
+                                                        <option value="Tn.">Tn.</option>
+                                                        <option value="Ny.">Ny.</option>
+                                                        <option value="Nn.">Nn.</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nama Lengkap</strong></label>
+                                                    <input type="text" placeholder="Nama Pasien" class="input" maxlength="50" name="namalengkap" id="namalengkap">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Kelamin</strong></label>
+                                                    <select name="kelamin" id="kelamin" class="form-control form-control-user" title="Pilih Jenis Kelamin">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="L">Laki-laki</option>
+                                                        <option value="P">Perempuan</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tempat Lahir</strong></label>
+                                                    <input type="text" placeholder="Tempat Lahir" class="input" maxlength="50" id="tempatlahir" name="tempatlahir">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tanggal Lahir</strong></label>
+                                                    <input type="date" placeholder="dd/mm/yyyy" class="input" value="<?= date("Y-m-d") ?>" id="tgllahir" name="tgllahir">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tahun</strong></label>
+                                                    <input type="text" placeholder="Thn" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Bulan</strong></label>
+                                                    <input type="text" placeholder="Bln" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Hari</strong></label>
+                                                    <input type="text" placeholder="Hari" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
+                                                    <input type="number" placeholder="No. Identitas" class="input" maxlength="20" id="noidentitas" name="noidentitas">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Alamat</strong></label>
+                                                    <input type="text" placeholder="Alamat" class="input" maxlength="100" id="alamat" name="alamat">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>RT</strong></label>
+                                                    <input type="number" placeholder="RT" class="input" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>RW</strong></label>
+                                                    <input type="number" placeholder="RW" class="input" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Propinsi</strong></label>
+                                                    <select name="propinsi" id="propinsi" class="form-control form-control-user" title="Pilih Propinsi">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
+                                                    <select name="kota" id="kota" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kecamatan</strong></label>
+                                                    <select name="kecamatan" id="kecamatan" class="form-control form-control-user" title="Pilih Kecamatan">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
+                                                    <select name="kelurahan" id="kelurahan" class="form-control form-control-user" title="Pilih Kelurahan">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class=" form-group">
+                                                    <label class="label-control"><strong>Telepon</strong></label>
+                                                    <input type="number" placeholder="Telepon" class="input" onKeyPress="if(this.value.length==15) return false;" id="notlp" name="notlp">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kode Pos</strong></label>
+                                                    <input type="number" placeholder="Kode Pos" class="input" onKeyPress="if(this.value.length==5) return false;">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-header bg-primary  text-white" id="headerreservasi">
+                                        Data Registrasi
+                                    </div>
+                                    <div class="card-body" id="isireservasi">
+                                        <input type="hidden" name="nilai" id="nilai" value="1">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tgl. Registrasi</strong></label>
+                                                    <input type="date" placeholder="Tanggal Reservasi" class="input" value="<?= date("Y-m-d") ?>">
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Poli</strong></label>
+                                                    <select name="poli" id="poli" class="form-control form-control-user" title="Pilih Poli">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="01">MATA</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Rujukan Asal</strong></label>
+                                                    <select name="rujukanasal" id="rujukanasal" class="form-control form-control-user" title="Pilih Rujukan Asal">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class=" form-group">
+                                                    <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
+                                                    <input type="number" placeholder="No Peserta" class="input" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class=" form-group">
+                                                    <label class="label-control"><strong>No. Surat Rujukan</strong></label>
+                                                    <input type="number" placeholder="No. Surat Rujukan" class="input" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan">
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Kunjungan</strong></label>
+                                                    <select name="jeniskunjungan" id="jeniskunjungan" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Kontrol</option>
+                                                        <option value="2">Berdasarkan Rujukan</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Permintaan</strong></label>
+                                                    <select name="jenispermintaan" id="jenispermintaan" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Ambil Antrian Pendaftaran</option>
+                                                        <option value="2">Pendaftaran Poli</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Poli</strong></label>
+                                                    <select name="jenispoli" id="jenispoli" class="form-control form-control-user" title="Pilih Jenis POli">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Eksekutif</option>
+                                                        <option value="2">Reguler</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex">
+                                        <!-- <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button> -->
+                                        <button id="btnkembali" name="btnkembali" type="button" onclick="prosesKembali()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-circle-left"></i> Kembali</button>
+                                        <button id="btnlanjut" name="btnlanjut" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
+                                    </div>
+
                                 </div>
-                            </section>
+                            </div>
+                            <!-- </section> -->
                         </div>
                     </div>
 
@@ -625,48 +629,333 @@
     <script>
         $(document).ready(function() {
 
-            $("#pasienlama").hide();
-            $("#pasienbaru").show();
-            $("#btncari").hide();
+            $("#pasienlama").show();
+            $("#pasienbaru").hide();
+            $("#btnlanjutcarabayar").show();
             $("#headerreservasi").hide();
             $("#isireservasi").hide();
-            $("#btnlanjut").show();
+            $("#headerdatapasien").hide();
+            $("#isidatapasien").hide();
+            $("#cardfooter").hide();
             $("#btnkembali").hide();
+            $("#btnlanjut").hide();
+            $("#carddata").hide();
 
             getpropinsi();
             GetRujukanAsal();
-
         });
 
         function checkRadio(value) {
+            var norm = document.getElementById('norm');
             if (value == "1") {
                 $("#pasienlama").show();
                 $("#pasienbaru").hide();
-                $("#btncari").show();
-                $("#btnsimpan").hide();
+                $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
             } else {
                 $("#pasienlama").hide();
                 $("#pasienbaru").show();
-                $("#btncari").hide();
-                $("#btnsimpan").show();
+                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             }
+            setSuccessFor(norm);
+        }
+
+        function prosesLanjutcarabayar() {
+            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
+            if (statuspasien == '1') {
+                $("#pasienlama").show();
+                $("#pasienbaru").hide();
+                $("#headerdatapasien").show();
+                $("#isidatapasien").show();
+                $("#headerreservasi").hide();
+                $("#isireservasi").hide();
+                $("#btnkembali").show();
+                $("#btnlanjut").show();
+                $("#carabayar").hide();
+                $("#btncarabayar").hide();
+                $("#btnlanjutcarabayar").hide();
+                $("#carddata").show();
+            } else {
+                $("#headerdatapasien").show();
+                $("#isidatapasien").show();
+                $("#headerreservasi").hide();
+                $("#isireservasi").hide();
+                $("#pasienbaru").show();
+                $("#carabayar").hide();
+                $("#btncarabayar").hide();
+                $("#btnlanjutcarabayar").hide();
+                $("#carddata").show();
+            }
+            $("#btnkembali").show();
+            $("#btnlanjut").show();
+            document.getElementById("nilai").value = "1";
+            $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
+
+            var norm = document.getElementById('norm');
+            setSuccessFor(norm);
+        }
+
+        function prosesKembali() {
+            var nilai = $("[name='nilai']").val();
+            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
+            var norm = document.getElementById('norm');
+
+            if (nilai == '1') {
+                $("#pasienlama").hide();
+                $("#btnlanjutcarabayar").show();
+                $("#carabayar").show();
+                $("#headerreservasi").hide();
+                $("#isireservasi").hide();
+                $("#headerdatapasien").hide();
+                $("#isidatapasien").hide();
+                $("#cardfooter").hide();
+                $("#btnkembali").hide();
+                $("#btnlanjut").hide();
+                $("#carddata").hide();
+            } else {
+                if (statuspasien == '1') {
+                    $("#pasienlama").show();
+                    $("#pasienbaru").hide();
+                    $("#headerdatapasien").show();
+                    $("#isidatapasien").show();
+                    $("#headerreservasi").hide();
+                    $("#isireservasi").hide();
+                    $("#btnkembali").show();
+                    $("#btnlanjut").show();
+                    $("#carabayar").hide();
+                    $("#btncarabayar").hide();
+                    $("#btnlanjutcarabayar").hide();
+                    $("#carddata").show();
+                } else {
+                    $("#headerdatapasien").show();
+                    $("#isidatapasien").show();
+                    $("#headerreservasi").hide();
+                    $("#isireservasi").hide();
+                    $("#pasienbaru").show();
+                }
+                $("#btnkembali").show();
+                $("#btnlanjut").show();
+
+            }
+            if (nilai == '1') {
+                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
+            } else {
+                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+            }
+            document.getElementById("nilai").value = Number(nilai) - 1;
+
+            setSuccessFor(norm);
         }
 
         function prosesLanjut() {
+            var nilai = $("[name='nilai']").val();
+            var hasilnum = Number(nilai) + 1;
+            if (nilai > '2') {
+                hasilnum = '2';
+            } else {
+                hasilnum = Number(nilai) + 1;
+            }
+            if (validasi() == false) {
+                return
+            }
+
             $("#headerdatapasien").hide();
             $("#isidatapasien").hide();
             $("#headerreservasi").show();
             $("#isireservasi").show();
             $("#btnkembali").show();
+
+            if (nilai == '1') {
+                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
+            } else {
+                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                // $("norm").attr("required", true);
+            }
+
+            document.getElementById("nilai").value = hasilnum;
+
         }
 
-        function prosesKembali() {
-            $("#headerdatapasien").show();
-            $("#isidatapasien").show();
-            $("#headerreservasi").hide();
-            $("#isireservasi").hide();
-            $("#btnkembali").hide();
-            $("#btnlanjut").show();
+        function validasi() {
+            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
+            var nilai = $("[name='nilai']").val();
+
+            if (nilai == '1') {
+                if (statuspasien == '1') { //jika pasien lama
+                    var norm = document.getElementById('norm');
+                    var normValue = norm.value.trim();
+                    var tgllahir = document.getElementById('tgllahir');
+                    var tgllahirValue = tgllahir.value.trim();
+                    if (normValue === '') {
+                        setErrorFor(norm, 'No.RM Tidak Boleh Kosong');
+                        return false;
+                    } else {
+                        setSuccessFor(norm);
+                    }
+                    if (tgllahirValue === '') {
+                        setErrorFor(tgllahir, 'Tgl. Lahir Tidak Boleh Kosong');
+                        return false;
+                    } else {
+                        setSuccessFor(tgllahir);
+                    }
+                } else { //jika pasien baru
+
+                    var gelarValue = gelar.value.trim();
+                    if (gelarValue === '') {
+                        setErrorFor(gelar, 'Nama Depan Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(gelar);
+                    }
+                    var namalengkapValue = namalengkap.value.trim();
+                    if (namalengkapValue === '') {
+                        setErrorFor(namalengkap, 'Nama Lengkap Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(namalengkap);
+                    }
+                    var kelaminValue = kelamin.value.trim();
+                    if (kelaminValue === '') {
+                        setErrorFor(kelamin, 'Jenis Kelamin Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(kelamin);
+                    }
+                    var tempatlahirValue = tempatlahir.value.trim();
+                    if (tempatlahirValue === '') {
+                        setErrorFor(tempatlahir, 'Tempat Lahir Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(tempatlahir);
+                    }
+                    var noidentitasValue = noidentitas.value.trim();
+                    if (noidentitasValue === '') {
+                        setErrorFor(noidentitas, 'No. Identitas Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(noidentitas);
+                    }
+                    var alamatValue = alamat.value.trim();
+                    if (alamatValue === '') {
+                        setErrorFor(alamat, 'Alamat Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(alamat);
+                    }
+                    var rtValue = rt.value.trim();
+                    if (rtValue === '') {
+                        setErrorFor(rt, 'RT Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(rt);
+                    }
+                    var rwValue = rw.value.trim();
+                    if (rwValue === '') {
+                        setErrorFor(rw, 'RW Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(rw);
+                    }
+                    var propinsiValue = propinsi.value.trim();
+                    if (propinsiValue === '') {
+                        setErrorFor(propinsi, 'Propinsi Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(propinsi);
+                    }
+                    var kotaValue = kota.value.trim();
+                    if (kotaValue === '') {
+                        setErrorFor(kota, 'Kota Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(kota);
+                    }
+                    var kecamatanValue = kecamatan.value.trim();
+                    if (kecamatanValue === '') {
+                        setErrorFor(kecamatan, 'Kecamatan Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(kecamatan);
+                    }
+                    var kelurahanValue = kelurahan.value.trim();
+                    if (kelurahanValue === '') {
+                        setErrorFor(kelurahan, 'Kelurahan Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(kelurahan);
+                    }
+                    var notlpValue = notlp.value.trim();
+                    if (notlpValue === '') {
+                        setErrorFor(notlp, 'No. Telp Tidak Boleh Kosong.');
+                        return false;
+                    } else {
+                        setSuccessFor(notlp);
+                    }
+
+                }
+
+            } else {
+                var poliValue = poli.value.trim();
+                if (poliValue === '') {
+                    setErrorFor(poli, 'Poli Tidak Boleh Kosong');
+                    return false;
+                } else {
+                    setSuccessFor(poli);
+                }
+                var rujukanasalValue = rujukanasal.value.trim();
+                if (rujukanasalValue === '') {
+                    setErrorFor(rujukanasal, 'Rujukan Asal Tidak Boleh Kosong');
+                    return false;
+                } else {
+                    setSuccessFor(rujukanasal);
+                }
+                var nopesertaValue = nopeserta.value.trim();
+                if (nopesertaValue === '') {
+                    setErrorFor(nopeserta, 'No. Peserta Tidak Boleh Kosong');
+                    return false;
+                } else {
+                    setSuccessFor(nopeserta);
+                }
+                var nosuratrujukanValue = nosuratrujukan.value.trim();
+                if (nosuratrujukanValue === '') {
+                    setErrorFor(nosuratrujukan, 'No. Surat Rujukan Tidak Boleh Kosong');
+                    return false;
+                } else {
+                    setSuccessFor(nosuratrujukan);
+                }
+                var jeniskunjunganValue = jeniskunjungan.value.trim();
+                if (jeniskunjunganValue === '') {
+                    setErrorFor(jeniskunjungan, 'Jenis Kunjungan Harus Dipilih.');
+                    return false;
+                } else {
+                    setSuccessFor(jeniskunjungan);
+                }
+                var jenispermintaanValue = jenispermintaan.value.trim();
+                if (jenispermintaanValue === '') {
+                    setErrorFor(jenispermintaan, 'Jenis Permintaan Harus Dipilih.');
+                    return false;
+                } else {
+                    setSuccessFor(jenispermintaan);
+                }
+                var jenispoliValue = jenispoli.value.trim();
+                if (jenispoliValue === '') {
+                    setErrorFor(jenispoli, 'Jenis Poli Harus Dipilih.');
+                    return false;
+                } else {
+                    setSuccessFor(jenispoli);
+                }
+            }
+        }
+
+        function setErrorFor(input, message) {
+            var formGroup = input.parentElement;
+            var small = formGroup.querySelector('small');
+            formGroup.className = 'form-group error';
+            small.innerText = message;
+        }
+
+        function setSuccessFor(input) {
+            var formGroup = input.parentElement;
+            formGroup.className = 'form-group success';
         }
 
         function getpropinsi() {
