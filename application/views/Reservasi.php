@@ -361,264 +361,583 @@
                     </div>
 
                     <div class="tab-pane" id="tab-2">
-                        <div class="row">
+                        <div class="row justify-content-md-center">
+                            <!-- <section id="featured-services1" class="featured-services1"> -->
+                            <div style="padding: 2rem 3rem; text-align: left;">
+                                <div class="card" id="carddata2">
+                                    <div class="card-header bg-primary  text-white" id="headerdatapasien2">
+                                        Data Pasien
+                                    </div>
+                                    <div class="card-body" id="isidatapasien2">
+                                        <input type="hidden" name="nilai2" id="nilai2" value="1">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <label class="label-control"><strong>Status Pasien</strong></label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault2" value="1" id="flexRadioDefault3" checked onclick="checkRadio(value)">
+                                                    <label class="form-check-label mr-5" for="flexRadioDefault3">
+                                                        Pasien Lama
+                                                    </label>
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault2" value="2" id="flexRadioDefault4" onclick="checkRadio(value)">
+                                                    <label class="form-check-label" for="flexRadioDefault4">
+                                                        Pasien Baru
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4" id="pasienlama2">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
+                                                    <input type="number" placeholder="Nomor RM" class="input" name="norm2" id="norm2">
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tanggal Lahir</strong></label>
+                                                    <input type="date" value="<?= date("Y-m-d") ?>" class="input" name="tgllahir2" id="tgllahir2">
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                        </div>
 
-                            <section id="featured-services2" class="featured-services2">
-                                <div class="row">
-                                    <div class="col-lg-6" style="justify-content: right;  text-align: right">
-                                        <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                            <span>Download Buku Petunjuk Seleksi CPNS</span>
-                                            <i class="icofont-download-alt"></i>
-                                        </a>
+                                        <div class="row mt-3" id="pasienbaru2">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nama Depan</strong></label>
+                                                    <select name="gelar2" id="gelar2" class="input" title="Pilih Gelar">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="Bayi">Bayi</option>
+                                                        <option value="Anak">Anak</option>
+                                                        <option value="Tn.">Tn.</option>
+                                                        <option value="Ny.">Ny.</option>
+                                                        <option value="Nn.">Nn.</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nama Lengkap</strong></label>
+                                                    <input type="text" placeholder="Nama Pasien" class="input" maxlength="50" name="namalengkap2" id="namalengkap2">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Kelamin</strong></label>
+                                                    <select name="kelamin2" id="kelamin2" class="form-control form-control-user" title="Pilih Jenis Kelamin">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="L">Laki-laki</option>
+                                                        <option value="P">Perempuan</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tempat Lahir</strong></label>
+                                                    <input type="text" placeholder="Tempat Lahir" class="input" maxlength="50" id="tempatlahir2" name="tempatlahir2">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tanggal Lahir</strong></label>
+                                                    <input type="date" placeholder="dd/mm/yyyy" class="input" value="<?= date("Y-m-d") ?>" id="tgllahir2" name="tgllahir2">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tahun</strong></label>
+                                                    <input type="text" placeholder="Thn" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Bulan</strong></label>
+                                                    <input type="text" placeholder="Bln" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Hari</strong></label>
+                                                    <input type="text" placeholder="Hari" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
+                                                    <input type="number" placeholder="No. Identitas" class="input" maxlength="20" id="noidentitas2" name="noidentitas2">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Alamat</strong></label>
+                                                    <input type="text" placeholder="Alamat" class="input" maxlength="100" id="alamat2" name="alamat2">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>RT</strong></label>
+                                                    <input type="number" placeholder="RT" class="input" onKeyPress="if(this.value.length==3) return false;" id="rt2" name="rt2">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>RW</strong></label>
+                                                    <input type="number" placeholder="RW" class="input" onKeyPress="if(this.value.length==3) return false;" id="rw2" name="rw2">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Propinsi</strong></label>
+                                                    <select name="propinsi2" id="propinsi2" class="form-control form-control-user" title="Pilih Propinsi">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
+                                                    <select name="kota2" id="kota2" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kecamatan</strong></label>
+                                                    <select name="kecamatan2" id="kecamatan2" class="form-control form-control-user" title="Pilih Kecamatan">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
+                                                    <select name="kelurahan2" id="kelurahan2" class="form-control form-control-user" title="Pilih Kelurahan">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class=" form-group">
+                                                    <label class="label-control"><strong>Telepon</strong></label>
+                                                    <input type="number" placeholder="Telepon" class="input" onKeyPress="if(this.value.length==15) return false;" id="notlp2" name="notlp2">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kode Pos</strong></label>
+                                                    <input type="number" placeholder="Kode Pos" class="input" onKeyPress="if(this.value.length==5) return false;">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6" style="justify-content: left;  text-align: left">
-                                        <a download="" href="assets/img/alur/Alur%20Seleksi%20CPNS.png" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                            <span>Download Alur Seleksi CPNS</span>
-                                            <i class="icofont-download-alt"></i>
-                                        </a>
+                                    <div class="card-header bg-primary  text-white" id="headerreservasi2">
+                                        Data Registrasi
                                     </div>
+                                    <div class="card-body" id="isireservasi2">
+                                        <input type="hidden" name="nilai" id="nilai" value="1">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tgl. Registrasi</strong></label>
+                                                    <input type="date" placeholder="Tanggal Reservasi" class="input" value="<?= date("Y-m-d") ?>">
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class=" form-group">
+                                                    <label class="label-control"><strong>Cara Bayar</strong></label>
+                                                    <select name="carabayar2" id="carabayar2" class="form-control form-control-user" title="Pilih Cara Bayar">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Poli</strong></label>
+                                                    <select name="poli2" id="poli2" class="form-control form-control-user" title="Pilih Poli">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="01">MATA</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Rujukan Asal</strong></label>
+                                                    <select name="rujukanasal2" id="rujukanasal2" class="form-control form-control-user" title="Pilih Rujukan Asal">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class=" form-group">
+                                                    <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
+                                                    <input type="number" placeholder="No Peserta" class="input" onKeyPress="if(this.value.length==20) return false;" id="nopeserta2" name="nopeserta2">
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Kunjungan</strong></label>
+                                                    <select name="jeniskunjungan2" id="jeniskunjungan2" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Kontrol</option>
+                                                        <option value="2">Berdasarkan Rujukan</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Permintaan</strong></label>
+                                                    <select name="jenispermintaan2" id="jenispermintaan2" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Ambil Antrian Pendaftaran</option>
+                                                        <option value="2">Pendaftaran Poli</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Poli</strong></label>
+                                                    <select name="jenispoli2" id="jenispoli2" class="form-control form-control-user" title="Pilih Jenis POli">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Eksekutif</option>
+                                                        <option value="2">Reguler</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex">
+                                        <!-- <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button> -->
+                                        <button id="btnkembali2" name="btnkembali2" type="button" onclick="prosesKembali()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-circle-left"></i> Kembali</button>
+                                        <button id="btnlanjut2" name="btnlanjut2" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
+                                    </div>
+
                                 </div>
-                                <br><br>
-                                <div class="container">
-
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box">
-                                                <div style="text-align: center"><img src="assets/img/alur/daftar.jpg" class="img-fluid" alt="" style="width: 70%; "></div>
-                                                <h4 class="title"><a>1. Daftar Akun</a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li>Pelamar mengakses Portal SSCASN di <strong> <a href="https://sscasn.bkn.go.id">https://sscasn.bkn.go.id</a></strong> </li>
-                                                    <li>Buat akun SSCASN </li>
-                                                    <li>Login ke akun SSCASN yang telah dibuat</li>
-                                                    <li>Lengkapi biodata dan unggah swafoto </li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box" data-aos-delay="200">
-                                                <br>
-                                                <div style="text-align: center"><img src="assets/img/alur/pilih.jpg" class="img-fluid" alt="" style="width: 60%; "></div>
-                                                <h4 class="title"><a>2. Daftar Formasi</a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li>Pilih Jenis Seleksi</li>
-                                                    <li>Pilih Formasi</li>
-                                                    <li>Unggah dokumen</li>
-                                                    <li>Cek resume dan akhiri pendaftaran</li>
-                                                    <li>Cetak kartu informasi akun dan kartu pendaftaran akun</li>
-                                                </ul>
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box" data-aos-delay="300">
-                                                <div style="text-align: center"><img src="img/icon2/3.png" class="img-fluid" alt="" style="width: 50%; "></div>
-                                                <h4 class="title"><a>3. Seleksi Administrasi</a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li> Panitia memverifikasi data pelamar</li>
-                                                    <li>Panitia mengumumkan hasil Seleksi Administrasi</li>
-                                                    <li>Pelamar yang dinyatakan tidak lulus dapat menyanggah Hasil Seleksi Administrasi</li>
-                                                    <li>Panitia mengumumkan hasil sanggah</li>
-                                                    <li>Pelamar yang dinyatakan lulus melakukan cetak Kartu Ujian </li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-                                    <br><br>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box">
-                                                <div style="text-align: center"><img src="img/icon2/4.png" class="img-fluid" alt="" style="width: 50%; "></div>
-                                                <h4 class="title"><a>4. Seleksi Kompetensi Dasar </a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li> Pelamar melaksanakan Ujian Seleksi Kompetensi Dasar</li>
-                                                    <li> Panitia mengumumkan hasil Seleksi Kompetensi Dasar</li>
-                                                    <li>Pelamar yang dinyatakan tidak lulus dapat menyanggah Hasil Seleksi Kompetensi Dasar</li>
-                                                    <li>Panitia mengumumkan hasil sanggah</li>
-                                                    <li>Pelamar yang dinyatakan lulus dapat melanjutkan proses ke tahap Ujian Seleksi Kompetensi Bidang </li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box" data-aos-delay="200">
-                                                <div style="text-align: center"><img src="assets/img/alur/skb.jpg" class="img-fluid" alt="" style="width: 60%; "></div>
-                                                <h4 class="title"><a>5. Seleksi Kompetensi Bidang </a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li> Pelamar melaksanakan Ujian Seleksi Kompetensi Bidang</li>
-                                                    <li> Panitia mengumumkan hasil Seleksi Kompetensi Bidang</li>
-                                                    <li>Pelamar yang dinyatakan tidak lulus dapat menyanggah Hasil Seleksi Kompetensi Bidang</li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box" data-aos-delay="300">
-                                                <div style="text-align: center"><img src="assets/img/alur/berhasil.png" class="img-fluid" alt="" style="width: 60%; "></div>
-                                                <h4 class="title"><a>6. Pengumuman Kelulusan</a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li> Panitia mengumumkan hasil sanggah Seleksi Kompetensi Bidang (pengumuman ini bersifat mutlak dan tidak dapat diganggu gugat)</li>
-                                                    <li>Pelamar yang dinyatakan lulus melakukan pemberkasan</li>
-                                                </ul>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div></div>
-                            </section>
+                            </div>
+                            <!-- </section> -->
                         </div>
                     </div>
 
                     <div class="tab-pane" id="tab-3">
-                        <div class="row">
-                            <section id="featured-services3" class="featured-services3">
+                        <div class="row justify-content-md-center">
+                            <!-- <section id="featured-services1" class="featured-services1"> -->
+                            <div style="padding: 2rem 3rem; text-align: left;">
+                                <div class="card" id="carddata3">
+                                    <div class="card-header bg-primary  text-white" id="headerdatapasien3">
+                                        Data Pasien
+                                    </div>
+                                    <div class="card-body" id="isidatapasien3">
+                                        <input type="hidden" name="nilai3" id="nilai3" value="1">
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <label class="label-control"><strong>Status Pasien</strong></label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault3" value="1" id="flexRadioDefault5" checked onclick="checkRadio(value)">
+                                                    <label class="form-check-label mr-5" for="flexRadioDefault5">
+                                                        Pasien Lama
+                                                    </label>
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault3" value="2" id="flexRadioDefault6" onclick="checkRadio(value)">
+                                                    <label class="form-check-label" for="flexRadioDefault6">
+                                                        Pasien Baru
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4" id="pasienlama3">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
+                                                    <input type="number" placeholder="Nomor RM" class="input" name="norm3" id="norm3">
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tanggal Lahir</strong></label>
+                                                    <input type="date" value="<?= date("Y-m-d") ?>" class="input" name="tgllahir3" id="tgllahir3">
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                <div class="row">
-                                    <div class="col-lg-6" style="justify-content: right;  text-align: right">
-                                        <a download="" href="#" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                            <span>Download Buku Petunjuk Seleksi PPPK Non Guru</span>
-                                            <i class="icofont-download-alt"></i>
-                                        </a>
+                                        <div class="row mt-3" id="pasienbaru3">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nama Depan</strong></label>
+                                                    <select name="gelar3" id="gelar3" class="input" title="Pilih Gelar">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="Bayi">Bayi</option>
+                                                        <option value="Anak">Anak</option>
+                                                        <option value="Tn.">Tn.</option>
+                                                        <option value="Ny.">Ny.</option>
+                                                        <option value="Nn.">Nn.</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Nama Lengkap</strong></label>
+                                                    <input type="text" placeholder="Nama Pasien" class="input" maxlength="50" name="namalengkap3" id="namalengkap3">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Kelamin</strong></label>
+                                                    <select name="kelamin3" id="kelamin3" class="form-control form-control-user" title="Pilih Jenis Kelamin">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="L">Laki-laki</option>
+                                                        <option value="P">Perempuan</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tempat Lahir</strong></label>
+                                                    <input type="text" placeholder="Tempat Lahir" class="input" maxlength="50" id="tempatlahir3" name="tempatlahir3">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tanggal Lahir</strong></label>
+                                                    <input type="date" placeholder="dd/mm/yyyy" class="input" value="<?= date("Y-m-d") ?>" id="tgllahir3" name="tgllahir3">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tahun</strong></label>
+                                                    <input type="text" placeholder="Thn" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Bulan</strong></label>
+                                                    <input type="text" placeholder="Bln" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Hari</strong></label>
+                                                    <input type="text" placeholder="Hari" class="input" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
+                                                    <input type="number" placeholder="No. Identitas" class="input" maxlength="20" id="noidentitas3" name="noidentitas3">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Alamat</strong></label>
+                                                    <input type="text" placeholder="Alamat" class="input" maxlength="100" id="alamat3" name="alamat3">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>RT</strong></label>
+                                                    <input type="number" placeholder="RT" class="input" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>RW</strong></label>
+                                                    <input type="number" placeholder="RW" class="input" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Propinsi</strong></label>
+                                                    <select name="propinsi3" id="propinsi3" class="form-control form-control-user" title="Pilih Propinsi">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
+                                                    <select name="kota3" id="kota3" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kecamatan</strong></label>
+                                                    <select name="kecamatan3" id="kecamatan3" class="form-control form-control-user" title="Pilih Kecamatan">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
+                                                    <select name="kelurahan3" id="kelurahan3" class="form-control form-control-user" title="Pilih Kelurahan">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5">
+                                                <div class=" form-group">
+                                                    <label class="label-control"><strong>Telepon</strong></label>
+                                                    <input type="number" placeholder="Telepon" class="input" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Kode Pos</strong></label>
+                                                    <input type="number" placeholder="Kode Pos" class="input" onKeyPress="if(this.value.length==5) return false;">
+                                                    <!---->
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-6" style="justify-content: left;  text-align: left">
-                                        <a download="" href="assets/img/alur/Alur%20Seleksi%20PPPK.png" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
-                                            <span>Download Alur Seleksi PPPK Non Guru</span>
-                                            <i class="icofont-download-alt"></i>
-                                        </a>
+                                    <div class="card-header bg-primary  text-white" id="headerreservasi3">
+                                        Data Registrasi
                                     </div>
+                                    <div class="card-body" id="isireservasi3">
+                                        <input type="hidden" name="nilai3" id="nilai3" value="1">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Tgl. Registrasi</strong></label>
+                                                    <input type="date" placeholder="Tanggal Reservasi" class="input" value="<?= date("Y-m-d") ?>">
+                                                    <!---->
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Poli</strong></label>
+                                                    <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="01">MATA</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Rujukan Asal</strong></label>
+                                                    <select name="rujukanasal3" id="rujukanasal3" class="form-control form-control-user" title="Pilih Rujukan Asal">
+                                                        <option value="">-PILIH-</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Kunjungan</strong></label>
+                                                    <select name="jeniskunjungan3" id="jeniskunjungan3" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Kontrol</option>
+                                                        <option value="2">Berdasarkan Rujukan</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Permintaan</strong></label>
+                                                    <select name="jenispermintaan3" id="jenispermintaan3" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Ambil Antrian Pendaftaran</option>
+                                                        <option value="2">Pendaftaran Poli</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="label-control"><strong>Jenis Poli</strong></label>
+                                                    <select name="jenispoli3" id="jenispoli3" class="form-control form-control-user" title="Pilih Jenis POli">
+                                                        <option value="">-PILIH-</option>
+                                                        <option value="1">Eksekutif</option>
+                                                        <option value="2">Reguler</option>
+                                                    </select>
+                                                    <small>Error Message</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer d-flex">
+                                        <!-- <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button> -->
+                                        <button id="btnkembali2" name="btnkembali2" type="button" onclick="prosesKembali()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-circle-left"></i> Kembali</button>
+                                        <button id="btnlanjut2" name="btnlanjut2" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
+                                    </div>
+
                                 </div>
-                                <br><br>
-
-                                <div class="container">
-
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box">
-                                                <div style="text-align: center"><img src="assets/img/alur/daftar2.jpg" class="img-fluid" alt="" style="width: 60%; "></div>
-                                                <h4 class="title"><a>1. Daftar Akun</a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li>Pelamar mengakses Portal SSCASN di <strong> <a href="https://sscasn.bkn.go.id">https://sscasn.bkn.go.id</a></strong> </li>
-                                                    <li>Buat akun SSCASN </li>
-                                                    <li>Login ke akun SSCASN yang telah dibuat</li>
-                                                    <li>Lengkapi biodata dan unggah swafoto </li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box" data-aos-delay="200">
-                                                <br>
-                                                <div style="text-align: center"><img src="assets/img/alur/pilih2.jpg" class="img-fluid" alt="" style="width: 80%; "></div>
-                                                <h4 class="title"><a>2. Daftar Formasi</a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li>Pilih Jenis Seleksi</li>
-                                                    <li>Pilih Formasi</li>
-                                                    <li>Unggah dokumen</li>
-                                                    <li>Cek resume dan akhiri pendaftaran</li>
-                                                    <li>Cetak kartu informasi akun dan kartu pendaftaran akun</li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box" data-aos-delay="300">
-                                                <div style="text-align: center"><img src="img/icon2/3.png" class="img-fluid" alt="" style="width: 50%; "></div>
-                                                <h4 class="title"><a>3. Seleksi Administrasi</a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li> Panitia memverifikasi data pelamar</li>
-                                                    <li>Panitia mengumumkan hasil Seleksi Administrasi</li>
-                                                    <li>Pelamar yang dinyatakan tidak lulus dapat menyanggah Hasil Seleksi Administrasi</li>
-                                                    <li>Panitia mengumumkan hasil sanggah</li>
-                                                    <li>Pelamar yang dinyatakan lulus melakukan cetak Kartu Ujian </li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-                                    <br><br>
-                                    <div class="row">
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box">
-                                                <div style="text-align: center"><img src="img/icon2/4.png" class="img-fluid" alt="" style="width: 50%; "></div>
-                                                <h4 class="title"><a>4. Seleksi Kompetensi Dasar </a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li> Pelamar melaksanakan Ujian Seleksi Kompetensi Dasar</li>
-                                                    <li> Panitia mengumumkan hasil Seleksi Kompetensi Dasar</li>
-                                                    <li>Pelamar yang dinyatakan tidak lulus dapat menyanggah Hasil Seleksi Kompetensi Dasar</li>
-                                                    <li>Panitia mengumumkan hasil sanggah</li>
-                                                    <li>Pelamar yang dinyatakan lulus dapat melanjutkan proses ke tahap Ujian Seleksi Kompetensi Bidang </li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box" data-aos-delay="200">
-                                                <div style="text-align: center"><img src="assets/img/alur/skb2.jpg" class="img-fluid" alt="" style="width: 80%; "></div>
-                                                <h4 class="title"><a>5. Seleksi Kompetensi Bidang </a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li> Pelamar melaksanakan Ujian Seleksi Kompetensi Bidang</li>
-                                                    <li> Panitia mengumumkan hasil Seleksi Kompetensi Bidang</li>
-                                                    <li>Pelamar yang dinyatakan tidak lulus dapat menyanggah Hasil Seleksi Kompetensi Bidang</li>
-                                                </ul>
-                                                </p>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0">
-                                            <div class="icon-box" data-aos-delay="300">
-                                                <div style="text-align: center"><img src="assets/img/alur/berhasill2.jpg" class="img-fluid" alt="" style="width: 65%; "></div>
-                                                <h4 class="title"><a>6. Pengumuman Kelulusan</a></h4>
-                                                <p class="description">
-                                                <ul>
-                                                    <li> Panitia mengumumkan hasil sanggah Seleksi Kompetensi Bidang (pengumuman ini bersifat mutlak dan tidak dapat diganggu gugat)</li>
-                                                    <li>Pelamar yang dinyatakan lulus melakukan pemberkasan</li>
-                                                </ul>
-                                                </p>
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-                                <div></div>
-                            </section>
+                            </div>
+                            <!-- </section> -->
                         </div>
                     </div>
                 </div>
@@ -628,10 +947,15 @@
 
     <script>
         $(document).ready(function() {
-
-            $("#pasienlama").show();
-            $("#pasienbaru").hide();
             $("#btnlanjutcarabayar").show();
+            hidetab1();
+            hidetab2();
+            hidetab3();
+            getpropinsi();
+            GetRujukanAsal();
+        });
+
+        function hidetab1() {
             $("#headerreservasi").hide();
             $("#isireservasi").hide();
             $("#headerdatapasien").hide();
@@ -640,157 +964,438 @@
             $("#btnkembali").hide();
             $("#btnlanjut").hide();
             $("#carddata").hide();
+        }
 
-            getpropinsi();
-            GetRujukanAsal();
-        });
+        function hidetab2() {
+            $("#pasienlama").show();
+            $("#pasienbaru").hide();
+            $("#headerdatapasien2").hide();
+            $("#isidatapasien2").hide();
+            $("#headerreservasi2").hide();
+            $("#isireservasi2").hide();
+            $("#btnkembali2").hide();
+            $("#btnlanjut2").hide();
+            $("#carddata2").hide();
+        }
+
+        function hidetab3() {
+            $("#pasienlama").show();
+            $("#pasienbaru").hide();
+            $("#isidatapasien3").hide();
+            $("#headerreservasi3").hide();
+            $("#isireservasi3").hide();
+            $("#btnkembali3").hide();
+            $("#btnlanjut3").hide();
+            $("#carddata3").hide();
+        }
+
+        function pasienlamatab1() {
+            $("#pasienlama").show();
+            $("#pasienbaru").hide();
+            $("#headerdatapasien").show();
+            $("#isidatapasien").show();
+            $("#headerreservasi").hide();
+            $("#isireservasi").hide();
+            $("#btnkembali").show();
+            $("#btnlanjut").show();
+            $("#carddata").show();
+        }
+
+        function pasienlamatab2() {
+            $("#pasienlama2").show();
+            $("#pasienbaru2").hide();
+            $("#headerdatapasien2").show();
+            $("#isidatapasien2").show();
+            $("#headerreservasi2").hide();
+            $("#isireservasi2").hide();
+            $("#btnkembali2").show();
+            $("#btnlanjut2").show();
+            $("#carddata2").show();
+        }
+
+        function pasienlamatab3() {
+            $("#pasienlama3").show();
+            $("#pasienbaru3").hide();
+            $("#headerdatapasien3").show();
+            $("#isidatapasien3").show();
+            $("#headerreservasi3").hide();
+            $("#isireservasi3").hide();
+            $("#btnkembali3").show();
+            $("#btnlanjut3").show();
+            $("#carddata3").show();
+        }
+
+        function pasienbarutab1() {
+            $("#headerdatapasien").show();
+            $("#isidatapasien").show();
+            $("#headerreservasi").hide();
+            $("#isireservasi").hide();
+            $("#pasienbaru").show();
+        }
+
+        function pasienbarutab2() {
+            $("#headerdatapasien2").show();
+            $("#isidatapasien2").show();
+            $("#headerreservasi2").hide();
+            $("#isireservasi2").hide();
+            $("#pasienbaru2").show();
+        }
+
+        function pasienbarutab3() {
+            $("#headerdatapasien3").show();
+            $("#isidatapasien3").show();
+            $("#headerreservasi3").hide();
+            $("#isireservasi3").hide();
+            $("#pasienbaru3").show();
+        }
 
         function checkRadio(value) {
-            var norm = document.getElementById('norm');
-            if (value == "1") {
-                $("#pasienlama").show();
-                $("#pasienbaru").hide();
-                $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
+            var idtabs = $(".tab-pane.active").attr("id");
+
+            if (idtabs == 'tab-1') {
+                var norm = document.getElementById('norm');
+                if (value == "1") {
+                    $("#pasienlama").show();
+                    $("#pasienbaru").hide();
+                    $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
+                } else {
+                    $("#pasienlama").hide();
+                    $("#pasienbaru").show();
+                    $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                }
+            } else if (idtabs == 'tab-2') {
+                var norm = document.getElementById('norm2');
+                if (value == "1") {
+                    $("#pasienlama2").show();
+                    $("#pasienbaru2").hide();
+                    $("#btnlanjut2").html('<i class="fas fa-search"></i> Cari');
+                } else {
+                    $("#pasienlama2").hide();
+                    $("#pasienbaru2").show();
+                    $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                }
             } else {
-                $("#pasienlama").hide();
-                $("#pasienbaru").show();
-                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                var norm = document.getElementById('norm3');
+                if (value == "1") {
+                    $("#pasienlama3").show();
+                    $("#pasienbaru3").hide();
+                    $("#btnlanjut3").html('<i class="fas fa-search"></i> Cari');
+                } else {
+                    $("#pasienlama3").hide();
+                    $("#pasienbaru3").show();
+                    $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                }
             }
             setSuccessFor(norm);
         }
 
         function prosesLanjutcarabayar() {
-            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
-            if (statuspasien == '1') {
-                $("#pasienlama").show();
-                $("#pasienbaru").hide();
-                $("#headerdatapasien").show();
-                $("#isidatapasien").show();
-                $("#headerreservasi").hide();
-                $("#isireservasi").hide();
-                $("#btnkembali").show();
-                $("#btnlanjut").show();
-                $("#carabayar").hide();
-                $("#btncarabayar").hide();
-                $("#btnlanjutcarabayar").hide();
-                $("#carddata").show();
-            } else {
-                $("#headerdatapasien").show();
-                $("#isidatapasien").show();
-                $("#headerreservasi").hide();
-                $("#isireservasi").hide();
-                $("#pasienbaru").show();
-                $("#carabayar").hide();
-                $("#btncarabayar").hide();
-                $("#btnlanjutcarabayar").hide();
-                $("#carddata").show();
-            }
-            $("#btnkembali").show();
-            $("#btnlanjut").show();
-            document.getElementById("nilai").value = "1";
-            $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
-
-            var norm = document.getElementById('norm');
-            setSuccessFor(norm);
-        }
-
-        function prosesKembali() {
-            var nilai = $("[name='nilai']").val();
-            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
-            var norm = document.getElementById('norm');
-
-            if (nilai == '1') {
-                $("#pasienlama").hide();
-                $("#btnlanjutcarabayar").show();
-                $("#carabayar").show();
-                $("#headerreservasi").hide();
-                $("#isireservasi").hide();
-                $("#headerdatapasien").hide();
-                $("#isidatapasien").hide();
-                $("#cardfooter").hide();
-                $("#btnkembali").hide();
-                $("#btnlanjut").hide();
-                $("#carddata").hide();
-            } else {
+            var idtabs = $(".tab-pane.active").attr("id");
+            if (idtabs == 'tab-1') {
+                var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
                 if (statuspasien == '1') {
-                    $("#pasienlama").show();
-                    $("#pasienbaru").hide();
-                    $("#headerdatapasien").show();
-                    $("#isidatapasien").show();
-                    $("#headerreservasi").hide();
-                    $("#isireservasi").hide();
-                    $("#btnkembali").show();
-                    $("#btnlanjut").show();
-                    $("#carabayar").hide();
-                    $("#btncarabayar").hide();
-                    $("#btnlanjutcarabayar").hide();
-                    $("#carddata").show();
+                    pasienlamatab1();
                 } else {
-                    $("#headerdatapasien").show();
-                    $("#isidatapasien").show();
-                    $("#headerreservasi").hide();
-                    $("#isireservasi").hide();
-                    $("#pasienbaru").show();
+                    pasienbarutab1();
                 }
                 $("#btnkembali").show();
                 $("#btnlanjut").show();
-
-            }
-            if (nilai == '1') {
-                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
+                document.getElementById("nilai").value = "1";
+                $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
+                var norm = document.getElementById('norm');
+                setSuccessFor(norm);
+            } else if (idtabs == 'tab-2') {
+                var statuspasien = $('input[name="flexRadioDefault2"]:checked').val();
+                if (statuspasien == '1') {
+                    pasienlamatab2();
+                } else {
+                    pasienbarutab2();
+                }
+                $("#btnkembali2").show();
+                $("#btnlanjut2").show();
+                document.getElementById("nilai2").value = "1";
+                $("#btnlanjut2").html('<i class="fas fa-search"></i> Cari');
+                var norm = document.getElementById('norm2');
+                setSuccessFor(norm);
             } else {
-                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                var statuspasien = $('input[name="flexRadioDefault3"]:checked').val();
+                if (statuspasien == '1') {
+                    pasienlamatab3();
+                } else {
+                    pasienbarutab3();
+                }
+                $("#btnkembali3").show();
+                $("#btnlanjut3").show();
+                document.getElementById("nilai3").value = "1";
+                $("#btnlanjut3").html('<i class="fas fa-search"></i> Cari');
+                var norm = document.getElementById('norm3');
+                setSuccessFor(norm);
             }
-            document.getElementById("nilai").value = Number(nilai) - 1;
+            $("#carabayar").hide();
+            $("#btncarabayar").hide();
+            $("#btnlanjutcarabayar").hide();
+        }
 
+        function prosesKembali() {
+            var idtabs = $(".tab-pane.active").attr("id");
+
+            if (idtabs == 'tab-1') {
+                var nilai = $("[name='nilai']").val();
+                var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
+                var norm = document.getElementById('norm');
+
+                if (nilai == '1') {
+                    $("#pasienlama").hide();
+                    $("#btnlanjutcarabayar").show();
+                    $("#carabayar").show();
+                    $("#headerreservasi").hide();
+                    $("#isireservasi").hide();
+                    $("#headerdatapasien").hide();
+                    $("#isidatapasien").hide();
+                    $("#cardfooter").hide();
+                    $("#btnkembali").hide();
+                    $("#btnlanjut").hide();
+                    $("#carddata").hide();
+                } else {
+                    if (statuspasien == '1') {
+                        $("#pasienlama").show();
+                        $("#pasienbaru").hide();
+                        $("#headerdatapasien").show();
+                        $("#isidatapasien").show();
+                        $("#headerreservasi").hide();
+                        $("#isireservasi").hide();
+                        $("#btnkembali").show();
+                        $("#btnlanjut").show();
+                        $("#carabayar").hide();
+                        $("#btncarabayar").hide();
+                        $("#btnlanjutcarabayar").hide();
+                        $("#carddata").show();
+                    } else {
+                        $("#headerdatapasien").show();
+                        $("#isidatapasien").show();
+                        $("#headerreservasi").hide();
+                        $("#isireservasi").hide();
+                        $("#pasienbaru").show();
+                    }
+                    $("#btnkembali").show();
+                    $("#btnlanjut").show();
+                }
+                if (nilai == '1') {
+                    $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
+                } else {
+                    $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                }
+                document.getElementById("nilai").value = Number(nilai) - 1;
+            } else if (idtabs == 'tab-2') {
+
+                var nilai = $("[name='nilai2']").val();
+                var statuspasien = $('input[name="flexRadioDefault2"]:checked').val();
+                var norm = document.getElementById('norm2');
+
+                if (nilai == '1') {
+                    $("#pasienlama2").hide();
+                    $("#btnlanjutcarabayar").show();
+                    $("#carabayar").show();
+                    $("#headerreservasi2").hide();
+                    $("#isireservasi2").hide();
+                    $("#headerdatapasien2").hide();
+                    $("#isidatapasien2").hide();
+                    $("#cardfooter2").hide();
+                    $("#btnkembali2").hide();
+                    $("#btnlanjut2").hide();
+                    $("#carddata2").hide();
+                } else {
+                    if (statuspasien == '1') {
+                        $("#pasienlama2").show();
+                        $("#pasienbaru2").hide();
+                        $("#headerdatapasien2").show();
+                        $("#isidatapasien2").show();
+                        $("#headerreservasi2").hide();
+                        $("#isireservasi2").hide();
+                        $("#btnkembali2").show();
+                        $("#btnlanjut2").show();
+                        $("#carabayar").hide();
+                        $("#btncarabayar").hide();
+                        $("#btnlanjutcarabayar").hide();
+                        $("#carddata2").show();
+                    } else {
+                        $("#headerdatapasien2").show();
+                        $("#isidatapasien2").show();
+                        $("#headerreservasi2").hide();
+                        $("#isireservasi2").hide();
+                        $("#pasienbaru2").show();
+                    }
+                    $("#btnkembali2").show();
+                    $("#btnlanjut2").show();
+                }
+                if (nilai == '1') {
+                    $("#btnlanjut2").html('<i class="fas fa-save"></i> Simpan');
+                } else {
+                    $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                }
+                document.getElementById("nilai2").value = Number(nilai) - 1;
+            } else {
+                var nilai = $("[name='nilai3']").val();
+                var statuspasien = $('input[name="flexRadioDefault3"]:checked').val();
+                var norm = document.getElementById('norm');
+
+                if (nilai == '1') {
+                    $("#pasienlama3").hide();
+                    $("#btnlanjutcarabayar").show();
+                    $("#carabayar").show();
+                    $("#headerreservasi3").hide();
+                    $("#isireservasi3").hide();
+                    $("#headerdatapasien3").hide();
+                    $("#isidatapasien3").hide();
+                    $("#cardfooter3").hide();
+                    $("#btnkembali3").hide();
+                    $("#btnlanjut3").hide();
+                    $("#carddata3").hide();
+                } else {
+                    if (statuspasien == '1') {
+                        $("#pasienlama3").show();
+                        $("#pasienbaru3").hide();
+                        $("#headerdatapasien3").show();
+                        $("#isidatapasien3").show();
+                        $("#headerreservasi3").hide();
+                        $("#isireservasi3").hide();
+                        $("#btnkembali3").show();
+                        $("#btnlanjut3").show();
+                        $("#carabayar").hide();
+                        $("#btncarabayar").hide();
+                        $("#btnlanjutcarabayar").hide();
+                        $("#carddata3").show();
+                    } else {
+                        $("#headerdatapasien3").show();
+                        $("#isidatapasien3").show();
+                        $("#headerreservasi3").hide();
+                        $("#isireservasi3").hide();
+                        $("#pasienbaru3").show();
+                    }
+                    $("#btnkembali3").show();
+                    $("#btnlanjut3").show();
+                }
+                if (nilai == '1') {
+                    $("#btnlanjut3").html('<i class="fas fa-save"></i> Simpan');
+                } else {
+                    $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                }
+                document.getElementById("nilai3").value = Number(nilai) - 1;
+            }
             setSuccessFor(norm);
         }
 
         function prosesLanjut() {
-            var nilai = $("[name='nilai']").val();
-            var hasilnum = Number(nilai) + 1;
-            if (nilai > '2') {
-                hasilnum = '2';
+            var idtabs = $(".tab-pane.active").attr("id");
+
+            if (idtabs == 'tab-1') {
+                var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
+                var nilai = $("[name='nilai']").val();
+                var hasilnum = Number(nilai) + 1;
+                if (nilai > '2') {
+                    hasilnum = '2';
+                } else {
+                    hasilnum = Number(nilai) + 1;
+                }
+
+                if (validasi(statuspasien, nilai) == false) {
+                    return
+                }
+
+                if (nilai == '1') {
+                    $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
+                } else {
+                    $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                    // $("norm").attr("required", true);
+                }
+
+                $("#headerdatapasien").hide();
+                $("#isidatapasien").hide();
+                $("#headerreservasi").show();
+                $("#isireservasi").show();
+                $("#btnkembali").show();
+                document.getElementById("nilai").value = hasilnum;
+            } else if (idtabs == 'tab-2') {
+                var statuspasien = $('input[name="flexRadioDefault2"]:checked').val();
+                var nilai = $("[name='nilai2']").val();
+                var hasilnum = Number(nilai) + 1;
+                if (nilai > '2') {
+                    hasilnum = '2';
+                } else {
+                    hasilnum = Number(nilai) + 1;
+                }
+
+                if (validasi(statuspasien, nilai) == false) {
+                    return
+                }
+
+                if (nilai == '1') {
+
+                    $("#btnlanjut2").html('<i class="fas fa-save"></i> Simpan');
+                } else {
+                    $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                }
+
+                $("#headerdatapasien2").hide();
+                $("#isidatapasien2").hide();
+                $("#headerreservasi2").show();
+                $("#isireservasi2").show();
+                $("#btnkembal2i").show();
+                document.getElementById("nilai2").value = hasilnum;
             } else {
-                hasilnum = Number(nilai) + 1;
-            }
-            if (validasi() == false) {
-                return
-            }
+                var statuspasien = $('input[name="flexRadioDefault3"]:checked').val();
+                var nilai = $("[name='nilai3']").val();
+                var hasilnum = Number(nilai) + 1;
+                if (nilai > '2') {
+                    hasilnum = '2';
+                } else {
+                    hasilnum = Number(nilai) + 1;
+                }
 
-            $("#headerdatapasien").hide();
-            $("#isidatapasien").hide();
-            $("#headerreservasi").show();
-            $("#isireservasi").show();
-            $("#btnkembali").show();
+                if (validasi(statuspasien, nilai) == false) {
+                    return
+                }
 
-            if (nilai == '1') {
-                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
-            } else {
-                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
-                // $("norm").attr("required", true);
+                if (nilai == '1') {
+
+                    $("#btnlanjut3").html('<i class="fas fa-save"></i> Simpan');
+                } else {
+                    $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                }
+
+                $("#headerdatapasien3").hide();
+                $("#isidatapasien3").hide();
+                $("#headerreservasi3").show();
+                $("#isireservasi3").show();
+                $("#btnkembali3").show();
+                document.getElementById("nilai3").value = hasilnum;
             }
-
-            document.getElementById("nilai").value = hasilnum;
 
         }
 
-        function validasi() {
-            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
-            var nilai = $("[name='nilai']").val();
+        function validasi(statuspasien, nilai) {
+            var idtabs = $(".tab-pane.active").attr("id");
+            var numtab = '';
+            if (idtabs == 'tab-1') {
+                numtab = '';
+            } else if (idtabs == 'tab-2') {
+                numtab = '2';
+            } else {
+                numtab = '3';
+            }
 
             if (nilai == '1') {
                 if (statuspasien == '1') { //jika pasien lama
-                    var norm = document.getElementById('norm');
+                    var norm = document.getElementById('norm' + numtab);
                     var normValue = norm.value.trim();
-                    var tgllahir = document.getElementById('tgllahir');
-                    var tgllahirValue = tgllahir.value.trim();
                     if (normValue === '') {
                         setErrorFor(norm, 'No.RM Tidak Boleh Kosong');
                         return false;
                     } else {
                         setSuccessFor(norm);
                     }
+                    var tgllahir = document.getElementById('tgllahir' + numtab);
+                    var tgllahirValue = tgllahir.value.trim();
                     if (tgllahirValue === '') {
                         setErrorFor(tgllahir, 'Tgl. Lahir Tidak Boleh Kosong');
                         return false;
@@ -798,7 +1403,7 @@
                         setSuccessFor(tgllahir);
                     }
                 } else { //jika pasien baru
-
+                    var gelar = document.getElementById('gelar' + numtab);
                     var gelarValue = gelar.value.trim();
                     if (gelarValue === '') {
                         setErrorFor(gelar, 'Nama Depan Tidak Boleh Kosong.');
@@ -806,6 +1411,8 @@
                     } else {
                         setSuccessFor(gelar);
                     }
+                    var namalengkap = document.getElementById('namalengkap' + numtab);
+                    var namalengkap = document.getElementById('namalengkap' + numtab);
                     var namalengkapValue = namalengkap.value.trim();
                     if (namalengkapValue === '') {
                         setErrorFor(namalengkap, 'Nama Lengkap Tidak Boleh Kosong.');
@@ -813,6 +1420,7 @@
                     } else {
                         setSuccessFor(namalengkap);
                     }
+                    var kelamin = document.getElementById('kelamin' + numtab);
                     var kelaminValue = kelamin.value.trim();
                     if (kelaminValue === '') {
                         setErrorFor(kelamin, 'Jenis Kelamin Tidak Boleh Kosong.');
@@ -820,6 +1428,7 @@
                     } else {
                         setSuccessFor(kelamin);
                     }
+                    var tempatlahir = document.getElementById('tempatlahir' + numtab);
                     var tempatlahirValue = tempatlahir.value.trim();
                     if (tempatlahirValue === '') {
                         setErrorFor(tempatlahir, 'Tempat Lahir Tidak Boleh Kosong.');
@@ -827,6 +1436,7 @@
                     } else {
                         setSuccessFor(tempatlahir);
                     }
+                    var noidentitas = document.getElementById('noidentitas' + numtab);
                     var noidentitasValue = noidentitas.value.trim();
                     if (noidentitasValue === '') {
                         setErrorFor(noidentitas, 'No. Identitas Tidak Boleh Kosong.');
@@ -834,6 +1444,7 @@
                     } else {
                         setSuccessFor(noidentitas);
                     }
+                    var alamat = document.getElementById('alamat' + numtab);
                     var alamatValue = alamat.value.trim();
                     if (alamatValue === '') {
                         setErrorFor(alamat, 'Alamat Tidak Boleh Kosong.');
@@ -841,6 +1452,7 @@
                     } else {
                         setSuccessFor(alamat);
                     }
+                    var rt = document.getElementById('rt' + numtab);
                     var rtValue = rt.value.trim();
                     if (rtValue === '') {
                         setErrorFor(rt, 'RT Tidak Boleh Kosong.');
@@ -848,6 +1460,7 @@
                     } else {
                         setSuccessFor(rt);
                     }
+                    var rw = document.getElementById('rw' + numtab);
                     var rwValue = rw.value.trim();
                     if (rwValue === '') {
                         setErrorFor(rw, 'RW Tidak Boleh Kosong.');
@@ -855,6 +1468,7 @@
                     } else {
                         setSuccessFor(rw);
                     }
+                    var propinsi = document.getElementById('propinsi' + numtab);
                     var propinsiValue = propinsi.value.trim();
                     if (propinsiValue === '') {
                         setErrorFor(propinsi, 'Propinsi Tidak Boleh Kosong.');
@@ -862,6 +1476,7 @@
                     } else {
                         setSuccessFor(propinsi);
                     }
+                    var kota = document.getElementById('kota' + numtab);
                     var kotaValue = kota.value.trim();
                     if (kotaValue === '') {
                         setErrorFor(kota, 'Kota Tidak Boleh Kosong.');
@@ -869,6 +1484,7 @@
                     } else {
                         setSuccessFor(kota);
                     }
+                    var kecamatan = document.getElementById('kecamatan' + numtab);
                     var kecamatanValue = kecamatan.value.trim();
                     if (kecamatanValue === '') {
                         setErrorFor(kecamatan, 'Kecamatan Tidak Boleh Kosong.');
@@ -876,6 +1492,7 @@
                     } else {
                         setSuccessFor(kecamatan);
                     }
+                    var kelurahan = document.getElementById('kelurahan' + numtab);
                     var kelurahanValue = kelurahan.value.trim();
                     if (kelurahanValue === '') {
                         setErrorFor(kelurahan, 'Kelurahan Tidak Boleh Kosong.');
@@ -883,6 +1500,7 @@
                     } else {
                         setSuccessFor(kelurahan);
                     }
+                    var notlp = document.getElementById('notlp' + numtab);
                     var notlpValue = notlp.value.trim();
                     if (notlpValue === '') {
                         setErrorFor(notlp, 'No. Telp Tidak Boleh Kosong.');
@@ -894,34 +1512,55 @@
                 }
 
             } else {
+                if (idtabs == 'tab-2') {
+                    var carabayar = document.getElementById('carabayar' + numtab);
+                    var carabayarValue = carabayar.value.trim();
+                    if (carabayarValue === '') {
+                        setErrorFor(carabayar, 'Cara Bayar Harus Dipilih.');
+                        return false;
+                    } else {
+                        setSuccessFor(carabayar);
+                    }
+                }
+                var poli = document.getElementById('poli' + numtab);
                 var poliValue = poli.value.trim();
                 if (poliValue === '') {
-                    setErrorFor(poli, 'Poli Tidak Boleh Kosong');
+                    setErrorFor(poli, 'Poli Harus Dipilih');
                     return false;
                 } else {
                     setSuccessFor(poli);
                 }
+                var rujukanasal = document.getElementById('rujukanasal' + numtab);
                 var rujukanasalValue = rujukanasal.value.trim();
                 if (rujukanasalValue === '') {
-                    setErrorFor(rujukanasal, 'Rujukan Asal Tidak Boleh Kosong');
+                    setErrorFor(rujukanasal, 'Rujukan Asal Harus Dipilih');
                     return false;
                 } else {
                     setSuccessFor(rujukanasal);
                 }
-                var nopesertaValue = nopeserta.value.trim();
-                if (nopesertaValue === '') {
-                    setErrorFor(nopeserta, 'No. Peserta Tidak Boleh Kosong');
-                    return false;
-                } else {
-                    setSuccessFor(nopeserta);
+
+                if (idtabs == 'tab-1' || idtabs == 'tab-2') {
+                    var nopeserta = document.getElementById('nopeserta' + numtab);
+                    var nopesertaValue = nopeserta.value.trim();
+                    if (nopesertaValue === '') {
+                        setErrorFor(nopeserta, 'No. Peserta Tidak Boleh Kosong');
+                        return false;
+                    } else {
+                        setSuccessFor(nopeserta);
+                    }
                 }
-                var nosuratrujukanValue = nosuratrujukan.value.trim();
-                if (nosuratrujukanValue === '') {
-                    setErrorFor(nosuratrujukan, 'No. Surat Rujukan Tidak Boleh Kosong');
-                    return false;
-                } else {
-                    setSuccessFor(nosuratrujukan);
+
+                if (idtabs == 'tab-1') {
+                    var nosuratrujukan = document.getElementById('nosuratrujukan' + numtab);
+                    var nosuratrujukanValue = nosuratrujukan.value.trim();
+                    if (nosuratrujukanValue === '') {
+                        setErrorFor(nosuratrujukan, 'No. Surat Rujukan Tidak Boleh Kosong');
+                        return false;
+                    } else {
+                        setSuccessFor(nosuratrujukan);
+                    }
                 }
+                var jeniskunjungan = document.getElementById('jeniskunjungan' + numtab);
                 var jeniskunjunganValue = jeniskunjungan.value.trim();
                 if (jeniskunjunganValue === '') {
                     setErrorFor(jeniskunjungan, 'Jenis Kunjungan Harus Dipilih.');
@@ -929,6 +1568,7 @@
                 } else {
                     setSuccessFor(jeniskunjungan);
                 }
+                var jenispermintaan = document.getElementById('jenispermintaan' + numtab);
                 var jenispermintaanValue = jenispermintaan.value.trim();
                 if (jenispermintaanValue === '') {
                     setErrorFor(jenispermintaan, 'Jenis Permintaan Harus Dipilih.');
@@ -936,6 +1576,7 @@
                 } else {
                     setSuccessFor(jenispermintaan);
                 }
+                var jenispoli = document.getElementById('jenispoli' + numtab);
                 var jenispoliValue = jenispoli.value.trim();
                 if (jenispoliValue === '') {
                     setErrorFor(jenispoli, 'Jenis Poli Harus Dipilih.');
@@ -962,7 +1603,7 @@
             $.ajax({
                 url: "<?= base_url('Reservasi/GetPropinsi') ?>",
                 method: "POST",
-                async: false,
+                // async: false,
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
@@ -990,7 +1631,7 @@
                 data: {
                     "propinsi": id
                 },
-                async: false,
+                // async: false,
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
@@ -1018,7 +1659,7 @@
                 data: {
                     "kota": id
                 },
-                async: false,
+                // async: false,
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
@@ -1046,7 +1687,7 @@
                 data: {
                     "kecamatan": id
                 },
-                async: false,
+                // async: false,
                 dataType: 'json',
                 success: function(data) {
                     var html = '';
@@ -1070,7 +1711,7 @@
             $.ajax({
                 url: "<?= base_url('Reservasi/GetRujukanAsal') ?>",
                 method: "POST",
-                async: false,
+                // async: false,
                 dataType: 'json',
                 success: function(data) {
                     var html = '';

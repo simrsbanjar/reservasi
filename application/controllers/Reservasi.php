@@ -8,6 +8,36 @@ class Reservasi extends CI_Controller
         $this->load->view('Reservasi');
     }
 
+    function __construct()
+    {
+        parent::__construct();
+        $this->API = "http://simrs.rsukotabanjar.co.id/ws-rsubanjar";
+        $this->load->library('session');
+        $this->load->library('curl');
+        $this->load->helper('form');
+        $this->load->helper('url');
+    }
+
+    function GetToken()
+    {
+        $parm = array(
+            'username'       =>  'registrasionline',
+            'password'      =>  'RSU@B4nj4r'
+        );
+
+        $hasil = json_decode($this->curl->simple_post($this->API . '/gettoken', $parm, array(CURLOPT_BUFFERSIZE => 10)));
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data   = array(
+            'response' => $response,
+            'metadata' => $metadata
+        );
+        // var_dump($data['metadata']->code);
+        // die;
+        echo json_encode($data);
+    }
+
     function GetRujukanAsal()
     {
         $lines = file(base_url("assets/file/rujukanasal.txt"));
