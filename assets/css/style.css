@@ -465,7 +465,7 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
+#selamatdatang {
 	width: 100%;
 	height: 90vh;
 	background: url("../img/bg.jpg") top center;
@@ -474,11 +474,11 @@ h6 {
 	margin-bottom: -200px;
 }
 
-#hero .container {
+#selamatdatang .container {
 	position: relative;
 }
 
-#hero h1 {
+#selamatdatang h1 {
 	margin: 0;
 	font-size: 48px;
 	font-weight: 700;
@@ -487,13 +487,13 @@ h6 {
 	color: #2c4964;
 }
 
-#hero h2 {
+#selamatdatang h2 {
 	color: #2c4964;
 	margin: 10px 0 0 0;
 	font-size: 24px;
 }
 
-#hero .btn-get-started {
+#selamatdatang .btn-get-started {
 	font-family: "Raleway", sans-serif;
 	text-transform: uppercase;
 	font-weight: 500;
@@ -508,32 +508,32 @@ h6 {
 	background: #1977cc;
 }
 
-#hero .btn-get-started:hover {
+#selamatdatang .btn-get-started:hover {
 	background: #3291e6;
 }
 
 @media (min-width: 1024px) {
-	#hero {
+	#selamatdatang {
 		background-attachment: fixed;
 	}
 }
 
 @media (max-width: 992px) {
-	#hero {
+	#selamatdatang {
 		margin-bottom: 0;
 		height: 100vh;
 	}
 
-	#hero .container {
+	#selamatdatang .container {
 		padding-bottom: 63px;
 	}
 
-	#hero h1 {
+	#selamatdatang h1 {
 		font-size: 28px;
 		line-height: 36px;
 	}
 
-	#hero h2 {
+	#selamatdatang h2 {
 		font-size: 18px;
 		line-height: 24px;
 		margin-bottom: 30px;
@@ -541,7 +541,7 @@ h6 {
 }
 
 @media (max-height: 500px) {
-	#hero {
+	#selamatdatang {
 		height: auto;
 	}
 }
@@ -661,26 +661,26 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Why Us
+# tentangkita
 --------------------------------------------------------------*/
-.why-us .content {
+.tentangkita .content {
 	padding: 30px;
 	background: #1977cc;
 	border-radius: 4px;
 	color: #fff;
 }
 
-.why-us .content h3 {
+.tentangkita .content h3 {
 	font-weight: 700;
 	font-size: 34px;
 	margin-bottom: 30px;
 }
 
-.why-us .content p {
+.tentangkita .content p {
 	margin-bottom: 30px;
 }
 
-.why-us .content .more-btn {
+.tentangkita .content .more-btn {
 	display: inline-block;
 	background: rgba(255, 255, 255, 0.2);
 	padding: 6px 30px 8px 30px;
@@ -689,16 +689,16 @@ section {
 	transition: all ease-in-out 0.4s;
 }
 
-.why-us .content .more-btn i {
+.tentangkita .content .more-btn i {
 	font-size: 14px;
 }
 
-.why-us .content .more-btn:hover {
+.tentangkita .content .more-btn:hover {
 	color: #1977cc;
 	background: #fff;
 }
 
-.why-us .icon-boxes .icon-box {
+.tentangkita .icon-boxes .icon-box {
 	text-align: center;
 	border-radius: 10px;
 	background: #fff;
@@ -707,24 +707,24 @@ section {
 	width: 100%;
 }
 
-.why-us .icon-boxes .icon-box i {
+.tentangkita .icon-boxes .icon-box i {
 	font-size: 40px;
 	color: #1977cc;
 	margin-bottom: 30px;
 }
 
-.why-us .icon-boxes .icon-box h4 {
+.tentangkita .icon-boxes .icon-box h4 {
 	font-size: 20px;
 	font-weight: 700;
 	margin: 0 0 30px 0;
 }
 
-.why-us .icon-boxes .icon-box p {
+.tentangkita .icon-boxes .icon-box p {
 	font-size: 15px;
 	color: #848484;
 }
 
-.why-us .icon-boxes .icon-box ol {
+.tentangkita .icon-boxes .icon-box ol {
 	font-size: 15px;
 	color: #848484;
 }
@@ -1122,17 +1122,17 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Departments
+# Alur
 --------------------------------------------------------------*/
-.departments {
+.alur {
 	overflow: hidden;
 }
 
-.departments .nav-tabs {
+.alur .nav-tabs {
 	border: 0;
 }
 
-.departments .nav-link {
+.alur .nav-link {
 	border: 0;
 	padding: 12px 15px 12px 0;
 	transition: 0.3s;
@@ -1143,73 +1143,75 @@ section {
 	font-size: 15px;
 }
 
-.departments .nav-link:hover {
+.alur .nav-link:hover {
 	color: #1977cc;
 }
 
-.departments .nav-link.active {
+.alur .nav-link.active {
 	color: #1977cc;
 	border-color: #1977cc;
 }
 
-.departments .tab-pane.active {
+.alur .tab-pane.active {
 	-webkit-animation: fadeIn 0.5s ease-out;
 	animation: fadeIn 0.5s ease-out;
 }
 
-.departments .details h3 {
+.alur .details h3 {
 	font-size: 26px;
 	font-weight: 600;
 	margin-bottom: 20px;
 	color: #2c4964;
 }
 
-.departments .details p {
+.alur .details p {
 	color: #777777;
 }
 
-.departments .details p:last-child {
+.alur .details p:last-child {
 	margin-bottom: 0;
 }
 
 @media (max-width: 992px) {
-	.departments .nav-link {
+	.alur .nav-link {
 		border: 0;
 		padding: 15px;
 	}
 
-	.departments .nav-link.active {
+	.alur .nav-link.active {
 		color: #fff;
 		background: #1977cc;
 	}
 }
 
 /*--------------------------------------------------------------
-# Doctors
+# Dokter
 --------------------------------------------------------------*/
-.doctors {
+.dokter {
 	background: #fff;
 }
 
-.doctors .member {
+.dokter .member {
 	position: relative;
 	box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
 	padding: 30px;
 	border-radius: 200px;
 }
 
-.doctors .member .pic {
+.dokter .member .pic {
 	overflow: hidden;
 	/* Memperbesar dan memperkecil lingkaran foto maka ubah width nya */
 	width: 150px;
 	border-radius: 50%;
 }
 
-.doctors .member .pic img {
+.dokter .member .pic img {
+	/* transisi zoom in lebih smooth */
 	transition: ease-in-out 0.3s;
 }
 
-.doctors .member:hover img {
+.dokter .member:hover img {
+	/* zoom in dan zoom out  */
 	transform: scale(1.1);
 }
 
@@ -1217,14 +1219,14 @@ section {
 	padding-left: 10px;
 }
 
-.doctors .member h4 {
+.dokter .member h4 {
 	font-weight: 700;
 	margin-bottom: 5px;
 	font-size: 16px;
 	color: #2c4964;
 }
 
-.doctors .member span {
+.dokter .member span {
 	display: block;
 	font-size: 14px;
 	padding-bottom: 10px;
@@ -1243,19 +1245,19 @@ section {
 	left: 0;
 }
 
-.doctors .member p {
+.dokter .member p {
 	margin: 10px 0 0 0;
 	font-size: 14px;
 }
 
-.doctors .member .social {
+.dokter .member .social {
 	margin-top: 12px;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 }
 
-.doctors .member .social a {
+.dokter .member .social a {
 	transition: ease-in-out 0.3s;
 	display: flex;
 	align-items: center;
@@ -1266,17 +1268,17 @@ section {
 	background: #a0bcd5;
 }
 
-.doctors .member .social a i {
+.dokter .member .social a i {
 	color: #fff;
 	font-size: 16px;
 	margin: 0 2px;
 }
 
-.doctors .member .social a:hover {
+.dokter .member .social a:hover {
 	background: #1977cc;
 }
 
-.doctors .member .social a+a {
+.dokter .member .social a+a {
 	margin-left: 8px;
 }
 
@@ -1824,10 +1826,11 @@ section {
 /*--------------------------------------------------------------
 # Featured Services 1
 --------------------------------------------------------------*/
-.featured-services1{
+.featured-services1 {
 	border: 1px solid #e1ecff;
-  }
-  .featured-services1 .icon-box {
+}
+
+.featured-services1 .icon-box {
 	padding: 30px;
 	position: relative;
 	overflow: hidden;
@@ -1836,26 +1839,28 @@ section {
 	transition: all 0.3s ease-in-out;
 	border-radius: 8px;
 	z-index: 1;
-  
-  }
-  
-  
-  .featured-services1 h4 {
+
+}
+
+
+.featured-services1 h4 {
 	font-family: "Open Sans", sans-serif;
-  }
-  .featured-services1 a {
+}
+
+.featured-services1 a {
 	color: #4154f1;
-  }
-  
-  
-  .featured-services1 h2 {
+}
+
+
+.featured-services1 h2 {
 	color: #444444;
 	font-size: 48px;
 	font-weight: 700;
 	text-align: center;
 	margin-bottom: 30px;
-  }
-  .featured-services1 .icon-box::before {
+}
+
+.featured-services1 .icon-box::before {
 	content: '';
 	position: absolute;
 	background: #d9f1f2;
@@ -1865,53 +1870,59 @@ section {
 	top: 100%;
 	transition: all 0.3s;
 	z-index: -1;
-  }
-  
-  /*.featured-services1 .icon-box:hover::before {*/
-  /*  background: #fdbe29;*/
-  /*  top: 0;*/
-  /*  border-radius: 0px;*/
-  /*}*/
-  
-  .featured-services1 .icon {
+}
+
+/*.featured-services1 .icon-box:hover::before {*/
+/*  background: #fdbe29;*/
+/*  top: 0;*/
+/*  border-radius: 0px;*/
+/*}*/
+
+.featured-services1 .icon {
 	margin-bottom: 15px;
-  }
-  .featured-services1 .icon {
-	color:  #f21565;
-  }
-  .featured-services1 .icon i {
+}
+
+.featured-services1 .icon {
+	color: #f21565;
+}
+
+.featured-services1 .icon i {
 	font-size: 48px;
 	line-height: 1;
-	color:#00C3CD;
+	color: #00C3CD;
 	transition: all 0.3s ease-in-out;
-  }
-  .featured-services1 p{
+}
+
+.featured-services1 p {
 	color: #4154f1;
 	font-size: 14px;
-  }
-  .featured-services1 .title {
+}
+
+.featured-services1 .title {
 	font-weight: 700;
 	margin-bottom: 15px;
 	font-size: 18px;
-  }
-  
-  .featured-services1 .title a {
+}
+
+.featured-services1 .title a {
 	color: #111;
-  }
-  .featured-services1 a:hover {
+}
+
+.featured-services1 a:hover {
 	color: #919ae3;
-  }
-  .featured-services1 .description {
+}
+
+.featured-services1 .description {
 	font-size: 15px;
 	line-height: 18px;
 	margin-bottom: 0;
 	color: #444444;
 	font-family: "Open Sans", sans-serif;
 	margin-left: 10px;
-  }
-  
-  
-  .featured-services1 .btn-get-started {
+}
+
+
+.featured-services1 .btn-get-started {
 	margin-top: 30px;
 	line-height: 0;
 	padding: 10px 15px;
@@ -1919,28 +1930,28 @@ section {
 	transition: 0.5s;
 	color: #fff;
 	background: #4154f1;
-  
-  
-  }
-  
-  .featured-services1 .btn-get-started span {
+
+
+}
+
+.featured-services1 .btn-get-started span {
 	font-family: "Nunito", sans-serif;
-	font-weight:600;
+	font-weight: 600;
 	font-size: 14px;
 	letter-spacing: 1px;
-  }
-  
-  .featured-services1 .btn-get-started i {
+}
+
+.featured-services1 .btn-get-started i {
 	margin-left: 5px;
 	font-size: 18px;
 	transition: 0.3s;
-  }
-  
-  .featured-services1 .btn-get-started:hover i {
-	transform: translateY(5px);
-  }
+}
 
-  .form-group small {
+.featured-services1 .btn-get-started:hover i {
+	transform: translateY(5px);
+}
+
+.form-group small {
 	color: #e74c3c;
 	position: absolute;
 	bottom: 0;
@@ -1948,7 +1959,8 @@ section {
 	top: 67px;
 	visibility: hidden;
 }
-.form-group.error  input {
+
+.form-group.error input {
 	border-color: #e74c3c;
 }
 
