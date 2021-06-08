@@ -1,105 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Bagian ini tag head digunakan untuk penampung tag 
+<title>, <style>, <meta>, <link>, <script>, and <base>. -->
+<?php $this->load->view('Template/Head'); ?>
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<!-- Bagian paling atas diweb ini  -->
+<?php $this->load->view('Template/Topbar'); ?>
 
-    <title>Pendaftaran Online RSUD Kota Banjar</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+<!-- Menu navigasi dibuat disini -->
+<?php $this->load->view('Template/Header'); ?>
 
-    <!-- Favicons -->
-    <link rel="icon" href="<?= base_url('assets/img/logo rsu.png'); ?>" type="image/png" sizes="16x16">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: Medilab - v2.1.1
-  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-    <!-- ======= Top Bar ======= -->
-    <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
-        <div class="container d-flex">
-            <!-- <div class="social-links contact-info"> -->
-            <div class="social-links contact-info mr-auto">
-                <a href="mailto:contact@example.com"><i class="icofont-envelope"> rsu_kotabanjar@yahoo.co.id</i> </a>
-                <a href="tel:0265741032"><i class="icofont-ui-dial-phone"> 0265-741032</i></a>
-                <a href="https://api.whatsapp.com/send?phone=628112111146"><i class="icofont-whatsapp"> Whatsapp: 08112111146</i></a>
-                <a href="tel:02657482204 "><i class="icofont-phone"> Ponek 24 Jam : 0265-7482204 </i></a>
-                <i class="icofont-fax"> Fax : 0265-744730</i>
-            </div>
-            <div class="social-links">
-                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
-            </div>
-        </div>
+<!-- ======= selamatdatang Section ======= -->
+<section id="selamatdatang" class="d-flex align-items-center">
+    <div class="container">
+        <h1>Selamat Datang</h1>
+        <h2>Di Pendaftaran Pasien Rawat Jalan</h2>
+        <a href="#departments" class="btn-get-started scrollto">Cek Alur</a>
     </div>
+</section><!-- End selamatdatang -->
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-        <div class="container d-flex align-items-center">
+<main id="main">
 
-            <h1 class="logo mr-auto">
-                <marquee>RSUD Kota Banjar</marquee>
-            </h1>
-
-            <nav class="nav-menu d-none d-lg-block mr-auto">
-                <ul>
-                    <li class="active"><a href="">Home</a></li>
-                    <li><a href="#about">Tentang Kita</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#departments">Alur</a></li>
-                    <li><a href="#doctors">Dokter</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                    <li><a href="#lokasi">Lokasi</a></li>
-                </ul>
-            </nav>
-
-            <!-- .nav-menu -->
-
-            <a href="#appointment" class="appointment-btn scrollto">Daftar</a>
-
-        </div>
-    </header><!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
+    <!-- ======= tentangkita Us Section ======= -->
+    <section id="tentangkita" class="tentangkita">
         <div class="container">
-            <h1>Selamat Datang</h1>
-            <h2>Di Pendaftaran Pasien Rawat Jalan</h2>
-            <a href="#about" class="btn-get-started scrollto">Cek Alur</a>
-        </div>
-    </section><!-- End Hero -->
 
-    <main id="main">
-
-        <!-- ======= Why Us Section ======= -->
-        <section id="why-us" class="why-us">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="row justify-content-center">
+                <!-- <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="content">
                             <h3>Kenapa RSUD Kota Banjar?</h3>
                             <p>
@@ -109,41 +35,54 @@
                                 <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-8 d-flex align-items-stretch">
-                        <div class="icon-boxes d-flex flex-column justify-content-center">
-                            <div class="row">
-                                <div class="col-xl-4 d-flex align-items-stretch">
-                                    <div class="icon-box mt-4 mt-xl-0">
-                                        <i class="bx bx-receipt"></i>
-                                        <h4>Visi</h4>
-                                        <p>Acan di ketik di koding na</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 d-flex align-items-stretch">
-                                    <div class="icon-box mt-4 mt-xl-0">
-                                        <i class="bx bx-cube-alt"></i>
-                                        <h4>Misi</h4>
-                                        <p>Acan di ketik di koding na</p>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 d-flex align-items-stretch">
-                                    <div class="icon-box mt-4 mt-xl-0">
-                                        <i class="bx bx-images"></i>
-                                        <h4>Motto</h4>
-                                        <p>Acan di ketik di koding na</p>
-                                    </div>
+                    </div> -->
+                <div class="col-lg-12 d-flex align-items-stretch">
+                    <div class="icon-boxes d-flex flex-column justify-content-center">
+                        <div class="row">
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box mt-4 mt-xl-0">
+                                    <i class="bx bx-cube-alt"></i>
+                                    <h4>Visi</h4>
+                                    <p>Menjadi Rumah Sakit Unggulan dan Terpercaya di Priangan Timur</p>
                                 </div>
                             </div>
-                        </div><!-- End .content-->
-                    </div>
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box mt-4 mt-xl-0">
+                                    <i class="bx bx-cube-alt"></i>
+                                    <h4>Misi</h4>
+                                    <ol style="text-align: left;">
+                                        <li>
+                                            Menyelenggarakan Pelayanan Prima
+                                        </li>
+                                        <li>
+                                            Mengupayakan Terpenuhinya Sarana Prasarana sesuai Standar
+                                        </li>
+                                        <li>
+                                            Meningkatkan Kualitas dan Kuantitas SDM
+                                        </li>
+                                        <li>
+                                            Meningkatkan Kesejahteraan karyawan
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 d-flex align-items-stretch">
+                                <div class="icon-box mt-4 mt-xl-0">
+                                    <i class="bx bx-cube-alt"></i>
+                                    <h4>Motto</h4>
+                                    <p>Pelayanan yang Baik untuk Semua</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End .content-->
                 </div>
-
             </div>
-        </section><!-- End Why Us Section -->
 
-        <!-- ======= About Section ======= -->
-        <!-- <section id="about" class="about">
+        </div>
+    </section><!-- End tentangkita Section -->
+
+    <!-- ======= About Section ======= -->
+    <!-- <section id="about" class="about">
             <div class="container-fluid">
 
                 <div class="row">
@@ -178,10 +117,10 @@
 
             </div>
         </section> -->
-        <!-- End About Section -->
+    <!-- End About Section -->
 
-        <!-- ======= Counts Section ======= -->
-        <!-- <section id="counts" class="counts">
+    <!-- ======= Counts Section ======= -->
+    <!-- <section id="counts" class="counts">
             <div class="container">
 
                 <div class="row">
@@ -222,10 +161,10 @@
 
             </div>
         </section> -->
-        <!-- End Counts Section -->
+    <!-- End Counts Section -->
 
-        <!-- ======= Services Section ======= -->
-        <!-- <section id="services" class="services">
+    <!-- ======= Services Section ======= -->
+    <!-- <section id="services" class="services">
             <div class="container">
 
                 <div class="section-title">
@@ -286,10 +225,10 @@
 
             </div>
         </section> -->
-        <!-- End Services Section -->
+    <!-- End Services Section -->
 
-        <!-- ======= Appointment Section ======= -->
-        <!-- <section id="appointment" class="appointment section-bg">
+    <!-- ======= Appointment Section ======= -->
+    <!-- <section id="appointment" class="appointment section-bg">
             <div class="container">
 
                 <div class="section-title">
@@ -351,20 +290,20 @@
 
             </div>
         </section> -->
-        <!-- End Appointment Section -->
+    <!-- End Appointment Section -->
 
-        <!-- ======= Departments/alur Section ======= -->
-        <section id="departments" class="departments">
-            <div class="container align-center">
+    <!-- ======= Departments/alur Section ======= -->
+    <section id="alur" class="alur">
+        <div class="container align-center">
 
-                <div class="section-title">
-                    <h2>Alur</h2>
-                    <p>Sementara ieu mah bari ngantosan proses bisnisna rapih</p>
-                    <img src="<?= base_url('assets/'); ?>img/construction.png">
-                </div>
+            <div class="section-title">
+                <h2>Alur</h2>
+                <p>Sementara ieu mah bari ngantosan proses bisnisna rapih</p>
+                <img src="<?= base_url('assets/'); ?>img/construction.png">
+            </div>
 
 
-                <!-- <div class="row">
+            <!-- <div class="row">
                     <div class="col-lg-3">
                         <ul class="nav nav-tabs flex-column">
                             <li class="nav-item">
@@ -450,331 +389,331 @@
                     </div>
                 </div> -->
 
+        </div>
+    </section><!-- End Departments Section -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section id="dokter" class="dokter">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Dokter</h2>
+                <p>Berikut adalah list dokter :</p>
             </div>
-        </section><!-- End Departments Section -->
-
-        <!-- ======= Doctors Section ======= -->
-        <section id="doctors" class="doctors">
-            <div class="container">
-
-                <div class="section-title">
-                    <h2>Dokter</h2>
-                    <p>Berikut adalah list dokter :</p>
+            <!-- Buka Row -->
+            <div class="row">
+                <!-- DOKTER Dalam Eman Sulaeman -->
+                <div class="col-lg-6">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/dalam/emansulaeman.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Eman Sulaeman, Sp.PD</h4>
+                            <span>Dokter Spesialis Dalam (Internist)</span>
+                        </div>
+                    </div>
                 </div>
-                <!-- Buka Row -->
-                <div class="row">
-                    <!-- DOKTER Dalam Eman Sulaeman -->
-                    <div class="col-lg-6">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/dalam/emansulaeman.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Eman Sulaeman, Sp.PD</h4>
-                                <span>Dokter Spesialis Dalam (Internist)</span>
-                            </div>
+                <!-- DOKTER Dalam Siska Dewi Roslani -->
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/dalam/siskadewiroslani.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Siska Dewi Roslani, Sp.PD</h4>
+                            <span>Dokter Spesialis Dalam (Internist)</span>
                         </div>
                     </div>
-                    <!-- DOKTER Dalam Siska Dewi Roslani -->
-                    <div class="col-lg-6 mt-4 mt-lg-0">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/dalam/siskadewiroslani.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Siska Dewi Roslani, Sp.PD</h4>
-                                <span>Dokter Spesialis Dalam (Internist)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Spesialis Dalam - Mitra RS Julian Karundeng -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/dalam/juliankarundeng.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Julian Karundeng, Sp.D</h4>
-                                <span>Dokter Spesialis Dalam - Mitra RS (Internist)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Bedah Saraf Dany Erlangga -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/saraf/danyerlangga.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. R. Dany Erlangga, Sp.BS</h4>
-                                <span>Dokter Spesialis Bedah Saraf</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Saraf Fuad Hanif -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/saraf/fuadhanif.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Fuad Hanif, Sp.S.,M.Kes</h4>
-                                <span>Dokter Spesialis Saraf (Neurolog)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Saraf Marissa Ayu Anindyta -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/saraf/marisaayu.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Marissa Ayu Anindyta, Sp.S</h4>
-                                <span>Dokter Spesialis Saraf (Neurolog)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Anak Mahesa Suryanagara -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/anak/mahesa.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. R.Mahesa Suryanagara, Sp.A.,M.Kes</h4>
-                                <span>Dokter Spesialis Anak</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Anak Nia Adriani -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/anak/niaadriani.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Nia Adriani, Sp.A.,M.Kes</h4>
-                                <span>Dokter Spesialis Anak</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Jiwa Nunu Nurkholis -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/jiwa/nununurkholis.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Nunu Nurkholis Majid, Sp.KJ</h4>
-                                <span>Dokter Spesialis Jiwa (Psikiater)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Jiwa Rara Dyah -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/jiwa/dyah.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. RR Rara Dyah R.N, Sp.KJ</h4>
-                                <span>Dokter Spesialis Jiwa (Psikiater)</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Bedah Juliawan Perminanto -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/bedah/juliawan.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Juliawan Perminanto, Sp.B.,M.Si.Med</h4>
-                                <span>Dokter Spesialis Bedah</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Bedah Rendy Fitra -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/bedah/rendifitra.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Rendy Fitra, Sp.B</h4>
-                                <span>Dokter Spesialis Bedah</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Kulit Kelamin Bowo Wahyudi -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/kulitkelamin/bowo.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Bowo Wahyudi, Sp.KK</h4>
-                                <span>Dokter Spesialis Kulit & Kelamin</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Dermatovenereologi Andini Dwikenia Anjani -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/kulitkelamin/andini.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Andini Dwikenia Anjani, Sp.DV</h4>
-                                <span>Dokter Spesialis Dermatovenereologi</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Anesthesi Doni Arief -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/anestesi/doniarif.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Doni Arief R, Sp.An</h4>
-                                <span>Dokter Spesialis Anesthesi</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Anesthesi Teguh Budiman -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/anestesi/teguhbudiman.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. M. Teguh Budiman, Sp.An</h4>
-                                <span>Dokter Spesialis Anesthesi</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Kandungan dan Kebidanan Imam Wahyudi -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/kandungan/imamwahyudi.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. M. Imam Wahyudi, Sp.OG</h4>
-                                <span>Dokter Spesialis Kandungan & Kebidanan</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Kandungan dan Kebidanan Dennis Fachmi -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/kandungan/dennis.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Dennis Fachmi A, Sp.OG</h4>
-                                <span>Dokter Spesialis Kandungan & Kebidanan</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Kandungan dan Kebidanan Dennis Fachmi -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/kandungan/aguskurnia.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Agus Kurnia, Sp.OG</h4>
-                                <span>Dokter Spesialis Kandungan & Kebidanan</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- DOKTER Rehabilitasi Medik Tina Susilawati -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/rm/tinasusilawati.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Tina Susilawati, Sp.KFR</h4>
-                                <span>Dokter Spesialis Rehabilitasi Medik</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Radiologi Nunu Heryana -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/radiologi/nunuheryana.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Nunu Heryana, Sp.R</h4>
-                                <span>Dokter Spesialis Radiologi</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Mata Rety Sugiarti -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/mata/retysugiarti.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Rety Sugiarti, Sp.M</h4>
-                                <span>Dokter Spesialis Mata</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Orthopedi Isa Ridwan -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/ortopedi/isaridwan.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Isa Ridwan, Sp.OT</h4>
-                                <span>Dokter Spesialis Orthopedi</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Akupuntur Felicia Adriani -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/akupuntur/feliciaadriani.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Felicia Adriani, Sp.Ak</h4>
-                                <span>Dokter Spesialis Akupuntur</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Forensik & Medikolegal Hendrik Septiana -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/forensik/hendrik.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Hendrik Septiana, Sp.F.M</h4>
-                                <span>Dokter Spesialis Forensik & Medikolegal</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Paru Dilla Laswantina -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/paru/dilalaswantina.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Dilla Laswantina, Sp.P</h4>
-                                <span>Dokter Spesialis Paru</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Patologi Anatomi Yuke Ireka -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/pa/yukeireka.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Yuke Ireka, Sp.PA</h4>
-                                <span>Dokter Spesialis Patologi Anatomi</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Patologi Klinis Ade Novita Saragih -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/pk/adenovita.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Ade Novita Saragih, Sp.PK</h4>
-                                <span>Dokter Spesialis Patologi Klinis</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Penyakit Mulut Mega Rafika -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/mulut/megarafika.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Mega Rafika, Sp.PM</h4>
-                                <span>Dokter Spesialis Penyakit Mulut</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- DOKTER Telinga Hidung Tenggorokan Rini Febrianti -->
-                    <div class="col-lg-6 mt-4">
-                        <div class="member d-flex align-items-center">
-                            <div class="pic"><img src="assets/img/doctors/tht/rini.jpg" class="img-fluid" alt=""></div>
-                            <div class="member-info">
-                                <h4>dr. Rini Febrianti, Sp.THT</h4>
-                                <span>Dokter Spesialis Telinga Hidung Tenggorokan</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-                <!-- Tutup Row -->
+                <!-- DOKTER Spesialis Dalam - Mitra RS Julian Karundeng -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/dalam/juliankarundeng.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Julian Karundeng, Sp.D</h4>
+                            <span>Dokter Spesialis Dalam - Mitra RS (Internist)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Bedah Saraf Dany Erlangga -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/saraf/danyerlangga.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. R. Dany Erlangga, Sp.BS</h4>
+                            <span>Dokter Spesialis Bedah Saraf</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Saraf Fuad Hanif -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/saraf/fuadhanif.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Fuad Hanif, Sp.S.,M.Kes</h4>
+                            <span>Dokter Spesialis Saraf (Neurolog)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Saraf Marissa Ayu Anindyta -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/saraf/marisaayu.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Marissa Ayu Anindyta, Sp.S</h4>
+                            <span>Dokter Spesialis Saraf (Neurolog)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Anak Mahesa Suryanagara -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/anak/mahesa.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. R.Mahesa Suryanagara, Sp.A.,M.Kes</h4>
+                            <span>Dokter Spesialis Anak</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Anak Nia Adriani -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/anak/niaadriani.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Nia Adriani, Sp.A.,M.Kes</h4>
+                            <span>Dokter Spesialis Anak</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Jiwa Nunu Nurkholis -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/jiwa/nununurkholis.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Nunu Nurkholis Majid, Sp.KJ</h4>
+                            <span>Dokter Spesialis Jiwa (Psikiater)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Jiwa Rara Dyah -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/jiwa/dyah.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. RR Rara Dyah R.N, Sp.KJ</h4>
+                            <span>Dokter Spesialis Jiwa (Psikiater)</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Bedah Juliawan Perminanto -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/bedah/juliawan.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Juliawan Perminanto, Sp.B.,M.Si.Med</h4>
+                            <span>Dokter Spesialis Bedah</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Bedah Rendy Fitra -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/bedah/rendifitra.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Rendy Fitra, Sp.B</h4>
+                            <span>Dokter Spesialis Bedah</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Kulit Kelamin Bowo Wahyudi -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/kulitkelamin/bowo.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Bowo Wahyudi, Sp.KK</h4>
+                            <span>Dokter Spesialis Kulit & Kelamin</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Dermatovenereologi Andini Dwikenia Anjani -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/kulitkelamin/andini.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Andini Dwikenia Anjani, Sp.DV</h4>
+                            <span>Dokter Spesialis Dermatovenereologi</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Anesthesi Doni Arief -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/anestesi/doniarif.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Doni Arief R, Sp.An</h4>
+                            <span>Dokter Spesialis Anesthesi</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Anesthesi Teguh Budiman -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/anestesi/teguhbudiman.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. M. Teguh Budiman, Sp.An</h4>
+                            <span>Dokter Spesialis Anesthesi</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Kandungan dan Kebidanan Imam Wahyudi -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/kandungan/imamwahyudi.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. M. Imam Wahyudi, Sp.OG</h4>
+                            <span>Dokter Spesialis Kandungan & Kebidanan</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Kandungan dan Kebidanan Dennis Fachmi -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/kandungan/dennis.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Dennis Fachmi A, Sp.OG</h4>
+                            <span>Dokter Spesialis Kandungan & Kebidanan</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Kandungan dan Kebidanan Dennis Fachmi -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/kandungan/aguskurnia.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Agus Kurnia, Sp.OG</h4>
+                            <span>Dokter Spesialis Kandungan & Kebidanan</span>
+                        </div>
+                    </div>
+                </div>
 
-
+                <!-- DOKTER Rehabilitasi Medik Tina Susilawati -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/rm/tinasusilawati.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Tina Susilawati, Sp.KFR</h4>
+                            <span>Dokter Spesialis Rehabilitasi Medik</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Radiologi Nunu Heryana -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/radiologi/nunuheryana.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Nunu Heryana, Sp.R</h4>
+                            <span>Dokter Spesialis Radiologi</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Mata Rety Sugiarti -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/mata/retysugiarti.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Rety Sugiarti, Sp.M</h4>
+                            <span>Dokter Spesialis Mata</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Orthopedi Isa Ridwan -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/ortopedi/isaridwan.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Isa Ridwan, Sp.OT</h4>
+                            <span>Dokter Spesialis Orthopedi</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Akupuntur Felicia Adriani -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/akupuntur/feliciaadriani.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Felicia Adriani, Sp.Ak</h4>
+                            <span>Dokter Spesialis Akupuntur</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Forensik & Medikolegal Hendrik Septiana -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/forensik/hendrik.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Hendrik Septiana, Sp.F.M</h4>
+                            <span>Dokter Spesialis Forensik & Medikolegal</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Paru Dilla Laswantina -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/paru/dilalaswantina.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Dilla Laswantina, Sp.P</h4>
+                            <span>Dokter Spesialis Paru</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Patologi Anatomi Yuke Ireka -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/pa/yukeireka.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Yuke Ireka, Sp.PA</h4>
+                            <span>Dokter Spesialis Patologi Anatomi</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Patologi Klinis Ade Novita Saragih -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/pk/adenovita.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Ade Novita Saragih, Sp.PK</h4>
+                            <span>Dokter Spesialis Patologi Klinis</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Penyakit Mulut Mega Rafika -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/mulut/megarafika.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Mega Rafika, Sp.PM</h4>
+                            <span>Dokter Spesialis Penyakit Mulut</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- DOKTER Telinga Hidung Tenggorokan Rini Febrianti -->
+                <div class="col-lg-6 mt-4">
+                    <div class="member d-flex align-items-center">
+                        <div class="pic"><img src="assets/img/doctors/tht/rini.jpg" class="img-fluid" alt=""></div>
+                        <div class="member-info">
+                            <h4>dr. Rini Febrianti, Sp.THT</h4>
+                            <span>Dokter Spesialis Telinga Hidung Tenggorokan</span>
+                        </div>
+                    </div>
+                </div>
 
             </div>
-        </section><!-- End Doctors Section -->
+            <!-- Tutup Row -->
 
-        <!-- ======= Frequently Asked Questions Section ======= -->
-        <!-- <section id="faq" class="faq section-bg">
+
+
+        </div>
+    </section><!-- End Doctors Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <!-- <section id="faq" class="faq section-bg">
             <div class="container">
 
                 <div class="section-title">
@@ -834,10 +773,10 @@
 
             </div>
         </section> -->
-        <!-- End Frequently Asked Questions Section -->
+    <!-- End Frequently Asked Questions Section -->
 
-        <!-- ======= Testimonials Section ======= -->
-        <!-- <section id="testimonials" class="testimonials">
+    <!-- ======= Testimonials Section ======= -->
+    <!-- <section id="testimonials" class="testimonials">
             <div class="container">
 
                 <div class="owl-carousel testimonials-carousel">
@@ -911,10 +850,10 @@
 
             </div>
         </section> -->
-        <!-- End Testimonials Section -->
+    <!-- End Testimonials Section -->
 
-        <!-- ======= Gallery Section ======= -->
-        <!-- <section id="gallery" class="gallery">
+    <!-- ======= Gallery Section ======= -->
+    <!-- <section id="gallery" class="gallery">
             <div class="container">
 
                 <div class="section-title">
@@ -995,181 +934,99 @@
             </div>
         </section>End Gallery Section -->
 
-        <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Kontak</h2>
+            </div>
+        </div>
+        </div>
+
+        <section id="counts" class="counts">
             <div class="container">
-
-                <div class="section-title">
-                    <h2>Kontak</h2>
-                </div>
-            </div>
-            </div>
-
-            <section id="counts" class="counts">
-                <div class="container">
-                    <div class="row justify-content-md-center">
-                        <div class="col col-lg-3 mt-5">
-                            <div class="count-box">
-                                <i class="icofont-ui-dial-phone"></i>
-                                <a href="tel:0265741032">
-                                    <span>0265-741032</span>
-                                </a>
-                                <p>Telpon</p>
-                            </div>
-
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-3 mt-5">
+                        <div class="count-box">
+                            <i class="icofont-ui-dial-phone"></i>
+                            <a href="tel:0265741032">
+                                <span>0265-741032</span>
+                            </a>
+                            <p>Telpon</p>
                         </div>
 
-                        <div class="col-md-auto mt-5">
-                            <div class="count-box">
-                                <i class="icofont-envelope"></i>
-                                <a href="mailto:contact@example.com">
-                                    <span>rsu_kotabanjar@yahoo.co.id</span>
-                                </a>
-                                <p>Email</p>
-                            </div>
-
-                        </div>
-
-                        <div class="col col-lg-3 mt-5">
-
-                            <div class="count-box">
-                                <i class="icofont-ui-dial-phone"></i>
-                                <a href="tel:0265741032">
-                                    <span>0265-7482204</span>
-                                </a>
-                                <p>Ponek 24 Jam</p>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="row justify-content-md-center">
-                        <div class="col col-lg-2 mt-5">
-                            <div class="count-box">
-                                <i class="icofont-whatsapp"></i>
-                                <a href="https://api.whatsapp.com/send?phone=628112111146" target="_blank">
-                                    <span>08112111146</span>
-                                </a>
-                                <p>Whatsapp</p>
-                            </div>
-
+                    <div class="col-md-auto mt-5">
+                        <div class="count-box">
+                            <i class="icofont-envelope"></i>
+                            <a href="mailto:contact@example.com">
+                                <span>rsu_kotabanjar@yahoo.co.id</span>
+                            </a>
+                            <p>Email</p>
                         </div>
 
-                        <div class="col col-lg-2 mt-5">
+                    </div>
 
-                            <div class="count-box">
-                                <i class="icofont-fax"></i>
-                                <a href="tel:02657482204 ">
-                                    <span>0265744730</span>
-                                </a>
-                                <p>Fax</p>
-                            </div>
+                    <div class="col col-lg-3 mt-5">
+
+                        <div class="count-box">
+                            <i class="icofont-ui-dial-phone"></i>
+                            <a href="tel:0265741032">
+                                <span>0265-7482204</span>
+                            </a>
+                            <p>Ponek 24 Jam</p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- End Counts Section -->
-        </section><!-- End Contact Section -->
 
-        <section id="lokasi" class="contact">
-            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-2 mt-5">
+                        <div class="count-box">
+                            <i class="icofont-whatsapp"></i>
+                            <a href="https://api.whatsapp.com/send?phone=628112111146" target="_blank">
+                                <span>08112111146</span>
+                            </a>
+                            <p>Whatsapp</p>
+                        </div>
 
-                <div class="section-title">
-                    <h2>Lokasi RSUD Kota Banjar</h2>
-                </div>
-            </div>
-            </div>
-
-
-            <div>
-                <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?q=RSU%20KOTA%20BANJAR&t=m&z=10&output=embed&iwloc=near" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <!-- End Counts Section -->
-        </section><!-- End Contact Section -->
-
-
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-
-        <div class="footer-top">
-            <div class="container">
-                <!-- <div class="row">
-
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h3>RSUD Kota Banjar</h3>
-                        <p>
-                            Jln. Rumah Sakit No.5 <br>
-                            Kelurahan Hegarsari<br><br>
-                            <strong>Telpon :</strong> 0265-741032<br>
-                            <strong>Email:</strong> rsu_kotabanjar@yahoo.co.id<br>
-                        </p>
                     </div>
 
-                    <div class="col-lg-2 col-md-6 footer-links">
-                        <h4>Rekomendasi</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang Kita</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Alur</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Dokter</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Kontak</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Kamu tau bulan?</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Jawaban nya: Ya, itu Kamu</a></li>
-                        </ul>
-                    </div>
+                    <div class="col col-lg-2 mt-5">
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Pelayanan</h4>
-                        <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Daftar</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Cari Rekamedik</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Mendapatkan info terkini</h4>
-                        <p>Wa Gateway kudu na mah</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div> -->
-
-                <div class="mr-md-auto text-center text-md-left">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; <strong> RSUD KOTA BANJAR </strong> <?= date('Y'); ?>. All Rights Reserved</span>
+                        <div class="count-box">
+                            <i class="icofont-fax"></i>
+                            <a href="tel:02657482204 ">
+                                <span>0265744730</span>
+                            </a>
+                            <p>Fax</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <!-- End Counts Section -->
+    </section><!-- End Contact Section -->
 
-                <!-- <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                </div> -->
+    <section id="lokasi" class="contact">
+        <div class="container">
 
-    </footer><!-- End Footer -->
+            <div class="section-title">
+                <h2>Lokasi RSUD Kota Banjar</h2>
+            </div>
+        </div>
+        </div>
 
-    <div id="preloader"></div>
-    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-    <script src="assets/vendor/venobox/venobox.min.js"></script>
-    <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="assets/vendor/counterup/counterup.min.js"></script>
-    <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <div>
+            <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?q=RSU%20KOTA%20BANJAR&t=m&z=10&output=embed&iwloc=near" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- End Counts Section -->
+    </section><!-- End Contact Section -->
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
 
-</body>
+</main><!-- End #main -->
 
-</html>
+<!-- copyright dari web -->
+<?php $this->load->view('Template/Footer'); ?>
