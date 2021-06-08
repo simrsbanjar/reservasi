@@ -67,8 +67,8 @@
             <nav class="nav-menu d-none d-lg-block mr-auto">
                 <ul>
                     <li class="active"><a href="">Home</a></li>
-                    <li><a href="#about">Tentang Kita</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Tentang Kita</a></li>
+                    <!-- <li><a href="#services">Services</a></li> -->
                     <li><a href="#departments">Alur</a></li>
                     <li><a href="#doctors">Dokter</a></li>
                     <li><a href="#contact">Kontak</a></li>
@@ -98,8 +98,8 @@
         <section id="why-us" class="why-us">
             <div class="container">
 
-                <div class="row">
-                    <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="row justify-content-center">
+                    <!-- <div class="col-lg-4 d-flex align-items-stretch">
                         <div class="content">
                             <h3>Kenapa RSUD Kota Banjar?</h3>
                             <p>
@@ -109,29 +109,42 @@
                                 <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-8 d-flex align-items-stretch">
+                    </div> -->
+                    <div class="col-lg-12 d-flex align-items-stretch">
                         <div class="icon-boxes d-flex flex-column justify-content-center">
                             <div class="row">
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
-                                        <i class="bx bx-receipt"></i>
+                                        <i class="bx bx-cube-alt"></i>
                                         <h4>Visi</h4>
-                                        <p>Acan di ketik di koding na</p>
+                                        <p>Menjadi Rumah Sakit Unggulan dan Terpercaya di Priangan Timur</p>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
                                         <i class="bx bx-cube-alt"></i>
                                         <h4>Misi</h4>
-                                        <p>Acan di ketik di koding na</p>
+                                        <ol style="text-align: left;">
+                                            <li>
+                                                Menyelenggarakan Pelayanan Prima
+                                            </li>
+                                            <li>
+                                                Mengupayakan Terpenuhinya Sarana Prasarana sesuai Standar
+                                            </li>
+                                            <li>
+                                                Meningkatkan Kualitas dan Kuantitas SDM
+                                            </li>
+                                            <li>
+                                                Meningkatkan Kesejahteraan karyawan
+                                            </li>
+                                        </ol>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 d-flex align-items-stretch">
                                     <div class="icon-box mt-4 mt-xl-0">
-                                        <i class="bx bx-images"></i>
+                                        <i class="bx bx-rectangle"></i>
                                         <h4>Motto</h4>
-                                        <p>Acan di ketik di koding na</p>
+                                        <p>Pelayanan yang Baik untuk Semua</p>
                                     </div>
                                 </div>
                             </div>
@@ -1142,6 +1155,9 @@
                 <div class="mr-md-auto text-center text-md-left">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; <strong> RSUD KOTA BANJAR </strong> <?= date('Y'); ?>. All Rights Reserved</span>
+                    </div>
+                    <div class="copyright text-center my-auto">
+                        <span>Powered by SIMRS</span>
                     </div>
                 </div>
 
