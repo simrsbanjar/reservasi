@@ -66,6 +66,36 @@
 
     });
 
+    function HitungUmur(tgllahir) {
+        var idtabs = $(".tab-pane.active").attr("id");
+        var numtab = '';
+        if (idtabs == 'tab-1') {
+            numtab = '';
+        } else if (idtabs == 'tab-2') {
+            numtab = '2';
+        } else {
+            numtab = '3';
+        }
+        $.ajax({
+            url: "<?= base_url('Reservasi/hitung_umur') ?>",
+            method: "POST",
+            data: {
+                "tgllahir": tgllahir
+            },
+            // async: false,
+            dataType: 'json',
+            success: function(data) {
+                document.getElementById("tahun" + numtab).value = data.tahun;
+                document.getElementById("bulan" + numtab).value = data.bulan;
+                document.getElementById("hari" + numtab).value = data.hari;
+                // for (i = 0; i < data.length; i++) {
+                //     html += "<option value = '" + data[i].KdKotaKabupaten + "'>" + data[i].NamaKotaKabupaten + "</option>";
+                // }
+
+            }
+        });
+    }
+
     function hidetab1() {
         $("#headerreservasi").hide();
         $("#isireservasi").hide();

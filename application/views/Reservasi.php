@@ -137,7 +137,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir" name="tgllahir">
+                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir" name="tgllahir" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -145,19 +145,19 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tahun</strong></label>
-                                            <input type="text" placeholder="Thn" class="form-control" disabled>
+                                            <input type="text" placeholder="Thn" class="form-control" disabled name="tahun" id="tahun">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Bulan</strong></label>
-                                            <input type="text" placeholder="Bln" class="form-control" disabled>
+                                            <input type="text" placeholder="Bln" class="form-control" disabled name="bulan" id="bulan">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Hari</strong></label>
-                                            <input type="text" placeholder="Hari" class="form-control" disabled>
+                                            <input type="text" placeholder="Hari" class="form-control" disabled name="hari" id="hari">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -444,7 +444,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir2" name="tgllahir2">
+                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir2" name="tgllahir2" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -452,19 +452,19 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tahun</strong></label>
-                                            <input type="text" placeholder="Thn" class="form-control" disabled>
+                                            <input type="text" placeholder="Thn" class="form-control" disabled name="tahun2" id="tahun2">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Bulan</strong></label>
-                                            <input type="text" placeholder="Bln" class="form-control" disabled>
+                                            <input type="text" placeholder="Bln" class="form-control" disabled name="bulan2" id="bulan2">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Hari</strong></label>
-                                            <input type="text" placeholder="Hari" class="form-control" disabled>
+                                            <input type="text" placeholder="Hari" class="form-control" disabled name="hari2" id="hari2">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -752,7 +752,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir3" name="tgllahir3">
+                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir3" name="tgllahir3" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -760,19 +760,19 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tahun</strong></label>
-                                            <input type="text" placeholder="Thn" class="form-control" disabled>
+                                            <input type="text" placeholder="Thn" class="form-control" disabled name="tahun3" id="tahun3">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Bulan</strong></label>
-                                            <input type="text" placeholder="Bln" class="form-control" disabled>
+                                            <input type="text" placeholder="Bln" class="form-control" disabled name="bulan3" id="bulan3">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Hari</strong></label>
-                                            <input type="text" placeholder="Hari" class="form-control" disabled>
+                                            <input type="text" placeholder="Hari" class="form-control" disabled name="hari3" id="hari3">
                                         </div>
                                     </div>
                                     <div class="col-md-4">

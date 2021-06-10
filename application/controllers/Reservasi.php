@@ -18,6 +18,29 @@ class Reservasi extends CI_Controller
         $this->load->helper('url');
     }
 
+    function hitung_umur()
+    {
+        $birthDate = new DateTime($this->input->post('tgllahir'));
+        $today = new DateTime("today");
+        if (($birthDate > $today) || ($birthDate < new DateTime("1900-01-01"))) {
+            $y = '0';
+            $m = '0';
+            $d = '0';
+        } else {
+            $y = $today->diff($birthDate)->y;
+            $m = $today->diff($birthDate)->m;
+            $d = $today->diff($birthDate)->d;
+        }
+        $data = array(
+            'tahun' => $y,
+            'bulan' => $m,
+            'hari' => $d
+
+        );
+
+        echo json_encode($data);
+    }
+
     function GetToken()
     {
         $parm = array(
