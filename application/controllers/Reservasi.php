@@ -408,4 +408,67 @@ class Reservasi extends CI_Controller
         }
         echo json_encode($data);
     }
+
+    function GetPasienLama()
+    {
+        // $norm = $this->input->post('nocm');
+        // $tgllahir = $this->input->post('tgllahir');
+        $norm = '417191';
+        $tgllahir = '1991-04-04';
+
+        $token     =  $this->GetToken();
+        $url = $this->API . '/getdatapasienbynocm';
+        $headers = array(
+            'x-token:' . $token . "",
+        );
+
+        /* Init cURL resource */
+        $ch = curl_init($url);
+
+        /* Array Parameter Data */
+        $parm =  ['nocm' => "" . $norm . "", 'tgllahir' => "" . $tgllahir . ""];
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
+
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        /* execute request */
+        $result = curl_exec($ch);
+
+        /* close cURL resource */
+        curl_close($ch);
+        $hasil = json_decode($result);
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data['hasil'] = null;
+        if ($metadata->code == '200') {
+            $data['hasil'] = array(
+                'nocm' => $response->nocm,
+                'namapasien' => $response->namapasien,
+                'titlepasien' => $response->titlepasien,
+                'tempatlahir' => $response->tempatlahir,
+                'tgllahir' => $response->tgllahir,
+                'jeniskelamin' => $response->jeniskelamin,
+                'alamat' => $response->alamat,
+                'propinsi' => $response->propinsi,
+                'kota' => $response->kota,
+                'kecamatan' => $response->kecamatan,
+                'kelurahan' => $response->kelurahan,
+                'rtrw' => $response->rtrw,
+                'kodepos' => $response->kodepos
+            );
+        }
+
+        $data['codedata'] = array(
+            'code' => $metadata->code,
+            'message' => $metadata->message
+        );
+
+        echo json_encode($data);
+    }
 }

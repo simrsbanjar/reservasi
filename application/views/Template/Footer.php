@@ -25,6 +25,7 @@
 <script src="assets/vendor/counterup/counterup.min.js"></script>
 <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
 <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+<script src="assets/vendor/sweetalert/sweetalert.js"></script>
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
@@ -465,9 +466,17 @@
             }
 
             if (nilai == '1') {
+                // jika pasien lama
+                if (statuspasien == '1') {
+
+                    if (GetPasienLama() != '200') {
+                        return
+                    }
+                }
                 $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
             } else {
                 $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+
                 // $("norm").attr("required", true);
             }
 
@@ -948,6 +957,59 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 $('#carabayar2').html(html);
+            }
+        });
+    }
+
+    function message(icon, text, title, confirm) {
+        Swal.fire({
+            icon: icon,
+            title: title,
+            text: text,
+            showConfirmButton: false,
+            showCancelButton: false,
+            // timer: 9000,
+            // timerProgressBar: true,
+            showConfirmButton: confirm,
+            showCancelButton: confirm,
+            confirmButtonText: 'Ya, Benar Data Saya.',
+            cancelButtonText: "Bukan Data Saya.",
+            html: '<pre>' + text + '</pre>'
+        })
+    }
+
+    function GetPasienLama() {
+        var nocm = $('#norm').val();
+        var tgllahir = $('#tgllahir').val();
+        var varreturn = '200'
+        $.ajax({
+            url: "<?= base_url('Reservasi/GetPasienLama') ?>",
+            method: "POST",
+            data: {
+                "nocm": nocm,
+                "tgllahir": tgllahir
+            },
+            // async: false,
+            dataType: 'json',
+            success: function(data) {
+                if (data.codedata['code'] != '200') {
+                    message('info', data.codedata['message'], 'Informasi', false);
+                    return '404';
+                } else {
+                    message('question', 'No.Rekam Medik : ' + data.hasil['nocm'] +
+                        '\nNama Pasien : ' + data.hasil['titlepasien'] + ' ' + data.hasil['namapasien'],
+                        // '\nTempat Tanggal Lahir : ' + data.hasil['tempatlahir'] + ', ' + data.hasil['tgllahir'],
+                        // '\nJenis Kelamin : ' + data.hasil['jeniskelamin'],
+                        // '\nAlamat : ' + data.hasil['alamat'] + ' RT/RW ' + data.hasil['rtrw'] + ' Kelurahan ' + data.hasil['kelurahan'] +
+                        // ' Kecamatan ' + data.hasil['kecamtan'] + ' ' + data.hasil['kota'] + ' ' + data.hasil['propinsi'] + ' ' + data.hasil['kodepos'],
+                        ' Apakah Data Yang Anda Maksud ini ?', true);
+                    return '404';
+                }
+
+            },
+            error: function() {
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return '404';
             }
         });
     }
