@@ -259,7 +259,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Registrasi</strong></label>
-                                            <input type="date" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>">
+                                            <input type="date" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" name="tglregistrasi" id="tglregistrasi" onchange="GetPoli(this.value)">
                                             <!---->
                                         </div>
                                     </div>
@@ -268,6 +268,8 @@
                                             <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
                                             <select name="tujuanpemeriksaan" id="tujuanpemeriksaan" class="form-control" title="Pilih Tujuan Pemeriksaan">
                                                 <option value="">-PILIH-</option>
+                                                <option value="0">Pemeriksaan Dokter</option>
+                                                <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
                                             </select>
                                             <small>Error Message</small>
                                         </div>
@@ -575,6 +577,8 @@
                                             <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
                                             <select name="tujuanpemeriksaan2" id="tujuanpemeriksaan2" class="form-control" title="Pilih Tujuan Pemeriksaan">
                                                 <option value="">-PILIH-</option>
+                                                <option value="0">Pemeriksaan Dokter</option>
+                                                <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
                                             </select>
                                             <small>Error Message</small>
                                         </div>
@@ -883,6 +887,8 @@
                                             <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
                                             <select name="tujuanpemeriksaan3" id="tujuanpemeriksaan3" class="form-control" title="Pilih Tujuan Pemeriksaan">
                                                 <option value="">-PILIH-</option>
+                                                <option value="0">Pemeriksaan Dokter</option>
+                                                <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
                                             </select>
                                             <small>Error Message</small>
                                         </div>

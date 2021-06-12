@@ -33,12 +33,15 @@
 <script>
     $(document).ready(function() {
         var page = $("[name='reservasi']").val();
+        var date = new Date().toDateString("yyyy-MM-dd");
         $("#btnlanjutcarabayar").show();
         hidetab1();
         hidetab2();
         hidetab3();
         getpropinsi();
         GetRujukanAsal();
+        GetPoli(date);
+        GetCarabayar();
 
         if (page == null) {
             $("#daftar").show();
@@ -894,6 +897,57 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 $('#rujukanasal').html(html);
+            }
+        });
+    }
+
+    function GetPoli(id) {
+        $.ajax({
+            url: "<?= base_url('Reservasi/GetPoli') ?>",
+            method: "POST",
+            data: {
+                "tglregistrasi": id
+            },
+            // async: false,
+            dataType: 'json',
+            success: function(data) {
+                var html = '';
+                var i;
+                html += "<option value=''>-PILIH-</option>";
+                for (i = 0; i < data.length; i++) {
+                    html += "<option value = '" + data[i].KdPoli + "'>" + data[i].NamaPoli + "</option>";
+                }
+                $('#poli').html(html);
+
+            },
+            error: function() {
+                var html = '';
+                html += "<option value=''>-PILIH-</option>";
+                $('#poli').html(html);
+            }
+        });
+    }
+
+    function GetCarabayar() {
+        $.ajax({
+            url: "<?= base_url('Reservasi/GetCarabayar') ?>",
+            method: "POST",
+            // async: false,
+            dataType: 'json',
+            success: function(data) {
+                var html = '';
+                var i;
+                html += "<option value=''>-PILIH-</option>";
+                for (i = 0; i < data.length; i++) {
+                    html += "<option value = '" + data[i].KdCarabayar + "'>" + data[i].NamaCarabayar + "</option>";
+                }
+                $('#carabayar2').html(html);
+
+            },
+            error: function() {
+                var html = '';
+                html += "<option value=''>-PILIH-</option>";
+                $('#carabayar2').html(html);
             }
         });
     }
