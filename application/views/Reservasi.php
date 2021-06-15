@@ -57,7 +57,7 @@
                                 Data Pasien
                             </div>
                             <div class="card-body" id="isidatapasien">
-                                <input type="hidden" name="nilai" id="nilai" value="1">
+                                <input type="hidden" name="nilai" id="nilai" value="0">
                                 <div class="row">
                                     <div class="col-md-9">
                                         <label class="label-control"><strong>Status Pasien</strong></label>
@@ -89,6 +89,15 @@
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive" style="width:100%" id="tabletab">
                                     </div>
                                 </div>
 
@@ -137,7 +146,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir" name="tgllahir" onchange="HitungUmur(this.value)">
+                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir1" name="tgllahir1" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -179,7 +188,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt">
+                                            <input type="text" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -187,7 +196,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw">
+                                            <input type="text" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -243,7 +252,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos" name="kodepos">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -398,6 +407,15 @@
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
+                                    </div>
+
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <button id="btncari2" name="btncari2" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive" style="width:100%" id="tabletab2">
                                     </div>
                                 </div>
 
@@ -709,6 +727,15 @@
                                             <!---->
                                         </div>
                                     </div>
+
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <button id="btncari3" name="btncari3" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive" style="width:100%" id="tabletab3">
+                                    </div>
                                 </div>
 
                                 <div class="row mt-3" id="pasienbaru3">
@@ -950,8 +977,8 @@
                             </div>
                             <div class="card-footer d-flex">
                                 <!-- <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button> -->
-                                <button id="btnkembali2" name="btnkembali2" type="button" onclick="prosesKembali()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-circle-left"></i> Kembali</button>
-                                <button id="btnlanjut2" name="btnlanjut2" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
+                                <button id="btnkembali3" name="btnkembali3" type="button" onclick="prosesKembali()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-circle-left"></i> Kembali</button>
+                                <button id="btnlanjut3" name="btnlanjut3" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
                             </div>
 
                         </div>
@@ -959,9 +986,9 @@
                     <!-- </section> -->
                 </div>
             </div>
+
         </div>
-    </div>
-    <!-- </section> -->
+        <!-- </section> -->
 </main>
 <!-- copyright dari web -->
 <?php $this->load->view('Template/Footer'); ?>

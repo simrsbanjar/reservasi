@@ -70,6 +70,51 @@
 
     });
 
+    function bersihkan(tab) {
+        var numtab = '';
+        if (tab == 'tab-1') {
+            numtab = '';
+            $('#tabletab').html('');
+        } else if (tab == 'tab-2') {
+            numtab = '2';
+            $('#tabletab2').html('');
+        } else {
+            numtab = '3';
+            $('#tabletab3').html('');
+        }
+
+        document.getElementById("norm" + numtab).value = "";
+        document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("gelar" + numtab).value = "";
+        document.getElementById("namalengkap" + numtab).value = "";
+        document.getElementById("kelamin" + numtab).value = "";
+        document.getElementById("tempatlahir" + numtab).value = "";
+        document.getElementById("tgllahir1" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tahun" + numtab).value = "";
+        document.getElementById("bulan" + numtab).value = "";
+        document.getElementById("hari" + numtab).value = "";
+        document.getElementById("noidentitas" + numtab).value = "";
+        document.getElementById("alamat" + numtab).value = "";
+        document.getElementById("rt" + numtab).value = "";
+        document.getElementById("rw" + numtab).value = "";
+        document.getElementById("propinsi" + numtab).value = "";
+        document.getElementById("kota" + numtab).value = "";
+        document.getElementById("kecamatan" + numtab).value = "";
+        document.getElementById("kelurahan" + numtab).value = "";
+        document.getElementById("notlp" + numtab).value = "";
+        document.getElementById("kodepos" + numtab).value = "";
+        document.getElementById("tglregistrasi" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tujuanpemeriksaan" + numtab).value = "";
+        document.getElementById("poli" + numtab).value = "";
+        document.getElementById("rujukanasal" + numtab).value = "";
+        document.getElementById("nopeserta" + numtab).value = "";
+        document.getElementById("nosuratrujukan" + numtab).value = "";
+        document.getElementById("jeniskunjungan" + numtab).value = "";
+        document.getElementById("jenispermintaan" + numtab).value = "";
+        document.getElementById("jenispoli" + numtab).value = "";
+
+    }
+
     function HitungUmur(tgllahir) {
         var idtabs = $(".tab-pane.active").attr("id");
         var numtab = '';
@@ -92,12 +137,9 @@
                 document.getElementById("tahun" + numtab).value = data.tahun;
                 document.getElementById("bulan" + numtab).value = data.bulan;
                 document.getElementById("hari" + numtab).value = data.hari;
-                // for (i = 0; i < data.length; i++) {
-                //     html += "<option value = '" + data[i].KdKotaKabupaten + "'>" + data[i].NamaKotaKabupaten + "</option>";
-                // }
-
             }
         });
+
     }
 
     function hidetab1() {
@@ -176,6 +218,10 @@
         $("#headerreservasi").hide();
         $("#isireservasi").hide();
         $("#pasienbaru").show();
+        $("#carddata").show();
+        $("#pasienlama").hide();
+        $("#btnkembali").show();
+        $("#btnlanjut").show();
     }
 
     function pasienbarutab2() {
@@ -264,7 +310,6 @@
             $("#btnkembali").show();
             $("#btnlanjut").show();
             document.getElementById("nilai").value = "1";
-            $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
             var norm = document.getElementById('norm');
             setSuccessFor(norm);
         } else if (idtabs == 'tab-2') {
@@ -277,7 +322,6 @@
             $("#btnkembali2").show();
             $("#btnlanjut2").show();
             document.getElementById("nilai2").value = "1";
-            $("#btnlanjut2").html('<i class="fas fa-search"></i> Cari');
             var norm = document.getElementById('norm2');
             setSuccessFor(norm);
         } else {
@@ -290,7 +334,6 @@
             $("#btnkembali3").show();
             $("#btnlanjut3").show();
             document.getElementById("nilai3").value = "1";
-            $("#btnlanjut3").html('<i class="fas fa-search"></i> Cari');
             var norm = document.getElementById('norm3');
             setSuccessFor(norm);
         }
@@ -308,17 +351,33 @@
             var norm = document.getElementById('norm');
 
             if (nilai == '1') {
-                $("#pasienlama").hide();
-                $("#btnlanjutcarabayar").show();
-                $("#carabayar").show();
-                $("#headerreservasi").hide();
-                $("#isireservasi").hide();
-                $("#headerdatapasien").hide();
-                $("#isidatapasien").hide();
-                $("#cardfooter").hide();
-                $("#btnkembali").hide();
-                $("#btnlanjut").hide();
-                $("#carddata").hide();
+                Swal.fire({
+                    title: 'Konfirmasi',
+                    text: "Jika kembali data yang telah dimasukan akan hilang, Apakah anda yakin?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then((result) => {
+                    if (result.value) {
+                        $("#pasienlama").hide();
+                        $("#btnlanjutcarabayar").show();
+                        $("#carabayar").show();
+                        $("#headerreservasi").hide();
+                        $("#isireservasi").hide();
+                        $("#headerdatapasien").hide();
+                        $("#isidatapasien").hide();
+                        $("#cardfooter").hide();
+                        $("#btnkembali").hide();
+                        $("#btnlanjut").hide();
+                        $("#carddata").hide();
+                        bersihkan(idtabs);
+                        document.getElementById("nilai").value = Number(nilai) - 1;
+                    } else {
+                        document.getElementById("nilai").value = '1';
+                    }
+                })
+
             } else {
                 if (statuspasien == '1') {
                     $("#pasienlama").show();
@@ -342,13 +401,14 @@
                 }
                 $("#btnkembali").show();
                 $("#btnlanjut").show();
+                document.getElementById("nilai").value = Number(nilai) - 1;
             }
-            if (nilai == '1') {
-                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
-            } else {
+
+            if (Number(nilai) - 1 <= '1') {
                 $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+            } else {
+                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
             }
-            document.getElementById("nilai").value = Number(nilai) - 1;
         } else if (idtabs == 'tab-2') {
 
             var nilai = $("[name='nilai2']").val();
@@ -356,17 +416,32 @@
             var norm = document.getElementById('norm2');
 
             if (nilai == '1') {
-                $("#pasienlama2").hide();
-                $("#btnlanjutcarabayar").show();
-                $("#carabayar").show();
-                $("#headerreservasi2").hide();
-                $("#isireservasi2").hide();
-                $("#headerdatapasien2").hide();
-                $("#isidatapasien2").hide();
-                $("#cardfooter2").hide();
-                $("#btnkembali2").hide();
-                $("#btnlanjut2").hide();
-                $("#carddata2").hide();
+                Swal.fire({
+                    title: 'Konfirmasi',
+                    text: "Jika kembali data yang telah dimasukan akan hilang, Apakah anda yakin?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then((result) => {
+                    if (result.value) {
+                        $("#pasienlama2").hide();
+                        $("#btnlanjutcarabayar").show();
+                        $("#carabayar").show();
+                        $("#headerreservasi2").hide();
+                        $("#isireservasi2").hide();
+                        $("#headerdatapasien2").hide();
+                        $("#isidatapasien2").hide();
+                        $("#cardfooter2").hide();
+                        $("#btnkembali2").hide();
+                        $("#btnlanjut2").hide();
+                        $("#carddata2").hide();
+                        bersihkan(idtabs);
+                        document.getElementById("nilai2").value = Number(nilai) - 1;
+                    } else {
+                        document.getElementById("nilai2").value = '1';
+                    }
+                })
             } else {
                 if (statuspasien == '1') {
                     $("#pasienlama2").show();
@@ -390,30 +465,46 @@
                 }
                 $("#btnkembali2").show();
                 $("#btnlanjut2").show();
+                document.getElementById("nilai2").value = Number(nilai) - 1;
             }
-            if (nilai == '1') {
-                $("#btnlanjut2").html('<i class="fas fa-save"></i> Simpan');
-            } else {
+
+            if (Number(nilai) - 1 <= '1') {
                 $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+            } else {
+                $("#btnlanjut2").html('<i class="fas fa-save"></i> Simpan');
             }
-            document.getElementById("nilai2").value = Number(nilai) - 1;
         } else {
             var nilai = $("[name='nilai3']").val();
             var statuspasien = $('input[name="flexRadioDefault3"]:checked').val();
             var norm = document.getElementById('norm');
 
             if (nilai == '1') {
-                $("#pasienlama3").hide();
-                $("#btnlanjutcarabayar").show();
-                $("#carabayar").show();
-                $("#headerreservasi3").hide();
-                $("#isireservasi3").hide();
-                $("#headerdatapasien3").hide();
-                $("#isidatapasien3").hide();
-                $("#cardfooter3").hide();
-                $("#btnkembali3").hide();
-                $("#btnlanjut3").hide();
-                $("#carddata3").hide();
+                Swal.fire({
+                    title: 'Konfirmasi',
+                    text: "Jika kembali data yang telah dimasukan akan hilang, Apakah anda yakin?",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Tidak'
+                }).then((result) => {
+                    if (result.value) {
+                        $("#pasienlama3").hide();
+                        $("#btnlanjutcarabayar").show();
+                        $("#carabayar").show();
+                        $("#headerreservasi3").hide();
+                        $("#isireservasi3").hide();
+                        $("#headerdatapasien3").hide();
+                        $("#isidatapasien3").hide();
+                        $("#cardfooter3").hide();
+                        $("#btnkembali3").hide();
+                        $("#btnlanjut3").hide();
+                        $("#carddata3").hide();
+                        bersihkan(idtabs);
+                        document.getElementById("nilai3").value = Number(nilai) - 1;
+                    } else {
+                        document.getElementById("nilai3").value = '1';
+                    }
+                })
             } else {
                 if (statuspasien == '1') {
                     $("#pasienlama3").show();
@@ -437,15 +528,41 @@
                 }
                 $("#btnkembali3").show();
                 $("#btnlanjut3").show();
+                document.getElementById("nilai3").value = Number(nilai) - 1;
             }
-            if (nilai == '1') {
-                $("#btnlanjut3").html('<i class="fas fa-save"></i> Simpan');
-            } else {
+
+            if (Number(nilai) - 1 <= '1') {
                 $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+            } else {
+                $("#btnlanjut3").html('<i class="fas fa-save"></i> Simpan');
             }
-            document.getElementById("nilai3").value = Number(nilai) - 1;
         }
         setSuccessFor(norm);
+    }
+
+    function prosesCari() {
+
+        var idtabs = $(".tab-pane.active").attr("id");
+        if (idtabs == 'tab-1') {
+            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
+            var nilai = $("[name='nilai']").val();
+        } else if (idtabs == 'tab-2') {
+            var statuspasien = $('input[name="flexRadioDefault2"]:checked').val();
+            var nilai = $("[name='nilai2']").val();
+        } else {
+            var statuspasien = $('input[name="flexRadioDefault3"]:checked').val();
+            var nilai = $("[name='nilai3']").val();
+        }
+
+
+        if (validasi(statuspasien, nilai) == false) {
+            return
+        }
+
+        if (GetPasienLama() != '200') {
+            return
+        }
+
     }
 
     function prosesLanjut() {
@@ -465,18 +582,18 @@
                 return
             }
 
-            if (nilai == '1') {
-                // jika pasien lama
-                if (statuspasien == '1') {
-
-                    if (GetPasienLama() != '200') {
-                        return
-                    }
+            //cek proses pencarian pasien lama ada tidak,jika tidak ada maka munculkan validasi
+            if (nilai == '1' && statuspasien == '1') {
+                if (document.getElementById("tabelpaslama1") == null) {
+                    message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
+                    return
                 }
-                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
-            } else {
-                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+            }
 
+            if (hasilnum == '1') {
+                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+            } else {
+                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
                 // $("norm").attr("required", true);
             }
 
@@ -500,11 +617,18 @@
                 return
             }
 
-            if (nilai == '1') {
+            //cek proses pencarian pasien lama ada tidak,jika tidak ada maka munculkan validasi
+            if (nilai == '1' && statuspasien == '1') {
+                if (document.getElementById("tabelpaslama2") == null) {
+                    message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
+                    return
+                }
+            }
 
-                $("#btnlanjut2").html('<i class="fas fa-save"></i> Simpan');
-            } else {
+            if (hasilnum == '1') {
                 $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+            } else {
+                $("#btnlanjut2").html('<i class="fas fa-save"></i> Simpan');
             }
 
             $("#headerdatapasien2").hide();
@@ -527,11 +651,17 @@
                 return
             }
 
-            if (nilai == '1') {
-
-                $("#btnlanjut3").html('<i class="fas fa-save"></i> Simpan');
-            } else {
+            //cek proses pencarian pasien lama ada tidak,jika tidak ada maka munculkan validasi
+            if (nilai == '1' && statuspasien == '1') {
+                if (document.getElementById("tabelpaslama3") == null) {
+                    message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
+                    return
+                }
+            }
+            if (hasilnum == '1') {
                 $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+            } else {
+                $("#btnlanjut3").html('<i class="fas fa-save"></i> Simpan');
             }
 
             $("#headerdatapasien3").hide();
@@ -573,6 +703,7 @@
                 } else {
                     setSuccessFor(tgllahir);
                 }
+
             } else { //jika pasien baru
                 var gelar = document.getElementById('gelar' + numtab);
                 var gelarValue = gelar.value.trim();
@@ -968,20 +1099,38 @@
             text: text,
             showConfirmButton: false,
             showCancelButton: false,
-            // timer: 9000,
+            timer: 3000,
             // timerProgressBar: true,
             showConfirmButton: confirm,
             showCancelButton: confirm,
-            confirmButtonText: 'Ya, Benar Data Saya.',
-            cancelButtonText: "Bukan Data Saya.",
-            html: '<pre>' + text + '</pre>'
+            confirmButtonText: 'Ok'
         })
     }
 
     function GetPasienLama() {
-        var nocm = $('#norm').val();
-        var tgllahir = $('#tgllahir').val();
+        var idtabs = $(".tab-pane.active").attr("id");
         var varreturn = '200'
+        var tabelid = '';
+        var nocm = '';
+        var tgllahir = '';
+
+        if (idtabs == 'tab-1') {
+            tabid = $('#tabletab');
+            tabelid = 'tabelpaslama1';
+            nocm = $('#norm').val();
+            tgllahir = $('#tgllahir').val();
+        } else if (idtabs == 'tab-2') {
+            tabid = $('#tabletab2');
+            tabelid = 'tabelpaslama2';
+            nocm = $('#norm2').val();
+            tgllahir = $('#tgllahir2').val();
+        } else {
+            tabid = $('#tabletab3');
+            tabelid = 'tabelpaslama3';
+            nocm = $('#norm3').val();
+            tgllahir = $('#tgllahir3').val();
+        }
+
         $.ajax({
             url: "<?= base_url('Reservasi/GetPasienLama') ?>",
             method: "POST",
@@ -994,22 +1143,33 @@
             success: function(data) {
                 if (data.codedata['code'] != '200') {
                     message('info', data.codedata['message'], 'Informasi', false);
-                    return '404';
                 } else {
-                    message('question', 'No.Rekam Medik : ' + data.hasil['nocm'] +
-                        '\nNama Pasien : ' + data.hasil['titlepasien'] + ' ' + data.hasil['namapasien'],
-                        // '\nTempat Tanggal Lahir : ' + data.hasil['tempatlahir'] + ', ' + data.hasil['tgllahir'],
-                        // '\nJenis Kelamin : ' + data.hasil['jeniskelamin'],
-                        // '\nAlamat : ' + data.hasil['alamat'] + ' RT/RW ' + data.hasil['rtrw'] + ' Kelurahan ' + data.hasil['kelurahan'] +
-                        // ' Kecamatan ' + data.hasil['kecamtan'] + ' ' + data.hasil['kota'] + ' ' + data.hasil['propinsi'] + ' ' + data.hasil['kodepos'],
-                        ' Apakah Data Yang Anda Maksud ini ?', true);
-                    return '404';
+                    var html = '';
+                    html = "<table class='table' id ='" + tabelid + "'> "
+                    html += "<tr style='text-align: center;'> "
+                    html += "<th scope='col'>No.RM </th> "
+                    html += "<th scope='col'>Nama</th>"
+                    html += "<th scope='col'>Tgl. Lahir</th> "
+                    html += "<th scope='col'>Jenis Kelamin</th> "
+                    html += "<th scope='col'>Alamat</th> "
+                    html += "<th scope='col'>No. Telp</th> "
+                    html += "</tr>"
+                    html += "<tr>"
+                    html += "<td>" + data.hasil['nocm'] + "</td>";
+                    html += "<td>" + data.hasil['titlepasien'] + ' ' + data.hasil['namapasien'] + "</td>";
+                    html += "<td>" + data.hasil['tempatlahir'] + ', ' + data.hasil['tgllahir'] + "</td>";
+                    html += "<td>" + data.hasil['jeniskelamin'] + "</td>";
+                    html += "<td>" + data.hasil['alamat'] + ' RT/RW ' + data.hasil['rtrw'] + ' KELURAHAN ' + data.hasil['kelurahan'].toUpperCase() +
+                        ' KECAMATAN ' + data.hasil['kecamatan'].toUpperCase() + ' ' + data.hasil['kota'].toUpperCase() + ' ' + data.hasil['propinsi'].toUpperCase() + ' ' + data.hasil['kodepos'] + "</td>";
+                    html += "<td>" + data.hasil['notelp'] + "</td>";
+                    html += "</tr>"
+                    html += "</table>"
+                    tabid.html(html);
                 }
 
             },
             error: function() {
                 message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                return '404';
             }
         });
     }

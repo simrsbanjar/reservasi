@@ -446,21 +446,29 @@ class Reservasi extends CI_Controller
         $metadata = $hasil->metadata;
 
         $data['hasil'] = null;
+
         if ($metadata->code == '200') {
+            if ($response->jeniskelamin == 'L') {
+                $jeniskelamin = 'Laki-laki';
+            } else {
+                $jeniskelamin = 'Perempuan';
+            };
+
             $data['hasil'] = array(
                 'nocm' => $response->nocm,
                 'namapasien' => $response->namapasien,
                 'titlepasien' => $response->titlepasien,
                 'tempatlahir' => $response->tempatlahir,
                 'tgllahir' => $response->tgllahir,
-                'jeniskelamin' => $response->jeniskelamin,
+                'jeniskelamin' => $jeniskelamin,
                 'alamat' => $response->alamat,
                 'propinsi' => $response->propinsi,
                 'kota' => $response->kota,
                 'kecamatan' => $response->kecamatan,
                 'kelurahan' => $response->kelurahan,
                 'rtrw' => $response->rtrw,
-                'kodepos' => $response->kodepos
+                'kodepos' => $response->kodepos,
+                'notelp' => $response->notelp
             );
         }
 
