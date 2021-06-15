@@ -7,20 +7,21 @@
         </h1>
 
         <nav class="nav-menu d-none d-lg-block mr-auto">
-            <ul>
-                <li class="active"><a href="">Home</a></li>
+            <ul id="myList">
+                <!-- di set di javasvript karena apabila klik daftar maka akan muncul menu yg beda-->
+
+                <!-- <li class="active"><a href="Home">Home</a></li>
                 <li><a href="#tentangkita">Tentang Kita</a></li>
-                <!-- <li><a href="#services">Services</a></li> -->
                 <li><a href="#alur">Alur</a></li>
                 <li><a href="#dokter">Dokter</a></li>
                 <li><a href="#contact">Kontak</a></li>
-                <li><a href="#lokasi">Lokasi</a></li>
+                <li><a href="#lokasi">Lokasi</a></li> -->
             </ul>
         </nav>
 
         <!-- .nav-menu -->
 
-        <a href="#appointment" class="appointment-btn scrollto">Daftar</a>
+        <a href="<?= base_url('Reservasi'); ?>" class="appointment-btn scrollto" id="daftar">Daftar / Cari Pasien</a>
 
     </div>
 </header><!-- End Header -->
