@@ -411,10 +411,10 @@ class Reservasi extends CI_Controller
 
     function GetPasienLama()
     {
-        // $norm = $this->input->post('nocm');
-        // $tgllahir = $this->input->post('tgllahir');
-        $norm = '417191';
-        $tgllahir = '1991-04-04';
+        $norm = $this->input->post('nocm');
+        $tgllahir = $this->input->post('tgllahir');
+        // $norm = '417191';
+        // $tgllahir = '1991-04-04';
 
         $token     =  $this->GetToken();
         $url = $this->API . '/getdatapasienbynocm';
