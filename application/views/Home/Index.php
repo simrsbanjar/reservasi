@@ -392,6 +392,115 @@
         </div>
     </section><!-- End Departments Section -->
 
+    <!-- slider section  -->
+    <section id="slider" class="bergerak">
+        <div class="container">
+            <!-- slider -->
+            <ul id="dokterslide">
+                <!-- li 1 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="box">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" class="model" alt="">
+                        <!-- <img src="assets/img/marvel/Ant-Man.png" class="model"> -->
+                        <!-- detail -->
+                        <!-- <div class="details"> -->
+                        <!-- logo character -->
+                        <!-- <div>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div> -->
+                        <!-- <img src="assets/img/marvel/AntMan-logo.png" class="logo" width="100px" style="height: auto;"> -->
+                        <!-- </div> -->
+                        <!-- <p>Bruce Bayne invite deadpool to kill the enemy how make distrub bat to the kill the anymens how make him will be die</p> -->
+                    </div>
+                </li>
+                <!-- li 2 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="box">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" class="model" alt="">
+                        <!-- <img src="assets/img/marvel/Ant-Man.png" class="model"> -->
+                        <!-- detail -->
+                        <!-- <div class="details"> -->
+                        <!-- logo character -->
+                        <!-- <div>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div> -->
+                        <!-- <img src="assets/img/marvel/AntMan-logo.png" class="logo" width="100px" style="height: auto;"> -->
+                        <!-- </div> -->
+                        <!-- <p>Bruce Bayne invite deadpool to kill the enemy how make distrub bat to the kill the anymens how make him will be die</p> -->
+                    </div>
+                </li>
+                <!-- li 3 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="box">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" class="model" alt="">
+                        <!-- <img src="assets/img/marvel/Ant-Man.png" class="model"> -->
+                        <!-- detail -->
+                        <!-- <div class="details"> -->
+                        <!-- logo character -->
+                        <!-- <div>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div> -->
+                        <!-- <img src="assets/img/marvel/AntMan-logo.png" class="logo" width="100px" style="height: auto;"> -->
+                        <!-- </div> -->
+                        <!-- <p>Bruce Bayne invite deadpool to kill the enemy how make distrub bat to the kill the anymens how make him will be die</p> -->
+                    </div>
+                </li>
+                <!-- li 4 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="box">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" class="model" alt="">
+                        <!-- <img src="assets/img/marvel/Ant-Man.png" class="model"> -->
+                        <!-- detail -->
+                        <!-- <div class="details"> -->
+                        <!-- logo character -->
+                        <!-- <div>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div> -->
+                        <!-- <img src="assets/img/marvel/AntMan-logo.png" class="logo" width="100px" style="height: auto;"> -->
+                        <!-- </div> -->
+                        <!-- <p>Bruce Bayne invite deadpool to kill the enemy how make distrub bat to the kill the anymens how make him will be die</p> -->
+                    </div>
+                </li>
+                <!-- li 5 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="box">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" class="model" alt="">
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+
+    </section>
+
     <!-- ======= Doctors Section ======= -->
     <section id="dokter" class="dokter">
         <div class="container">
@@ -710,7 +819,8 @@
 
 
         </div>
-    </section><!-- End Doctors Section -->
+    </section>
+    <!-- End Doctors Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <!-- <section id="faq" class="faq section-bg">
