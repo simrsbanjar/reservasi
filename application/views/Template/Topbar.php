@@ -10,9 +10,9 @@
             <i class="icofont-fax"> Fax : 0265-744730</i>
         </div>
         <div class="social-links">
-            <a href="#" class="facebook"><i class="icofont-youtube"></i></a>
-            <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
-            <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCQ39aoo-F5NBnKro2nd8WYg?view_as=subscriber" class="youtube" target="_blank"><i class="icofont-youtube"></i></a>
+            <a href="https://www.facebook.com/PKRS-RSU-Kota-Banjar-2122561541368560/?modal=admin_todo_tour" class="facebook" target="_blank"><i class="icofont-facebook"></i></a>
+            <a href="https://www.instagram.com/pkrsrsukotabanjar/" class="instagram" target="_blank"><i class="icofont-instagram"></i></a>
         </div>
     </div>
 </div>
