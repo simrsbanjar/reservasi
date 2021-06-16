@@ -274,23 +274,48 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
-                                            <select name="tujuanpemeriksaan" id="tujuanpemeriksaan" class="form-control" title="Pilih Tujuan Pemeriksaan">
+                                            <label class="label-control"><strong>Jenis Permintaan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispermintaan" value="2" id="radiojenispermintaan1" checked>
+                                                <label class="form-check-label" for="radiojenispermintaan">
+                                                    Antrian Pendaftaran
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispermintaan" value="1" id="radiojenispermintaan2">
+                                                <label class="form-check-label" for="radiojenispermintaan">
+                                                    Antrian Poli
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jenispermintaan" id="jenispermintaan" class="form-control form-control-user" title="Pilih Jenis Permintaan">
                                                 <option value="">-PILIH-</option>
-                                                <option value="0">Pemeriksaan Dokter</option>
-                                                <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
+                                                <option value="1">Ambil Antrian Pendaftaran</option>
+                                                <option value="2">Pendaftaran Poli</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli" id="poli" class="form-control" title="Pilih Poli">
+                                            <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiotjnpemeiksaan" value="0" id="radiotjnpemeriksaan1" checked>
+                                                <label class="form-check-label" for="radiotjnpemeiksaan">
+                                                    Pemeriksaan Dokter
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiotjnpemeiksaan" value="1" id="radiotjnpemeriksaan2">
+                                                <label class="form-check-label" for="radiotjnpemeiksaan">
+                                                    Pembuatan Surat Keterangan Sehat (KIR Dokter)
+                                                </label>
+                                            </div>
+                                            <!-- <select name="tujuanpemeriksaan" id="tujuanpemeriksaan" class="form-control" title="Pilih Tujuan Pemeriksaan">
                                                 <option value="">-PILIH-</option>
-                                                <option value="01">MATA</option>
-                                            </select>
-                                            <small>Error Message</small>
+                                                <option value="0">Pemeriksaan Dokter</option>
+                                                <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
+                                            </select> -->
+                                            <!-- <small>Error Message</small> -->
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -319,37 +344,62 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
-                                            <select name="jeniskunjungan" id="jeniskunjungan" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
+                                            <label class="label-control"><strong>Poli</strong></label>
+                                            <select name="poli" id="poli" class="form-control" title="Pilih Poli">
                                                 <option value="">-PILIH-</option>
-                                                <option value="1">Kontrol</option>
-                                                <option value="2">Berdasarkan Rujukan</option>
                                             </select>
                                             <small>Error Message</small>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Jenis Permintaan</strong></label>
-                                            <select name="jenispermintaan" id="jenispermintaan" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan" value="2" id="radiojeniskunjungan2" checked>
+                                                <label class="form-check-label" for="radiojeniskunjungan">
+                                                    Berdasarkan Rujukan
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan" value="1" id="radiojeniskunjungan1">
+                                                <label class="form-check-label" for="radiojeniskunjungan">
+                                                    Kontrol
+                                                </label>
+                                            </div>
+
+                                            <!-- <select name="jeniskunjungan" id="jeniskunjungan" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
                                                 <option value="">-PILIH-</option>
-                                                <option value="1">Ambil Antrian Pendaftaran</option>
-                                                <option value="2">Pendaftaran Poli</option>
-                                            </select>
-                                            <small>Error Message</small>
+                                                <option value="1">Kontrol</option>
+                                                <option value="2">Berdasarkan Rujukan</option>
+                                            </select> -->
+                                            <!-- <small>Error Message</small> -->
                                         </div>
                                     </div>
+
 
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Poli</strong></label>
-                                            <select name="jenispoli" id="jenispoli" class="form-control form-control-user" title="Pilih Jenis POli">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispoli" value="2" id="radiojenispoli2" checked onclick="return false">
+                                                <label class="form-check-label" for="radiojenispoli">
+                                                    Reguler
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispoli" value="1" id="radiojenispoli1" onclick="return false">
+                                                <label class="form-check-label" for="radiojenispoli">
+                                                    Eksekutif
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jenispoli" id="jenispoli" class="form-control form-control-user" title="Pilih Jenis POli">
                                                 <option value="">-PILIH-</option>
                                                 <option value="1">Eksekutif</option>
                                                 <option value="2">Reguler</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
                                     </div>
                                 </div>
                             </div>
@@ -570,7 +620,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos2" name="kodepos2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -586,19 +636,54 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Registrasi</strong></label>
-                                            <input type="date" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>">
+                                            <input type="date" name="tglregistrasi2" id="tglregistrasi2" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" onchange="GetPoli(this.value)">
                                             <!---->
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
+                                            <label class="label-control"><strong>Jenis Permintaan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispermintaan2" value="2" id="radiojenispermintaan21" checked>
+                                                <label class="form-check-label" for="radiojenispermintaa2n">
+                                                    Antrian Pendaftaran
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispermintaan2" value="1" id="radiojenispermintaan22">
+                                                <label class="form-check-label" for="radiojenispermintaan2">
+                                                    Antrian Poli
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jenispermintaan2" id="jenispermintaan2" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                                <option value="">-PILIH-</option>
+                                                <option value="1">Ambil Antrian Pendaftaran</option>
+                                                <option value="2">Pendaftaran Poli</option>
+                                            </select>
+                                            <small>Error Message</small> -->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
                                             <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
-                                            <select name="tujuanpemeriksaan2" id="tujuanpemeriksaan2" class="form-control" title="Pilih Tujuan Pemeriksaan">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiotjnpemeiksaan2" value="0" id="radiotjnpemeriksaan21" checked>
+                                                <label class="form-check-label" for="radiotjnpemeiksaan2">
+                                                    Pemeriksaan Dokter
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiotjnpemeiksaan2" value="1" id="radiotjnpemeriksaan22">
+                                                <label class="form-check-label" for="radiotjnpemeiksaan2">
+                                                    Pembuatan Surat Keterangan Sehat (KIR Dokter)
+                                                </label>
+                                            </div>
+                                            <!-- <select name="tujuanpemeriksaan2" id="tujuanpemeriksaan2" class="form-control" title="Pilih Tujuan Pemeriksaan">
                                                 <option value="">-PILIH-</option>
                                                 <option value="0">Pemeriksaan Dokter</option>
                                                 <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -606,16 +691,6 @@
                                             <label class="label-control"><strong>Cara Bayar</strong></label>
                                             <select name="carabayar2" id="carabayar2" class="form-control form-control-user" title="Pilih Cara Bayar">
                                                 <option value="">-PILIH-</option>
-                                            </select>
-                                            <small>Error Message</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli2" id="poli2" class="form-control form-control-user" title="Pilih Poli">
-                                                <option value="">-PILIH-</option>
-                                                <option value="01">MATA</option>
                                             </select>
                                             <small>Error Message</small>
                                         </div>
@@ -636,40 +711,62 @@
                                             <small>Error Message</small>
                                         </div>
                                     </div>
-
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
-                                            <select name="jeniskunjungan2" id="jeniskunjungan2" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
+                                            <label class="label-control"><strong>Poli</strong></label>
+                                            <select name="poli2" id="poli2" class="form-control form-control-user" title="Pilih Poli">
                                                 <option value="">-PILIH-</option>
-                                                <option value="1">Kontrol</option>
-                                                <option value="2">Berdasarkan Rujukan</option>
                                             </select>
                                             <small>Error Message</small>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Jenis Permintaan</strong></label>
-                                            <select name="jenispermintaan2" id="jenispermintaan2" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan2" value="2" id="radiojeniskunjungan22" checked>
+                                                <label class="form-check-label" for="radiojeniskunjungan2">
+                                                    Berdasarkan Rujukan
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan2" value="1" id="radiojeniskunjungan21">
+                                                <label class="form-check-label" for="radiojeniskunjungan2">
+                                                    Kontrol
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jeniskunjungan2" id="jeniskunjungan2" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
                                                 <option value="">-PILIH-</option>
-                                                <option value="1">Ambil Antrian Pendaftaran</option>
-                                                <option value="2">Pendaftaran Poli</option>
+                                                <option value="1">Kontrol</option>
+                                                <option value="2">Berdasarkan Rujukan</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Poli</strong></label>
-                                            <select name="jenispoli2" id="jenispoli2" class="form-control form-control-user" title="Pilih Jenis POli">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispoli2" value="2" id="radiojenispoli22" checked onclick="return false">
+                                                <label class="form-check-label" for="radiojenispoli2">
+                                                    Reguler
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispoli2" value="1" id="radiojenispoli21" onclick="return false">
+                                                <label class="form-check-label" for="radiojenispoli2">
+                                                    Eksekutif
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jenispoli2" id="jenispoli2" class="form-control form-control-user" title="Pilih Jenis POli">
                                                 <option value="">-PILIH-</option>
                                                 <option value="1">Eksekutif</option>
                                                 <option value="2">Reguler</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
                                     </div>
                                 </div>
                             </div>
@@ -889,7 +986,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -905,29 +1002,54 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Registrasi</strong></label>
-                                            <input type="date" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>">
+                                            <input type="date" name="tglregistrasi3" id="tglregistrasi3" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" onchange="GetPoli(this.value)">
                                             <!---->
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
-                                            <select name="tujuanpemeriksaan3" id="tujuanpemeriksaan3" class="form-control" title="Pilih Tujuan Pemeriksaan">
+                                            <label class="label-control"><strong>Jenis Permintaan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispermintaan3" value="2" id="radiojenispermintaan31" checked>
+                                                <label class="form-check-label" for="radiojenispermintaan3">
+                                                    Antrian Pendaftaran
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispermintaan3" value="1" id="radiojenispermintaan32">
+                                                <label class="form-check-label" for="radiojenispermintaan3">
+                                                    Antrian Poli
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jenispermintaan3" id="jenispermintaan3" class="form-control form-control-user" title="Pilih Jenis Permintaan">
                                                 <option value="">-PILIH-</option>
-                                                <option value="0">Pemeriksaan Dokter</option>
-                                                <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
+                                                <option value="1">Ambil Antrian Pendaftaran</option>
+                                                <option value="2">Pendaftaran Poli</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli">
+                                            <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiotjnpemeiksaan3" value="0" id="radiotjnpemeriksaan31" checked>
+                                                <label class="form-check-label" for="radiotjnpemeiksaan3">
+                                                    Pemeriksaan Dokter
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiotjnpemeiksaan3" value="1" id="radiotjnpemeriksaan32">
+                                                <label class="form-check-label" for="radiotjnpemeiksaan3">
+                                                    Pembuatan Surat Keterangan Sehat (KIR Dokter)
+                                                </label>
+                                            </div>
+                                            <!-- <select name="tujuanpemeriksaan3" id="tujuanpemeriksaan3" class="form-control" title="Pilih Tujuan Pemeriksaan">
                                                 <option value="">-PILIH-</option>
-                                                <option value="01">MATA</option>
+                                                <option value="0">Pemeriksaan Dokter</option>
+                                                <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -941,37 +1063,60 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
-                                            <select name="jeniskunjungan3" id="jeniskunjungan3" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
+                                            <label class="label-control"><strong>Poli</strong></label>
+                                            <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli">
                                                 <option value="">-PILIH-</option>
-                                                <option value="1">Kontrol</option>
-                                                <option value="2">Berdasarkan Rujukan</option>
                                             </select>
                                             <small>Error Message</small>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Jenis Permintaan</strong></label>
-                                            <select name="jenispermintaan3" id="jenispermintaan3" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan3" value="2" id="radiojeniskunjungan32" checked>
+                                                <label class="form-check-label" for="radiojeniskunjungan3">
+                                                    Berdasarkan Rujukan
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan3" value="1" id="radiojeniskunjungan31">
+                                                <label class="form-check-label" for="radiojeniskunjungan3">
+                                                    Kontrol
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jeniskunjungan3" id="jeniskunjungan3" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
                                                 <option value="">-PILIH-</option>
-                                                <option value="1">Ambil Antrian Pendaftaran</option>
-                                                <option value="2">Pendaftaran Poli</option>
+                                                <option value="1">Kontrol</option>
+                                                <option value="2">Berdasarkan Rujukan</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
                                     </div>
 
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Poli</strong></label>
-                                            <select name="jenispoli3" id="jenispoli3" class="form-control form-control-user" title="Pilih Jenis POli">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispoli3" value="2" id="radiojenispoli32" checked onclick="return false">
+                                                <label class="form-check-label" for="radiojenispoli3">
+                                                    Reguler
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispoli3" value="1" id="radiojenispoli31" onclick="return false">
+                                                <label class="form-check-label" for="radiojenispoli3">
+                                                    Eksekutif
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jenispoli3" id="jenispoli3" class="form-control form-control-user" title="Pilih Jenis POli">
                                                 <option value="">-PILIH-</option>
                                                 <option value="1">Eksekutif</option>
                                                 <option value="2">Reguler</option>
                                             </select>
-                                            <small>Error Message</small>
+                                            <small>Error Message</small> -->
                                         </div>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
                                     </div>
                                 </div>
                             </div>

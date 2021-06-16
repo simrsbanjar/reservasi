@@ -39,10 +39,18 @@
         hidetab1();
         hidetab2();
         hidetab3();
-        getpropinsi();
-        GetRujukanAsal();
-        GetPoli(date);
-        GetCarabayar();
+        if (getpropinsi() === false) {
+            return
+        };
+        if (GetRujukanAsal() === false) {
+            return
+        };
+        if (GetPoli(date) === false) {
+            return
+        };
+        if (GetCarabayar() === false) {
+            return
+        };
 
         if (page == null) {
             $("#daftar").show();
@@ -89,7 +97,7 @@
         document.getElementById("namalengkap" + numtab).value = "";
         document.getElementById("kelamin" + numtab).value = "";
         document.getElementById("tempatlahir" + numtab).value = "";
-        document.getElementById("tgllahir1" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
         document.getElementById("tahun" + numtab).value = "";
         document.getElementById("bulan" + numtab).value = "";
         document.getElementById("hari" + numtab).value = "";
@@ -104,14 +112,20 @@
         document.getElementById("notlp" + numtab).value = "";
         document.getElementById("kodepos" + numtab).value = "";
         document.getElementById("tglregistrasi" + numtab).value = "<?= date("Y-m-d") ?>";
-        document.getElementById("tujuanpemeriksaan" + numtab).value = "";
         document.getElementById("poli" + numtab).value = "";
         document.getElementById("rujukanasal" + numtab).value = "";
-        document.getElementById("nopeserta" + numtab).value = "";
-        document.getElementById("nosuratrujukan" + numtab).value = "";
-        document.getElementById("jeniskunjungan" + numtab).value = "";
-        document.getElementById("jenispermintaan" + numtab).value = "";
-        document.getElementById("jenispoli" + numtab).value = "";
+        if (tab == 'tab-1') {
+            document.getElementById("nopeserta" + numtab).value = "";
+            document.getElementById("nosuratrujukan" + numtab).value = "";
+        } else if (tab == 'tab-2') {
+            document.getElementById("carabayar" + numtab).value = "";
+        } else {
+            document.getElementById("nopeserta" + numtab).value = "";
+        }
+        // document.getElementById("tujuanpemeriksaan" + numtab).value = "";
+        // document.getElementById("jeniskunjungan" + numtab).value = "";
+        // document.getElementById("jenispermintaan" + numtab).value = "";
+        // document.getElementById("jenispoli" + numtab).value = "";
 
     }
 
@@ -230,6 +244,10 @@
         $("#headerreservasi2").hide();
         $("#isireservasi2").hide();
         $("#pasienbaru2").show();
+        $("#carddata2").show();
+        $("#pasienlama2").hide();
+        $("#btnkembali2").show();
+        $("#btnlanjut2").show();
     }
 
     function pasienbarutab3() {
@@ -238,11 +256,22 @@
         $("#headerreservasi3").hide();
         $("#isireservasi3").hide();
         $("#pasienbaru3").show();
+        $("#carddata3").show();
+        $("#pasienlama3").hide();
+        $("#btnkembali3").show();
+        $("#btnlanjut3").show();
     }
 
     function checkRadio(value) {
         var idtabs = $(".tab-pane.active").attr("id");
-
+        var numtab = '';
+        if (idtabs == 'tab-1') {
+            numtab = '';
+        } else if (idtabs == 'tab-2') {
+            numtab = '2';
+        } else {
+            numtab = '3';
+        }
         if (idtabs == 'tab-1') {
             var norm = document.getElementById('norm');
             if (value == "1") {
@@ -278,6 +307,30 @@
             }
         }
         setSuccessFor(norm);
+
+        document.getElementById("norm" + numtab).value = "";
+        document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("gelar" + numtab).value = "";
+        document.getElementById("namalengkap" + numtab).value = "";
+        document.getElementById("kelamin" + numtab).value = "";
+        document.getElementById("tempatlahir" + numtab).value = "";
+        document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tahun" + numtab).value = "";
+        document.getElementById("bulan" + numtab).value = "";
+        document.getElementById("hari" + numtab).value = "";
+        document.getElementById("noidentitas" + numtab).value = "";
+        document.getElementById("alamat" + numtab).value = "";
+        document.getElementById("rt" + numtab).value = "";
+        document.getElementById("rw" + numtab).value = "";
+        document.getElementById("propinsi" + numtab).value = "";
+        document.getElementById("kota" + numtab).value = "";
+        document.getElementById("kecamatan" + numtab).value = "";
+        document.getElementById("kelurahan" + numtab).value = "";
+        document.getElementById("notlp" + numtab).value = "";
+        document.getElementById("kodepos" + numtab).value = "";
+        $('#tabletab').html('');
+        $('#tabletab2').html('');
+        $('#tabletab3').html('');
     }
 
     function caripasienbooking() {
@@ -814,14 +867,20 @@
             }
 
         } else {
-            var tujuanpemeriksaan = document.getElementById('tujuanpemeriksaan' + numtab);
-            var tujuanpemeriksaanValue = tujuanpemeriksaan.value.trim();
-            if (tujuanpemeriksaanValue === '') {
-                setErrorFor(tujuanpemeriksaan, 'Tujuan Pemeriksaan Harus Dipilih');
-                return false;
-            } else {
-                setSuccessFor(tujuanpemeriksaan);
-            }
+            // var tujuanpemeriksaan = document.getElementById('radiotjnpemeriksaan1');
+            // var tujuanpemeriksaanValue = ($("input[id='radiotjnpemeriksaan1']:checked").val());
+            // if (tujuanpemeriksaanValue == null) {
+            // message('warning', 'Tujuan Pemeriksaan Harus Dipilih', 'Peringatan', false);
+            // var formGroup = input.parentElement;
+            // var small = formGroup.querySelector('small');
+            // formGroup.className = 'form-group error';
+            // small.innerText = 'Tujuan Pemeriksaan Harus Dipilih';
+
+            // setErrorFor(tujuanpemeriksaan, 'Tujuan Pemeriksaan Harus Dipilih');
+            //     return false;
+            // } else {
+            // setSuccessFor(tujuanpemeriksaan);
+            // }
             if (idtabs == 'tab-2') {
                 var carabayar = document.getElementById('carabayar' + numtab);
                 var carabayarValue = carabayar.value.trim();
@@ -923,18 +982,37 @@
                     html += "<option value = '" + data[i].KdPropinsi + "'>" + data[i].NamaPropinsi + "</option>";
                 }
                 $('#propinsi').html(html);
+                $('#propinsi2').html(html);
+                $('#propinsi3').html(html);
 
             },
             error: function() {
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 $('#propinsi').html(html);
+                $('#propinsi2').html(html);
+                $('#propinsi3').html(html);
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return false;
             }
         });
     }
 
     function GetKota() {
-        var id = $('#propinsi').val();
+        var idtabs = $(".tab-pane.active").attr("id");
+        var tabelkota = '';
+        var id = '';
+        if (idtabs == 'tab-1') {
+            id = $('#propinsi').val();
+            tabelkota = $('#kota');
+        } else if (idtabs == 'tab-2') {
+            id = $('#propinsi2').val();
+            tabelkota = $('#kota2');
+        } else {
+            id = $('#propinsi3').val();
+            tabelkota = $('#kota3');
+        }
+
         $.ajax({
             url: "<?= base_url('Reservasi/GetKota') ?>",
             method: "POST",
@@ -950,19 +1028,34 @@
                 for (i = 0; i < data.length; i++) {
                     html += "<option value = '" + data[i].KdKotaKabupaten + "'>" + data[i].NamaKotaKabupaten + "</option>";
                 }
-                $('#kota').html(html);
+                tabelkota.html(html);
 
             },
             error: function() {
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
-                $('#kota').html(html);
+                tabelkota.html(html);
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return false;
             }
         });
     }
 
     function GetKecamatan() {
-        var id = $('#kota').val();
+        var idtabs = $(".tab-pane.active").attr("id");
+        var tabelkota = '';
+        var id = '';
+        if (idtabs == 'tab-1') {
+            id = $('#kota').val();
+            tabelkota = $('#kecamatan');
+        } else if (idtabs == 'tab-2') {
+            id = $('#kota2').val();
+            tabelkota = $('#kecamatan2');
+        } else {
+            id = $('#kota3').val();
+            tabelkota = $('#kecamatan3');
+        }
+
         $.ajax({
             url: "<?= base_url('Reservasi/GetKecamatan') ?>",
             method: "POST",
@@ -978,19 +1071,34 @@
                 for (i = 0; i < data.length; i++) {
                     html += "<option value = '" + data[i].KdKecamatan + "'>" + data[i].NamaKecamatan + "</option>";
                 }
-                $('#kecamatan').html(html);
+                tabelkota.html(html);
 
             },
             error: function() {
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
-                $('#kecamatan').html(html);
+                tabelkota.html(html);
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return false;
             }
         });
     }
 
     function GetKelurahan() {
-        var id = $('#kecamatan').val();
+        var idtabs = $(".tab-pane.active").attr("id");
+        var tabelkota = '';
+        var id = '';
+        if (idtabs == 'tab-1') {
+            id = $('#kecamatan').val();
+            tabelkota = $('#kelurahan');
+        } else if (idtabs == 'tab-2') {
+            id = $('#kecamatan2').val();
+            tabelkota = $('#kelurahan2');
+        } else {
+            id = $('#kecamatan3').val();
+            tabelkota = $('#kelurahan3');
+        }
+
         $.ajax({
             url: "<?= base_url('Reservasi/GetKelurahan') ?>",
             method: "POST",
@@ -1006,13 +1114,15 @@
                 for (i = 0; i < data.length; i++) {
                     html += "<option value = '" + data[i].KdKelurahan + "'>" + data[i].NamaKelurahan + "</option>";
                 }
-                $('#kelurahan').html(html);
+                tabelkota.html(html);
 
             },
             error: function() {
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
-                $('#kelurahan').html(html);
+                tabelkota.html(html);
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return false;
             }
         });
     }
@@ -1031,12 +1141,18 @@
                     html += "<option value = '" + data[i].KdRujukanAsal + "'>" + data[i].RujukanAsal + "</option>";
                 }
                 $('#rujukanasal').html(html);
+                $('#rujukanasal2').html(html);
+                $('#rujukanasal3').html(html);
 
             },
             error: function() {
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 $('#rujukanasal').html(html);
+                $('#rujukanasal2').html(html);
+                $('#rujukanasal3').html(html);
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return false;
             }
         });
     }
@@ -1058,12 +1174,18 @@
                     html += "<option value = '" + data[i].KdPoli + "'>" + data[i].NamaPoli + "</option>";
                 }
                 $('#poli').html(html);
+                $('#poli2').html(html);
+                $('#poli3').html(html);
 
             },
             error: function() {
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 $('#poli').html(html);
+                $('#poli2').html(html);
+                $('#poli3').html(html);
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return false;
             }
         });
     }
@@ -1088,6 +1210,8 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 $('#carabayar2').html(html);
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return false;
             }
         });
     }
@@ -1170,6 +1294,7 @@
             },
             error: function() {
                 message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return false;
             }
         });
     }
@@ -1179,13 +1304,37 @@
         GetKecamatan();
         GetKelurahan();
     });
+    $('#propinsi2').change(function() {
+        GetKota();
+        GetKecamatan();
+        GetKelurahan();
+    });
+    $('#propinsi3').change(function() {
+        GetKota();
+        GetKecamatan();
+        GetKelurahan();
+    });
 
     $('#kota').change(function() {
         GetKecamatan();
         GetKelurahan();
     });
+    $('#kota2').change(function() {
+        GetKecamatan();
+        GetKelurahan();
+    });
+    $('#kota3').change(function() {
+        GetKecamatan();
+        GetKelurahan();
+    });
 
     $('#kecamatan').change(function() {
+        GetKelurahan();
+    });
+    $('#kecamatan2').change(function() {
+        GetKelurahan();
+    });
+    $('#kecamatan3').change(function() {
         GetKelurahan();
     });
 </script>

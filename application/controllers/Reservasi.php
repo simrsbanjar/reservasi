@@ -58,8 +58,8 @@ class Reservasi extends CI_Controller
             'response' => $response,
             'metadata' => $metadata
         );
-        // var_dump($data['metadata']->code);
-        // die;
+
+        // jika respon 200/sukses maka tidak perlu di balikan namun jika gagal maka balikan gagalnya 
         return $data['response']->token;
     }
 
@@ -411,10 +411,10 @@ class Reservasi extends CI_Controller
 
     function GetPasienLama()
     {
-        $norm = $this->input->post('nocm');
-        $tgllahir = $this->input->post('tgllahir');
-        // $norm = '417191';
-        // $tgllahir = '1991-04-04';
+        // $norm = $this->input->post('nocm');
+        // $tgllahir = $this->input->post('tgllahir');
+        $norm = '386123'; //'417191';
+        $tgllahir = '1961-03-15'; //'1991-04-04';
 
         $token     =  $this->GetToken();
         $url = $this->API . '/getdatapasienbynocm';
