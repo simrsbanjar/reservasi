@@ -8,14 +8,34 @@
 
         <nav class="nav-menu d-none d-lg-block mr-auto">
             <ul id="myList">
-                <!-- di set di javasvript karena apabila klik daftar maka akan muncul menu yg beda-->
 
+                <!-- di set di javasvript karena apabila klik daftar maka akan muncul menu yg beda-->
+                <?php
+                $name = $this->input->get('reservasi');
+
+
+
+
+
+                if ($name == null) {
+                    echo '<li class="active"><a href="Home">Home</a></li>';
+                } else if ($name == 1) {
+                    echo '<li><a href="#tentangkita">Tentang Kita</a></li>';
+                } else {
+                    echo '<li><a href="#tentangkita">Tentang Kita</a></li>';
+                }
+
+
+
+                ?>
                 <!-- <li class="active"><a href="Home">Home</a></li>
                 <li><a href="#tentangkita">Tentang Kita</a></li>
                 <li><a href="#alur">Alur</a></li>
                 <li><a href="#dokter">Dokter</a></li>
                 <li><a href="#contact">Kontak</a></li>
                 <li><a href="#lokasi">Lokasi</a></li> -->
+
+
             </ul>
         </nav>
 
