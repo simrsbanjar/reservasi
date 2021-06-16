@@ -30,6 +30,10 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
+<!-- slider -->
+<script src="assets/js/script.js"></script>
+<script src="assets/js/JQuery3.3.1.js"></script>
+<script src="assets/js/lightslider.js"></script>
 
 <script>
     $(document).ready(function() {

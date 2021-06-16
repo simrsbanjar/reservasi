@@ -14,7 +14,7 @@
     <div class="container">
         <h1>Selamat Datang</h1>
         <h2>Di Pendaftaran Pasien Rawat Jalan</h2>
-        <a href="#departments" class="btn-get-started scrollto">Cek Alur</a>
+        <a href="#alur" class="btn-get-started scrollto">Cek Alur</a>
     </div>
 </section><!-- End selamatdatang -->
 
@@ -292,6 +292,81 @@
         </section> -->
     <!-- End Appointment Section -->
 
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Kontak</h2>
+            </div>
+        </div>
+        </div>
+
+        <section id="counts" class="counts">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-3 mt-5">
+                        <div class="count-box">
+                            <i class="icofont-ui-dial-phone"></i>
+                            <a href="tel:0265741032">
+                                <span>0265-741032</span>
+                            </a>
+                            <p>Telpon</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-auto mt-5">
+                        <div class="count-box">
+                            <i class="icofont-envelope"></i>
+                            <a href="mailto:contact@example.com">
+                                <span>rsu_kotabanjar@yahoo.co.id</span>
+                            </a>
+                            <p>Email</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col col-lg-3 mt-5">
+
+                        <div class="count-box">
+                            <i class="icofont-ui-dial-phone"></i>
+                            <a href="tel:0265741032">
+                                <span>0265-7482204</span>
+                            </a>
+                            <p>Ponek 24 Jam</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-2 mt-5">
+                        <div class="count-box">
+                            <i class="icofont-whatsapp"></i>
+                            <a href="https://api.whatsapp.com/send?phone=628112111146" target="_blank">
+                                <span>08112111146</span>
+                            </a>
+                            <p>Whatsapp</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col col-lg-2 mt-5">
+
+                        <div class="count-box">
+                            <i class="icofont-fax"></i>
+                            <a href="tel:02657482204 ">
+                                <span>0265744730</span>
+                            </a>
+                            <p>Fax</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Counts Section -->
+    </section><!-- End Contact Section -->
+
+
     <!-- ======= Departments/alur Section ======= -->
     <section id="alur" class="alur">
         <div class="container align-center">
@@ -392,6 +467,115 @@
         </div>
     </section><!-- End Departments Section -->
 
+    <!-- slider section  -->
+    <section id="slider" class="bergerak">
+        <div class="container">
+            <!-- slider -->
+            <ul id="dokterslide">
+                <!-- li 1 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" class="model" alt="">
+                        <!-- <img src="assets/img/marvel/Ant-Man.png" class="model"> -->
+                        <!-- detail -->
+                        <!-- <div class="details"> -->
+                        <!-- logo character -->
+                        <!-- <div>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div> -->
+                        <!-- <img src="assets/img/marvel/AntMan-logo.png" class="logo" width="100px" style="height: auto;"> -->
+                        <!-- </div> -->
+                        <!-- <p>Bruce Bayne invite deadpool to kill the enemy how make distrub bat to the kill the anymens how make him will be die</p> -->
+                    </div>
+                </li>
+                <!-- li 2 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/dalam/juliankarundeng.jpg" class="model" alt="">
+                        <!-- <img src="assets/img/marvel/Ant-Man.png" class="model"> -->
+                        <!-- detail -->
+                        <!-- <div class="details"> -->
+                        <!-- logo character -->
+                        <!-- <div>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div> -->
+                        <!-- <img src="assets/img/marvel/AntMan-logo.png" class="logo" width="100px" style="height: auto;"> -->
+                        <!-- </div> -->
+                        <!-- <p>Bruce Bayne invite deadpool to kill the enemy how make distrub bat to the kill the anymens how make him will be die</p> -->
+                    </div>
+                </li>
+                <!-- li 3 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/dalam/siskadewiroslani.jpg" class="model" alt="">
+                        <!-- <img src="assets/img/marvel/Ant-Man.png" class="model"> -->
+                        <!-- detail -->
+                        <!-- <div class="details"> -->
+                        <!-- logo character -->
+                        <!-- <div>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div> -->
+                        <!-- <img src="assets/img/marvel/AntMan-logo.png" class="logo" width="100px" style="height: auto;"> -->
+                        <!-- </div> -->
+                        <!-- <p>Bruce Bayne invite deadpool to kill the enemy how make distrub bat to the kill the anymens how make him will be die</p> -->
+                    </div>
+                </li>
+                <!-- li 4 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/anak/mahesa.jpg" class="model" alt="">
+                        <!-- <img src="assets/img/marvel/Ant-Man.png" class="model"> -->
+                        <!-- detail -->
+                        <!-- <div class="details"> -->
+                        <!-- logo character -->
+                        <!-- <div>
+                        <a href=""><i class="ri-twitter-fill"></i></a>
+                        <a href=""><i class="ri-facebook-fill"></i></a>
+                        <a href=""><i class="ri-instagram-fill"></i></a>
+                        <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                    </div> -->
+                        <!-- <img src="assets/img/marvel/AntMan-logo.png" class="logo" width="100px" style="height: auto;"> -->
+                        <!-- </div> -->
+                        <!-- <p>Bruce Bayne invite deadpool to kill the enemy how make distrub bat to the kill the anymens how make him will be die</p> -->
+                    </div>
+                </li>
+                <!-- li 5 -->
+                <li class="item-a">
+                    <!-- slider box -->
+                    <div class="">
+                        <p class="namadokter">Dokter Spesialis Dalam (Internist)</p>
+                        <!-- Model  -->
+                        <img src="assets/img/doctors/anak/niaadriani.jpg" class="model" alt="">
+                    </div>
+                </li>
+            </ul>
+
+
+        </div>
+
+    </section>
+
     <!-- ======= Doctors Section ======= -->
     <section id="dokter" class="dokter">
         <div class="container">
@@ -400,6 +584,7 @@
                 <h2>Dokter</h2>
                 <p>Berikut adalah list dokter :</p>
             </div>
+
             <!-- Buka Row -->
             <div class="row">
                 <!-- DOKTER Dalam Eman Sulaeman -->
@@ -710,7 +895,8 @@
 
 
         </div>
-    </section><!-- End Doctors Section -->
+    </section>
+    <!-- End Doctors Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <!-- <section id="faq" class="faq section-bg">
@@ -935,79 +1121,6 @@
         </section>End Gallery Section -->
 
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Kontak</h2>
-            </div>
-        </div>
-        </div>
-
-        <section id="counts" class="counts">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-3 mt-5">
-                        <div class="count-box">
-                            <i class="icofont-ui-dial-phone"></i>
-                            <a href="tel:0265741032">
-                                <span>0265-741032</span>
-                            </a>
-                            <p>Telpon</p>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-auto mt-5">
-                        <div class="count-box">
-                            <i class="icofont-envelope"></i>
-                            <a href="mailto:contact@example.com">
-                                <span>rsu_kotabanjar@yahoo.co.id</span>
-                            </a>
-                            <p>Email</p>
-                        </div>
-
-                    </div>
-
-                    <div class="col col-lg-3 mt-5">
-
-                        <div class="count-box">
-                            <i class="icofont-ui-dial-phone"></i>
-                            <a href="tel:0265741032">
-                                <span>0265-7482204</span>
-                            </a>
-                            <p>Ponek 24 Jam</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-2 mt-5">
-                        <div class="count-box">
-                            <i class="icofont-whatsapp"></i>
-                            <a href="https://api.whatsapp.com/send?phone=628112111146" target="_blank">
-                                <span>08112111146</span>
-                            </a>
-                            <p>Whatsapp</p>
-                        </div>
-
-                    </div>
-
-                    <div class="col col-lg-2 mt-5">
-
-                        <div class="count-box">
-                            <i class="icofont-fax"></i>
-                            <a href="tel:02657482204 ">
-                                <span>0265744730</span>
-                            </a>
-                            <p>Fax</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Counts Section -->
-    </section><!-- End Contact Section -->
 
     <section id="lokasi" class="contact">
         <div class="container">
