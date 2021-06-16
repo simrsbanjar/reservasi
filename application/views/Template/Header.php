@@ -12,18 +12,14 @@
                 <!-- di set di javasvript karena apabila klik daftar maka akan muncul menu yg beda-->
                 <?php
                 $name = $this->input->get('reservasi');
-
-
-
-
-
-                if ($name == null) {
-                    echo '<li class="active"><a href="Home">Home</a></li>';
-                } else if ($name == 1) {
-                    echo '<li><a href="#tentangkita">Tentang Kita</a></li>';
-                } else {
-                    echo '<li><a href="#tentangkita">Tentang Kita</a></li>';
-                }
+                // var_dump($name);
+                // if ($name == null) {
+                //     echo '<li class="active"><a href="Home">Home</a></li>';
+                // } else if ($name == 1) {
+                //     echo '<li><a href="#tentangkita">Tentang Kita</a></li>';
+                // } else {
+                //     echo '<li><a href="#tentangkita">Tentang Kita</a></li>';
+                // }
 
 
 
