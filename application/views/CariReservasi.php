@@ -12,7 +12,7 @@
     <h2>PENDAFTARAN ONLINE</h2>
 </div>
 
-<div class="row justify-content-md-center">
+<div class="row justify-content-md-center" style="margin-bottom: 80px;">
     <!-- row satu  -->
     <div class="col-lg-5">
         <div class="card">
