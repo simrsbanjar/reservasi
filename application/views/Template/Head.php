@@ -27,7 +27,8 @@
   <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <!-- slider -->
+  <link href="assets/css/lightslider.css" rel="stylesheet">
   <!-- =======================================================
   * Template Name: Medilab - v2.1.1
   * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
@@ -37,3 +38,4 @@
 </head>
 
 <body>
+  <div id="WAButton"></div>
