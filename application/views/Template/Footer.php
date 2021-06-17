@@ -344,15 +344,59 @@
             var nopendaftaranValue = nopendaftaran.value.trim();
             if (nopendaftaranValue === '') {
                 setErrorFor(nopendaftaran, 'No. Pendaftaran Tidak Boleh Kosong');
-                return false;
+                return;
             } else {
                 setSuccessFor(nopendaftaran);
             }
-        } else {
-            var nopendaftaran = document.getElementById('nopendaftaran');
-            setSuccessFor(nopendaftaran);
-            alert(nopendaftaran);
         }
+
+        $.ajax({
+            url: "<?= base_url('CariReservasi/GetBookingPasien') ?>",
+            method: "POST",
+            data: {
+                "nopendaftaran": nopendaftaran
+            },
+            // async: false,
+            dataType: 'json',
+            success: function(data) {
+                if (data.codedata['code'] != '200') {
+                    message('info', data.codedata['message'], 'Informasi', false);
+                } else {
+                    var html = '';
+                    html = "<table class='table'> "
+                    html += "<tr>"
+                    html += "<th scope='col'>Kode Booking </th>"
+                    html += "<th scope='col'>No. Pendaftaran</th>"
+                    html += "<th scope='col'>No. Antrian</th>"
+                    html += "<th scope='col'>Jenis Antrian</th>"
+                    html += "<th scope='col'>Estimasi Dilayani</th>"
+                    html += "<th scope='col'>Poli Tujuan</th </tr>"
+                    html += "<th scope='col'>Dokter Tujuan</th </tr>"
+                    html += "<th scope='col'>Aksi</th>"
+                    html += "</tr>"
+                    html += "<tr>"
+                    html += "<td>" + data.hasil['kodebooking'] + "</td>";
+                    html += "<td>" + data.hasil['nopendaftaran'] + "</td>";
+                    html += "<td>" + data.hasil['nomorantrean'] + "</td>";
+                    html += "<td>" + data.hasil['jenisantrean'] + "</td>";
+                    html += "<td>" + data.hasil['estimasidilayani'] + "</td>";
+                    html += "<td>" + data.hasil['namapoli'] + "</td>";
+                    html += "<td>" + data.hasil['namadokter'] + "</td>";
+                    html += "<td>" +
+                        '<button id="btnhapus" type="button" onclick="batalpasienbooking()" class="btn btn-sm btn-danger mb-4"><i class="fa fa-trash"></i> Hapus</button> <br>' +
+                        '<button id="btncetak" type="button" onclick="cetakpasienbooking()" class="btn btn-sm btn-danger"><i class="fas fa-print"></i> Cetak</button>' + "</td>";
+                    html += "</tr>"
+                    html += "</table>"
+                    $('#carireservasi').html(html);
+                }
+
+            },
+            error: function() {
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return;
+            }
+        });
+
     }
 
     function prosesLanjutcarabayar() {
@@ -1188,8 +1232,8 @@
                 $('#poli').html(html);
                 $('#poli2').html(html);
                 $('#poli3').html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                return false;
+                // message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                // return false;
             }
         });
     }

@@ -27,7 +27,7 @@
                             <h4 style="text-align: center;">BPJS</h4>
                         </a>
                     </li>
-                    <li class="nav-item col-lg-3 mt-5">
+                    <li class="nav-item col-lg-3 mt-5" hidden>
                         <a class="nav-link " data-toggle="tab" href="#tab-2">
                             <div class="icon"><img src="<?= base_url("assets/img/ASURANSI.png"); ?>" width="170px" height="170px"></div>
                             <h4 style="text-align: center;">JAMINAN LAIN</h4>
@@ -272,7 +272,7 @@
                                             <!---->
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4" hidden>
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Permintaan</strong></label>
                                             <div class="form-check">
@@ -416,7 +416,7 @@
                 </div>
             </div>
 
-            <div class="tab-pane" id="tab-2">
+            <div class="tab-pane" id="tab-2" hidden>
                 <div class="row justify-content-md-center">
                     <!-- <section id="featured-services1" class="featured-services1"> -->
                     <div class="col-lg-11">
@@ -640,7 +640,7 @@
                                             <!---->
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4" hidden>
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Permintaan</strong></label>
                                             <div class="form-check">
@@ -1006,7 +1006,7 @@
                                             <!---->
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4" hidden>
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Permintaan</strong></label>
                                             <div class="form-check">
