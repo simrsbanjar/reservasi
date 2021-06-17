@@ -12,8 +12,8 @@ class Reservasi extends CI_Controller
     {
         parent::__construct();
         // $this->API = "http://simrs.rsukotabanjar.co.id/ws-rsubanjar";
-        // $this->API = "http://172.16.0.3/wg-rsubanjar";
-        $this->API = "http://localhost/wg-rsubanjar";
+        $this->API = "http://172.16.0.3/wg-rsubanjar";
+        // $this->API = "http://localhost/wg-rsubanjar";
         $this->load->library('session');
         $this->load->library('curl');
         $this->load->helper('form');
@@ -175,7 +175,7 @@ class Reservasi extends CI_Controller
         $ch = curl_init($url);
 
         /* Array Parameter Data */
-        $parm = ['KdPropinsi' => "" . $propinsi . ""];
+        $parm = ['kdPropinsi' => "" . $propinsi . ""];
 
         /* pass encoded JSON string to the POST fields */
         curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
@@ -224,7 +224,7 @@ class Reservasi extends CI_Controller
         $ch = curl_init($url);
 
         /* Array Parameter Data */
-        $parm = ['KdKota' => "" . $kodekota . ""];
+        $parm = ['kdKota' => "" . $kodekota . ""];
 
         /* pass encoded JSON string to the POST fields */
         curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
@@ -273,7 +273,7 @@ class Reservasi extends CI_Controller
         $ch = curl_init($url);
 
         /* Array Parameter Data */
-        $parm = ['KdKecamatan' => "" . $kodekecamatan . ""];
+        $parm = ['kdKecamatan' => "" . $kodekecamatan . ""];
 
         /* pass encoded JSON string to the POST fields */
         curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
@@ -411,13 +411,23 @@ class Reservasi extends CI_Controller
 
     function GetPasienLama()
     {
-        // $norm = $this->input->post('nocm');
-        // $tgllahir = $this->input->post('tgllahir');
-        $norm = '386123'; //'417191';
-        $tgllahir = '1961-03-15'; //'1991-04-04';
+        $norm = $this->input->post('nocm');
+        $tgllahir = $this->input->post('tgllahir');
+        // $norm = '386123  '; //'417191';
+        // $tgllahir = '1961-03-15'; //'1991-04-04';
 
         $token     =  $this->GetToken();
-        $url = $this->API . '/getdatapasienbynocm';
+
+        if (strlen(trim($norm)) == '6') {
+            $url = $this->API . '/getdatapasienbynocm';
+            /* Array Parameter Data */
+            $parm =  ['nocm' => "" . $norm . "", 'tgllahir' => "" . $tgllahir . ""];
+        } else {
+            $url = $this->API . '/getdatapasienbynik';
+            /* Array Parameter Data */
+            $parm =  ['nik' => "" . $norm . "", 'tgllahir' => "" . $tgllahir . ""];
+        }
+
         $headers = array(
             'x-token:' . $token . "",
         );
@@ -425,8 +435,6 @@ class Reservasi extends CI_Controller
         /* Init cURL resource */
         $ch = curl_init($url);
 
-        /* Array Parameter Data */
-        $parm =  ['nocm' => "" . $norm . "", 'tgllahir' => "" . $tgllahir . ""];
         /* pass encoded JSON string to the POST fields */
         curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
 
@@ -459,7 +467,7 @@ class Reservasi extends CI_Controller
                 'namapasien' => $response->namapasien,
                 'titlepasien' => $response->titlepasien,
                 'tempatlahir' => $response->tempatlahir,
-                'tgllahir' =>  $response->tgllahir,
+                'tgllahir' =>  date('d-m-Y', strtotime($response->tgllahir)),
                 'jeniskelamin' => $jeniskelamin,
                 'alamat' => $response->alamat,
                 'propinsi' => $response->propinsi,

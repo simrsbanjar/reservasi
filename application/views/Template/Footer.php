@@ -43,18 +43,10 @@
         hidetab1();
         hidetab2();
         hidetab3();
-        if (getpropinsi() === false) {
-            return
-        };
-        if (GetRujukanAsal() === false) {
-            return
-        };
-        if (GetPoli(date) === false) {
-            return
-        };
-        if (GetCarabayar() === false) {
-            return
-        };
+        getpropinsi();
+        GetRujukanAsal();
+        GetPoli(date);
+        GetCarabayar();
 
         if (page == null) {
             $("#daftar").show();
@@ -281,33 +273,33 @@
             if (value == "1") {
                 $("#pasienlama").show();
                 $("#pasienbaru").hide();
-                $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
+                // $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
             } else {
                 $("#pasienlama").hide();
                 $("#pasienbaru").show();
-                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                // $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             }
         } else if (idtabs == 'tab-2') {
             var norm = document.getElementById('norm2');
             if (value == "1") {
                 $("#pasienlama2").show();
                 $("#pasienbaru2").hide();
-                $("#btnlanjut2").html('<i class="fas fa-search"></i> Cari');
+                // $("#btnlanjut2").html('<i class="fas fa-search"></i> Cari');
             } else {
                 $("#pasienlama2").hide();
                 $("#pasienbaru2").show();
-                $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                // $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             }
         } else {
             var norm = document.getElementById('norm3');
             if (value == "1") {
                 $("#pasienlama3").show();
                 $("#pasienbaru3").hide();
-                $("#btnlanjut3").html('<i class="fas fa-search"></i> Cari');
+                // $("#btnlanjut3").html('<i class="fas fa-search"></i> Cari');
             } else {
                 $("#pasienlama3").hide();
                 $("#pasienbaru3").show();
-                $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                // $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             }
         }
         setSuccessFor(norm);
@@ -1040,7 +1032,7 @@
                 $('#propinsi').html(html);
                 $('#propinsi2').html(html);
                 $('#propinsi3').html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1083,7 +1075,7 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 tabelkota.html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1126,7 +1118,7 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 tabelkota.html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1169,7 +1161,7 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 tabelkota.html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1199,7 +1191,7 @@
                 $('#rujukanasal').html(html);
                 $('#rujukanasal2').html(html);
                 $('#rujukanasal3').html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1258,7 +1250,7 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 $('#carabayar2').html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });

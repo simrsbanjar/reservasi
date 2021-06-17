@@ -76,8 +76,8 @@
                                 <div class="row mt-4" id="pasienlama">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
-                                            <input type="number" placeholder="Nomor RM" class="form-control" name="norm" id="norm">
+                                            <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
+                                            <input type="number" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
