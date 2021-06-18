@@ -50,18 +50,10 @@
         hidetab1();
         hidetab2();
         hidetab3();
-        if (getpropinsi() === false) {
-            return
-        };
-        if (GetRujukanAsal() === false) {
-            return
-        };
-        if (GetPoli(date) === false) {
-            return
-        };
-        if (GetCarabayar() === false) {
-            return
-        };
+        getpropinsi();
+        GetRujukanAsal();
+        GetPoli(date);
+        GetCarabayar();
 
         if (page == null) {
             $("#daftar").show();
@@ -288,33 +280,33 @@
             if (value == "1") {
                 $("#pasienlama").show();
                 $("#pasienbaru").hide();
-                $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
+                // $("#btnlanjut").html('<i class="fas fa-search"></i> Cari');
             } else {
                 $("#pasienlama").hide();
                 $("#pasienbaru").show();
-                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                // $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             }
         } else if (idtabs == 'tab-2') {
             var norm = document.getElementById('norm2');
             if (value == "1") {
                 $("#pasienlama2").show();
                 $("#pasienbaru2").hide();
-                $("#btnlanjut2").html('<i class="fas fa-search"></i> Cari');
+                // $("#btnlanjut2").html('<i class="fas fa-search"></i> Cari');
             } else {
                 $("#pasienlama2").hide();
                 $("#pasienbaru2").show();
-                $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                // $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             }
         } else {
             var norm = document.getElementById('norm3');
             if (value == "1") {
                 $("#pasienlama3").show();
                 $("#pasienbaru3").hide();
-                $("#btnlanjut3").html('<i class="fas fa-search"></i> Cari');
+                // $("#btnlanjut3").html('<i class="fas fa-search"></i> Cari');
             } else {
                 $("#pasienlama3").hide();
                 $("#pasienbaru3").show();
-                $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+                // $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             }
         }
         setSuccessFor(norm);
@@ -351,15 +343,59 @@
             var nopendaftaranValue = nopendaftaran.value.trim();
             if (nopendaftaranValue === '') {
                 setErrorFor(nopendaftaran, 'No. Pendaftaran Tidak Boleh Kosong');
-                return false;
+                return;
             } else {
                 setSuccessFor(nopendaftaran);
             }
-        } else {
-            var nopendaftaran = document.getElementById('nopendaftaran');
-            setSuccessFor(nopendaftaran);
-            alert(nopendaftaran);
         }
+
+        $.ajax({
+            url: "<?= base_url('CariReservasi/GetBookingPasien') ?>",
+            method: "POST",
+            data: {
+                "nopendaftaran": nopendaftaran
+            },
+            // async: false,
+            dataType: 'json',
+            success: function(data) {
+                if (data.codedata['code'] != '200') {
+                    message('info', data.codedata['message'], 'Informasi', false);
+                } else {
+                    var html = '';
+                    html = "<table class='table'> "
+                    html += "<tr>"
+                    html += "<th scope='col'>Kode Booking </th>"
+                    html += "<th scope='col'>No. Pendaftaran</th>"
+                    html += "<th scope='col'>No. Antrian</th>"
+                    html += "<th scope='col'>Jenis Antrian</th>"
+                    html += "<th scope='col'>Estimasi Dilayani</th>"
+                    html += "<th scope='col'>Poli Tujuan</th </tr>"
+                    html += "<th scope='col'>Dokter Tujuan</th </tr>"
+                    html += "<th scope='col'>Aksi</th>"
+                    html += "</tr>"
+                    html += "<tr>"
+                    html += "<td>" + data.hasil['kodebooking'] + "</td>";
+                    html += "<td>" + data.hasil['nopendaftaran'] + "</td>";
+                    html += "<td>" + data.hasil['nomorantrean'] + "</td>";
+                    html += "<td>" + data.hasil['jenisantrean'] + "</td>";
+                    html += "<td>" + data.hasil['estimasidilayani'] + "</td>";
+                    html += "<td>" + data.hasil['namapoli'] + "</td>";
+                    html += "<td>" + data.hasil['namadokter'] + "</td>";
+                    html += "<td>" +
+                        '<button id="btnhapus" type="button" onclick="batalpasienbooking()" class="btn btn-sm btn-danger mb-4"><i class="fa fa-trash"></i> Hapus</button> <br>' +
+                        '<button id="btncetak" type="button" onclick="cetakpasienbooking()" class="btn btn-sm btn-danger"><i class="fas fa-print"></i> Cetak</button>' + "</td>";
+                    html += "</tr>"
+                    html += "</table>"
+                    $('#carireservasi').html(html);
+                }
+
+            },
+            error: function() {
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                return;
+            }
+        });
+
     }
 
     function prosesLanjutcarabayar() {
@@ -1003,7 +1039,7 @@
                 $('#propinsi').html(html);
                 $('#propinsi2').html(html);
                 $('#propinsi3').html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1046,7 +1082,7 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 tabelkota.html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1089,7 +1125,7 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 tabelkota.html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1132,7 +1168,7 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 tabelkota.html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1162,7 +1198,7 @@
                 $('#rujukanasal').html(html);
                 $('#rujukanasal2').html(html);
                 $('#rujukanasal3').html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
@@ -1195,8 +1231,8 @@
                 $('#poli').html(html);
                 $('#poli2').html(html);
                 $('#poli3').html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                return false;
+                // message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                // return false;
             }
         });
     }
@@ -1221,7 +1257,7 @@
                 var html = '';
                 html += "<option value=''>-PILIH-</option>";
                 $('#carabayar2').html(html);
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
                 return false;
             }
         });
