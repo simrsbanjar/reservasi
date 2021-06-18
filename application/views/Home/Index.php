@@ -312,12 +312,37 @@
                 </div>
                 <div>
                     <a href="">
-                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" alt="Eman Sulaeman">
+                        <img src="assets/img/doctors/anak/mahesa.jpg" alt="Mahes">
                     </a>
                 </div>
                 <div>
                     <a href="">
-                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" alt="Eman Sulaeman">
+                        <img src="assets/img/doctors/anak/niaadriani.jpg" alt="Nia Adriani">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/bedah/juliawan.jpg" alt="Juliawan">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/bedah/rendifitra.jpg" alt="Rendifitra">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/jantung/asepsopandiana.jpg" alt="Rendifitra">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/kulitkelamin/andinidwi.jpg" alt="Andini Dwi">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/kulitkelamin/bowo.jpg" alt="Bowo">
                     </a>
                 </div>
             </div>
