@@ -29,6 +29,10 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <!-- slider -->
   <link href="assets/css/lightslider.css" rel="stylesheet">
+  <!-- slick slider -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
   <!-- =======================================================
   * Template Name: Medilab - v2.1.1
   * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/

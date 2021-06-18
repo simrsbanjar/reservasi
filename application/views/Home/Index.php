@@ -292,6 +292,39 @@
         </section> -->
     <!-- End Appointment Section -->
 
+    <section class="slidedokter">
+        <div class="container">
+            <div class="slidercuy">
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" alt="Eman Sulaeman">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/dalam/juliankarundeng.jpg" alt="Julian Karundeng">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/dalam/siskadewiroslani.jpg" alt="Siska Dewi Rosalani">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" alt="Eman Sulaeman">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" alt="Eman Sulaeman">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
     <section id="contact" class="contact">
         <div class="container">
 

@@ -31,6 +31,7 @@ h6 {
 	font-family: "Raleway", sans-serif;
 }
 
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -2025,4 +2026,112 @@ section {
 
 .bergerak .logo {
 	height: 60px;
+}
+
+.slidedokter .container {
+	max-width: 100%;
+	padding: 15px;
+	background-color: #fff;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.slidercuy .slick-slide {
+	border: solid 1px #000;
+}
+
+.slidercuy .slick-slide img {
+	width: 100%;
+}
+
+/* Section Nomer Antrian  */
+
+.antrian {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.antrian .container {
+	max-width: 50%;
+	max-height: 50%;
+	background-color: #ffffff;
+	border: 2px solid rgb(0, 0, 0);
+	text-align: center;
+}
+
+.antrian .container p {
+	margin-bottom: 0px;
+}
+
+.antrian .nomerantri p {
+	font-size: 75px;
+	font-weight: bold;
+}
+
+.antrian .kotaknomerdaftar {
+	border: 1px solid black;
+	width: 25%;
+	margin-left: 37%;
+}
+
+.antrian .gambar img {
+	width: 12%;
+	height: 12%;
+}
+
+.antrian .gambar p {
+	font-weight: bold;
+	font-size: 25px;
+	margin-bottom: 0px;
+}
+
+.antrian .qrcode img {
+	width: 40%;
+	height: 40%;
+}
+
+.antrian .urutan {
+	line-height: 0.6;
+}
+
+.antrian .urutan p {
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+
+.antrian .urutan .nomer {
+	font-weight: bolder;
+}
+
+.antrian .nopendaftaran {
+	font-size: 25px;
+	padding-right: 5px;
+
+}
+
+.antrian .politujuan {
+	margin-top: 8px;
+	padding-right: 5px;
+}
+
+.antrian .politujuan p {
+	font-size: medium;
+}
+
+
+.antrian .doktertugas {
+	margin-top: 8px;
+	padding-right: 5px;
+}
+
+.antrian .doktertugas p {
+	font-size: medium;
+}
+
+.antrian .estimasi {
+	margin-top: 8px;
+	padding-right: 5px;
+}
+
+.antrian .estimasi p {
+	font-size: medium;
 }
