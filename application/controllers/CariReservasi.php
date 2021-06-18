@@ -12,8 +12,8 @@ class CariReservasi extends CI_Controller
     {
         parent::__construct();
         // $this->API = "http://simrs.rsukotabanjar.co.id/ws-rsubanjar";
-        // $this->API = "http://172.16.0.3/wg-rsubanjar";
-        $this->API = "http://localhost/wg-rsubanjar";
+        $this->API = "http://172.16.0.3/wg-rsubanjar";
+        // $this->API = "http://localhost/wg-rsubanjar";
         $this->load->library('session');
         $this->load->library('curl');
         $this->load->helper('form');
@@ -46,13 +46,13 @@ class CariReservasi extends CI_Controller
         return $data['response']->token;
     }
 
-    function GetBookingPasien()
+    function GetBookingPasienbynoreg($nopendaftaran)
     {
-        // $nopendaftaran = $this->input->post('nopendaftaran');
-        $nopendaftaran = '2007140019';
-
         $token     =  $this->GetToken();
-        $url = $this->API . '/getdataregistrasi';
+
+        $url = $this->API . '/getdataregistrasibynoreg';
+        $parm =  ['nopendaftaran' => "" . $nopendaftaran . ""];
+
         $headers = array(
             'x-token:' . $token . "",
         );
@@ -61,7 +61,6 @@ class CariReservasi extends CI_Controller
         $ch = curl_init($url);
 
         /* Array Parameter Data */
-        $parm =  ['nopendaftaran' => "" . $nopendaftaran . ""];
         /* pass encoded JSON string to the POST fields */
         curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
 
@@ -96,7 +95,9 @@ class CariReservasi extends CI_Controller
                 'jenisantrean' => $jenisantrian,
                 'estimasidilayani' => $estimasidilayani,
                 'namapoli' => $response->namapoli,
-                'namadokter' => $response->namadokter
+                'namadokter' => $response->namadokter,
+                'nocm' => $response->nocm,
+                'statuspasien' => $response->statuspasien
             );
         }
 
@@ -104,6 +105,82 @@ class CariReservasi extends CI_Controller
             'code' => $metadata->code,
             'message' => $metadata->message
         );
+
+        return $data;
+    }
+
+    function GetBookingPasienbynobooking($nopendaftaran)
+    {
+        $token     =  $this->GetToken();
+
+        $url = $this->API . '/getdataregistrasibykdbooking';
+        $parm =  ['kdbooking' => "" . $nopendaftaran . ""];
+
+        $headers = array(
+            'x-token:' . $token . "",
+        );
+
+        /* Init cURL resource */
+        $ch = curl_init($url);
+
+        /* Array Parameter Data */
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
+
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        /* execute request */
+        $result = curl_exec($ch);
+
+        /* close cURL resource */
+        curl_close($ch);
+        $hasil = json_decode($result);
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data['hasil'] = null;
+
+        if ($metadata->code == '200') {
+            $estimasidilayani   = $this->time_convert($response->estimasidilayani);
+            if ($response->jenisantrean == '1') {
+                $jenisantrian = 'Antrian Registrasi';
+            } else {
+                $jenisantrian = 'Antrian Poli';
+            }
+            $data['hasil'] = array(
+                'kodebooking' => $response->kodebooking,
+                'nomorantrean' => $response->nomorantrean,
+                'nopendaftaran' => $response->nopendaftaran,
+                'jenisantrean' => $jenisantrian,
+                'estimasidilayani' => $estimasidilayani,
+                'namapoli' => $response->namapoli,
+                'namadokter' => $response->namadokter,
+                'nocm' => $response->nocm,
+                'statuspasien' => $response->statuspasien
+            );
+        }
+
+        $data['codedata'] = array(
+            'code' => $metadata->code,
+            'message' => $metadata->message
+        );
+
+        return $data;
+    }
+
+    function GetBookingPasien()
+    {
+        $nopendaftaran = $this->input->post('nopendaftaran');
+        // $nopendaftaran = '2007140019';
+
+        $data = $this->GetBookingPasienbynoreg($nopendaftaran);
+        if ($data['codedata']['code'] != '200') {
+            $data = $this->GetBookingPasienbynobooking($nopendaftaran);
+        }
 
         echo json_encode($data);
     }

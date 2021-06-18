@@ -359,21 +359,25 @@
                     html += "<tr>"
                     html += "<th scope='col'>Kode Booking </th>"
                     html += "<th scope='col'>No. Pendaftaran</th>"
+                    html += "<th scope='col'>No. Rekam Medik</th>"
                     html += "<th scope='col'>No. Antrian</th>"
                     html += "<th scope='col'>Jenis Antrian</th>"
                     html += "<th scope='col'>Estimasi Dilayani</th>"
                     html += "<th scope='col'>Poli Tujuan</th </tr>"
                     html += "<th scope='col'>Dokter Tujuan</th </tr>"
+                    html += "<th scope='col'>Status Pasien</th>"
                     html += "<th scope='col'>Aksi</th>"
                     html += "</tr>"
                     html += "<tr>"
                     html += "<td>" + data.hasil['kodebooking'] + "</td>";
                     html += "<td>" + data.hasil['nopendaftaran'] + "</td>";
+                    html += "<td>" + data.hasil['nocm'] + "</td>";
                     html += "<td>" + data.hasil['nomorantrean'] + "</td>";
                     html += "<td>" + data.hasil['jenisantrean'] + "</td>";
                     html += "<td>" + data.hasil['estimasidilayani'] + "</td>";
                     html += "<td>" + data.hasil['namapoli'] + "</td>";
                     html += "<td>" + data.hasil['namadokter'] + "</td>";
+                    html += "<td>" + data.hasil['statuspasien'] + "</td>";
                     html += "<td>" +
                         '<button id="btnhapus" type="button" onclick="batalpasienbooking()" class="btn btn-sm btn-danger mb-4"><i class="fa fa-trash"></i> Hapus</button> <br>' +
                         '<button id="btncetak" type="button" onclick="cetakpasienbooking()" class="btn btn-sm btn-danger"><i class="fas fa-print"></i> Cetak</button>' + "</td>";

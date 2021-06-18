@@ -27,8 +27,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="label-control">No. Pendaftaran</label>
-                                    <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="No. Pendaftaran">
+                                    <label class="label-control">Kode Booking / No. Pendaftaran</label>
+                                    <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="Kode Bookinng / No. Pendaftaran">
                                     <small>Error Message</small>
                                 </div>
                             </div>
@@ -42,12 +42,12 @@
         </div>
 
         <div class="col-lg-10">
-            <div class="card">
-                <div class="card-body card-block">
-                    <div class="table-responsive" style="width:100%" id="carireservasi">
-                    </div>
-                </div>
+            <!-- <div class="card">
+                <div class="card-body card-block"> -->
+            <div class="table-responsive" style="width:100%" id="carireservasi">
             </div>
+            <!-- </div>
+            </div> -->
         </div>
     </div>
 </div>
