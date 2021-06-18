@@ -1,4 +1,7 @@
 <?php
+
+use Dompdf\Dompdf;
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class CariReservasi extends CI_Controller
@@ -175,7 +178,7 @@ class CariReservasi extends CI_Controller
     function GetBookingPasien()
     {
         $nopendaftaran = $this->input->post('nopendaftaran');
-        // $nopendaftaran = '2007140019';
+        // $nopendaftaran = '2105100010';
 
         $data = $this->GetBookingPasienbynoreg($nopendaftaran);
         if ($data['codedata']['code'] != '200') {
@@ -183,5 +186,62 @@ class CariReservasi extends CI_Controller
         }
 
         echo json_encode($data);
+    }
+
+    function Cetak()
+    {
+        $kodebooking = $this->input->post('kodebooking');
+        $nopendaftaran = $this->input->post('nopendaftaran');
+        $nocm = $this->input->post('nocm');
+        $nomorantrean = $this->input->post('nomorantrean');
+        $jenisantrean = $this->input->post('jenisantrean');
+        $estimasidilayani = $this->input->post('estimasidilayani');
+        $namapoli = $this->input->post('namapoli');
+        $namadokter = $this->input->post('namadokter');
+        $statuspasien = $this->input->post('statuspasien');
+
+        $this->GenerateQrcode($kodebooking);
+
+        $data['cetak'] = [
+            'kodebooking' => $kodebooking,
+            'nopendaftaran' => $nopendaftaran,
+            'nocm' => $nocm,
+            'nomorantrean' => $nomorantrean,
+            'jenisantrean' => $jenisantrean,
+            'estimasidilayani' => $estimasidilayani,
+            'namapoli' => $namapoli,
+            'namadokter' => $namadokter,
+            'statuspasien' => $statuspasien
+        ];
+
+        // $this->load->library('pdf');
+        // $this->pdf->setPaper('A4', 'landscape');
+        // $this->pdf->filename = "Laporan-Dompdf-Codeigniter.pdf";
+        // $this->pdf->load_view('CetakBuktiReservasi', $data);
+
+        $this->load->view('Cetak_noantrian', $data);
+    }
+
+    function GenerateQrcode($kodebooking)
+    {
+        $this->load->library('ciqrcode'); //pemanggilan library QR CODE
+
+        $config['cacheable']    = true; //boolean, the default is true
+        $config['cachedir']     = './assets/'; //string, the default is application/cache/
+        $config['errorlog']     = './assets/'; //string, the default is application/logs/
+        $config['imagedir']     = './assets/img/qrcode/'; //direktori penyimpanan qr code
+        $config['quality']      = true; //boolean, the default is true
+        $config['size']         = '1024'; //interger, the default is 1024
+        $config['black']        = array(224, 255, 255); // array, default is array(255,255,255)
+        $config['white']        = array(70, 130, 180); // array, default is array(0,0,0)
+        $this->ciqrcode->initialize($config);
+
+        $image_name = $kodebooking . '.png'; //buat name dari qr code sesuai dengan kodebooking
+
+        $params['data'] = $kodebooking; //data yang akan di jadikan QR CODE
+        $params['level'] = 'H'; //H=High
+        $params['size'] = 10;
+        $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
+        $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
     }
 }

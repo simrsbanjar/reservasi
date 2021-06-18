@@ -362,7 +362,8 @@
                     message('info', data.codedata['message'], 'Informasi', false);
                 } else {
                     var html = '';
-                    html = "<table class='table'> "
+                    html = "<form action='CariReservasi/Cetak' method='post' name='carireservasi' id='carireservasi' target='_blank'>"
+                    html += "<table class='table'> "
                     html += "<tr>"
                     html += "<th scope='col'>Kode Booking </th>"
                     html += "<th scope='col'>No. Pendaftaran</th>"
@@ -386,10 +387,20 @@
                     html += "<td>" + data.hasil['namadokter'] + "</td>";
                     html += "<td>" + data.hasil['statuspasien'] + "</td>";
                     html += "<td>" +
-                        '<button id="btnhapus" type="button" onclick="batalpasienbooking()" class="btn btn-sm btn-danger mb-4"><i class="fa fa-trash"></i> Hapus</button> <br>' +
-                        '<button id="btncetak" type="button" onclick="cetakpasienbooking()" class="btn btn-sm btn-danger"><i class="fas fa-print"></i> Cetak</button>' + "</td>";
+                        '<button id="btnhapus" type="submit" value="hapus" class="btn btn-sm btn-danger mb-4"><i class="fa fa-trash"></i> Hapus</button> <br>' +
+                        '<button id="btncetak" type="submit" value="cetak" class="btn btn-sm btn-danger"><i class="fas fa-print"></i> Cetak</button>' + "</td>";
                     html += "</tr>"
                     html += "</table>"
+                    html += "<input type='text' name='kodebooking' id='kodebooking' value = '" + data.hasil['kodebooking'] + "' hidden>"
+                    html += "<input type='text' name='nopendaftaran' id='nopendaftaran' value = '" + data.hasil['nopendaftaran'] + "' hidden>"
+                    html += "<input type='text' name='nocm' id='nocm' value = '" + data.hasil['nocm'] + "' hidden>"
+                    html += "<input type='text' name='nomorantrean' id='nomorantrean' value = '" + data.hasil['nomorantrean'] + "' hidden>"
+                    html += "<input type='text' name='jenisantrean' id='jenisantrean' value = '" + data.hasil['jenisantrean'] + "' hidden>"
+                    html += "<input type='text' name='estimasidilayani' id='estimasidilayani' value = '" + data.hasil['estimasidilayani'] + "' hidden>"
+                    html += "<input type='text' name='namapoli' id='namapoli' value = '" + data.hasil['namapoli'] + "' hidden>"
+                    html += "<input type='text' name='namadokter' id='namadokter' value = '" + data.hasil['namadokter'] + "' hidden>"
+                    html += "<input type='text' name='statuspasien' id='statuspasien' value = '" + data.hasil['statuspasien'] + "' hidden>"
+                    html += "</form>"
                     $('#carireservasi').html(html);
                 }
 
