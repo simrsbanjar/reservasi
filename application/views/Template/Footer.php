@@ -32,8 +32,15 @@
 
 <!-- slider -->
 <script src="assets/js/script.js"></script>
-<script src="assets/js/JQuery3.3.1.js"></script>
+<!-- <script src="assets/js/JQuery3.3.1.js"></script> -->
 <script src="assets/js/lightslider.js"></script>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Slick JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="assets/js/slide.js"></script>
 
 <script>
     $(document).ready(function() {
