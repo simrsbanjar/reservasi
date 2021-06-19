@@ -30,11 +30,6 @@
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
 
-<!-- slider -->
-<script src="assets/js/script.js"></script>
-<!-- <script src="assets/js/JQuery3.3.1.js"></script> -->
-<script src="assets/js/lightslider.js"></script>
-
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
