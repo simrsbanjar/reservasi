@@ -16,17 +16,17 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>/assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Medilab - v2.1.1
@@ -41,7 +41,7 @@
     <div class="antrian">
         <div class="container">
             <div class="gambar">
-                <img src="assets/img/logo rsu.png" alt="logo rumah sakit">
+                <img src="<?= base_url() ?>/assets/img/logo rsu.png" alt="logo rumah sakit">
                 <p>
                     Rumah Sakit Umum Daerah Kota Banjar
                 </p>
@@ -55,7 +55,7 @@
                     <p style="margin-top: 10px;">Nomer Antrian Anda</p>
                     <div class="nomerantri">
                         <div>
-                            <p>001</p>
+                            <p><?= $cetak['nomorantrean'] ?></p>
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     No. Pendaftaran :
                 </div>
                 <div class="nomer">
-                    <p>A001</p>
+                    <p><?= $cetak['nopendaftaran'] ?></p>
                 </div>
             </div>
             <div class="urutan row justify-content-center">
@@ -73,7 +73,7 @@
                     Poli Tujuan :
                 </div>
                 <div class="politujuan">
-                    <p>Poli Jantung</p>
+                    <p><?= $cetak['namapoli'] ?></p>
                 </div>
             </div>
             <div class="urutan row justify-content-center">
@@ -81,7 +81,7 @@
                     Dokter Tujuan :
                 </div>
                 <div class="doktertugas">
-                    <p>Dr. Asep</p>
+                    <p><?= $cetak['namadokter'] ?></p>
                 </div>
             </div>
             <div class="urutan row justify-content-center">
@@ -89,7 +89,7 @@
                     Estimasi Dilayani :
                 </div>
                 <div class="estimasi">
-                    <p>17-06-2021 09.00</p>
+                    <p><?= $cetak['estimasidilayani'] ?></p>
                 </div>
             </div>
             <div class="urutan row justify-content-center">
@@ -97,7 +97,7 @@
                     No. Rekam Medik :
                 </div>
                 <div class="estimasi">
-                    <p>4319101</p>
+                    <p><?= $cetak['nocm'] ?></p>
                 </div>
             </div>
             <div class="urutan row justify-content-center">
@@ -105,13 +105,18 @@
                     Status Pasien :
                 </div>
                 <div class="estimasi">
-                    <p>Pasien Baru</p>
+                    <p><?= $cetak['statuspasien'] ?></p>
                 </div>
             </div>
 
 
             <div class="qrcode">
-                <img src="assets/img/qrcode.png" alt="logo qrcode">
+                <img src="<?= base_url() . 'assets/img/qrcode/' . $cetak['kodebooking'] . '.png' ?>" alt="logo qrcode">
+            </div>
+            <div class="urutan row justify-content-center">
+                <div class="nomer">
+                    <p><?= $cetak['kodebooking'] ?></p>
+                </div>
             </div>
 
             <div style="align-items: center;">
