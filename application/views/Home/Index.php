@@ -294,6 +294,11 @@
 
     <section class="slidedokter">
         <div class="container">
+            <div class="section-title">
+                <h2>Dokter Spesialis</h2>
+                <p>Berikut adalah list dokter spesialis :</p>
+            </div>
+
             <div class="slidercuy">
                 <div>
                     <a href="">
@@ -343,6 +348,111 @@
                 <div>
                     <a href="">
                         <img src="assets/img/doctors/kulitkelamin/bowo.jpg" alt="Bowo">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/anestesi/doniarif.jpg" alt="Doni Arif">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/anestesi/teguhbudiman.jpg" alt="Teguh Budiman">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/kandungan/aguskurnia.jpg" alt="Agus Kurnia">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/kandungan/dennis.jpg" alt="Dennis">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/kandungan/imamwahyudi.jpg" alt="Imam Wahyudi">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/mata/retysugiarti.jpg" alt="Rety Sugiarti">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/radiologi/nunuheryana.jpg" alt="Nunu Heryana">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/rm/tinasusilawati.jpg" alt="Tina Susilawati">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/saraf/danyerlangga.jpg" alt="Dany Erlangga">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/saraf/fuadhanif.jpg" alt="Fuad Hanif">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/saraf/marisaayu.jpg" alt="Marisa Ayu">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/ortopedi/isaridwan.jpg" alt="Isa Ridwan">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/tht/rini.jpg" alt="Rini">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/forensik/hendrik.jpg" alt="Hendrik">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/paru/dilalaswantina.jpg" alt="Dila Laswantina">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/jiwa/nununurkholis.jpg" alt="Nunu Nur Kholis">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/jiwa/dyah.jpg" alt="Dyah">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/akupuntur/feliciaadriani.jpg" alt="Felicia Adriani">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/mulut/megarafika.jpg" alt="Mega Rafika">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/pa/yukeireka.jpg" alt="Yuke Ireka">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/doctors/pk/adenovita.jpg" alt="Ade Novita">
                     </a>
                 </div>
             </div>
