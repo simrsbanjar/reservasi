@@ -31,12 +31,54 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
+  <!-- Styling slick slider vendor -->
+  <style>
+    .slider .slick-slide {
+      border: solid 1px #000;
+    }
+
+    .slider .slick-slide img {
+      width: 100%;
+    }
+
+    /* Membuat button prev dan next membesar */
+    .slick-prev,
+    .slick-next {
+      width: 50px;
+      height: 50px;
+      z-index: 1;
+    }
+
+    /* Menggeser posisi previous (prev) ke banner foto */
+    .slick-prev {
+      left: 5px;
+    }
+
+    /* Menggeser posisi next ke banner foto */
+    .slick-next {
+      right: 5px;
+    }
+
+    /* Menambahkan shadow  */
+    .slick-prev:before,
+    .slick-next:before {
+      font-size: 40px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .slick-dots li.slick-active button:before {
+      color: #000;
+    }
+  </style>
+
   <!-- =======================================================
   * Template Name: Medilab - v2.1.1
   * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+
 </head>
 
 <body>
