@@ -43,68 +43,28 @@
                 <div class="card-header bg-primary text-white">
                     <center>Hasil Pencarian </center>
                 </div>
-                <div class="row">
+                <div>
                     <!-- DOKUMENTASI -->
                     <!-- col-lg-4 tampilan ketika desktop -->
                     <!-- TAMPILAN MOBILE -->
                     <!-- col-7 tampilan extra small <576px -->
                     <!-- col-sm-6 tampilan small ≥576px <768px -->
-                    <!-- col-md-5 tampilan medium 720px -->
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>Kode Booking</dt>
-                            <dd>2003190003</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>No Pendaftaran</dt>
-                            <dd>2105100010</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>No. Rekam Medik</dt>
-                            <dd>329686</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>No. Antrian</dt>
-                            <dd>001</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>Jenis Antrian</dt>
-                            <dd>Antrian Poli</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>Estimasi Dilayani</dt>
-                            <dd>24-03-2020 06:03</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>Poli Tujuan</dt>
-                            <dd>Poli Psikiatri</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>Dokter Tujuan</dt>
-                            <dd>dr. RR. Dyah Rikayanti N, Sp.KJ</dd>
-                        </dl>
-                    </div>
-                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                        <dl>
-                            <dt>Status Pasien</dt>
-                            <dd>Lama</dd>
-                        </dl>
-                    </div>
+                    <thead>
+                        <tr class="row justify-content-center">
+                            <th class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</th>
+                            <th class="col-lg-4 col-7 col-sm-6">No. Pendaftaran</th>
+                            <th class="col-lg-4 col-7 col-sm-6">No. Rekam Medik</th>
+                            <th class="col-lg-4 col-7 col-sm-6">No. Antrian</th>
+                            <th class="col-lg-4 col-7 col-sm-6">Jenis Antrian</th>
+                            <th class="col-lg-4 col-7 col-sm-6">Estimasi Dilayani</th>
+                            <th class="col-lg-4 col-7 col-sm-6">Poli Tujuan</th>
+                            <th class="col-lg-4 col-7 col-sm-6">Dokter Tujuan</th>
+                            <th class="col-lg-4 col-7 col-sm-6">Status Pasien</th></b>
+                        </tr>
+                    </thead>
                 </div>
+
+
                 <div class="d-flex justify-content-end card-footer">
                     <button id="btnhapus" type="submit" value="hapus" class="btn btn-sm btn-danger mr-2"><i class="fa fa-trash"></i> Hapus</button>
                     <button id="btncetak" type="submit" value="cetak" class="btn btn-sm btn-danger mr-1"><i class="fas fa-print"></i> Cetak</button>
