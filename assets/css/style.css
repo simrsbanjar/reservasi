@@ -1962,6 +1962,16 @@ section {
 	width: 100%;
 }
 
+/* jarak dengan menu sebelumnya */
+.slidersection {
+	text-align: center;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+
+
+
 /* Nomer Antrian Section  */
 
 .antrian {
