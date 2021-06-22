@@ -20,6 +20,12 @@ class Reservasi extends CI_Controller
         $this->load->helper('url');
     }
 
+    public function time_convert($timestamp)
+    {
+        // $timestamp = '1597078800';
+        return date('d-m-Y H:m', $timestamp / 1000);
+    }
+
     function hitung_umur()
     {
         $birthDate = new DateTime($this->input->post('tgllahir'));
@@ -411,13 +417,12 @@ class Reservasi extends CI_Controller
 
     function GetPasienLama()
     {
-        $norm = $this->input->post('nocm');
+        $norm = substr(('000000' . $this->input->post('nocm')), -6);
         $tgllahir = $this->input->post('tgllahir');
-        // $norm = '386123  '; //'417191';
-        // $tgllahir = '1961-03-15'; //'1991-04-04';
+        // $norm = '3279040404910001'; //'386123'; //'417191';
+        // $tgllahir = '1991-04-04'; //'1961-03-15'; //'1991-04-04';
 
         $token     =  $this->GetToken();
-
         if (strlen(trim($norm)) == '6') {
             $url = $this->API . '/getdatapasienbynocm';
             /* Array Parameter Data */
@@ -477,6 +482,121 @@ class Reservasi extends CI_Controller
                 'rtrw' => $response->rtrw,
                 'kodepos' => $response->kodepos,
                 'notelp' => $response->notelp
+            );
+        }
+
+        $data['codedata'] = array(
+            'code' => $metadata->code,
+            'message' => $metadata->message
+        );
+
+        echo json_encode($data);
+    }
+
+    function SimpanRegistrasi()
+    {
+        $statuspasien = $this->input->post('statuspasien');
+        $tujuanperiksa = $this->input->post('tujuanperiksa');
+        $jenispasien = $this->input->post('jenispasien');
+        $namapasien = $this->input->post('namapasien');
+        $titlepasien = $this->input->post('titlepasien');
+        $tempatlahir = $this->input->post('tempatlahir');
+        $tgllahir = $this->input->post('tgllahir');
+        $jeniskelamin = $this->input->post('jeniskelamin');
+        $alamat = $this->input->post('alamat');
+        $propinsi = $this->input->post('propinsi');
+        $kota = $this->input->post('kota');
+        $kecamatan = $this->input->post('kecamatan');
+        $kelurahan = $this->input->post('kelurahan');
+        $rtrw = $this->input->post('rtrw');
+        $kodepos = $this->input->post('kodepos');
+        $nocm = substr(('000000' . $this->input->post('nocm')), -6);
+        $nomorkartu = $this->input->post('nomorkartu');
+        $nik = $this->input->post('nik');
+        $notelp = $this->input->post('notelp');
+        $tanggalperiksa = $this->input->post('tanggalperiksa');
+        $kodepoli = $this->input->post('kodepoli');
+        $kdrujukanasal = $this->input->post('kdrujukanasal');
+        $nomorreferensi = $this->input->post('nomorreferensi');
+        $jenisreferensi = $this->input->post('jenisreferensi');
+        $jenisrequest = $this->input->post('jenisrequest');
+        $polieksekutif = $this->input->post('polieksekutif');
+
+        $token     =  $this->GetToken();
+        $url = $this->API . '/registrasionline';
+        /* Array Parameter Data */
+        $parm =  [
+            'statuspasien'        => "" .     $statuspasien         . "",
+            'tujuanpemeriksaan'     => "" .     $tujuanperiksa      . "",
+            'jenispasien'        => "" .     $jenispasien         . "",
+            'namapasien'        => "" .     $namapasien         . "",
+            'titlepasien'        => "" .     $titlepasien         . "",
+            'tempatlahir'       => "" .     $tempatlahir        . "",
+            'tgllahir'            => "" .     $tgllahir             . "",
+            'jeniskelamin'      => "" .     $jeniskelamin       . "",
+            'alamat'            => "" .     $alamat             . "",
+            'propinsi'          => "" .     $propinsi             . "",
+            'kota'                => "" .     $kota                 . "",
+            'kecamatan'         => "" .     $kecamatan             . "",
+            'kelurahan'         => "" .     $kelurahan             . "",
+            'rtrw'              => "" .     $rtrw                 . "",
+            'kodepos'           => "" .     $kodepos             . "",
+            'nocm'              => "" .     $nocm                 . "",
+            'nomorkartu'        => "" .     $nomorkartu         . "",
+            'nik'               => "" .     $nik                 . "",
+            'notelp'            => "" .     $notelp             . "",
+            'tanggalperiksa'    => "" .     $tanggalperiksa     . "",
+            'kodepoli'            => "" .     $kodepoli             . "",
+            'kdrujukanasal'     => "" .     $kdrujukanasal      . "",
+            'nomorreferensi'    => "" .     $nomorreferensi     . "",
+            'jenisreferensi'    => "" .     $jenisreferensi     . "",
+            'jenisrequest'      => "" .     $jenisrequest         . "",
+            'polieksekutif'     => "" .     $polieksekutif      . ""
+        ];
+
+        // var_dump($parm);
+        // die;
+
+        $headers = array(
+            'x-token:' . $token . "",
+        );
+
+        /* Init cURL resource */
+        $ch = curl_init($url);
+
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
+
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        /* execute request */
+        $result = curl_exec($ch);
+
+        /* close cURL resource */
+        curl_close($ch);
+        $hasil = json_decode($result);
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data['hasil'] = null;
+
+        if ($metadata->code == '200') {
+            $estimasidilayani   = $this->time_convert($response->estimasidilayani);
+
+            $data['hasil'] = array(
+                "nomorantrean" => $response->nomorantrean,
+                "kodebooking" => $response->kodebooking,
+                "nopendaftaran" => $response->nopendaftaran,
+                "nocm" => $response->nocm,
+                "jenisantrean" => $response->jenisantrean,
+                "estimasidilayani" => $estimasidilayani,
+                "namapoli" => $response->namapoli,
+                "namadokter" => $response->namadokter,
+                "statuspasien" => $response->statuspasien
             );
         }
 
