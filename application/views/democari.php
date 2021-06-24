@@ -49,32 +49,6 @@
                     <!-- TAMPILAN MOBILE -->
                     <!-- col-7 tampilan extra small <576px -->
                     <!-- col-sm-6 tampilan small ≥576px <768px -->
-<<<<<<< HEAD
-                    <thead>
-                        <tr class="row justify-content-center">
-                            <th class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</th>
-                            <th class="col-lg-4 col-7 col-sm-6">No. Pendaftaran</th>
-                            <th class="col-lg-4 col-7 col-sm-6">No. Rekam Medik</th>
-                            <th class="col-lg-4 col-7 col-sm-6">No. Antrian</th>
-                            <th class="col-lg-4 col-7 col-sm-6">Jenis Antrian</th>
-                            <th class="col-lg-4 col-7 col-sm-6">Estimasi Dilayani</th>
-                            <th class="col-lg-4 col-7 col-sm-6">Poli Tujuan</th>
-                            <th class="col-lg-4 col-7 col-sm-6">Dokter Tujuan</th>
-                            <th class="col-lg-4 col-7 col-sm-6">Status Pasien</th></b>
-                        </tr>
-                    </thead>
-                    <!-- <tr class="row justify-content-center">
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
-                    </tr> -->
-=======
                     <!-- col-md-5 tampilan medium 720px -->
                     <div class="col-lg-4 col-7 col-sm-6 col-md-5">
                         <dl>
@@ -130,7 +104,6 @@
                             <dd>Lama</dd>
                         </dl>
                     </div>
->>>>>>> 17385c1112fb00a5dd8bd37cfaff5109a431a7c2
                 </div>
                 <div class="d-flex justify-content-end card-footer">
                     <button id="btnhapus" type="submit" value="hapus" class="btn btn-sm btn-danger mr-2"><i class="fa fa-trash"></i> Hapus</button>
