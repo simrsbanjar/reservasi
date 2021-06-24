@@ -62,6 +62,17 @@
                             <th class="col-lg-4 col-7 col-sm-6">Status Pasien</th></b>
                         </tr>
                     </thead>
+                    <!-- <tr class="row justify-content-center">
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                        <td class="col-lg-4 col-7 col-sm-6"><b>Kode Booking</td>
+                    </tr> -->
                 </div>
 
 

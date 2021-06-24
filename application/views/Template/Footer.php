@@ -110,7 +110,7 @@
         document.getElementById("notlp" + numtab).value = "";
         document.getElementById("kodepos" + numtab).value = "";
         document.getElementById("tglregistrasi" + numtab).value = "<?= date("Y-m-d") ?>";
-        document.getElementById("poli" + numtab).vlaue = "";
+        document.getElementById("poli" + numtab).value = "";
         document.getElementById("rujukanasal" + numtab).value = "";
         if (tab == 'tab-1') {
             document.getElementById("nopeserta" + numtab).value = "";
@@ -118,12 +118,13 @@
         } else if (tab == 'tab-2') {
             document.getElementById("carabayar" + numtab).value = "";
             document.getElementById("nopeserta" + numtab).value = "";
-        } else {}
+        }
         // document.getElementById("tujuanpemeriksaan" + numtab).value = "";
         // document.getElementById("jeniskunjungan" + numtab).value = "";
         // document.getElementById("jenispermintaan" + numtab).value = "";
         // document.getElementById("jenispoli" + numtab).value = "";
 
+        GetPoli("<?= date("Y-m-d") ?>");
     }
 
     function HitungUmur(tgllahir) {
@@ -787,9 +788,7 @@
                 }).then((result) => {
                     if (result.value) {
                         // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.
-                        if (SimpanRegistrasi() === false) {
-
-                        };
+                        SimpanRegistrasi();
                         document.getElementById("nilai3").value = hasilnum;
                     } else {
                         document.getElementById("nilai3").value = Number(hasilnum) - 1;
@@ -1411,6 +1410,7 @@
         var nosuratrujukan = '';
         var nocm = '';
         var jeniskunjungan = '';
+
         if (idtabs == 'tab-1') {
             numtab = '';
             carabayar = '14'; // hardcode bpjs kode 14
@@ -1497,16 +1497,15 @@
             success: function(data) {
                 if (data.codedata['code'] != '200') {
                     message('warning', data.codedata['message'], 'Informasi', false);
-                    return false;
                 } else {
                     message('success', 'Data Berhasil Disimpan.', 'Informasi', false);
-                    // setInterval(location.reload(), 3000);
+                    // console.log('a');
+                    setInterval(location.reload(), 5000);
                 }
 
             },
             error: function() {
                 message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                return false;
             }
         });
 

@@ -1,7 +1,5 @@
 <?php
 
-use Dompdf\Dompdf;
-
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class CariReservasi extends CI_Controller
@@ -214,12 +212,24 @@ class CariReservasi extends CI_Controller
             'statuspasien' => $statuspasien
         ];
 
-        // $this->load->library('pdf');
-        // $this->pdf->setPaper('A4', 'landscape');
-        // $this->pdf->filename = "Laporan-Dompdf-Codeigniter.pdf";
-        // $this->pdf->load_view('CetakBuktiReservasi', $data);
+        // panggil library yang kita buat sebelumnya yang bernama pdfgenerator
+        $this->load->library('pdfgenerator');
 
-        $this->load->view('Cetak_noantrian', $data);
+        // title dari pdf
+        // $this->data['title_pdf'] = 'Laporan Penjualan Toko Kita';
+
+        // filename dari pdf ketika didownload
+        $file_pdf = 'laporan_penjualan_toko_kita';
+        // setting paper
+        $paper = 'A4';
+        //orientasi paper potrait / landscape
+        $orientation = "portrait";
+
+        $html = $this->load->view('Cetak_noantrian', $data, true);
+
+        // run dompdf
+        $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+        // $this->load->view('Cetak_noantrian', $data);
     }
 
     function GenerateQrcode($kodebooking)
