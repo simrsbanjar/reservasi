@@ -100,15 +100,15 @@
                                     <div class="table-responsive" style="width:100%" id="tabletab">
                                     </div>
 
-                                    <div class="col-md-5">
-                                        <input type="text" class="form-control" maxlength="50" name="normhiddenlama1" id="normhiddenlama1" hidden>
-                                    </div>
+                                    <!-- <div class="col-md-5"> -->
+                                    <input type="text" class="form-control" maxlength="50" name="normhiddenlama" id="normhiddenlama" hidden>
+                                    <!-- </div> -->
                                 </div>
 
                                 <div class="row mt-3" id="pasienbaru">
-                                    <div class="col-md-5">
-                                        <input type="text" class="form-control" maxlength="50" name="normhiddenbaru1" id="normhiddenbaru1" hidden>
-                                    </div>
+                                    <!-- <div class="col-md-5"> -->
+                                    <input type="text" class="form-control" maxlength="50" name="normhiddenbaru" id="normhiddenbaru" hidden>
+                                    <!-- </div> -->
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Depan</strong></label>
@@ -438,11 +438,11 @@
                                         <label class="label-control"><strong>Status Pasien</strong></label>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault2" value="1" id="flexRadioDefault3" checked onclick="checkRadio(value)">
-                                            <label class="form-check-label mr-5" for="flexRadioDefault3">
+                                            <label class="form-check-label mr-5" for="flexRadioDefault2">
                                                 Pasien Lama
                                             </label>
                                             <input class="form-check-input" type="radio" name="flexRadioDefault2" value="2" id="flexRadioDefault4" onclick="checkRadio(value)">
-                                            <label class="form-check-label" for="flexRadioDefault4">
+                                            <label class="form-check-label" for="flexRadioDefault2">
                                                 Pasien Baru
                                             </label>
                                         </div>
@@ -474,15 +474,15 @@
 
                                     <div class="table-responsive" style="width:100%" id="tabletab2">
                                     </div>
-                                    <div class="col-md-5">
-                                        <input type="text" class="form-control" maxlength="50" name="normhiddenlama2" id="normhiddenlama2" hidden>
-                                    </div>
+                                    <!-- <div class="col-md-5"> -->
+                                    <input type="text" class="form-control" maxlength="50" name="normhiddenlama2" id="normhiddenlama2" hidden>
+                                    <!-- </div> -->
                                 </div>
 
                                 <div class="row mt-3" id="pasienbaru2">
-                                    <div class="col-md-5">
-                                        <input type="text" class="form-control" maxlength="50" name="normhiddenbaru2" id="normhiddenbaru2" hidden>
-                                    </div>
+                                    <!-- <div class="col-md-5"> -->
+                                    <input type="text" class="form-control" maxlength="50" name="normhiddenbaru2" id="normhiddenbaru2" hidden>
+                                    <!-- </div> -->
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Depan</strong></label>
@@ -810,11 +810,11 @@
                                         <label class="label-control"><strong>Status Pasien</strong></label>
                                         <div class="form-check">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault3" value="1" id="flexRadioDefault5" checked onclick="checkRadio(value)">
-                                            <label class="form-check-label mr-5" for="flexRadioDefault5">
+                                            <label class="form-check-label mr-5" for="flexRadioDefault3">
                                                 Pasien Lama
                                             </label>
                                             <input class="form-check-input" type="radio" name="flexRadioDefault3" value="2" id="flexRadioDefault6" onclick="checkRadio(value)">
-                                            <label class="form-check-label" for="flexRadioDefault6">
+                                            <label class="form-check-label" for="flexRadioDefault3">
                                                 Pasien Baru
                                             </label>
                                         </div>
@@ -846,314 +846,313 @@
 
                                     <div class="table-responsive" style="width:100%" id="tabletab3">
                                     </div>
-                                    <div class="col-md-5">
-                                        <input type="text" class="form-control" maxlength="50" name="normhiddenlama3" id="normhiddenlama3" hidden>
-                                    </div>
+                                    <!-- <div class="col-md-5"> -->
+                                    <input type="text" class="form-control" maxlength="50" name="normhiddenlama3" id="normhiddenlama3" hidden>
+                                    <!-- </div> -->
                                 </div>
-                            </div>
 
-                            <div class="row mt-3" id="pasienbaru3">
-                                <div class="col-md-5">
+                                <div class="row mt-3" id="pasienbaru3">
+                                    <!-- <div class="col-md-5"> -->
                                     <input type="text" class="form-control" maxlength="50" name="normhiddenbaru3" id="normhiddenbaru3" hidden>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Nama Depan</strong></label>
-                                        <select name="gelar3" id="gelar3" class="form-control" title="Pilih Gelar">
-                                            <option value="">-PILIH-</option>
-                                            <option value="Bayi">Bayi</option>
-                                            <option value="Anak">Anak</option>
-                                            <option value="Tn.">Tn.</option>
-                                            <option value="Ny.">Ny.</option>
-                                            <option value="Nn.">Nn.</option>
-                                        </select>
-                                        <small>Error Message</small>
+                                    <!-- </div> -->
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Nama Depan</strong></label>
+                                            <select name="gelar3" id="gelar3" class="form-control" title="Pilih Gelar">
+                                                <option value="">-PILIH-</option>
+                                                <option value="Bayi">Bayi</option>
+                                                <option value="Anak">Anak</option>
+                                                <option value="Tn.">Tn.</option>
+                                                <option value="Ny.">Ny.</option>
+                                                <option value="Nn.">Nn.</option>
+                                            </select>
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                        <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap3" id="namalengkap3">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Nama Lengkap</strong></label>
+                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap3" id="namalengkap3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Jenis Kelamin</strong></label>
-                                        <select name="kelamin3" id="kelamin3" class="form-control form-control-user" title="Pilih Jenis Kelamin">
-                                            <option value="">-PILIH-</option>
-                                            <option value="L">Laki-laki</option>
-                                            <option value="P">Perempuan</option>
-                                        </select>
-                                        <small>Error Message</small>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Jenis Kelamin</strong></label>
+                                            <select name="kelamin3" id="kelamin3" class="form-control form-control-user" title="Pilih Jenis Kelamin">
+                                                <option value="">-PILIH-</option>
+                                                <option value="L">Laki-laki</option>
+                                                <option value="P">Perempuan</option>
+                                            </select>
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                        <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir3" name="tempatlahir3">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Tempat Lahir</strong></label>
+                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir3" name="tempatlahir3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                        <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir3" name="tgllahir3" onchange="HitungUmur(this.value)">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Tanggal Lahir</strong></label>
+                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir3" name="tgllahir3" onchange="HitungUmur(this.value)">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Tahun</strong></label>
-                                        <input type="text" placeholder="Thn" class="form-control" disabled name="tahun3" id="tahun3">
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Tahun</strong></label>
+                                            <input type="text" placeholder="Thn" class="form-control" disabled name="tahun3" id="tahun3">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Bulan</strong></label>
-                                        <input type="text" placeholder="Bln" class="form-control" disabled name="bulan3" id="bulan3">
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Bulan</strong></label>
+                                            <input type="text" placeholder="Bln" class="form-control" disabled name="bulan3" id="bulan3">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Hari</strong></label>
-                                        <input type="text" placeholder="Hari" class="form-control" disabled name="hari3" id="hari3">
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Hari</strong></label>
+                                            <input type="text" placeholder="Hari" class="form-control" disabled name="hari3" id="hari3">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                        <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas3" name="noidentitas3">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
+                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas3" name="noidentitas3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Alamat</strong></label>
-                                        <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat3" name="alamat3">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Alamat</strong></label>
+                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat3" name="alamat3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>RT</strong></label>
-                                        <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>RT</strong></label>
+                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-1">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>RW</strong></label>
-                                        <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-1">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>RW</strong></label>
+                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Propinsi</strong></label>
-                                        <select name="propinsi3" id="propinsi3" class="form-control form-control-user" title="Pilih Propinsi">
-                                            <option value="">-PILIH-</option>
-                                        </select>
-                                        <small>Error Message</small>
-                                        <!---->
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Propinsi</strong></label>
+                                            <select name="propinsi3" id="propinsi3" class="form-control form-control-user" title="Pilih Propinsi">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
+                                            <!---->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
-                                        <select name="kota3" id="kota3" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
-                                            <option value="">-PILIH-</option>
-                                        </select>
-                                        <small>Error Message</small>
-                                        <!---->
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
+                                            <select name="kota3" id="kota3" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
+                                            <!---->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Kecamatan</strong></label>
-                                        <select name="kecamatan3" id="kecamatan3" class="form-control form-control-user" title="Pilih Kecamatan">
-                                            <option value="">-PILIH-</option>
-                                        </select>
-                                        <small>Error Message</small>
-                                        <!---->
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Kecamatan</strong></label>
+                                            <select name="kecamatan3" id="kecamatan3" class="form-control form-control-user" title="Pilih Kecamatan">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
+                                            <!---->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
-                                        <select name="kelurahan3" id="kelurahan3" class="form-control form-control-user" title="Pilih Kelurahan">
-                                            <option value="">-PILIH-</option>
-                                        </select>
-                                        <small>Error Message</small>
-                                        <!---->
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
+                                            <select name="kelurahan3" id="kelurahan3" class="form-control form-control-user" title="Pilih Kelurahan">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
+                                            <!---->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-5">
-                                    <div class=" form-group">
-                                        <label class="label-control"><strong>Telepon</strong></label>
-                                        <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-5">
+                                        <div class=" form-group">
+                                            <label class="label-control"><strong>Telepon</strong></label>
+                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Kode Pos</strong></label>
-                                        <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3">
-                                        <!---->
-                                        <small>Error Message</small>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Kode Pos</strong></label>
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-header bg-primary  text-white" id="headerreservasi3">
-                            Data Registrasi
-                        </div>
-                        <div class="card-body" id="isireservasi3">
-                            <input type="hidden" name="nilai3" id="nilai3" value="1">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Tgl. Registrasi</strong></label>
-                                        <input type="date" name="tglregistrasi3" id="tglregistrasi3" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" onchange="GetPoli(this.value)">
-                                        <!---->
+                            <div class="card-header bg-primary  text-white" id="headerreservasi3">
+                                Data Registrasi
+                            </div>
+                            <div class="card-body" id="isireservasi3">
+                                <input type="hidden" name="nilai3" id="nilai3" value="1">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Tgl. Registrasi</strong></label>
+                                            <input type="date" name="tglregistrasi3" id="tglregistrasi3" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" onchange="GetPoli(this.value)">
+                                            <!---->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4" hidden>
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Jenis Permintaan</strong></label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radiojenispermintaan3" value="1" id="radiojenispermintaan31">
-                                            <label class="form-check-label" for="radiojenispermintaan3">
-                                                Antrian Pendaftaran
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radiojenispermintaan3" value="2" id="radiojenispermintaan32" checked>
-                                            <label class="form-check-label" for="radiojenispermintaan3">
-                                                Antrian Poli
-                                            </label>
-                                        </div>
-                                        <!-- <select name="jenispermintaan3" id="jenispermintaan3" class="form-control form-control-user" title="Pilih Jenis Permintaan">
+                                    <div class="col-md-4" hidden>
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Jenis Permintaan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispermintaan3" value="1" id="radiojenispermintaan31">
+                                                <label class="form-check-label" for="radiojenispermintaan3">
+                                                    Antrian Pendaftaran
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispermintaan3" value="2" id="radiojenispermintaan32" checked>
+                                                <label class="form-check-label" for="radiojenispermintaan3">
+                                                    Antrian Poli
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jenispermintaan3" id="jenispermintaan3" class="form-control form-control-user" title="Pilih Jenis Permintaan">
                                                 <option value="">-PILIH-</option>
                                                 <option value="1">Ambil Antrian Pendaftaran</option>
                                                 <option value="2">Pendaftaran Poli</option>
                                             </select>
                                             <small>Error Message</small> -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radiotjnpemeiksaan3" value="0" id="radiotjnpemeriksaan31" checked>
-                                            <label class="form-check-label" for="radiotjnpemeiksaan3">
-                                                Pemeriksaan Dokter
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radiotjnpemeiksaan3" value="1" id="radiotjnpemeriksaan32">
-                                            <label class="form-check-label" for="radiotjnpemeiksaan3">
-                                                Pembuatan Surat Keterangan Sehat (KIR Dokter)
-                                            </label>
-                                        </div>
-                                        <!-- <select name="tujuanpemeriksaan3" id="tujuanpemeriksaan3" class="form-control" title="Pilih Tujuan Pemeriksaan">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Tujuan Pemeriksaan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiotjnpemeiksaan3" value="0" id="radiotjnpemeriksaan31" checked>
+                                                <label class="form-check-label" for="radiotjnpemeiksaan3">
+                                                    Pemeriksaan Dokter
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiotjnpemeiksaan3" value="1" id="radiotjnpemeriksaan32">
+                                                <label class="form-check-label" for="radiotjnpemeiksaan3">
+                                                    Pembuatan Surat Keterangan Sehat (KIR Dokter)
+                                                </label>
+                                            </div>
+                                            <!-- <select name="tujuanpemeriksaan3" id="tujuanpemeriksaan3" class="form-control" title="Pilih Tujuan Pemeriksaan">
                                                 <option value="">-PILIH-</option>
                                                 <option value="0">Pemeriksaan Dokter</option>
                                                 <option value="1">Pembuatan Surat Keterangan Sehat (KIR Dokter)</option>
                                             </select>
                                             <small>Error Message</small> -->
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Rujukan Asal</strong></label>
-                                        <select name="rujukanasal3" id="rujukanasal3" class="form-control form-control-user" title="Pilih Rujukan Asal">
-                                            <option value="">-PILIH-</option>
-                                        </select>
-                                        <small>Error Message</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Poli</strong></label>
-                                        <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli">
-                                            <option value="">-PILIH-</option>
-                                        </select>
-                                        <small>Error Message</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-4" hidden>
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Jenis Kunjungan</strong></label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radiojeniskunjungan3" value="2" id="radiojeniskunjungan32" checked>
-                                            <label class="form-check-label" for="radiojeniskunjungan3">
-                                                Berdasarkan Rujukan
-                                            </label>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radiojeniskunjungan3" value="1" id="radiojeniskunjungan31">
-                                            <label class="form-check-label" for="radiojeniskunjungan3">
-                                                Kontrol
-                                            </label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Rujukan Asal</strong></label>
+                                            <select name="rujukanasal3" id="rujukanasal3" class="form-control form-control-user" title="Pilih Rujukan Asal">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
                                         </div>
-                                        <!-- <select name="jeniskunjungan3" id="jeniskunjungan3" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Poli</strong></label>
+                                            <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" hidden>
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan3" value="2" id="radiojeniskunjungan32" checked>
+                                                <label class="form-check-label" for="radiojeniskunjungan3">
+                                                    Berdasarkan Rujukan
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan3" value="1" id="radiojeniskunjungan31">
+                                                <label class="form-check-label" for="radiojeniskunjungan3">
+                                                    Kontrol
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jeniskunjungan3" id="jeniskunjungan3" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
                                                 <option value="">-PILIH-</option>
                                                 <option value="1">Kontrol</option>
                                                 <option value="2">Berdasarkan Rujukan</option>
                                             </select>
                                             <small>Error Message</small> -->
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="label-control"><strong>Jenis Poli</strong></label>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radiojenispoli3" value="0" id="radiojenispoli32" checked onclick="return false">
-                                            <label class="form-check-label" for="radiojenispoli3">
-                                                Reguler
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="radiojenispoli3" value="1" id="radiojenispoli31" onclick="return false">
-                                            <label class="form-check-label" for="radiojenispoli3">
-                                                Eksekutif
-                                            </label>
-                                        </div>
-                                        <!-- <select name="jenispoli3" id="jenispoli3" class="form-control form-control-user" title="Pilih Jenis POli">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Jenis Poli</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispoli3" value="0" id="radiojenispoli32" checked onclick="return false">
+                                                <label class="form-check-label" for="radiojenispoli3">
+                                                    Reguler
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojenispoli3" value="1" id="radiojenispoli31" onclick="return false">
+                                                <label class="form-check-label" for="radiojenispoli3">
+                                                    Eksekutif
+                                                </label>
+                                            </div>
+                                            <!-- <select name="jenispoli3" id="jenispoli3" class="form-control form-control-user" title="Pilih Jenis POli">
                                                 <option value="">-PILIH-</option>
                                                 <option value="1">Eksekutif</option>
                                                 <option value="2">Reguler</option>
                                             </select>
                                             <small>Error Message</small> -->
+                                        </div>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
                                     </div>
-                                    <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer d-flex">
-                            <!-- <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button> -->
-                            <button id="btnkembali3" name="btnkembali3" type="button" onclick="prosesKembali()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-circle-left"></i> Kembali</button>
-                            <button id="btnlanjut3" name="btnlanjut3" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
-                        </div>
+                            <div class="card-footer d-flex">
+                                <!-- <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button> -->
+                                <button id="btnkembali3" name="btnkembali3" type="button" onclick="prosesKembali()" class="btn btn-sm btn-primary p-2"><i class="fas fa-arrow-circle-left"></i> Kembali</button>
+                                <button id="btnlanjut3" name="btnlanjut3" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
+                            </div>
 
+                        </div>
                     </div>
+                    <!-- </section> -->
                 </div>
-                <!-- </section> -->
             </div>
-        </div>
 
-    </div>
-    <!-- </section> -->
+        </div>
+        <!-- </section> -->
 </main>
 <!-- copyright dari web -->
 <?php $this->load->view('Template/Footer'); ?>
