@@ -89,6 +89,8 @@
             $('#tabletab3').html('');
         }
 
+        document.getElementById("normhiddenbaru" + numtab).value = "";
+        document.getElementById("normhiddenlama" + numtab).value = "";
         document.getElementById("norm" + numtab).value = "";
         document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
         document.getElementById("gelar" + numtab).value = "";
@@ -115,16 +117,36 @@
         if (tab == 'tab-1') {
             document.getElementById("nopeserta" + numtab).value = "";
             document.getElementById("nosuratrujukan" + numtab).value = "";
+            $('input:radio[name=flexRadioDefault][id=flexRadioDefault1]').click();
         } else if (tab == 'tab-2') {
             document.getElementById("carabayar" + numtab).value = "";
             document.getElementById("nopeserta" + numtab).value = "";
+            $('input:radio[name=flexRadioDefault2][id=flexRadioDefault3]').click();
+        } else {
+            $('input:radio[name=flexRadioDefault3][id=flexRadioDefault5]').click();
         }
-        // document.getElementById("tujuanpemeriksaan" + numtab).value = "";
-        // document.getElementById("jeniskunjungan" + numtab).value = "";
-        // document.getElementById("jenispermintaan" + numtab).value = "";
-        // document.getElementById("jenispoli" + numtab).value = "";
-
         GetPoli("<?= date("Y-m-d") ?>");
+
+        setSuccessFor(document.getElementById('norm' + numtab));
+        setSuccessFor(document.getElementById("gelar" + numtab));
+        setSuccessFor(document.getElementById("namalengkap" + numtab));
+        setSuccessFor(document.getElementById("kelamin" + numtab));
+        setSuccessFor(document.getElementById("tempatlahir" + numtab));
+        setSuccessFor(document.getElementById("tahun" + numtab));
+        setSuccessFor(document.getElementById("bulan" + numtab));
+        setSuccessFor(document.getElementById("hari" + numtab));
+        setSuccessFor(document.getElementById("noidentitas" + numtab));
+        setSuccessFor(document.getElementById("alamat" + numtab));
+        setSuccessFor(document.getElementById("rt" + numtab));
+        setSuccessFor(document.getElementById("rw" + numtab));
+        setSuccessFor(document.getElementById("propinsi" + numtab));
+        setSuccessFor(document.getElementById("kota" + numtab));
+        setSuccessFor(document.getElementById("kecamatan" + numtab));
+        setSuccessFor(document.getElementById("kelurahan" + numtab));
+        setSuccessFor(document.getElementById("notlp" + numtab));
+        setSuccessFor(document.getElementById("kodepos" + numtab));
+        setSuccessFor(document.getElementById("poli" + numtab));
+        setSuccessFor(document.getElementById("rujukanasal" + numtab));
     }
 
     function HitungUmur(tgllahir) {
@@ -337,74 +359,102 @@
             var nopendaftaran = document.getElementById('nopendaftaran');
             var nopendaftaranValue = nopendaftaran.value.trim();
             if (nopendaftaranValue === '') {
-                setErrorFor(nopendaftaran, 'No. Pendaftaran Tidak Boleh Kosong');
+                setErrorFor(nopendaftaran, 'No. Booking / No. Pendaftaran Tidak Boleh Kosong');
                 return;
             } else {
                 setSuccessFor(nopendaftaran);
             }
+        } else {
+            setSuccessFor(document.getElementById('nopendaftaran'));
+            var kriteriacari = $('input[name="radiokriteria"]:checked').val();
+
+            $.ajax({
+                url: "<?= base_url('CariReservasi/GetBookingPasien') ?>",
+                method: "POST",
+                data: {
+                    "nopendaftaran": nopendaftaran,
+                    "kriteria": kriteriacari
+                },
+                // async: false,
+                dataType: 'json',
+                success: function(data) {
+                    if (data.codedata['code'] != '200') {
+                        message('info', data.codedata['message'], 'Informasi', false);
+                        $('#kodebooking').text('-');
+                        $('#noreg').text('-');
+                        $('#norm').text('-');
+                        $('#noantrian').text('-');
+                        $('#jenisantrian').text('-');
+                        $('#estimasidilayani').text('-');
+                        $('#politujuan').text('-');
+                        $('#doktertujuan').text('-');
+                        $('#statuspasien').text('-');
+                        $("#btnhapus").attr("disabled", true);
+                        $("#btncetak").attr("disabled", true);
+
+                        document.getElementById("kodebookingval").value = '';
+                        document.getElementById("nopendaftaranval").value = '';
+                        document.getElementById("nocmval").value = '';
+                        document.getElementById("nomorantreanval").value = '';
+                        document.getElementById("jenisantreanval").value = '';
+                        document.getElementById("estimasidilayanival").value = '';
+                        document.getElementById("namapolival").value = '';
+                        document.getElementById("namadokterval").value = '';
+                        document.getElementById("statuspasienval").value = '';
+                    } else {
+                        $('#kodebooking').text(data.hasil['kodebooking']);
+                        $('#noreg').text(data.hasil['nopendaftaran']);
+                        $('#norm').text(data.hasil['nocm']);
+                        $('#noantrian').text(data.hasil['nomorantrean']);
+                        $('#jenisantrian').text(data.hasil['jenisantrean']);
+                        $('#estimasidilayani').text(data.hasil['estimasidilayani']);
+                        $('#politujuan').text(data.hasil['namapoli']);
+                        $('#doktertujuan').text(data.hasil['namadokter']);
+                        $('#statuspasien').text(data.hasil['statuspasien']);
+
+                        document.getElementById("kodebookingval").value = data.hasil['kodebooking'];
+                        document.getElementById("nopendaftaranval").value = data.hasil['nopendaftaran'];
+                        document.getElementById("nocmval").value = data.hasil['nocm'];
+                        document.getElementById("nomorantreanval").value = data.hasil['nomorantrean'];
+                        document.getElementById("jenisantreanval").value = data.hasil['jenisantrean'];
+                        document.getElementById("estimasidilayanival").value = data.hasil['estimasidilayani'];
+                        document.getElementById("namapolival").value = data.hasil['namapoli'];
+                        document.getElementById("namadokterval").value = data.hasil['namadokter'];
+                        document.getElementById("statuspasienval").value = data.hasil['statuspasien'];
+
+                        $("#btnhapus").attr("disabled", false);
+                        $("#btncetak").attr("disabled", false);
+                    }
+
+                },
+                error: function() {
+                    message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                    $('#kodebooking').text('-');
+                    $('#noreg').text('-');
+                    $('#norm').text('-');
+                    $('#noantrian').text('-');
+                    $('#jenisantrian').text('-');
+                    $('#estimasidilayani').text('-');
+                    $('#politujuan').text('-');
+                    $('#doktertujuan').text('-');
+                    $('#statuspasien').text('-');
+                    $("#btnhapus").attr("disabled", true);
+                    $("#btncetak").attr("disabled", true);
+
+                    document.getElementById("kodebookingval").value = '';
+                    document.getElementById("nopendaftaranval").value = '';
+                    document.getElementById("nocmval").value = '';
+                    document.getElementById("nomorantreanval").value = '';
+                    document.getElementById("jenisantreanval").value = '';
+                    document.getElementById("estimasidilayanival").value = '';
+                    document.getElementById("namapolival").value = '';
+                    document.getElementById("namadokterval").value = '';
+                    document.getElementById("statuspasienval").value = '';
+                }
+            });
+
         }
 
-        $.ajax({
-            url: "<?= base_url('CariReservasi/GetBookingPasien') ?>",
-            method: "POST",
-            data: {
-                "nopendaftaran": nopendaftaran
-            },
-            // async: false,
-            dataType: 'json',
-            success: function(data) {
-                if (data.codedata['code'] != '200') {
-                    message('info', data.codedata['message'], 'Informasi', false);
-                } else {
-                    var html = '';
-                    html = "<form action='CariReservasi/Cetak' method='post' name='carireservasi' id='carireservasi' target='_blank'>"
-                    html += "<table class='table'> "
-                    html += "<tr>"
-                    html += "<th scope='col'>Kode Booking </th>"
-                    html += "<th scope='col'>No. Pendaftaran</th>"
-                    html += "<th scope='col'>No. Rekam Medik</th>"
-                    html += "<th scope='col'>No. Antrian</th>"
-                    html += "<th scope='col'>Jenis Antrian</th>"
-                    html += "<th scope='col'>Estimasi Dilayani</th>"
-                    html += "<th scope='col'>Poli Tujuan</th </tr>"
-                    html += "<th scope='col'>Dokter Tujuan</th </tr>"
-                    html += "<th scope='col'>Status Pasien</th>"
-                    html += "<th scope='col'>Aksi</th>"
-                    html += "</tr>"
-                    html += "<tr>"
-                    html += "<td>" + data.hasil['kodebooking'] + "</td>";
-                    html += "<td>" + data.hasil['nopendaftaran'] + "</td>";
-                    html += "<td>" + data.hasil['nocm'] + "</td>";
-                    html += "<td>" + data.hasil['nomorantrean'] + "</td>";
-                    html += "<td>" + data.hasil['jenisantrean'] + "</td>";
-                    html += "<td>" + data.hasil['estimasidilayani'] + "</td>";
-                    html += "<td>" + data.hasil['namapoli'] + "</td>";
-                    html += "<td>" + data.hasil['namadokter'] + "</td>";
-                    html += "<td>" + data.hasil['statuspasien'] + "</td>";
-                    html += "<td>" +
-                        '<button id="btnhapus" type="submit" value="hapus" class="btn btn-sm btn-danger mb-4"><i class="fa fa-trash"></i> Hapus</button> <br>' +
-                        '<button id="btncetak" type="submit" value="cetak" class="btn btn-sm btn-danger"><i class="fas fa-print"></i> Cetak</button>' + "</td>";
-                    html += "</tr>"
-                    html += "</table>"
-                    html += "<input type='text' name='kodebooking' id='kodebooking' value = '" + data.hasil['kodebooking'] + "' hidden>"
-                    html += "<input type='text' name='nopendaftaran' id='nopendaftaran' value = '" + data.hasil['nopendaftaran'] + "' hidden>"
-                    html += "<input type='text' name='nocm' id='nocm' value = '" + data.hasil['nocm'] + "' hidden>"
-                    html += "<input type='text' name='nomorantrean' id='nomorantrean' value = '" + data.hasil['nomorantrean'] + "' hidden>"
-                    html += "<input type='text' name='jenisantrean' id='jenisantrean' value = '" + data.hasil['jenisantrean'] + "' hidden>"
-                    html += "<input type='text' name='estimasidilayani' id='estimasidilayani' value = '" + data.hasil['estimasidilayani'] + "' hidden>"
-                    html += "<input type='text' name='namapoli' id='namapoli' value = '" + data.hasil['namapoli'] + "' hidden>"
-                    html += "<input type='text' name='namadokter' id='namadokter' value = '" + data.hasil['namadokter'] + "' hidden>"
-                    html += "<input type='text' name='statuspasien' id='statuspasien' value = '" + data.hasil['statuspasien'] + "' hidden>"
-                    html += "</form>"
-                    $('#carireservasi').html(html);
-                }
-
-            },
-            error: function() {
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                return;
-            }
-        });
 
     }
 
@@ -1499,7 +1549,6 @@
                     message('warning', data.codedata['message'], 'Informasi', false);
                 } else {
                     message('success', 'Data Berhasil Disimpan.', 'Informasi', false);
-                    // console.log('a');
                     setInterval(location.reload(), 5000);
                 }
 

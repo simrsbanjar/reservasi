@@ -176,11 +176,13 @@ class CariReservasi extends CI_Controller
     function GetBookingPasien()
     {
         $nopendaftaran = $this->input->post('nopendaftaran');
+        $kriteria = $this->input->post('kriteria');
         // $nopendaftaran = '2105100010';
 
-        $data = $this->GetBookingPasienbynoreg($nopendaftaran);
-        if ($data['codedata']['code'] != '200') {
+        if ($kriteria == '0') {
             $data = $this->GetBookingPasienbynobooking($nopendaftaran);
+        } else {
+            $data = $this->GetBookingPasienbynoreg($nopendaftaran);
         }
 
         echo json_encode($data);
@@ -188,15 +190,15 @@ class CariReservasi extends CI_Controller
 
     function Cetak()
     {
-        $kodebooking = $this->input->post('kodebooking');
-        $nopendaftaran = $this->input->post('nopendaftaran');
-        $nocm = $this->input->post('nocm');
-        $nomorantrean = $this->input->post('nomorantrean');
-        $jenisantrean = $this->input->post('jenisantrean');
-        $estimasidilayani = $this->input->post('estimasidilayani');
-        $namapoli = $this->input->post('namapoli');
-        $namadokter = $this->input->post('namadokter');
-        $statuspasien = $this->input->post('statuspasien');
+        $kodebooking = $this->input->post('kodebookingval');
+        $nopendaftaran = $this->input->post('nopendaftaranval');
+        $nocm = $this->input->post('nocmval');
+        $nomorantrean = $this->input->post('nomorantreanval');
+        $jenisantrean = $this->input->post('jenisantreanval');
+        $estimasidilayani = $this->input->post('estimasidilayanival');
+        $namapoli = $this->input->post('namapolival');
+        $namadokter = $this->input->post('namadokterval');
+        $statuspasien = $this->input->post('statuspasienval');
 
         $this->GenerateQrcode($kodebooking);
 
