@@ -3,108 +3,122 @@
 
 <head>
     <link href="<?= base_url() ?>/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/assets/vendor/venobox/venobox.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
-    <link href="<?= base_url() ?>/assets/css/style.css" rel="stylesheet">
+    <style>
+        .antrian {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            max-width: 150%;
+            max-height: 150%;
+            background-color: #ffffff;
+            border: 2px solid rgb(0, 0, 0);
+            text-align: center;
+        }
+    </style>
+
 </head>
 
 <body>
+    <div class="container">
+        <div>
+            <img src="<?= base_url() ?>assets/img/logo rsu.png" alt="logo rumah sakit" style="padding-top: 60px; padding-bottom: 0px; line-height: 0px;">
+        </div>
+        <!-- tutup logo rumah sakit -->
 
-    <div class="antrian">
-        <div class="container">
-            <div class="gambar">
-                <img src="<?= base_url() ?>/assets/img/logo rsu.png" alt="logo rumah sakit">
-                <p>
-                    Rumah Sakit Umum Daerah Kota Banjar
+        <div>
+            <div>
+                <p style="font-size: 35px; font-weight: bold; margin-bottom: 0px;">Rumah Sakit Umum Daerah Kota Banjar</p>
+            </div>
+            <div>
+                <p style="margin-bottom: 0px;">
+                    Jl. Rumah Sakit Umum No.5, Hegarsari, Kec. Pataruman, Kota Banjar, Jawa Barat 40293
                 </p>
             </div>
-            <p>
-                Jl. Rumah Sakit Umum No.5, Hegarsari, Kec. Pataruman, Kota Banjar, Jawa Barat 40293
-            </p>
-            <table>
+        </div>
+        <!-- tutup alamat rumah sakit -->
 
-                <div>
-                    <p style="margin-top: 10px;">Nomer Antrian Anda</p>
-                    <div class="nomerantri">
-                        <div>
-                            <p><?= $cetak['nomorantrean'] ?></p>
-                        </div>
-                    </div>
-                </div>
-            </table>
-            <div class="urutan row justify-content-center" style="padding-top: 10px;">
-                <div class="nopendaftaran">
-                    No. Pendaftaran :
-                </div>
-                <div class="nomer">
-                    <p><?= $cetak['nopendaftaran'] ?></p>
-                </div>
+        <div>
+            <div>
+                <p style="margin-bottom: 0px;">Nomer Antrian Anda</p>
             </div>
-            <div class="urutan row justify-content-center">
-                <div class="politujuan">
-                    Poli Tujuan :
-                </div>
-                <div class="politujuan">
-                    <p><?= $cetak['namapoli'] ?></p>
-                </div>
-            </div>
-            <div class="urutan row justify-content-center">
-                <div class="doktertugas">
-                    Dokter Tujuan :
-                </div>
-                <div class="doktertugas">
-                    <p><?= $cetak['namadokter'] ?></p>
-                </div>
-            </div>
-            <div class="urutan row justify-content-center">
-                <div class="estimasi">
-                    Estimasi Dilayani :
-                </div>
-                <div class="estimasi">
-                    <p><?= $cetak['estimasidilayani'] ?></p>
-                </div>
-            </div>
-            <div class="urutan row justify-content-center">
-                <div class="estimasi">
-                    No. Rekam Medik :
-                </div>
-                <div class="estimasi">
-                    <p><?= $cetak['nocm'] ?></p>
-                </div>
-            </div>
-            <div class="urutan row justify-content-center">
-                <div class="estimasi">
-                    Status Pasien :
-                </div>
-                <div class="estimasi">
-                    <p><?= $cetak['statuspasien'] ?></p>
-                </div>
-            </div>
-
-
-            <div class="qrcode">
-                <img src="<?= base_url() . 'assets/img/qrcode/' . $cetak['kodebooking'] . '.png' ?>" alt="logo qrcode">
-            </div>
-            <div class="urutan row justify-content-center">
-                <div class="nomer">
-                    <p><?= $cetak['kodebooking'] ?></p>
-                </div>
-            </div>
-
-            <div style="align-items: center;">
-                <p>Mohon datang <b>30 menit</b> sebelumnya </p>
-                <p>Jika terlambat antrian tidak berlaku lagi</p>
-                <p style="font-weight: bold;">!!! Bawalah tanda bukti ini untuk verifikasi di pendaftaran !!! </p>
+            <div>
+                <p style="font-weight: bold; font-size: 75px; line-height: 80px; margin-bottom: 0px;"><?= $cetak['nomorantrean'] ?></p>
             </div>
         </div>
-        <!-- tutup div container -->
+        <!-- tutup nomer antrian -->
+
+        <tr>
+            <th>No. Pendaftaran :</th>
+            <td><?= $cetak['nopendaftaran'] ?></td>
+        </tr>
+        <!-- tutup tr no pendaftaran -->
+
+        <br>
+        <br style="line-height: 5px;">
+        <tr>
+            <th>Poli Tujuan :</th>
+            <td><?= $cetak['namapoli'] ?></td>
+        </tr>
+        <!-- tutup tr poli tujuan  -->
+
+        <br>
+        <br style="line-height: 5px;">
+
+        <tr>
+            <th>Dokter Tujuan :</th>
+            <td><?= $cetak['namadokter'] ?></td>
+        </tr>
+        <!-- tutup tr dokter tujuan  -->
+
+        <br>
+        <br style="line-height: 5px;">
+
+        <tr>
+            <th>Estimasi Dilayani :</th>
+            <td><?= $cetak['estimasidilayani'] ?></td>
+        </tr>
+        <!-- tutup tr estimasi dilayani  -->
+
+        <br>
+        <br style="line-height: 5px;">
+
+        <tr>
+            <th>No. Rekam Medik :</th>
+            <td><?= $cetak['nocm'] ?></td>
+        </tr>
+        <!-- tutup tr rekam medik  -->
+
+        <br>
+        <br style="line-height: 5px;">
+
+        <tr>
+            <th>Status Pasien :</th>
+            <td><?= $cetak['statuspasien'] ?></td>
+        </tr>
+        <!-- tutup tr statuspasien -->
+
+        <div>
+            <img src="<?= base_url() . 'assets/img/qrcode/' . $cetak['kodebooking'] . '.png' ?>" alt="logo qrcode" style="padding-bottom: 0px; line-height: 0px;">
+        </div>
+        <!-- tutup div gambar barcode -->
+
+        <div>
+            <p style="font-size: 35px; font-weight: bold; margin-bottom: 0px; line-height: 0px;"><?= $cetak['kodebooking'] ?></p>
+        </div>
+        <!-- tutup kode booking -->
+
+        <br>
+
+        <div style="line-height: 5px;">
+            <p>Mohon datang <b>30 menit</b> sebelumnya </p>
+            <p>Jika terlambat antrian tidak berlaku lagi</p>
+            <p style="font-weight: bold;">!!! Bawalah tanda bukti ini untuk verifikasi di pendaftaran !!! </p>
+        </div>
+        <!-- tutup keterangan -->
+
     </div>
-    <!-- tutup div class antrian -->
+    <!-- tutup container -->
 
 </body>
 
