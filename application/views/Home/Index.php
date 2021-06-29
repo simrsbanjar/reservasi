@@ -6,7 +6,7 @@
 <?php $this->load->view('Template/Topbar'); ?>
 
 <!-- Menu navigasi dibuat disini -->
-<?php $this->load->view('Template/Header'); ?>
+<?php $this->load->view('Template/Header', array('data' => '1')); ?>
 
 
 <!-- ======= selamatdatang Section ======= -->

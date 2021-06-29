@@ -6,7 +6,7 @@
 <?php $this->load->view('Template/Topbar'); ?>
 
 <!-- Menu navigasi dibuat disini -->
-<?php $this->load->view('Template/Header'); ?>
+<?php $this->load->view('Template/Header', array('data' => '2')); ?>
 
 <div class="section-title">
     <h2>PENDAFTARAN ONLINE</h2>
@@ -1183,8 +1183,7 @@
         <!-- <div id="loading"> -->
     </div>
 
-    <div id="loading">
-    </div>
+
 </main>
 <!-- copyright dari web -->
 <?php $this->load->view('Template/Footer'); ?>
