@@ -77,7 +77,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
-                                            <input type="number" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm">
+                                            <input type="text" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -126,7 +126,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap" id="namalengkap">
+                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap" id="namalengkap" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -145,7 +145,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir" name="tempatlahir">
+                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir" name="tempatlahir" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -153,7 +153,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir1" name="tgllahir1" onchange="HitungUmur(this.value)">
+                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahirbaru" name="tgllahirbaru" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -179,7 +179,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas" name="noidentitas">
+                                            <input type="text" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas" name="noidentitas" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -187,7 +187,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Alamat</strong></label>
-                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat" name="alamat">
+                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat" name="alamat" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -195,7 +195,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="text" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt">
+                                            <input type="text" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -203,7 +203,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="text" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw">
+                                            <input type="text" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -251,7 +251,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp" name="notlp">
+                                            <input type="text" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp" name="notlp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -259,7 +259,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos" name="kodepos">
+                                            <input type="text" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos" name="kodepos" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -337,7 +337,7 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                            <input type="number" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -345,7 +345,7 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Surat Rujukan</strong></label>
-                                            <input type="number" placeholder="No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan">
+                                            <input type="text" placeholder="No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan" oninput="this.value = this.value.toUpperCase()">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -416,8 +416,19 @@
                                 <button id="btnlanjut" name="btnlanjut" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
                             </div>
 
+                            <div class="card-body " id="sukses" style="text-align: center;">
+                                <div class="form-group">
+                                    <i class="far fa-check-circle fa-10x" style="color: green;"></i>
+                                    <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
+                                    <h6 style="padding-top: 10px;" id="nobookingsimpan">No. Booking : 2003190003</h6>
+                                    <button id="btnhome" name="btnhome" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
+
                     <!-- </div> -->
                     <!-- </section> -->
                 </div>
@@ -452,7 +463,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
-                                            <input type="number" placeholder="Nomor RM" class="form-control" name="norm2" id="norm2">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Nomor RM" class="form-control" name="norm2" id="norm2">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -500,7 +511,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap2" id="namalengkap2">
+                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap2" id="namalengkap2" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -519,7 +530,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir2" name="tempatlahir2">
+                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir2" name="tempatlahir2" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -527,7 +538,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir2" name="tgllahir2" onchange="HitungUmur(this.value)">
+                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahirbaru2" name="tgllahirbaru2" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -553,7 +564,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas2" name="noidentitas2">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas2" name="noidentitas2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -561,7 +572,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Alamat</strong></label>
-                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat2" name="alamat2">
+                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat2" name="alamat2" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -569,7 +580,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt2" name="rt2">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt2" name="rt2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -577,7 +588,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw2" name="rw2">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw2" name="rw2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -625,7 +636,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp2" name="notlp2">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp2" name="notlp2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -633,7 +644,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos2" name="kodepos2">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos2" name="kodepos2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -720,7 +731,7 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                            <input type="number" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta2" name="nopeserta2">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta2" name="nopeserta2">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -789,6 +800,15 @@
                                 <button id="btnlanjut2" name="btnlanjut2" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
                             </div>
 
+                            <div class="card-body " id="sukses2" style="text-align: center;">
+                                <div class="form-group">
+                                    <i class="far fa-check-circle fa-10x" style="color: green;"></i>
+                                    <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
+                                    <h6 style="padding-top: 10px;" id="nobookingsimpan">No. Booking : -</h6>
+                                    <button id="btnhome2" name="btnhome2" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <!-- </section> -->
@@ -824,7 +844,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
-                                            <input type="number" placeholder="No. RM / NIK" class="form-control" name="norm3" id="norm3">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No. RM / NIK" class="form-control" name="norm3" id="norm3">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -872,7 +892,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap3" id="namalengkap3">
+                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap3" id="namalengkap3" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -891,7 +911,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir3" name="tempatlahir3">
+                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir3" name="tempatlahir3" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -899,7 +919,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahir3" name="tgllahir3" onchange="HitungUmur(this.value)">
+                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahirbaru3" name="tgllahirbaru3" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -925,7 +945,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas3" name="noidentitas3">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas3" name="noidentitas3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -933,7 +953,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Alamat</strong></label>
-                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat3" name="alamat3">
+                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat3" name="alamat3" oninput="this.value = this.value.toUpperCase()">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -941,7 +961,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -949,7 +969,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -997,7 +1017,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1005,7 +1025,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3">
+                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1145,14 +1165,26 @@
                                 <button id="btnlanjut3" name="btnlanjut3" type="button" onclick="prosesLanjut()" class="btn btn-sm btn-primary ml-auto p-2"><i class="fas fa-arrow-alt-circle-right"></i> Lanjut</button>
                             </div>
 
+                            <div class="card-body " id="sukses3" style="text-align: center;">
+                                <div class="form-group">
+                                    <i class="far fa-check-circle fa-10x" style="color: green;"></i>
+                                    <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
+                                    <h6 style="padding-top: 10px;" id="nobookingsimpan3">No. Booking : -</h6>
+                                    <button id="btnhome3" name="btnhome3" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- </section> -->
                 </div>
             </div>
-
         </div>
         <!-- </section> -->
+        <!-- <div id="loading"> -->
+    </div>
+
+    <div id="loading">
+    </div>
 </main>
 <!-- copyright dari web -->
 <?php $this->load->view('Template/Footer'); ?>

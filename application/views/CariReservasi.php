@@ -139,8 +139,8 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-end card-footer">
-                        <button id="btnhapus" type="submit" value="hapus" class="btn btn-sm btn-danger mr-2" disabled value="1"><i class="fa fa-trash"></i> Hapus</button>
-                        <button id="btncetak" type="submit" value="cetak" class="btn btn-sm btn-danger mr-1" disabled value="2"><i class="fas fa-print"></i> Cetak</button>
+                        <button id="btnhapus" type="button" onclick="HapusBooking()" class="btn btn-sm btn-danger mr-2" disabled value="1"><i class="fa fa-trash"></i> Hapus</button>
+                        <button id="btncetak" type="submit" class="btn btn-sm btn-danger mr-1" disabled value="2"><i class="fas fa-print"></i> Cetak</button>
                     </div>
                 </form>
             </div>

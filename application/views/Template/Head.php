@@ -30,6 +30,9 @@
   <!-- slick slider -->
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/admin-lte@3.0.0/dist/css/adminlte.min.css" /> -->
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- Styling slick slider vendor -->
   <style>
@@ -71,6 +74,32 @@
     }
   </style>
 
+  <style>
+    #load {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      text-indent: 100%;
+      background: #e0e0e0 url('assets/img/loading-gif-png-5.gif') no-repeat center;
+      z-index: 1;
+      opacity: 0.6;
+      background-size: 8%;
+    }
+
+    .overlay {
+      z-index: 999999;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #e0e0e0 url('assets/img/loading-gif-png-5.gif') no-repeat center;
+      text-align: center;
+      z-index: 1;
+      opacity: 0.6;
+      background-size: 8%;
+    }
+  </style>
   <!-- =======================================================
   * Template Name: Medilab - v2.1.1
   * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
@@ -83,3 +112,7 @@
 
 <body>
   <div id="WAButton"></div>
+  <div id="load">Loading...</div>
+
+  <div id="loading"></div>
+  <div id="loadingsimpan" class="overlay" hidden></div>
