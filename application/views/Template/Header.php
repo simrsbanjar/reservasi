@@ -8,28 +8,45 @@
 
         <nav class="nav-menu d-none d-lg-block mr-auto">
             <ul id="myList">
-
+                <!-- <li><a href="CariReservasi"><i class="fas fa-search"></i> Cariiiii</a></li> -->
                 <!-- di set di javasvript karena apabila klik daftar maka akan muncul menu yg beda-->
-                <?php
-                $name = $this->input->get('reservasi');
-                // var_dump($name);
+
+                <!-- // var_dump($name);
                 // if ($name == null) {
                 //     echo '<li class="active"><a href="Home">Home</a></li>';
                 // } else if ($name == 1) {
                 //     echo '<li><a href="#tentangkita">Tentang Kita</a></li>';
                 // } else {
                 //     echo '<li><a href="#tentangkita">Tentang Kita</a></li>';
-                // }
+                // } -->
 
 
 
-                ?>
                 <!-- <li class="active"><a href="Home">Home</a></li>
                 <li><a href="#tentangkita">Tentang Kita</a></li>
                 <li><a href="#alur">Alur</a></li>
                 <li><a href="#dokter">Dokter</a></li>
                 <li><a href="#contact">Kontak</a></li>
                 <li><a href="#lokasi">Lokasi</a></li> -->
+                <?php if ($data == '1') { ?>
+                    <!-- home -->
+                    <li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#tentangkita"><i class="far fa-list-alt"></i> Visi dan Misi</a></li>
+                    <li><a href="#contact"><i class="fab fa-hubspot"></i> Kontak</a></li>
+                    <li><a href="#alur"><i class="fas fa-user-md"></i> Alur </a></li>
+                    <li><a href="#dokter"><i class="far fa-address-book"></i> Dokter </a></li>
+                    <li><a href="#lokasi"><i class="fas fa-map-marked-alt"></i> Lokasi</a></li>
+
+                <?php } elseif ($data == '2') { ?>
+                    <!-- daftar -->
+                    <li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>
+
+                <?php } else { ?>
+                    <!-- cari -->
+                    <li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>
+                <?php } ?>
 
 
             </ul>

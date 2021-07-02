@@ -188,6 +188,54 @@ class CariReservasi extends CI_Controller
         echo json_encode($data);
     }
 
+    function HapusBooking()
+    {
+        $nobooking = $this->input->post('nobooking');
+        $token     =  $this->GetToken();
+
+        $url = $this->API . '/batalregistrasi';
+        $parm =  ['KdBooking' => "" . $nobooking . ""];
+
+        $headers = array(
+            'x-token:' . $token . "",
+        );
+
+        /* Init cURL resource */
+        $ch = curl_init($url);
+
+        /* Array Parameter Data */
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
+
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        /* execute request */
+        $result = curl_exec($ch);
+
+        /* close cURL resource */
+        curl_close($ch);
+        $hasil = json_decode($result);
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data['hasil'] = null;
+
+        if ($metadata->code == '200') {
+            $data['hasil'] = $response;
+        }
+
+        $data['codedata'] = array(
+            'code' => $metadata->code,
+            'message' => $metadata->message
+        );
+
+        echo json_encode($data);
+    }
+
     function Cetak()
     {
         $kodebooking = $this->input->post('kodebookingval');
@@ -221,7 +269,7 @@ class CariReservasi extends CI_Controller
         // $this->data['title_pdf'] = 'Laporan Penjualan Toko Kita';
 
         // filename dari pdf ketika didownload
-        $file_pdf = 'laporan_penjualan_toko_kita';
+        $file_pdf = 'RSUBANJAR_' . $kodebooking;
         // setting paper
         $paper = 'A4';
         //orientasi paper potrait / landscape
