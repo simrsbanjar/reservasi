@@ -12,26 +12,6 @@
     <h2>PENDAFTARAN ONLINE</h2>
 </div>
 
-<div id="stepProgressBar">
-    <div class="step">
-        <p class="step-text">Carabayar</p>
-        <div class="bullet">1</div>
-    </div>
-    <div class="step">
-        <p class="step-text">Pasien</p>
-        <div class="bullet">2</div>
-    </div>
-    <div class="step">
-        <p class="step-text">Pendaftaran</p>
-        <div class="bullet">3</div>
-    </div>
-    <div class="step">
-        <p class="step-text">Selesai</p>
-        <div class="bullet ">4</div>
-    </div>
-    <input type='text' name='currentStep' id='currentStep' hidden>
-</div>
-
 <main id="main">
     <!-- ======= Features Section ======= -->
     <!-- <section id="featuresok" class="featuresok"> -->
