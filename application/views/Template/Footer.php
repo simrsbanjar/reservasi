@@ -875,14 +875,6 @@
                     setSuccessFor(carabayar);
                 }
             }
-            var poli = document.getElementById('poli' + numtab);
-            var poliValue = poli.value.trim();
-            if (poliValue === '') {
-                setErrorFor(poli, 'Poli Harus Dipilih');
-                return false;
-            } else {
-                setSuccessFor(poli);
-            }
             var rujukanasal = document.getElementById('rujukanasal' + numtab);
             var rujukanasalValue = rujukanasal.value.trim();
             if (rujukanasalValue === '') {
@@ -913,6 +905,16 @@
                     setSuccessFor(nosuratrujukan);
                 }
             }
+
+            var poli = document.getElementById('poli' + numtab);
+            var poliValue = poli.value.trim();
+            if (poliValue === '') {
+                setErrorFor(poli, 'Poli Harus Dipilih');
+                return false;
+            } else {
+                setSuccessFor(poli);
+            }
+
 
             var email = document.getElementById('email' + numtab);
             var emailValue = email.value.trim();
