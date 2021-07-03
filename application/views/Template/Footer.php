@@ -51,7 +51,13 @@
         GetRujukanAsal();
         GetPoli(date);
         GetCarabayar();
+        // const content = document.getElementById('content');
+        // const bullets = [...document.querySelectorAll('.bullet')];
 
+        // const MAX_STEPS = 4;
+        // let currentStep = 1;
+        // bullets[currentStep - 1].classList.add('completed');
+        // currentStep += 1;
 
         if (page == null) {
             $("#daftar").show();
@@ -405,16 +411,6 @@
                         $('#statuspasien').text('-');
                         $("#btnhapus").attr("disabled", true);
                         $("#btncetak").attr("disabled", true);
-
-                        document.getElementById("kodebookingval").value = '';
-                        document.getElementById("nopendaftaranval").value = '';
-                        document.getElementById("nocmval").value = '';
-                        document.getElementById("nomorantreanval").value = '';
-                        document.getElementById("jenisantreanval").value = '';
-                        document.getElementById("estimasidilayanival").value = '';
-                        document.getElementById("namapolival").value = '';
-                        document.getElementById("namadokterval").value = '';
-                        document.getElementById("statuspasienval").value = '';
                     } else {
                         $('#kodebooking').text(data.hasil['kodebooking']);
                         $('#noreg').text(data.hasil['nopendaftaran']);
@@ -425,16 +421,6 @@
                         $('#politujuan').text(data.hasil['namapoli']);
                         $('#doktertujuan').text(data.hasil['namadokter']);
                         $('#statuspasien').text(data.hasil['statuspasien']);
-
-                        document.getElementById("kodebookingval").value = data.hasil['kodebooking'];
-                        document.getElementById("nopendaftaranval").value = data.hasil['nopendaftaran'];
-                        document.getElementById("nocmval").value = data.hasil['nocm'];
-                        document.getElementById("nomorantreanval").value = data.hasil['nomorantrean'];
-                        document.getElementById("jenisantreanval").value = data.hasil['jenisantrean'];
-                        document.getElementById("estimasidilayanival").value = data.hasil['estimasidilayani'];
-                        document.getElementById("namapolival").value = data.hasil['namapoli'];
-                        document.getElementById("namadokterval").value = data.hasil['namadokter'];
-                        document.getElementById("statuspasienval").value = data.hasil['statuspasien'];
 
                         $("#btnhapus").attr("disabled", false);
                         $("#btncetak").attr("disabled", false);
@@ -454,16 +440,6 @@
                     $('#statuspasien').text('-');
                     $("#btnhapus").attr("disabled", true);
                     $("#btncetak").attr("disabled", true);
-
-                    document.getElementById("kodebookingval").value = '';
-                    document.getElementById("nopendaftaranval").value = '';
-                    document.getElementById("nocmval").value = '';
-                    document.getElementById("nomorantreanval").value = '';
-                    document.getElementById("jenisantreanval").value = '';
-                    document.getElementById("estimasidilayanival").value = '';
-                    document.getElementById("namapolival").value = '';
-                    document.getElementById("namadokterval").value = '';
-                    document.getElementById("statuspasienval").value = '';
                 }
             });
 
@@ -472,8 +448,14 @@
 
     }
 
+
     function prosesLanjutcarabayar() {
         var idtabs = $(".tab-pane.active").attr("id");
+        const content = document.getElementById('content');
+        const bullets = [...document.querySelectorAll('.bullet')];
+
+        const MAX_STEPS = 4;
+        let currentStep = 1;
         if (idtabs == 'tab-1') {
             var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
             if (statuspasien == '1') {
@@ -486,6 +468,7 @@
             document.getElementById("nilai").value = "1";
             var norm = document.getElementById('norm');
             setSuccessFor(norm);
+
         } else if (idtabs == 'tab-2') {
             var statuspasien = $('input[name="flexRadioDefault2"]:checked').val();
             if (statuspasien == '1') {
@@ -514,10 +497,20 @@
         $("#carabayar").hide();
         $("#btncarabayar").hide();
         $("#btnlanjutcarabayar").hide();
+
+
+        bullets[currentStep - 1].classList.add('completed');
+        currentStep += 1;
+        document.getElementById("currentStep").value = currentStep;
     }
 
     function prosesKembali() {
         var idtabs = $(".tab-pane.active").attr("id");
+        const content = document.getElementById('content');
+        const bullets = [...document.querySelectorAll('.bullet')];
+
+        const MAX_STEPS = 4;
+        let currentStep = Number($("[name='currentStep']").val());
 
         if (idtabs == 'tab-1') {
             var nilai = $("[name='nilai']").val();
@@ -547,6 +540,9 @@
                         $("#carddata").hide();
                         bersihkan(idtabs);
                         document.getElementById("nilai").value = Number(nilai) - 1;
+                        bullets[currentStep - 2].classList.remove('completed');
+                        currentStep -= 1;
+                        document.getElementById("currentStep").value = currentStep;
                     } else {
                         document.getElementById("nilai").value = '1';
                     }
@@ -576,6 +572,9 @@
                 $("#btnkembali").show();
                 $("#btnlanjut").show();
                 document.getElementById("nilai").value = Number(nilai) - 1;
+                bullets[currentStep - 2].classList.remove('completed');
+                currentStep -= 1;
+                document.getElementById("currentStep").value = currentStep;
             }
 
             if (Number(nilai) - 1 <= '2') {
@@ -612,6 +611,9 @@
                         $("#carddata2").hide();
                         bersihkan(idtabs);
                         document.getElementById("nilai2").value = Number(nilai) - 1;
+                        bullets[currentStep - 2].classList.remove('completed');
+                        currentStep -= 1;
+                        document.getElementById("currentStep").value = currentStep;
                     } else {
                         document.getElementById("nilai2").value = '1';
                     }
@@ -640,6 +642,9 @@
                 $("#btnkembali2").show();
                 $("#btnlanjut2").show();
                 document.getElementById("nilai2").value = Number(nilai) - 1;
+                bullets[currentStep - 2].classList.remove('completed');
+                currentStep -= 1;
+                document.getElementById("currentStep").value = currentStep;
             }
 
             if (Number(nilai) - 1 <= '2') {
@@ -675,6 +680,9 @@
                         $("#carddata3").hide();
                         bersihkan(idtabs);
                         document.getElementById("nilai3").value = Number(nilai) - 1;
+                        bullets[currentStep - 2].classList.remove('completed');
+                        currentStep -= 1;
+                        document.getElementById("currentStep").value = currentStep;
                     } else {
                         document.getElementById("nilai3").value = '1';
                     }
@@ -704,6 +712,9 @@
                 $("#btnlanjut3").show();
                 document.getElementById("nilai3").value = Number(nilai) - 1;
                 // console.log(Number(nilai) - 1);
+                bullets[currentStep - 2].classList.remove('completed');
+                currentStep -= 1;
+                document.getElementById("currentStep").value = currentStep;
 
             }
 
@@ -714,6 +725,7 @@
             }
         }
         setSuccessFor(norm);
+
     }
 
     function prosesCari() {
@@ -745,14 +757,14 @@
     function HapusBooking() {
         Swal.fire({
             title: 'Konfirmasi',
-            text: "Apakah anda yakin akan menghapus data?",
+            text: "Apakah anda yakin akan membatalkan pendaftaran?",
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Ya',
             cancelButtonText: 'Tidak'
         }).then((result) => {
             if (result.value) {
-                var nobooking = $('#kodebookingval').val();
+                var nobooking = $('#kodebooking').text();
 
                 $.ajax({
                     url: "<?= base_url('CariReservasi/HapusBooking') ?>",
@@ -802,9 +814,82 @@
         })
     }
 
+    function LoadingPopup() {
+        let timerInterval
+        Swal.fire({
+            title: 'Loading',
+            html: 'Silahkan tunggu beberapa saat.',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        })
+    }
+
+    async function CetakBooking() {
+        const {
+            value: email
+        } = await Swal.fire({
+            title: 'Kirim Ulang Bukti Pendaftaran Online',
+            input: 'email',
+            inputLabel: 'Masukan Alamat Email Anda',
+            inputPlaceholder: 'Email'
+        })
+        if (email) {
+            LoadingPopup();
+
+            var id = `${email}`;
+            var nobooking = $('#kodebooking').text();
+            var noreg = $('#noreg').text();
+            var norm = $('#norm').text();
+            var noantrian = $('#noantrian').text();
+            var jenisantrian = $('#jenisantrian').text();
+            var estimasidilayani = $('#estimasidilayani').text();
+            var politujuan = $('#politujuan').text();
+            var doktertujuan = $('#doktertujuan').text();
+            var statuspasien = $('#statuspasien').text();
+
+            $.ajax({
+                url: "<?= base_url('CariReservasi/Cetak') ?>",
+                method: "POST",
+                data: {
+                    "email": id,
+                    "kodebookingval": nobooking,
+                    "nopendaftaranval": noreg,
+                    "nocmval": norm,
+                    "nomorantreanval": noantrian,
+                    "jenisantreanval": jenisantrian,
+                    "estimasidilayanival": estimasidilayani,
+                    "namapolival": politujuan,
+                    "namadokterval": doktertujuan,
+                    "statuspasienval": statuspasien
+                },
+                dataType: 'json',
+                success: function(data) {
+                    swal.close();
+                    if (data.hasil['code'] != '200') {
+                        message('info', data.hasil['message'], 'Informasi', false);
+                    } else {
+                        message('success', data.hasil['message'], 'Informasi', false);
+                    }
+
+                },
+                error: function() {
+                    swal.close();
+                    message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                }
+            });
+        }
+
+    }
+
     function prosesLanjut() {
         var idtabs = $(".tab-pane.active").attr("id");
+        const content = document.getElementById('content');
+        const bullets = [...document.querySelectorAll('.bullet')];
 
+        const MAX_STEPS = 4;
+        let currentStep = Number($("[name='currentStep']").val()); //3;
         if (idtabs == 'tab-1') {
             var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
             var nilai = $("[name='nilai']").val();
@@ -829,6 +914,8 @@
 
             if (hasilnum == '1') {
                 $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+
+
             } else {
                 $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
                 // $("norm").attr("required", true);
@@ -935,13 +1022,6 @@
                 return
             }
 
-            //cek proses pencarian pasien lama ada tidak,jika tidak ada maka munculkan validasi
-            if (nilai == '1' && statuspasien == '1') {
-                if (document.getElementById("tabelpaslama3") == null) {
-                    message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
-                    return
-                }
-            }
             if (hasilnum == '1') {
                 $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
             } else {
@@ -950,7 +1030,6 @@
 
             // jika simpan terakhir
             if (hasilnum == '3') {
-                $("#loading").addClass("overlay");
                 Swal.fire({
                     title: 'Konfirmasi',
                     text: "Apakah anda yakin akan menyimpan data?",
@@ -966,22 +1045,30 @@
                             return
                         };
                         document.getElementById("nilai3").value = hasilnum;
+
+                        currentStep = Number($("[name='currentStep']").val());
+                        bullets[currentStep - 1].classList.add('completed');
+                        currentStep += 1;
+                        document.getElementById("currentStep").value = currentStep;
                     } else {
                         document.getElementById("nilai3").value = Number(hasilnum) - 1;
                     }
                 })
             } else {
                 document.getElementById("nilai3").value = hasilnum;
+
             }
+            // console.log($("[name='nilai3']").val());
             $("#headerdatapasien3").hide();
             $("#isidatapasien3").hide();
             $("#headerreservasi3").show();
             $("#isireservasi3").show();
             $("#btnkembali3").show();
-            // console.log($("[name='nilai3']").val());
-
         }
 
+        bullets[currentStep - 1].classList.add('completed');
+        currentStep += 1;
+        document.getElementById("currentStep").value = currentStep;
     }
 
     function validasi(statuspasien, nilai) {
@@ -1185,6 +1272,15 @@
                 } else {
                     setSuccessFor(nosuratrujukan);
                 }
+            }
+
+            var email = document.getElementById('email' + numtab);
+            var emailValue = email.value.trim();
+            if (emailValue === '') {
+                setErrorFor(email, 'Email Tidak Boleh Kosong');
+                return false;
+            } else {
+                setSuccessFor(email);
             }
             // var jeniskunjungan = document.getElementById('jeniskunjungan' + numtab);
             // var jeniskunjunganValue = jeniskunjungan.value.trim();
@@ -1585,6 +1681,11 @@
     }
 
     function SimpanRegistrasi() {
+        const content = document.getElementById('content');
+        const bullets = [...document.querySelectorAll('.bullet')];
+
+        const MAX_STEPS = 4;
+        let currentStep = Number($("[name='currentStep']").val()); //3
         var idtabs = $(".tab-pane.active").attr("id");
         var numtab = '';
         var carabayar = '';
@@ -1650,8 +1751,12 @@
         var rujukanasal = $('#rujukanasal' + numtab).val();
         var poli = $('#poli' + numtab).val();
         var jenispoli = $('input[name="radiojenispoli' + numtab + '"]:checked').val();
+        var email = $('#email' + numtab).val();
 
         var bool = true;
+
+        swal.close();
+        LoadingPopup();
 
         $.ajax({
             url: "<?= base_url('Reservasi/SimpanRegistrasi') ?>",
@@ -1682,16 +1787,19 @@
                 "nomorreferensi": nosuratrujukan,
                 "jenisreferensi": jeniskunjungan,
                 "jenisrequest": jenispermintaan,
-                "polieksekutif": jenispoli
+                "polieksekutif": jenispoli,
+                "email": email
             },
             async: false,
             dataType: 'json',
             success: function(data) {
                 if (data.codedata['code'] != '200') {
+                    swal.close();
                     message('warning', data.codedata['message'], 'Informasi', false);
                     bool = false;
                 } else {
-                    // message('success', 'Data Berhasil Disimpan.', 'Informasi', false);
+                    swal.close();
+                    message('success', 'Data Berhasil Disimpan.', 'Informasi', false);
                     $("#headerreservasi" + numtab).hide();
                     $("#isireservasi" + numtab).hide();
                     $("#btnkembali" + numtab).hide();
@@ -1704,6 +1812,7 @@
 
             },
             error: function() {
+                swal.close();
                 message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
                 bool = false;
             }

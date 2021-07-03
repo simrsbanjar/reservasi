@@ -11,6 +11,27 @@
 <div class="section-title">
     <h2>PENDAFTARAN ONLINE</h2>
 </div>
+
+<div id="stepProgressBar">
+    <div class="step">
+        <p class="step-text">Carabayar</p>
+        <div class="bullet">1</div>
+    </div>
+    <div class="step">
+        <p class="step-text">Pasien</p>
+        <div class="bullet">2</div>
+    </div>
+    <div class="step">
+        <p class="step-text">Pendaftaran</p>
+        <div class="bullet">3</div>
+    </div>
+    <div class="step">
+        <p class="step-text">Selesai</p>
+        <div class="bullet ">4</div>
+    </div>
+    <input type='text' name='currentStep' id='currentStep' hidden>
+</div>
+
 <main id="main">
     <!-- ======= Features Section ======= -->
     <!-- <section id="featuresok" class="featuresok"> -->
@@ -408,6 +429,16 @@
                                         </div>
                                         <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
                                     </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Email</strong></label>
+                                            <input type="text" placeholder="Email" class="form-control" id="email" name="email">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti registrasi.</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-footer d-flex">
@@ -792,6 +823,16 @@
                                         </div>
                                         <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
                                     </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Email</strong></label>
+                                            <input type="text" placeholder="Email" class="form-control" id="email2" name="email2">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti registrasi.</label>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card-footer d-flex">
@@ -1156,6 +1197,15 @@
                                             <small>Error Message</small> -->
                                         </div>
                                         <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Email</strong></label>
+                                            <input type="text" placeholder="Email" class="form-control" id="email3" name="email3">
+                                            <!---->
+                                            <small>Error Message</small>
+                                        </div>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti registrasi.</label>
                                     </div>
                                 </div>
                             </div>
