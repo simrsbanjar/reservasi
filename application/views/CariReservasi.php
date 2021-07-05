@@ -127,6 +127,12 @@
                             <dd id="statuspasien">-</dd>
                         </dl>
                     </div>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5" hidden>
+                        <dl>
+                            <dt>Status Pasien</dt>
+                            <dd id="email">-</dd>
+                        </dl>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-end card-footer">
                     <button id="btnhapus" type="button" onclick="HapusBooking()" class="btn btn-sm btn-danger mr-2" disabled value="1"><i class="fa fa-trash"></i> Batalkan Data Registrasi</button>

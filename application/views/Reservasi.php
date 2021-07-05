@@ -432,6 +432,11 @@
                                     <i class="far fa-check-circle fa-10x" style="color: green;"></i>
                                     <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
                                     <h6 style="padding-top: 10px;" id="nobookingsimpan">No. Booking : 2003190003</h6>
+                                    <br>
+                                    <h6 style="padding-top: 10px;">Silahkan cek email yang sudah didaftarkan sebelumnya untuk melihat bukti pendaftaran.</h6>
+                                    <br>
+                                    <h6 style="padding-top: 10px;" id="ketnobookingsimpan">* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No.Booking : 2003190003 </h6>
+                                    <br>
                                     <button id="btnhome" name="btnhome" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
                                 </div>
                             </div>
@@ -826,6 +831,11 @@
                                     <i class="far fa-check-circle fa-10x" style="color: green;"></i>
                                     <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
                                     <h6 style="padding-top: 10px;" id="nobookingsimpan">No. Booking : -</h6>
+                                    <br>
+                                    <h6 style="padding-top: 10px;">Silahkan cek email yang sudah didaftarkan sebelumnya untuk melihat bukti pendaftaran.</h6>
+                                    <br>
+                                    <h6 style="padding-top: 10px;" id="ketnobookingsimpan2">* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No.Booking : 2003190003 </h6>
+                                    <br>
                                     <button id="btnhome2" name="btnhome2" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
                                 </div>
                             </div>
@@ -1200,6 +1210,8 @@
                                     <i class="far fa-check-circle fa-10x" style="color: green;"></i>
                                     <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
                                     <h6 style="padding-top: 10px;" id="nobookingsimpan3">No. Booking : -</h6>
+                                    <h6 style="padding-top: 10px;">Silahkan cek email yang sudah didaftarkan sebelumnya untuk melihat bukti pendaftaran.</h6>
+                                    <h6 style="padding-top: 10px;" id="ketnobookingsimpan3">-</h6>
                                     <button id="btnhome3" name="btnhome3" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
                                 </div>
                             </div>

@@ -522,6 +522,7 @@ class Reservasi extends CI_Controller
         $jenisreferensi = $this->input->post('jenisreferensi');
         $jenisrequest = $this->input->post('jenisrequest');
         $polieksekutif = $this->input->post('polieksekutif');
+        $email = $this->input->post('email');
 
         $parm =  [
             'statuspasien'          => "" . $statuspasien . "",
@@ -549,7 +550,8 @@ class Reservasi extends CI_Controller
             'nomorreferensi'        => "" . $nomorreferensi . "",
             'jenisreferensi'        => "" . $jenisreferensi . "",
             'jenisrequest'          => "" . $jenisrequest . "",
-            'polieksekutif'         => "" . $polieksekutif . ""
+            'polieksekutif'         => "" . $polieksekutif . "",
+            'email'                 => "" . $email . ""
         ];
 
         // var_dump($parm);

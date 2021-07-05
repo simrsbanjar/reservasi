@@ -98,7 +98,8 @@ class CariReservasi extends CI_Controller
                 'namapoli' => $response->namapoli,
                 'namadokter' => $response->namadokter,
                 'nocm' => $response->nocm,
-                'statuspasien' => $response->statuspasien
+                'statuspasien' => $response->statuspasien,
+                'email' => $response->email
             );
         }
 
@@ -161,7 +162,8 @@ class CariReservasi extends CI_Controller
                 'namapoli' => $response->namapoli,
                 'namadokter' => $response->namadokter,
                 'nocm' => $response->nocm,
-                'statuspasien' => $response->statuspasien
+                'statuspasien' => $response->statuspasien,
+                'email' => $response->email
             );
         }
 

@@ -339,6 +339,7 @@
                         $('#politujuan').text('-');
                         $('#doktertujuan').text('-');
                         $('#statuspasien').text('-');
+                        $('#email').text('-');
                         $("#btnhapus").attr("disabled", true);
                         $("#btncetak").attr("disabled", true);
                     } else {
@@ -351,6 +352,7 @@
                         $('#politujuan').text(data.hasil['namapoli']);
                         $('#doktertujuan').text(data.hasil['namadokter']);
                         $('#statuspasien').text(data.hasil['statuspasien']);
+                        $('#email').text(data.hasil['email']);
 
                         $("#btnhapus").attr("disabled", false);
                         $("#btncetak").attr("disabled", false);
@@ -368,6 +370,7 @@
                     $('#politujuan').text('-');
                     $('#doktertujuan').text('-');
                     $('#statuspasien').text('-');
+                    $('#email').text('-');
                     $("#btnhapus").attr("disabled", true);
                     $("#btncetak").attr("disabled", true);
                 }
@@ -600,60 +603,91 @@
         })
     }
 
-    async function CetakBooking(status) {
-        const {
-            value: email
-        } = await Swal.fire({
-            title: 'Kirim Ulang Bukti Pendaftaran Online',
-            input: 'email',
-            inputLabel: 'Masukan Alamat Email Anda',
-            inputPlaceholder: 'Email'
-        })
-        if (email) {
-            LoadingPopup('Mohon Tunggu', 'Sedang Menyimpan Data.....');
-
-            var id = `${email}`;
-            var nobooking = $('#kodebooking').text();
-            var noreg = $('#noreg').text();
-            var norm = $('#norm').text();
-            var noantrian = $('#noantrian').text();
-            var jenisantrian = $('#jenisantrian').text();
-            var estimasidilayani = $('#estimasidilayani').text();
-            var politujuan = $('#politujuan').text();
-            var doktertujuan = $('#doktertujuan').text();
-            var statuspasien = $('#statuspasien').text();
-
-            $.ajax({
-                url: "<?= base_url('CariReservasi/Cetak') ?>",
-                method: "POST",
-                data: {
-                    "email": id,
-                    "kodebookingval": nobooking,
-                    "nopendaftaranval": noreg,
-                    "nocmval": norm,
-                    "nomorantreanval": noantrian,
-                    "jenisantreanval": jenisantrian,
-                    "estimasidilayanival": estimasidilayani,
-                    "namapolival": politujuan,
-                    "namadokterval": doktertujuan,
-                    "statuspasienval": statuspasien
-                },
-                dataType: 'json',
-                success: function(data) {
-                    swal.close();
-                    if (data.hasil['code'] != '200') {
-                        message('info', data.hasil['message'], 'Informasi', false);
-                    } else {
-                        message('success', data.hasil['message'], 'Informasi', false);
-                    }
-
-                },
-                error: function() {
-                    swal.close();
-                    message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                }
-            });
+    function gantiemail(email) {
+        var a = email.split("@");
+        var b = a[0];
+        var newstr = "";
+        for (var i in b) {
+            if (i > 2 && i < b.length - 1) newstr += "*";
+            else newstr += b[i];
         }
+
+        return newstr + "@" + a[1];
+    }
+
+    async function CetakBooking(status) {
+        // var id = `${email}`;
+        var id = $('#email').text();
+        var nobooking = $('#kodebooking').text();
+        var noreg = $('#noreg').text();
+        var norm = $('#norm').text();
+        var noantrian = $('#noantrian').text();
+        var jenisantrian = $('#jenisantrian').text();
+        var estimasidilayani = $('#estimasidilayani').text();
+        var politujuan = $('#politujuan').text();
+        var doktertujuan = $('#doktertujuan').text();
+        var statuspasien = $('#statuspasien').text();
+
+        Swal.fire({
+            title: 'Konfirmasi',
+            text: "Apakah yakin dikirim ke alamat email " + gantiemail(id) + " ?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak'
+        }).then((result) => {
+            if (result.value) {
+                // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.               
+                LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Data.....');
+
+                $.ajax({
+                    url: "<?= base_url('CariReservasi/Cetak') ?>",
+                    method: "POST",
+                    data: {
+                        "email": id,
+                        "kodebookingval": nobooking,
+                        "nopendaftaranval": noreg,
+                        "nocmval": norm,
+                        "nomorantreanval": noantrian,
+                        "jenisantreanval": jenisantrian,
+                        "estimasidilayanival": estimasidilayani,
+                        "namapolival": politujuan,
+                        "namadokterval": doktertujuan,
+                        "statuspasienval": statuspasien
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        swal.close();
+                        if (data.hasil['code'] != '200') {
+                            message('info', data.hasil['message'], 'Informasi', false);
+                        } else {
+                            message('success', data.hasil['message'], 'Informasi', false);
+                        }
+
+                    },
+                    error: function() {
+                        swal.close();
+                        message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                    }
+                });
+            } else {
+                // jika klik batal
+            }
+        })
+
+        // const {
+        //     value: email
+        // } = await Swal.fire({
+        //     title: 'Kirim Ulang Bukti Pendaftaran Online',
+        //     input: 'email',
+        //     inputLabel: 'Masukan Alamat Email Anda',
+        //     inputPlaceholder: 'Email'
+        // })
+        // if (email) {
+        // LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Data.....');
+
+
+        // }
 
     }
 
@@ -1454,8 +1488,19 @@
                             // bool = false;
                         } else {
                             swal.close();
-                            LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Bukti Pendaftarakan ke Email.');
                             var nobooking = data.hasil['kodebooking'];
+
+                            $("#headerreservasi" + numtab).hide();
+                            $("#isireservasi" + numtab).hide();
+                            $("#btnkembali" + numtab).hide();
+                            $("#btnlanjut" + numtab).hide();
+                            $("#sukses" + numtab).show();
+                            $("#nobookingsimpan" + numtab).text('No. Booking : ' + nobooking);
+                            $("#ketnobookingsimpan" + numtab).text('* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No. Booking.');
+                            // setInterval(location.reload(), 5000);
+                            document.getElementById("nilai" + numtab).value = Number(hasilnum) + 1;
+
+                            // LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Bukti Pendaftarakan ke Email.');
                             // kirim bukti registrasi ke email
                             $.ajax({
                                 url: "<?= base_url('Reservasi/Cetak') ?>",
@@ -1484,18 +1529,19 @@
                                     // message('success', 'Data Berhasil Disimpan.', 'Informasi', false);
                                     // bool = true;
 
-                                    $("#headerreservasi" + numtab).hide();
-                                    $("#isireservasi" + numtab).hide();
-                                    $("#btnkembali" + numtab).hide();
-                                    $("#btnlanjut" + numtab).hide();
-                                    $("#sukses" + numtab).show();
-                                    $("#nobookingsimpan" + numtab).text('No. Booking : ' + nobooking);
-                                    // setInterval(location.reload(), 5000);
-                                    document.getElementById("nilai" + numtab).value = Number(hasilnum) + 1;
+                                    // $("#headerreservasi" + numtab).hide();
+                                    // $("#isireservasi" + numtab).hide();
+                                    // $("#btnkembali" + numtab).hide();
+                                    // $("#btnlanjut" + numtab).hide();
+                                    // $("#sukses" + numtab).show();
+                                    // $("#nobookingsimpan" + numtab).text('No. Booking : ' + nobooking);
+                                    // $("#ketnobookingsimpan" + numtab).text('* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No. Booking : ' + nobooking);
+                                    // // setInterval(location.reload(), 5000);
+                                    // document.getElementById("nilai" + numtab).value = Number(hasilnum) + 1;
                                 },
                                 error: function() {
                                     swal.close();
-                                    message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                                    // message('error', 'Gagal Kirim Email, Silahkan lakukan kirim ulang di halaman pencarian.', 'Peringatan', false);
                                 }
                             });
 
