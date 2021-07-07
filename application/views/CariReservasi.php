@@ -33,16 +33,20 @@
                                 <div class="form-group">
                                     <label class="label-control"><strong>Kriteria Pencarian</strong></label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radiokriteria" value="0" id="radiokriteriakdbooking" checked>
-                                        <label class="form-check-label mr-5" for="radiokriteria">
-                                            Kode Booking
-                                        </label>
-                                        <!-- </div> -->
-                                        <!-- <div class="form-check"> -->
-                                        <input class="form-check-input" type="radio" name="radiokriteria" value="1" id="radiokriterianopendaftaran">
-                                        <label class="form-check-label" for="radiokriteria">
-                                            No. Pendaftaran
-                                        </label>
+                                        <div class="row">
+                                            <div class="col col-6 col-lg-4">
+                                                <input class="form-check-input" type="radio" name="radiokriteria" value="0" id="radiokriteriakdbooking" checked>
+                                                <label class="form-check-label" for="radiokriteria">
+                                                    Kode Booking
+                                                </label>
+                                            </div>
+                                            <div class="col col-6 col-lg-4">
+                                                <input class="form-check-input" type="radio" name="radiokriteria" value="1" id="radiokriterianopendaftaran">
+                                                <label class="form-check-label" for="radiokriteria">
+                                                    No. Pendaftaran
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +54,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="Kode Bookinng / No. Pendaftaran">
+                                    <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="Kode Booking / No. Pendaftaran">
                                     <small>Error Message</small>
                                 </div>
                             </div>
@@ -134,9 +138,11 @@
                         </dl>
                     </div>
                 </div>
+
                 <div class="d-flex justify-content-end card-footer">
                     <button id="btnhapus" type="button" onclick="HapusBooking()" class="btn btn-sm btn-danger mr-2" disabled value="1"><i class="fa fa-trash"></i> Batalkan Data Registrasi</button>
                     <button id="btncetak" type="button" onclick="CetakBooking()" class="btn btn-sm btn-danger mr-1" disabled value="2"><i class="fas fa-print"></i> Kirim Bukti Registasi</button>
+                    <button id="btnunduh" type="button" onclick="down_file('1')" class="btn btn-sm btn-danger mr-1" disabled value="3"><i class="fas fa-download"></i> Unduh Bukti Registasi</button>
                 </div>
             </div>
         </div>

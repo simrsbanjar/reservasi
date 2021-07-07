@@ -19,6 +19,7 @@ class CariReservasi extends CI_Controller
         $this->load->library('curl');
         $this->load->helper('form');
         $this->load->helper('url');
+        $this->load->helper('download');
     }
 
     public function time_convert($timestamp)
@@ -280,6 +281,7 @@ class CariReservasi extends CI_Controller
 
     function Cetak()
     {
+        $idcetak = $this->input->post('idcetak');
         $kodebooking = $this->input->post('kodebookingval');
         $nopendaftaran = $this->input->post('nopendaftaranval');
         $nocm = $this->input->post('nocmval');
@@ -325,8 +327,17 @@ class CariReservasi extends CI_Controller
         $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
         // $this->load->view('Cetak_noantrian', $data);
 
-        $filedata   =  'assets/img/cetakan/' . $file_pdf;
-        $data = $this->SendMail($email, $subject, $mesage, $filedata);
+        // 1. jika kirim email 2. jika unduh file
+        if ($idcetak == '1') {
+            $filedata   =  'assets/img/cetakan/' . $file_pdf;
+
+            $data = $this->SendMail($email, $subject, $mesage, $filedata);
+        } else {
+            $data['hasil'] =  array(
+                'code' => '200',
+                'message' => 'File Berhasil Diunduh'
+            );
+        }
 
         echo json_encode($data);
     }

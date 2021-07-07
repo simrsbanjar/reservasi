@@ -432,12 +432,10 @@
                                     <i class="far fa-check-circle fa-10x" style="color: green;"></i>
                                     <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
                                     <h6 style="padding-top: 10px;" id="nobookingsimpan">No. Booking : 2003190003</h6>
-                                    <br>
                                     <h6 style="padding-top: 10px;">Silahkan cek email yang sudah didaftarkan sebelumnya untuk melihat bukti pendaftaran.</h6>
-                                    <br>
                                     <h6 style="padding-top: 10px;" id="ketnobookingsimpan">* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No.Booking : 2003190003 </h6>
-                                    <br>
                                     <button id="btnhome" name="btnhome" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
+                                    <button id="btnunduh" name="btnunduh" type="button" onclick="down_file('2')" class="btn btn-sm btn-danger mt-2"><i class="fas fa-download"></i> Unduh Bukti Pendaftaran</button>
                                 </div>
                             </div>
 
@@ -831,12 +829,10 @@
                                     <i class="far fa-check-circle fa-10x" style="color: green;"></i>
                                     <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
                                     <h6 style="padding-top: 10px;" id="nobookingsimpan">No. Booking : -</h6>
-                                    <br>
                                     <h6 style="padding-top: 10px;">Silahkan cek email yang sudah didaftarkan sebelumnya untuk melihat bukti pendaftaran.</h6>
-                                    <br>
                                     <h6 style="padding-top: 10px;" id="ketnobookingsimpan2">* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No.Booking : 2003190003 </h6>
-                                    <br>
                                     <button id="btnhome2" name="btnhome2" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
+                                    <button id="btnunduh2" name="btnunduh2" type="button" onclick="down_file('2')" class="btn btn-sm btn-danger mt-2"><i class="fas fa-download"></i> Unduh Bukti Pendaftaran</button>
                                 </div>
                             </div>
 
@@ -1207,12 +1203,24 @@
 
                             <div class="card-body " id="sukses3" style="text-align: center;">
                                 <div class="form-group">
+                                    <h1 id="email3" hidden>-</h1>
+                                    <h1 id="kodebookingval3" hidden>-</h1>
+                                    <h1 id="nopendaftaranval3" hidden>-</h1>
+                                    <h1 id="nocmval3" hidden>-</h1>
+                                    <h1 id="nomorantreanval3" hidden>-</h1>
+                                    <h1 id="jenisantreanval3" hidden>-</h1>
+                                    <h1 id="estimasidilayanival3" hidden>-</h1>
+                                    <h1 id="namapolival3" hidden>-</h1>
+                                    <h1 id="namadokterval3" hidden>-</h1>
+                                    <h1 id="statuspasienval3" hidden>-</h1>
+
                                     <i class="far fa-check-circle fa-10x" style="color: green;"></i>
                                     <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
                                     <h6 style="padding-top: 10px;" id="nobookingsimpan3">No. Booking : -</h6>
                                     <h6 style="padding-top: 10px;">Silahkan cek email yang sudah didaftarkan sebelumnya untuk melihat bukti pendaftaran.</h6>
                                     <h6 style="padding-top: 10px;" id="ketnobookingsimpan3">-</h6>
                                     <button id="btnhome3" name="btnhome3" type="button" onclick="prosesHome()" class="btn btn-sm btn-danger mt-2"><i class="fas fa-home"></i> Kembali Ke Beranda</button>
+                                    <button id="btnunduh3" name="btnunduh3" type="button" onclick="down_file('2')" class="btn btn-sm btn-danger mt-2"><i class="fas fa-download"></i> Unduh Bukti Pendaftaran</button>
                                 </div>
                             </div>
                         </div>

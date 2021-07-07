@@ -303,6 +303,102 @@
         $('#tabletab3').html('');
     }
 
+    function down_file(source) {
+        var idtabs = $(".tab-pane.active").attr("id");
+        var numtab = '';
+
+        if (idtabs == 'tab-1') {
+            numtab = '';
+        } else if (idtabs == 'tab-12') {
+            numtab = '2';
+        } else {
+            numtab = '3';
+        }
+
+        // source = 1 dari cari reservasi, source = 2 dari simpan reservasi 
+        if (source == '1') {
+            var id = $('#email').text();
+            var nobooking = $('#kodebooking').text();
+            var noreg = $('#noreg').text();
+            var norm = $('#norm').text();
+            var noantrian = $('#noantrian').text();
+            var jenisantrian = $('#jenisantrian').text();
+            var estimasidilayani = $('#estimasidilayani').text();
+            var politujuan = $('#politujuan').text();
+            var doktertujuan = $('#doktertujuan').text();
+            var statuspasien = $('#statuspasien').text();
+        } else {
+            var id = $('#email' + numtab).text();
+            var nobooking = $('#kodebookingval' + numtab).text();
+            var noreg = $('#nopendaftaranval' + numtab).text();
+            var norm = $('#nocmval' + numtab).text();
+            var noantrian = $('#nomorantreanval' + numtab).text();
+            var jenisantrian = $('#jenisantreanval' + numtab).text();
+            var estimasidilayani = $('#estimasidilayanival' + numtab).text();
+            var politujuan = $('#namapolival' + numtab).text();
+            var doktertujuan = $('#namadokterval' + numtab).text();
+            var statuspasien = $('#statuspasienval' + numtab).text();
+        }
+
+        var url = "assets/img/cetakan/RSUBANJAR_" + nobooking + ".pdf";
+        var name = "RSUBANJAR_" + nobooking + ".pdf";
+        var a = $("<a>")
+            .attr("href", url)
+            .attr("download", name)
+            .appendTo("body");
+
+        Swal.fire({
+            title: 'Konfirmasi',
+            text: "Apakah yakin akan mengunduh file dengan Kode Booking " + nobooking + "?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak'
+        }).then((result) => {
+            if (result.value) {
+                // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.   
+                LoadingPopup('Mohon Tunggu', 'Sedang Mengunduh Data.....');
+
+                $.ajax({
+                    url: "<?= base_url('CariReservasi/Cetak') ?>",
+                    method: "POST",
+                    data: {
+                        "email": id,
+                        "kodebookingval": nobooking,
+                        "nopendaftaranval": noreg,
+                        "nocmval": norm,
+                        "nomorantreanval": noantrian,
+                        "jenisantreanval": jenisantrian,
+                        "estimasidilayanival": estimasidilayani,
+                        "namapolival": politujuan,
+                        "namadokterval": doktertujuan,
+                        "statuspasienval": statuspasien,
+                        "idcetak": '2'
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        swal.close();
+                        if (data.hasil['code'] != '200') {
+                            message('info', data.hasil['message'], 'Informasi', false);
+                        } else {
+                            a[0].click();
+                            a.remove();
+                            message('success', data.hasil['message'], 'Informasi', false);
+                        }
+
+                    },
+                    error: function() {
+                        swal.close();
+                        message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                    }
+                });
+            } else {
+                // jika klik batal
+            }
+        })
+
+    }
+
     function caripasienbooking() {
         var nopendaftaran = $("[name='nopendaftaran']").val();
         if (nopendaftaran == null || nopendaftaran == '') {
@@ -342,6 +438,8 @@
                         $('#email').text('-');
                         $("#btnhapus").attr("disabled", true);
                         $("#btncetak").attr("disabled", true);
+                        $("#btnunduh").attr("disabled", true);
+                        // document.getElementById("kdbookingsubmit").value = '';
                     } else {
                         $('#kodebooking').text(data.hasil['kodebooking']);
                         $('#noreg').text(data.hasil['nopendaftaran']);
@@ -356,6 +454,7 @@
 
                         $("#btnhapus").attr("disabled", false);
                         $("#btncetak").attr("disabled", false);
+                        $("#btnunduh").attr("disabled", false);
                     }
 
                 },
@@ -373,6 +472,7 @@
                     $('#email').text('-');
                     $("#btnhapus").attr("disabled", true);
                     $("#btncetak").attr("disabled", true);
+                    $("#btnunduh").attr("disabled", true);
                 }
             });
 
@@ -637,7 +737,7 @@
             cancelButtonText: 'Tidak'
         }).then((result) => {
             if (result.value) {
-                // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.               
+                // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.   
                 LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Data.....');
 
                 $.ajax({
@@ -653,7 +753,8 @@
                         "estimasidilayanival": estimasidilayani,
                         "namapolival": politujuan,
                         "namadokterval": doktertujuan,
-                        "statuspasienval": statuspasien
+                        "statuspasienval": statuspasien,
+                        "idcetak": '1'
                     },
                     dataType: 'json',
                     success: function(data) {
@@ -1357,11 +1458,6 @@
     }
 
     async function SimpanRegistrasi() {
-        const content = document.getElementById('content');
-        const bullets = [...document.querySelectorAll('.bullet')];
-
-        const MAX_STEPS = 4;
-        let currentStep = Number($("[name='currentStep']").val()); //3
         var idtabs = $(".tab-pane.active").attr("id");
         var numtab = '';
         var carabayar = '';
@@ -1486,6 +1582,18 @@
                             message('warning', data.codedata['message'], 'Informasi', false);
                             // document.getElementById("nilai" + numtab).value = Number(hasilnum) - 1;
                             // bool = false;
+
+                            $('#email' + numtab).text('-');
+                            $('#kodebookingval' + numtab).text('-');
+                            $('#nopendaftaranval' + numtab).text('-');
+                            $('#nocmval' + numtab).text('-');
+                            $('#nomorantreanval' + numtab).text('-');
+                            $('#jenisantreanval' + numtab).text('-');
+                            $('#estimasidilayanival' + numtab).text('-');
+                            $('#namapolival' + numtab).text('-');
+                            $('#namadokterval' + numtab).text('-');
+                            $('#statuspasienval' + numtab).text('-');
+
                         } else {
                             swal.close();
                             var nobooking = data.hasil['kodebooking'];
@@ -1499,6 +1607,17 @@
                             $("#ketnobookingsimpan" + numtab).text('* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No. Booking.');
                             // setInterval(location.reload(), 5000);
                             document.getElementById("nilai" + numtab).value = Number(hasilnum) + 1;
+
+                            $('#email' + numtab).text(email);
+                            $('#kodebookingval' + numtab).text(nobooking);
+                            $('#nopendaftaranval' + numtab).text(data.hasil['nopendaftaran']);
+                            $('#nocmval' + numtab).text(data.hasil['nocm']);
+                            $('#nomorantreanval' + numtab).text(data.hasil['nomorantrean']);
+                            $('#jenisantreanval' + numtab).text(data.hasil['jenisantrean']);
+                            $('#estimasidilayanival' + numtab).text(data.hasil['estimasidilayani']);
+                            $('#namapolival' + numtab).text(data.hasil['namapoli']);
+                            $('#namadokterval' + numtab).text(data.hasil['namadokter']);
+                            $('#statuspasienval' + numtab).text(data.hasil['statuspasien']);
 
                             // LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Bukti Pendaftarakan ke Email.');
                             // kirim bukti registrasi ke email
@@ -1551,6 +1670,17 @@
                     error: function() {
                         swal.close();
                         message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+
+                        $('#email' + numtab).text('-');
+                        $('#kodebookingval' + numtab).text('-');
+                        $('#nopendaftaranval' + numtab).text('-');
+                        $('#nocmval' + numtab).text('-');
+                        $('#nomorantreanval' + numtab).text('-');
+                        $('#jenisantreanval' + numtab).text('-');
+                        $('#estimasidilayanival' + numtab).text('-');
+                        $('#namapolival' + numtab).text('-');
+                        $('#namadokterval' + numtab).text('-');
+                        $('#statuspasienval' + numtab).text('-');
                         // document.getElementById("nilai" + numtab).value = Number(hasilnum) - 1;
                         // bool = false;
                     }
