@@ -39,12 +39,14 @@
 
                 <?php } elseif ($data == '2') { ?>
                     <!-- daftar -->
-                    <li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Home"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>
+                    <li class="active"><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>
 
                 <?php } else { ?>
                     <!-- cari -->
-                    <li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="Home"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="active"><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>
                     <li><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>
                 <?php } ?>
 
