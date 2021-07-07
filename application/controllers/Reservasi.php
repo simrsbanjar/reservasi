@@ -522,6 +522,7 @@ class Reservasi extends CI_Controller
         $jenisreferensi = $this->input->post('jenisreferensi');
         $jenisrequest = $this->input->post('jenisrequest');
         $polieksekutif = $this->input->post('polieksekutif');
+        $email = $this->input->post('email');
 
         $parm =  [
             'statuspasien'          => "" . $statuspasien . "",
@@ -549,7 +550,8 @@ class Reservasi extends CI_Controller
             'nomorreferensi'        => "" . $nomorreferensi . "",
             'jenisreferensi'        => "" . $jenisreferensi . "",
             'jenisrequest'          => "" . $jenisrequest . "",
-            'polieksekutif'         => "" . $polieksekutif . ""
+            'polieksekutif'         => "" . $polieksekutif . "",
+            'email'                 => "" . $email . ""
         ];
 
         // var_dump($parm);
@@ -633,5 +635,121 @@ class Reservasi extends CI_Controller
 
 
         echo json_encode($data);
+    }
+
+    function SendMail($email, $subject, $mesage, $filedata)
+    {
+        // configurasi library email
+        $config = [
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'simrsrsukotabanjar@gmail.com',
+            'smtp_pass' => 'Simrs321',
+            'smtp_port' => 465,
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'newline'   => "\r\n"
+        ];
+
+
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+
+        // send email
+        $this->email->from('simrsrsukotabanjar@gmail.com', 'RSU BANJAR REGISTRASI ONLINE');
+        $this->email->to($email);
+        $this->email->subject($subject);
+        $this->email->message($mesage);
+        $this->email->attach($filedata);
+
+        if ($this->email->send()) {
+            $data['hasil'] =  array(
+                'code' => '200',
+                'message' => 'Email Berhasil Dikirim'
+            );
+        } else {
+            $data['hasil'] =  array(
+                'code' => '201',
+                'message' => $this->email->print_debugger()
+            );
+        }
+
+        return $data;
+    }
+
+    function Cetak()
+    {
+        $kodebooking = $this->input->post('kodebookingval');
+        $nopendaftaran = $this->input->post('nopendaftaranval');
+        $nocm = $this->input->post('nocmval');
+        $nomorantrean = $this->input->post('nomorantreanval');
+        $jenisantrean = $this->input->post('jenisantreanval');
+        $estimasidilayani = $this->input->post('estimasidilayanival');
+        $namapoli = $this->input->post('namapolival');
+        $namadokter = $this->input->post('namadokterval');
+        $statuspasien = $this->input->post('statuspasienval');
+        $email = $this->input->post('email');
+        $subject    = 'Bukti Registrasi Online';
+        $mesage     = 'Silahkan bawa bukti hasil registrasi online ini saat daftar ulang ke Rumah Sakit.';
+        $this->GenerateQrcode($kodebooking);
+
+        $data['cetak'] = [
+            'kodebooking' => $kodebooking,
+            'nopendaftaran' => $nopendaftaran,
+            'nocm' => $nocm,
+            'nomorantrean' => $nomorantrean,
+            'jenisantrean' => $jenisantrean,
+            'estimasidilayani' => $estimasidilayani,
+            'namapoli' => $namapoli,
+            'namadokter' => $namadokter,
+            'statuspasien' => $statuspasien
+        ];
+
+        // panggil library yang kita buat sebelumnya yang bernama pdfgenerator
+        $this->load->library('pdfgenerator');
+
+        // title dari pdf
+        // $this->data['title_pdf'] = 'Laporan Penjualan Toko Kita';
+
+        // filename dari pdf ketika didownload
+        $file_pdf = 'RSUBANJAR_' . $kodebooking . '.pdf';
+        // setting paper
+        $paper = 'A4';
+        //orientasi paper potrait / landscape
+        $orientation = "portrait";
+
+        $html = $this->load->view('Cetak_noantrian', $data, true);
+
+        // run dompdf
+        $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+        // $this->load->view('Cetak_noantrian', $data);
+
+        $filedata   =  'assets/img/cetakan/' . $file_pdf;
+        $data = $this->SendMail($email, $subject, $mesage, $filedata);
+
+        echo json_encode($data);
+    }
+
+    function GenerateQrcode($kodebooking)
+    {
+        $this->load->library('ciqrcode'); //pemanggilan library QR CODE
+
+        $config['cacheable']    = true; //boolean, the default is true
+        $config['cachedir']     = './assets/'; //string, the default is application/cache/
+        $config['errorlog']     = './assets/'; //string, the default is application/logs/
+        $config['imagedir']     = './assets/img/qrcode/'; //direktori penyimpanan qr code
+        $config['quality']      = true; //boolean, the default is true
+        $config['size']         = '1024'; //interger, the default is 1024
+        $config['black']        = array(224, 255, 255); // array, default is array(255,255,255)
+        $config['white']        = array(70, 130, 180); // array, default is array(0,0,0)
+        $this->ciqrcode->initialize($config);
+
+        $image_name = $kodebooking . '.png'; //buat name dari qr code sesuai dengan kodebooking
+
+        $params['data'] = $kodebooking; //data yang akan di jadikan QR CODE
+        $params['level'] = 'H'; //H=High
+        $params['size'] = 10;
+        $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
+        $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
     }
 }

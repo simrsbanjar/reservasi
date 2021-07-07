@@ -98,7 +98,8 @@ class CariReservasi extends CI_Controller
                 'namapoli' => $response->namapoli,
                 'namadokter' => $response->namadokter,
                 'nocm' => $response->nocm,
-                'statuspasien' => $response->statuspasien
+                'statuspasien' => $response->statuspasien,
+                'email' => $response->email
             );
         }
 
@@ -161,7 +162,8 @@ class CariReservasi extends CI_Controller
                 'namapoli' => $response->namapoli,
                 'namadokter' => $response->namadokter,
                 'nocm' => $response->nocm,
-                'statuspasien' => $response->statuspasien
+                'statuspasien' => $response->statuspasien,
+                'email' => $response->email
             );
         }
 
@@ -236,6 +238,46 @@ class CariReservasi extends CI_Controller
         echo json_encode($data);
     }
 
+    function SendMail($email, $subject, $mesage, $filedata)
+    {
+        // configurasi library email
+        $config = [
+            'protocol'  => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'simrsrsukotabanjar@gmail.com',
+            'smtp_pass' => 'Simrs321',
+            'smtp_port' => 465,
+            'mailtype'  => 'html',
+            'charset'   => 'utf-8',
+            'newline'   => "\r\n"
+        ];
+
+
+        $this->load->library('email', $config);
+        $this->email->initialize($config);
+
+        // send email
+        $this->email->from('simrsrsukotabanjar@gmail.com', 'RSU BANJAR REGISTRASI ONLINE');
+        $this->email->to($email);
+        $this->email->subject($subject);
+        $this->email->message($mesage);
+        $this->email->attach($filedata);
+
+        if ($this->email->send()) {
+            $data['hasil'] =  array(
+                'code' => '200',
+                'message' => 'Email Berhasil Dikirim'
+            );
+        } else {
+            $data['hasil'] =  array(
+                'code' => '201',
+                'message' => $this->email->print_debugger()
+            );
+        }
+
+        return $data;
+    }
+
     function Cetak()
     {
         $kodebooking = $this->input->post('kodebookingval');
@@ -247,7 +289,9 @@ class CariReservasi extends CI_Controller
         $namapoli = $this->input->post('namapolival');
         $namadokter = $this->input->post('namadokterval');
         $statuspasien = $this->input->post('statuspasienval');
-
+        $email = $this->input->post('email');
+        $subject    = 'Bukti Registrasi Online';
+        $mesage     = 'Silahkan bawa bukti hasil registrasi online ini saat daftar ulang ke Rumah Sakit.';
         $this->GenerateQrcode($kodebooking);
 
         $data['cetak'] = [
@@ -269,7 +313,7 @@ class CariReservasi extends CI_Controller
         // $this->data['title_pdf'] = 'Laporan Penjualan Toko Kita';
 
         // filename dari pdf ketika didownload
-        $file_pdf = 'RSUBANJAR_' . $kodebooking;
+        $file_pdf = 'RSUBANJAR_' . $kodebooking . '.pdf';
         // setting paper
         $paper = 'A4';
         //orientasi paper potrait / landscape
@@ -280,6 +324,11 @@ class CariReservasi extends CI_Controller
         // run dompdf
         $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
         // $this->load->view('Cetak_noantrian', $data);
+
+        $filedata   =  'assets/img/cetakan/' . $file_pdf;
+        $data = $this->SendMail($email, $subject, $mesage, $filedata);
+
+        echo json_encode($data);
     }
 
     function GenerateQrcode($kodebooking)

@@ -65,84 +65,79 @@
                 <div class="card-header bg-primary text-white">
                     <center>Hasil Pencarian </center>
                 </div>
-                <form action='CariReservasi/Cetak' method='post' name='carireservasi' id='carireservasi' target='_blank'>
-                    <input type='text' name='kodebookingval' id='kodebookingval' hidden>
-                    <input type='text' name='nopendaftaranval' id='nopendaftaranval' hidden>
-                    <input type='text' name='nocmval' id='nocmval' hidden>
-                    <input type='text' name='nomorantreanval' id='nomorantreanval' hidden>
-                    <input type='text' name='jenisantreanval' id='jenisantreanval' hidden>
-                    <input type='text' name='estimasidilayanival' id='estimasidilayanival' hidden>
-                    <input type='text' name='namapolival' id='namapolival' hidden>
-                    <input type='text' name='namadokterval' id='namadokterval' hidden>
-                    <input type='text' name='statuspasienval' id='statuspasienval' hidden>
 
-                    <div class="row" style="padding-left: 10px;">
-                        <!-- DOKUMENTASI -->
-                        <!-- col-lg-4 tampilan ketika desktop -->
-                        <!-- TAMPILAN MOBILE -->
-                        <!-- col-7 tampilan extra small <576px -->
-                        <!-- col-sm-6 tampilan small ≥576px <768px -->
-                        <!-- col-md-5 tampilan medium 720px -->
-                        <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>Kode Booking</dt>
-                                <dd id="kodebooking">-</dd>
-                            </dl>
-                        </div>
-                        <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>No Pendaftaran</dt>
-                                <dd id="noreg">-</dd>
-                            </dl>
-                        </div>
-                        <div class="col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>No. Rekam Medik</dt>
-                                <dd id="norm">-</dd>
-                            </dl>
-                        </div>
-                        <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>No. Antrian</dt>
-                                <dd id="noantrian">-</dd>
-                            </dl>
-                        </div>
-                        <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>Jenis Antrian</dt>
-                                <dd id="jenisantrian">-</dd>
-                            </dl>
-                        </div>
-                        <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>Estimasi Dilayani</dt>
-                                <dd id="estimasidilayani">-</dd>
-                            </dl>
-                        </div>
-                        <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>Poli Tujuan</dt>
-                                <dd id="politujuan">-</dd>
-                            </dl>
-                        </div>
-                        <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>Dokter Tujuan</dt>
-                                <dd id="doktertujuan">-</dd>
-                            </dl>
-                        </div>
-                        <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
-                            <dl>
-                                <dt>Status Pasien</dt>
-                                <dd id="statuspasien">-</dd>
-                            </dl>
-                        </div>
+                <div class="row" style="padding-left: 10px;">
+                    <!-- DOKUMENTASI -->
+                    <!-- col-lg-4 tampilan ketika desktop -->
+                    <!-- TAMPILAN MOBILE -->
+                    <!-- col-7 tampilan extra small <576px -->
+                    <!-- col-sm-6 tampilan small ≥576px <768px -->
+                    <!-- col-md-5 tampilan medium 720px -->
+                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>Kode Booking</dt>
+                            <dd id="kodebooking">-</dd>
+                        </dl>
                     </div>
-                    <div class="d-flex justify-content-end card-footer">
-                        <button id="btnhapus" type="button" onclick="HapusBooking()" class="btn btn-sm btn-danger mr-2" disabled value="1"><i class="fa fa-trash"></i> Hapus</button>
-                        <button id="btncetak" type="submit" class="btn btn-sm btn-danger mr-1" disabled value="2"><i class="fas fa-print"></i> Cetak</button>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>No Pendaftaran</dt>
+                            <dd id="noreg">-</dd>
+                        </dl>
                     </div>
-                </form>
+                    <div class="col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>No. Rekam Medik</dt>
+                            <dd id="norm">-</dd>
+                        </dl>
+                    </div>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>No. Antrian</dt>
+                            <dd id="noantrian">-</dd>
+                        </dl>
+                    </div>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>Jenis Antrian</dt>
+                            <dd id="jenisantrian">-</dd>
+                        </dl>
+                    </div>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>Estimasi Dilayani</dt>
+                            <dd id="estimasidilayani">-</dd>
+                        </dl>
+                    </div>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>Poli Tujuan</dt>
+                            <dd id="politujuan">-</dd>
+                        </dl>
+                    </div>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>Dokter Tujuan</dt>
+                            <dd id="doktertujuan">-</dd>
+                        </dl>
+                    </div>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5">
+                        <dl>
+                            <dt>Status Pasien</dt>
+                            <dd id="statuspasien">-</dd>
+                        </dl>
+                    </div>
+                    <div class=" col-lg-4 col-7 col-sm-6 col-md-5" hidden>
+                        <dl>
+                            <dt>Status Pasien</dt>
+                            <dd id="email">-</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end card-footer">
+                    <button id="btnhapus" type="button" onclick="HapusBooking()" class="btn btn-sm btn-danger mr-2" disabled value="1"><i class="fa fa-trash"></i> Batalkan Data Registrasi</button>
+                    <button id="btncetak" type="button" onclick="CetakBooking()" class="btn btn-sm btn-danger mr-1" disabled value="2"><i class="fas fa-print"></i> Kirim Bukti Registasi</button>
+                </div>
             </div>
         </div>
     </div>

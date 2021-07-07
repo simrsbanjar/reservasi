@@ -1929,7 +1929,7 @@ section {
 	position: absolute;
 	bottom: 0;
 	left: 15px;
-	/* top: 67px; */ /* ditutup terlebih dahulu karena mengakibatkan terlalu kebawah small nya*/
+	top: 67px;  
 	visibility: hidden;
 }
 
@@ -2063,3 +2063,87 @@ section {
 .antrian .estimasi p {
 	font-size: medium;
 }
+
+/*step bar*/
+#stepProgressBar  {
+	display:  flex;
+	justify-content:  space-between;
+	align-items:  flex-end;
+	width:  70%;
+	margin:  0  auto;
+	margin-bottom:  40px;
+}
+
+.step  {
+text-align:  center;
+}
+
+.step-text  {
+margin-bottom:  20px;
+color:rgb(0, 0, 0);
+}
+
+
+.bullet {
+	border: 3px solid rgb(0, 0, 0);
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	position: relative;
+	transition: background-color 500ms;
+  line-height:30px;
+}
+
+
+.bullet.completed  {
+	color:  white;
+	background-color:  #28a745;
+}
+
+
+
+.bullet.completed::after {
+	content: '';
+	position: absolute;
+	right: 100%;
+	bottom: 15px;
+	height: 5px;
+	width: 500%;
+	background-color: #28a745;
+}
+
+/* Base styles and helper stuff */
+.hidden  {
+	display:  none;
+}
+ 
+button  {
+	padding:  5px  10px;
+	border:  1px  solid  black;
+	transition:  250ms background-color;
+}
+
+button:hover  {
+	cursor:  pointer;
+	background-color:  black;
+	color:  white;
+}
+
+button:disabled:hover  {
+	opacity:  0.6;
+	cursor:  not-allowed;
+}
+
+.text-center  {
+	text-align:  center;
+}
+  
+/* .container  {
+	max-width:  400px;
+	margin:  0  auto;
+	margin-top:  20px;
+	padding:  40px;
+} */
+

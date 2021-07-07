@@ -51,7 +51,13 @@
         GetRujukanAsal();
         GetPoli(date);
         GetCarabayar();
+        // const content = document.getElementById('content');
+        // const bullets = [...document.querySelectorAll('.bullet')];
 
+        // const MAX_STEPS = 4;
+        // let currentStep = 1;
+        // bullets[currentStep - 1].classList.add('completed');
+        // currentStep += 1;
 
         if (page == null) {
             $("#daftar").show();
@@ -118,6 +124,7 @@
         document.getElementById("tglregistrasi" + numtab).value = "<?= date("Y-m-d") ?>";
         document.getElementById("poli" + numtab).value = "";
         document.getElementById("rujukanasal" + numtab).value = "";
+        document.getElementById("email" + numtab).value = "";
         if (tab == 'tab-1') {
             document.getElementById("nopeserta" + numtab).value = "";
             document.getElementById("nosuratrujukan" + numtab).value = "";
@@ -151,6 +158,7 @@
         setSuccessFor(document.getElementById("kodepos" + numtab));
         setSuccessFor(document.getElementById("poli" + numtab));
         setSuccessFor(document.getElementById("rujukanasal" + numtab));
+        setSuccessFor(document.getElementById("email" + numtab));
     }
 
     function HitungUmur(tgllahir) {
@@ -222,78 +230,6 @@
         $("#btnlanjut3").hide();
         $("#carddata3").hide();
         $("#sukses3").hide();
-    }
-
-    function pasienlamatab1() {
-        $("#pasienlama").show();
-        $("#pasienbaru").hide();
-        $("#headerdatapasien").show();
-        $("#isidatapasien").show();
-        $("#headerreservasi").hide();
-        $("#isireservasi").hide();
-        $("#btnkembali").show();
-        $("#btnlanjut").show();
-        $("#carddata").show();
-    }
-
-    function pasienlamatab2() {
-        $("#pasienlama2").show();
-        $("#pasienbaru2").hide();
-        $("#headerdatapasien2").show();
-        $("#isidatapasien2").show();
-        $("#headerreservasi2").hide();
-        $("#isireservasi2").hide();
-        $("#btnkembali2").show();
-        $("#btnlanjut2").show();
-        $("#carddata2").show();
-    }
-
-    function pasienlamatab3() {
-        $("#pasienlama3").show();
-        $("#pasienbaru3").hide();
-        $("#headerdatapasien3").show();
-        $("#isidatapasien3").show();
-        $("#headerreservasi3").hide();
-        $("#isireservasi3").hide();
-        $("#btnkembali3").show();
-        $("#btnlanjut3").show();
-        $("#carddata3").show();
-    }
-
-    function pasienbarutab1() {
-        $("#headerdatapasien").show();
-        $("#isidatapasien").show();
-        $("#headerreservasi").hide();
-        $("#isireservasi").hide();
-        $("#pasienbaru").show();
-        $("#carddata").show();
-        $("#pasienlama").hide();
-        $("#btnkembali").show();
-        $("#btnlanjut").show();
-    }
-
-    function pasienbarutab2() {
-        $("#headerdatapasien2").show();
-        $("#isidatapasien2").show();
-        $("#headerreservasi2").hide();
-        $("#isireservasi2").hide();
-        $("#pasienbaru2").show();
-        $("#carddata2").show();
-        $("#pasienlama2").hide();
-        $("#btnkembali2").show();
-        $("#btnlanjut2").show();
-    }
-
-    function pasienbarutab3() {
-        $("#headerdatapasien3").show();
-        $("#isidatapasien3").show();
-        $("#headerreservasi3").hide();
-        $("#isireservasi3").hide();
-        $("#pasienbaru3").show();
-        $("#carddata3").show();
-        $("#pasienlama3").hide();
-        $("#btnkembali3").show();
-        $("#btnlanjut3").show();
     }
 
     function checkRadio(value) {
@@ -403,18 +339,9 @@
                         $('#politujuan').text('-');
                         $('#doktertujuan').text('-');
                         $('#statuspasien').text('-');
+                        $('#email').text('-');
                         $("#btnhapus").attr("disabled", true);
                         $("#btncetak").attr("disabled", true);
-
-                        document.getElementById("kodebookingval").value = '';
-                        document.getElementById("nopendaftaranval").value = '';
-                        document.getElementById("nocmval").value = '';
-                        document.getElementById("nomorantreanval").value = '';
-                        document.getElementById("jenisantreanval").value = '';
-                        document.getElementById("estimasidilayanival").value = '';
-                        document.getElementById("namapolival").value = '';
-                        document.getElementById("namadokterval").value = '';
-                        document.getElementById("statuspasienval").value = '';
                     } else {
                         $('#kodebooking').text(data.hasil['kodebooking']);
                         $('#noreg').text(data.hasil['nopendaftaran']);
@@ -425,16 +352,7 @@
                         $('#politujuan').text(data.hasil['namapoli']);
                         $('#doktertujuan').text(data.hasil['namadokter']);
                         $('#statuspasien').text(data.hasil['statuspasien']);
-
-                        document.getElementById("kodebookingval").value = data.hasil['kodebooking'];
-                        document.getElementById("nopendaftaranval").value = data.hasil['nopendaftaran'];
-                        document.getElementById("nocmval").value = data.hasil['nocm'];
-                        document.getElementById("nomorantreanval").value = data.hasil['nomorantrean'];
-                        document.getElementById("jenisantreanval").value = data.hasil['jenisantrean'];
-                        document.getElementById("estimasidilayanival").value = data.hasil['estimasidilayani'];
-                        document.getElementById("namapolival").value = data.hasil['namapoli'];
-                        document.getElementById("namadokterval").value = data.hasil['namadokter'];
-                        document.getElementById("statuspasienval").value = data.hasil['statuspasien'];
+                        $('#email').text(data.hasil['email']);
 
                         $("#btnhapus").attr("disabled", false);
                         $("#btncetak").attr("disabled", false);
@@ -452,18 +370,9 @@
                     $('#politujuan').text('-');
                     $('#doktertujuan').text('-');
                     $('#statuspasien').text('-');
+                    $('#email').text('-');
                     $("#btnhapus").attr("disabled", true);
                     $("#btncetak").attr("disabled", true);
-
-                    document.getElementById("kodebookingval").value = '';
-                    document.getElementById("nopendaftaranval").value = '';
-                    document.getElementById("nocmval").value = '';
-                    document.getElementById("nomorantreanval").value = '';
-                    document.getElementById("jenisantreanval").value = '';
-                    document.getElementById("estimasidilayanival").value = '';
-                    document.getElementById("namapolival").value = '';
-                    document.getElementById("namadokterval").value = '';
-                    document.getElementById("statuspasienval").value = '';
                 }
             });
 
@@ -474,43 +383,44 @@
 
     function prosesLanjutcarabayar() {
         var idtabs = $(".tab-pane.active").attr("id");
+        var numtab = '';
         if (idtabs == 'tab-1') {
-            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
-            if (statuspasien == '1') {
-                pasienlamatab1();
-            } else {
-                pasienbarutab1();
-            }
-            $("#btnkembali").show();
-            $("#btnlanjut").show();
-            document.getElementById("nilai").value = "1";
-            var norm = document.getElementById('norm');
-            setSuccessFor(norm);
+            numtab = '';
         } else if (idtabs == 'tab-2') {
-            var statuspasien = $('input[name="flexRadioDefault2"]:checked').val();
-            if (statuspasien == '1') {
-                pasienlamatab2();
-            } else {
-                pasienbarutab2();
-            }
-            $("#btnkembali2").show();
-            $("#btnlanjut2").show();
-            document.getElementById("nilai2").value = "1";
-            var norm = document.getElementById('norm2');
-            setSuccessFor(norm);
+            numtab = '2';
         } else {
-            var statuspasien = $('input[name="flexRadioDefault3"]:checked').val();
-            if (statuspasien == '1') {
-                pasienlamatab3();
-            } else {
-                pasienbarutab3();
-            }
-            $("#btnkembali3").show();
-            $("#btnlanjut3").show();
-            document.getElementById("nilai3").value = "1";
-            var norm = document.getElementById('norm3');
-            setSuccessFor(norm);
+            numtab = '3';
         }
+
+        var statuspasien = $("input[name='flexRadioDefault" + numtab + "']:checked").val();
+        if (statuspasien == '1') {
+            $("#pasienlama" + numtab).show();
+            $("#pasienbaru" + numtab).hide();
+            $("#headerdatapasien" + numtab).show();
+            $("#isidatapasien" + numtab).show();
+            $("#headerreservasi" + numtab).hide();
+            $("#isireservasi" + numtab).hide();
+            $("#btnkembali" + numtab).show();
+            $("#btnlanjut" + numtab).show();
+            $("#carddata" + numtab).show();
+        } else {
+            $("#headerdatapasien" + numtab).show();
+            $("#isidatapasien" + numtab).show();
+            $("#headerreservasi" + numtab).hide();
+            $("#isireservasi" + numtab).hide();
+            $("#pasienbaru" + numtab).show();
+            $("#carddata" + numtab).show();
+            $("#pasienlama" + numtab).hide();
+            $("#btnkembali" + numtab).show();
+            $("#btnlanjut" + numtab).show();
+        }
+        $("#btnkembali").show();
+        $("#btnlanjut").show();
+        document.getElementById("nilai" + numtab).value = "1";
+        var norm = document.getElementById("norm" + numtab);
+        setSuccessFor(norm);
+
+
         $("#carabayar").hide();
         $("#btncarabayar").hide();
         $("#btnlanjutcarabayar").hide();
@@ -518,202 +428,81 @@
 
     function prosesKembali() {
         var idtabs = $(".tab-pane.active").attr("id");
-
+        var numtab = '';
         if (idtabs == 'tab-1') {
-            var nilai = $("[name='nilai']").val();
-            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
-            var norm = document.getElementById('norm');
-
-            if (nilai == '1') {
-                Swal.fire({
-                    title: 'Konfirmasi',
-                    text: "Jika kembali data yang telah dimasukan akan hilang, Apakah anda yakin?",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Ya',
-                    cancelButtonText: 'Tidak'
-                }).then((result) => {
-                    if (result.value) {
-                        $("#pasienlama").hide();
-                        $("#btnlanjutcarabayar").show();
-                        $("#carabayar").show();
-                        $("#headerreservasi").hide();
-                        $("#isireservasi").hide();
-                        $("#headerdatapasien").hide();
-                        $("#isidatapasien").hide();
-                        $("#cardfooter").hide();
-                        $("#btnkembali").hide();
-                        $("#btnlanjut").hide();
-                        $("#carddata").hide();
-                        bersihkan(idtabs);
-                        document.getElementById("nilai").value = Number(nilai) - 1;
-                    } else {
-                        document.getElementById("nilai").value = '1';
-                    }
-                })
-
-            } else {
-                if (statuspasien == '1') {
-                    $("#pasienlama").show();
-                    $("#pasienbaru").hide();
-                    $("#headerdatapasien").show();
-                    $("#isidatapasien").show();
-                    $("#headerreservasi").hide();
-                    $("#isireservasi").hide();
-                    $("#btnkembali").show();
-                    $("#btnlanjut").show();
-                    $("#carabayar").hide();
-                    $("#btncarabayar").hide();
-                    $("#btnlanjutcarabayar").hide();
-                    $("#carddata").show();
-                } else {
-                    $("#headerdatapasien").show();
-                    $("#isidatapasien").show();
-                    $("#headerreservasi").hide();
-                    $("#isireservasi").hide();
-                    $("#pasienbaru").show();
-                }
-                $("#btnkembali").show();
-                $("#btnlanjut").show();
-                document.getElementById("nilai").value = Number(nilai) - 1;
-            }
-
-            if (Number(nilai) - 1 <= '2') {
-                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
-            } else {
-                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
-            }
+            numtab = '';
         } else if (idtabs == 'tab-2') {
-
-            var nilai = $("[name='nilai2']").val();
-            var statuspasien = $('input[name="flexRadioDefault2"]:checked').val();
-            var norm = document.getElementById('norm2');
-
-            if (nilai == '1') {
-                Swal.fire({
-                    title: 'Konfirmasi',
-                    text: "Jika kembali data yang telah dimasukan akan hilang, Apakah anda yakin?",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Ya',
-                    cancelButtonText: 'Tidak'
-                }).then((result) => {
-                    if (result.value) {
-                        $("#pasienlama2").hide();
-                        $("#btnlanjutcarabayar").show();
-                        $("#carabayar").show();
-                        $("#headerreservasi2").hide();
-                        $("#isireservasi2").hide();
-                        $("#headerdatapasien2").hide();
-                        $("#isidatapasien2").hide();
-                        $("#cardfooter2").hide();
-                        $("#btnkembali2").hide();
-                        $("#btnlanjut2").hide();
-                        $("#carddata2").hide();
-                        bersihkan(idtabs);
-                        document.getElementById("nilai2").value = Number(nilai) - 1;
-                    } else {
-                        document.getElementById("nilai2").value = '1';
-                    }
-                })
-            } else {
-                if (statuspasien == '1') {
-                    $("#pasienlama2").show();
-                    $("#pasienbaru2").hide();
-                    $("#headerdatapasien2").show();
-                    $("#isidatapasien2").show();
-                    $("#headerreservasi2").hide();
-                    $("#isireservasi2").hide();
-                    $("#btnkembali2").show();
-                    $("#btnlanjut2").show();
-                    $("#carabayar").hide();
-                    $("#btncarabayar").hide();
-                    $("#btnlanjutcarabayar").hide();
-                    $("#carddata2").show();
-                } else {
-                    $("#headerdatapasien2").show();
-                    $("#isidatapasien2").show();
-                    $("#headerreservasi2").hide();
-                    $("#isireservasi2").hide();
-                    $("#pasienbaru2").show();
-                }
-                $("#btnkembali2").show();
-                $("#btnlanjut2").show();
-                document.getElementById("nilai2").value = Number(nilai) - 1;
-            }
-
-            if (Number(nilai) - 1 <= '2') {
-                $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
-            } else {
-                $("#btnlanjut2").html('<i class="fas fa-save"></i> Simpan');
-            }
+            numtab = '2';
         } else {
-            var nilai = $("[name='nilai3']").val();
-            var statuspasien = $('input[name="flexRadioDefault3"]:checked').val();
-            var norm = document.getElementById('norm');
-
-            if (nilai == '1') {
-                Swal.fire({
-                    title: 'Konfirmasi',
-                    text: "Jika kembali data yang telah dimasukan akan hilang, Apakah anda yakin?",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Ya',
-                    cancelButtonText: 'Tidak'
-                }).then((result) => {
-                    if (result.value) {
-                        $("#pasienlama3").hide();
-                        $("#btnlanjutcarabayar").show();
-                        $("#carabayar").show();
-                        $("#headerreservasi3").hide();
-                        $("#isireservasi3").hide();
-                        $("#headerdatapasien3").hide();
-                        $("#isidatapasien3").hide();
-                        $("#cardfooter3").hide();
-                        $("#btnkembali3").hide();
-                        $("#btnlanjut3").hide();
-                        $("#carddata3").hide();
-                        bersihkan(idtabs);
-                        document.getElementById("nilai3").value = Number(nilai) - 1;
-                    } else {
-                        document.getElementById("nilai3").value = '1';
-                    }
-                })
-            } else {
-                if (statuspasien == '1') {
-                    $("#pasienlama3").show();
-                    $("#pasienbaru3").hide();
-                    $("#headerdatapasien3").show();
-                    $("#isidatapasien3").show();
-                    $("#headerreservasi3").hide();
-                    $("#isireservasi3").hide();
-                    $("#btnkembali3").show();
-                    $("#btnlanjut3").show();
-                    $("#carabayar").hide();
-                    $("#btncarabayar").hide();
-                    $("#btnlanjutcarabayar").hide();
-                    $("#carddata3").show();
-                } else {
-                    $("#headerdatapasien3").show();
-                    $("#isidatapasien3").show();
-                    $("#headerreservasi3").hide();
-                    $("#isireservasi3").hide();
-                    $("#pasienbaru3").show();
-                }
-                $("#btnkembali3").show();
-                $("#btnlanjut3").show();
-                document.getElementById("nilai3").value = Number(nilai) - 1;
-                // console.log(Number(nilai) - 1);
-
-            }
-
-            if (Number(nilai) - 1 <= '2') {
-                $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
-            } else {
-                $("#btnlanjut3").html('<i class="fas fa-save"></i> Simpan');
-            }
+            numtab = '3';
         }
+
+        var nilai = $("[name='nilai" + numtab + "']").val();
+        var statuspasien = $("input[name='flexRadioDefault" + numtab + "']:checked").val();
+        var norm = document.getElementById("norm" + numtab);
+
+        if (nilai == '1') {
+            Swal.fire({
+                title: 'Konfirmasi',
+                text: "Jika kembali data yang telah dimasukan akan hilang, Apakah anda yakin?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak'
+            }).then((result) => {
+                if (result.value) {
+                    $("#pasienlama" + numtab).hide();
+                    $("#btnlanjutcarabayar").show();
+                    $("#carabayar").show();
+                    $("#headerreservasi" + numtab).hide();
+                    $("#isireservasi" + numtab).hide();
+                    $("#headerdatapasien" + numtab).hide();
+                    $("#isidatapasien" + numtab).hide();
+                    $("#cardfooter" + numtab).hide();
+                    $("#btnkembali" + numtab).hide();
+                    $("#btnlanjut" + numtab).hide();
+                    $("#carddata" + numtab).hide();
+                    bersihkan(idtabs);
+                    document.getElementById("nilai" + numtab).value = Number(nilai) - 1;
+                } else {
+                    document.getElementById("nilai" + numtab).value = '1';
+                }
+            })
+
+        } else {
+            if (statuspasien == '1') {
+                $("#pasienlama" + numtab).show();
+                $("#pasienbaru" + numtab).hide();
+                $("#headerdatapasien" + numtab).show();
+                $("#isidatapasien" + numtab).show();
+                $("#headerreservasi" + numtab).hide();
+                $("#isireservasi" + numtab).hide();
+                $("#btnkembali" + numtab).show();
+                $("#btnlanjut" + numtab).show();
+                $("#carabayar").hide();
+                $("#btncarabayar").hide();
+                $("#btnlanjutcarabayar").hide();
+                $("#carddata" + numtab).show();
+            } else {
+                $("#headerdatapasien" + numtab).show();
+                $("#isidatapasien" + numtab).show();
+                $("#headerreservasi" + numtab).hide();
+                $("#isireservasi" + numtab).hide();
+                $("#pasienbaru" + numtab).show();
+            }
+            $("#btnkembali" + numtab).show();
+            $("#btnlanjut" + numtab).show();
+            document.getElementById("nilai" + numtab).value = Number(nilai) - 1;
+        }
+
+        if (Number(nilai) - 1 <= '2') {
+            $("#btnlanjut" + numtab).html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+        } else {
+            $("#btnlanjut" + numtab).html('<i class="fas fa-save"></i> Simpan');
+        }
+
         setSuccessFor(norm);
+
     }
 
     function prosesCari() {
@@ -745,14 +534,14 @@
     function HapusBooking() {
         Swal.fire({
             title: 'Konfirmasi',
-            text: "Apakah anda yakin akan menghapus data?",
+            text: "Apakah anda yakin akan membatalkan pendaftaran?",
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Ya',
             cancelButtonText: 'Tidak'
         }).then((result) => {
             if (result.value) {
-                var nobooking = $('#kodebookingval').val();
+                var nobooking = $('#kodebooking').text();
 
                 $.ajax({
                     url: "<?= base_url('CariReservasi/HapusBooking') ?>",
@@ -802,185 +591,157 @@
         })
     }
 
+    function LoadingPopup(titlevar, htmlvar) {
+        let timerInterval
+        Swal.fire({
+            title: titlevar,
+            html: htmlvar,
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        })
+    }
+
+    function gantiemail(email) {
+        var a = email.split("@");
+        var b = a[0];
+        var newstr = "";
+        for (var i in b) {
+            if (i > 2 && i < b.length - 1) newstr += "*";
+            else newstr += b[i];
+        }
+
+        return newstr + "@" + a[1];
+    }
+
+    async function CetakBooking(status) {
+        // var id = `${email}`;
+        var id = $('#email').text();
+        var nobooking = $('#kodebooking').text();
+        var noreg = $('#noreg').text();
+        var norm = $('#norm').text();
+        var noantrian = $('#noantrian').text();
+        var jenisantrian = $('#jenisantrian').text();
+        var estimasidilayani = $('#estimasidilayani').text();
+        var politujuan = $('#politujuan').text();
+        var doktertujuan = $('#doktertujuan').text();
+        var statuspasien = $('#statuspasien').text();
+
+        Swal.fire({
+            title: 'Konfirmasi',
+            text: "Apakah yakin dikirim ke alamat email " + gantiemail(id) + " ?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak'
+        }).then((result) => {
+            if (result.value) {
+                // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.               
+                LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Data.....');
+
+                $.ajax({
+                    url: "<?= base_url('CariReservasi/Cetak') ?>",
+                    method: "POST",
+                    data: {
+                        "email": id,
+                        "kodebookingval": nobooking,
+                        "nopendaftaranval": noreg,
+                        "nocmval": norm,
+                        "nomorantreanval": noantrian,
+                        "jenisantreanval": jenisantrian,
+                        "estimasidilayanival": estimasidilayani,
+                        "namapolival": politujuan,
+                        "namadokterval": doktertujuan,
+                        "statuspasienval": statuspasien
+                    },
+                    dataType: 'json',
+                    success: function(data) {
+                        swal.close();
+                        if (data.hasil['code'] != '200') {
+                            message('info', data.hasil['message'], 'Informasi', false);
+                        } else {
+                            message('success', data.hasil['message'], 'Informasi', false);
+                        }
+
+                    },
+                    error: function() {
+                        swal.close();
+                        message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                    }
+                });
+            } else {
+                // jika klik batal
+            }
+        })
+
+        // const {
+        //     value: email
+        // } = await Swal.fire({
+        //     title: 'Kirim Ulang Bukti Pendaftaran Online',
+        //     input: 'email',
+        //     inputLabel: 'Masukan Alamat Email Anda',
+        //     inputPlaceholder: 'Email'
+        // })
+        // if (email) {
+        // LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Data.....');
+
+
+        // }
+
+    }
+
     function prosesLanjut() {
         var idtabs = $(".tab-pane.active").attr("id");
-
+        var numtab = '';
         if (idtabs == 'tab-1') {
-            var statuspasien = $('input[name="flexRadioDefault"]:checked').val();
-            var nilai = $("[name='nilai']").val();
-            var hasilnum = Number(nilai) + 1;
-            if (nilai > '2') {
-                hasilnum = '2';
-            } else {
-                hasilnum = Number(nilai) + 1;
-            }
-
-            if (validasi(statuspasien, nilai) == false) {
-                return
-            }
-
-            //cek proses pencarian pasien lama ada tidak,jika tidak ada maka munculkan validasi
-            if (nilai == '1' && statuspasien == '1') {
-                if (document.getElementById("tabelpaslama1") == null) {
-                    message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
-                    return
-                }
-            }
-
-            if (hasilnum == '1') {
-                $("#btnlanjut").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
-            } else {
-                $("#btnlanjut").html('<i class="fas fa-save"></i> Simpan');
-                // $("norm").attr("required", true);
-            }
-
-            // jika simpan terakhir
-            if (hasilnum == '3') {
-                Swal.fire({
-                    title: 'Konfirmasi',
-                    text: "Apakah anda yakin akan menyimpan data?",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Ya',
-                    cancelButtonText: 'Tidak'
-                }).then((result) => {
-                    if (result.value) {
-
-                        // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.
-                        if (SimpanRegistrasi() === false) {
-                            return
-                        };
-                        document.getElementById("nilai").value = hasilnum;
-                    } else {
-                        document.getElementById("nilai").value = Number(hasilnum) - 1;
-                    }
-                })
-            } else {
-                document.getElementById("nilai").value = hasilnum;
-            }
-
-            $("#headerdatapasien").hide();
-            $("#isidatapasien").hide();
-            $("#headerreservasi").show();
-            $("#isireservasi").show();
-            $("#btnkembali").show();
+            numtab = '';
         } else if (idtabs == 'tab-2') {
-            var statuspasien = $('input[name="flexRadioDefault2"]:checked').val();
-            var nilai = $("[name='nilai2']").val();
-            var hasilnum = Number(nilai) + 1;
-            if (nilai > '2') {
-                hasilnum = '2';
-            } else {
-                hasilnum = Number(nilai) + 1;
-            }
-
-            if (validasi(statuspasien, nilai) == false) {
-                return
-            }
-
-            //cek proses pencarian pasien lama ada tidak,jika tidak ada maka munculkan validasi
-            if (nilai == '1' && statuspasien == '1') {
-                if (document.getElementById("tabelpaslama2") == null) {
-                    message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
-                    return
-                }
-            }
-
-            if (hasilnum == '1') {
-                $("#btnlanjut2").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
-            } else {
-                $("#btnlanjut2").html('<i class="fas fa-save"></i> Simpan');
-            }
-
-            // jika simpan terakhir
-            if (hasilnum == '3') {
-                Swal.fire({
-                    title: 'Konfirmasi',
-                    text: "Apakah anda yakin akan menyimpan data?",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Ya',
-                    cancelButtonText: 'Tidak'
-                }).then((result) => {
-                    if (result.value) {
-                        // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.
-                        if (SimpanRegistrasi() === false) {
-                            return
-                        };
-                        document.getElementById("nilai2").value = hasilnum;
-                    } else {
-                        document.getElementById("nilai2").value = Number(hasilnum) - 1;
-                    }
-                })
-            } else {
-                document.getElementById("nilai2").value = hasilnum;
-            }
-
-            $("#headerdatapasien2").hide();
-            $("#isidatapasien2").hide();
-            $("#headerreservasi2").show();
-            $("#isireservasi2").show();
-            $("#btnkembal2i").show();
+            numtab = '2';
         } else {
-            var statuspasien = $('input[name="flexRadioDefault3"]:checked').val();
-            var nilai = $("[name='nilai3']").val();
-            var hasilnum = Number(nilai) + 1;
-            if (hasilnum > '3') {
-                hasilnum = '3';
-            } else {
-                hasilnum = Number(nilai) + 1;
-            }
+            numtab = '3';
+        }
 
-            if (validasi(statuspasien, nilai) == false) {
+        var statuspasien = $("input[name='flexRadioDefault" + numtab + "']:checked").val();
+        var nilai = $("[name='nilai" + numtab + "']").val();
+        var hasilnum = Number(nilai) + 1;
+        if (nilai > '2') {
+            hasilnum = '2';
+        } else {
+            hasilnum = Number(nilai) + 1;
+        }
+
+
+        if (validasi(statuspasien, nilai) == false) {
+            return
+        }
+
+        //cek proses pencarian pasien lama ada tidak,jika tidak ada maka munculkan validasi
+        if (nilai == '1' && statuspasien == '1') {
+            if (document.getElementById("tabelpaslama" + numtab) == null) {
+                message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
                 return
             }
-
-            //cek proses pencarian pasien lama ada tidak,jika tidak ada maka munculkan validasi
-            if (nilai == '1' && statuspasien == '1') {
-                if (document.getElementById("tabelpaslama3") == null) {
-                    message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
-                    return
-                }
-            }
-            if (hasilnum == '1') {
-                $("#btnlanjut3").html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
-            } else {
-                $("#btnlanjut3").html('<i class="fas fa-save"></i> Simpan');
-            }
-
-            // jika simpan terakhir
-            if (hasilnum == '3') {
-                $("#loading").addClass("overlay");
-                Swal.fire({
-                    title: 'Konfirmasi',
-                    text: "Apakah anda yakin akan menyimpan data?",
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Ya',
-                    cancelButtonText: 'Tidak'
-                }).then((result) => {
-                    if (result.value) {
-                        // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.
-
-                        if (SimpanRegistrasi() === false) {
-                            return
-                        };
-                        document.getElementById("nilai3").value = hasilnum;
-                    } else {
-                        document.getElementById("nilai3").value = Number(hasilnum) - 1;
-                    }
-                })
-            } else {
-                document.getElementById("nilai3").value = hasilnum;
-            }
-            $("#headerdatapasien3").hide();
-            $("#isidatapasien3").hide();
-            $("#headerreservasi3").show();
-            $("#isireservasi3").show();
-            $("#btnkembali3").show();
-            // console.log($("[name='nilai3']").val());
-
         }
+        console.log(hasilnum);
+        if (hasilnum == '1') {
+            $("#btnlanjut" + numtab).html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+        } else {
+            $("#btnlanjut" + numtab).html('<i class="fas fa-save"></i> Simpan');
+        }
+
+        // jika simpan terakhir
+        if (hasilnum == '3') {
+            SimpanRegistrasi()
+        } else {
+            document.getElementById("nilai" + numtab).value = hasilnum;
+        }
+
+        $("#headerdatapasien" + numtab).hide();
+        $("#isidatapasien" + numtab).hide();
+        $("#headerreservasi" + numtab).show();
+        $("#isireservasi" + numtab).show();
+        $("#btnkembali" + numtab).show();
 
     }
 
@@ -1148,14 +909,6 @@
                     setSuccessFor(carabayar);
                 }
             }
-            var poli = document.getElementById('poli' + numtab);
-            var poliValue = poli.value.trim();
-            if (poliValue === '') {
-                setErrorFor(poli, 'Poli Harus Dipilih');
-                return false;
-            } else {
-                setSuccessFor(poli);
-            }
             var rujukanasal = document.getElementById('rujukanasal' + numtab);
             var rujukanasalValue = rujukanasal.value.trim();
             if (rujukanasalValue === '') {
@@ -1185,6 +938,25 @@
                 } else {
                     setSuccessFor(nosuratrujukan);
                 }
+            }
+
+            var poli = document.getElementById('poli' + numtab);
+            var poliValue = poli.value.trim();
+            if (poliValue === '') {
+                setErrorFor(poli, 'Poli Harus Dipilih');
+                return false;
+            } else {
+                setSuccessFor(poli);
+            }
+
+
+            var email = document.getElementById('email' + numtab);
+            var emailValue = email.value.trim();
+            if (emailValue === '') {
+                setErrorFor(email, 'Email Tidak Boleh Kosong');
+                return false;
+            } else {
+                setSuccessFor(email);
             }
             // var jeniskunjungan = document.getElementById('jeniskunjungan' + numtab);
             // var jeniskunjunganValue = jeniskunjungan.value.trim();
@@ -1498,7 +1270,7 @@
 
         if (idtabs == 'tab-1') {
             tabid = $('#tabletab');
-            tabelid = 'tabelpaslama1';
+            tabelid = 'tabelpaslama';
             nocm = $('#norm').val();
             tgllahir = $('#tgllahir').val();
             numtab = '';
@@ -1584,7 +1356,12 @@
         $('#loading').fadeOut();
     }
 
-    function SimpanRegistrasi() {
+    async function SimpanRegistrasi() {
+        const content = document.getElementById('content');
+        const bullets = [...document.querySelectorAll('.bullet')];
+
+        const MAX_STEPS = 4;
+        let currentStep = Number($("[name='currentStep']").val()); //3
         var idtabs = $(".tab-pane.active").attr("id");
         var numtab = '';
         var carabayar = '';
@@ -1592,6 +1369,8 @@
         var nosuratrujukan = '';
         var nocm = '';
         var jeniskunjungan = '';
+        var nilai = $("[name='nilai" + numtab + "'").val();
+        var hasilnum = Number(nilai) + 1;
 
         if (idtabs == 'tab-1') {
             numtab = '';
@@ -1650,68 +1429,140 @@
         var rujukanasal = $('#rujukanasal' + numtab).val();
         var poli = $('#poli' + numtab).val();
         var jenispoli = $('input[name="radiojenispoli' + numtab + '"]:checked').val();
+        var email = $('#email' + numtab).val();
 
-        var bool = true;
+        // var bool = true;
 
-        $.ajax({
-            url: "<?= base_url('Reservasi/SimpanRegistrasi') ?>",
-            method: "POST",
-            data: {
-                "statuspasien": statuspasien,
-                "tujuanperiksa": tujuanpemeriksaan,
-                "jenispasien": carabayar,
-                "namapasien": namalengkap,
-                "titlepasien": gelar,
-                "tempatlahir": tempatlahir,
-                "tgllahir": tgllahir,
-                "jeniskelamin": jeniskelamin,
-                "alamat": alamat,
-                "propinsi": propinsi,
-                "kota": kota,
-                "kecamatan": kecamatan,
-                "kelurahan": kelurahan,
-                "rtrw": rtrw,
-                "kodepos": kodepos,
-                "nocm": nocm,
-                "nomorkartu": nopeserta,
-                "nik": noidentitas,
-                "notelp": notlp,
-                "tanggalperiksa": tglregistrasi,
-                "kodepoli": poli,
-                "kdrujukanasal": rujukanasal,
-                "nomorreferensi": nosuratrujukan,
-                "jenisreferensi": jeniskunjungan,
-                "jenisrequest": jenispermintaan,
-                "polieksekutif": jenispoli
-            },
-            async: false,
-            dataType: 'json',
-            success: function(data) {
-                if (data.codedata['code'] != '200') {
-                    message('warning', data.codedata['message'], 'Informasi', false);
-                    bool = false;
-                } else {
-                    // message('success', 'Data Berhasil Disimpan.', 'Informasi', false);
-                    $("#headerreservasi" + numtab).hide();
-                    $("#isireservasi" + numtab).hide();
-                    $("#btnkembali" + numtab).hide();
-                    $("#btnlanjut" + numtab).hide();
-                    $("#sukses" + numtab).show();
-                    $("#nobookingsimpan" + numtab).text('No. Booking : ' + data.hasil['kodebooking']);
-                    // setInterval(location.reload(), 5000);
-                    bool = true;
-                }
+        Swal.fire({
+            title: 'Konfirmasi',
+            text: "Apakah anda yakin akan menyimpan data?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak'
+        }).then((result) => {
+            if (result.value) {
+                // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.
+                Swal.close();
+                LoadingPopup('Mohon Tunggu', 'Sedang Menyimpan Data.....');
 
-            },
-            error: function() {
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                bool = false;
+                $.ajax({
+                    url: "<?= base_url('Reservasi/SimpanRegistrasi') ?>",
+                    method: "POST",
+                    data: {
+                        "statuspasien": statuspasien,
+                        "tujuanperiksa": tujuanpemeriksaan,
+                        "jenispasien": carabayar,
+                        "namapasien": namalengkap,
+                        "titlepasien": gelar,
+                        "tempatlahir": tempatlahir,
+                        "tgllahir": tgllahir,
+                        "jeniskelamin": jeniskelamin,
+                        "alamat": alamat,
+                        "propinsi": propinsi,
+                        "kota": kota,
+                        "kecamatan": kecamatan,
+                        "kelurahan": kelurahan,
+                        "rtrw": rtrw,
+                        "kodepos": kodepos,
+                        "nocm": nocm,
+                        "nomorkartu": nopeserta,
+                        "nik": noidentitas,
+                        "notelp": notlp,
+                        "tanggalperiksa": tglregistrasi,
+                        "kodepoli": poli,
+                        "kdrujukanasal": rujukanasal,
+                        "nomorreferensi": nosuratrujukan,
+                        "jenisreferensi": jeniskunjungan,
+                        "jenisrequest": jenispermintaan,
+                        "polieksekutif": jenispoli,
+                        "email": email
+                    },
+                    // async: false,
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.codedata['code'] != '200') {
+                            swal.close();
+                            message('warning', data.codedata['message'], 'Informasi', false);
+                            // document.getElementById("nilai" + numtab).value = Number(hasilnum) - 1;
+                            // bool = false;
+                        } else {
+                            swal.close();
+                            var nobooking = data.hasil['kodebooking'];
+
+                            $("#headerreservasi" + numtab).hide();
+                            $("#isireservasi" + numtab).hide();
+                            $("#btnkembali" + numtab).hide();
+                            $("#btnlanjut" + numtab).hide();
+                            $("#sukses" + numtab).show();
+                            $("#nobookingsimpan" + numtab).text('No. Booking : ' + nobooking);
+                            $("#ketnobookingsimpan" + numtab).text('* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No. Booking.');
+                            // setInterval(location.reload(), 5000);
+                            document.getElementById("nilai" + numtab).value = Number(hasilnum) + 1;
+
+                            // LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Bukti Pendaftarakan ke Email.');
+                            // kirim bukti registrasi ke email
+                            $.ajax({
+                                url: "<?= base_url('Reservasi/Cetak') ?>",
+                                method: "POST",
+                                data: {
+                                    "email": email,
+                                    "kodebookingval": nobooking,
+                                    "nopendaftaranval": data.hasil['nopendaftaran'],
+                                    "nocmval": data.hasil['nocm'],
+                                    "nomorantreanval": data.hasil['nomorantrean'],
+                                    "jenisantreanval": data.hasil['jenisantrean'],
+                                    "estimasidilayanival": data.hasil['estimasidilayani'],
+                                    "namapolival": data.hasil['namapoli'],
+                                    "namadokterval": data.hasil['namadokter'],
+                                    "statuspasienval": data.hasil['statuspasien']
+                                },
+                                dataType: 'json',
+                                // async = false,
+                                success: function(data) {
+                                    swal.close();
+                                    // if (data.hasil['code'] != '200') {
+                                    // message('info', data.hasil['message'], 'Informasi', false);
+                                    // } else {
+                                    // message('success', data.hasil['message'], 'Informasi', false);
+                                    // }
+                                    // message('success', 'Data Berhasil Disimpan.', 'Informasi', false);
+                                    // bool = true;
+
+                                    // $("#headerreservasi" + numtab).hide();
+                                    // $("#isireservasi" + numtab).hide();
+                                    // $("#btnkembali" + numtab).hide();
+                                    // $("#btnlanjut" + numtab).hide();
+                                    // $("#sukses" + numtab).show();
+                                    // $("#nobookingsimpan" + numtab).text('No. Booking : ' + nobooking);
+                                    // $("#ketnobookingsimpan" + numtab).text('* Jika tidak menerima email silahkan lakukan kirim ulang di halaman cari pendaftaran dengan memasukan No. Booking : ' + nobooking);
+                                    // // setInterval(location.reload(), 5000);
+                                    // document.getElementById("nilai" + numtab).value = Number(hasilnum) + 1;
+                                },
+                                error: function() {
+                                    swal.close();
+                                    // message('error', 'Gagal Kirim Email, Silahkan lakukan kirim ulang di halaman pencarian.', 'Peringatan', false);
+                                }
+                            });
+
+                        }
+
+                    },
+                    error: function() {
+                        swal.close();
+                        message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                        // document.getElementById("nilai" + numtab).value = Number(hasilnum) - 1;
+                        // bool = false;
+                    }
+                });
+            } else {
+                // jika klik batal
+                // document.getElementById("nilai" + numtab).value = Number(hasilnum) - 1;
+                // bool = false;
             }
-        });
-        // setTimeout(() => {
-        //     $("#loadingsimpan").removeClass("overlay");
-        // }, 100);
-        return bool;
+        })
+
+        // return bool;
 
     }
 
