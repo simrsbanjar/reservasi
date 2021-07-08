@@ -275,9 +275,18 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Tgl. Registrasi</strong></label>
+                                            <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
                                             <input type="date" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" name="tglregistrasi" id="tglregistrasi" onchange="GetPoli(this.value)">
                                             <!---->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Poli</strong></label>
+                                            <select name="poli" id="poli" class="form-control" title="Pilih Poli">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
                                         </div>
                                     </div>
                                     <div class="col-md-4" hidden>
@@ -352,15 +361,6 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli" id="poli" class="form-control" title="Pilih Poli">
-                                                <option value="">-PILIH-</option>
-                                            </select>
-                                            <small>Error Message</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
                                             <label class="label-control"><strong>Jenis Kunjungan</strong></label>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="radiojeniskunjungan" value="2" id="radiojeniskunjungan2" checked>
@@ -407,7 +407,7 @@
                                             </select>
                                             <small>Error Message</small> -->
                                         </div>
-                                        <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini poli eksekutif belum tersedia.</label>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Mohon maaf untuk saat ini Poli Eksekutif belum tersedia.</label>
                                     </div>
 
                                     <div class="col-md-4">
@@ -417,7 +417,7 @@
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
-                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti registrasi.</label>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima Bukti Pendaftaran.</label>
                                     </div>
                                 </div>
                             </div>
@@ -673,9 +673,18 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Tgl. Registrasi</strong></label>
+                                            <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
                                             <input type="date" name="tglregistrasi2" id="tglregistrasi2" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" onchange="GetPoli(this.value)">
                                             <!---->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Poli</strong></label>
+                                            <select name="poli2" id="poli2" class="form-control form-control-user" title="Pilih Poli">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
                                         </div>
                                     </div>
                                     <div class="col-md-4" hidden>
@@ -746,15 +755,6 @@
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
                                             <input type="number" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta2" name="nopeserta2">
-                                            <small>Error Message</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli2" id="poli2" class="form-control form-control-user" title="Pilih Poli">
-                                                <option value="">-PILIH-</option>
-                                            </select>
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -1067,9 +1067,18 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="label-control"><strong>Tgl. Registrasi</strong></label>
+                                            <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
                                             <input type="date" name="tglregistrasi3" id="tglregistrasi3" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" onchange="GetPoli(this.value)">
                                             <!---->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Poli</strong></label>
+                                            <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli">
+                                                <option value="">-PILIH-</option>
+                                            </select>
+                                            <small>Error Message</small>
                                         </div>
                                     </div>
                                     <div class="col-md-4" hidden>
@@ -1122,15 +1131,6 @@
                                         <div class="form-group">
                                             <label class="label-control"><strong>Rujukan Asal</strong></label>
                                             <select name="rujukanasal3" id="rujukanasal3" class="form-control form-control-user" title="Pilih Rujukan Asal">
-                                                <option value="">-PILIH-</option>
-                                            </select>
-                                            <small>Error Message</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -1191,7 +1191,7 @@
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
-                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti registrasi.</label>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima Bukti Pendaftaran.</label>
                                     </div>
                                 </div>
                             </div>
