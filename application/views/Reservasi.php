@@ -18,6 +18,14 @@
     <div class="container">
         <input type="hidden" name="reservasi" id="reservasi" value="1">
         <div class="card" id="carabayar">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="Home">Home</a></li>
+                    <li class="breadcrumb-item"><a href=" Reservasi">Daftar</a></li>
+                    <li class="breadcrumb-item"><a href="#"> Data Pasien</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Data Registrasi</li>
+                </ol>
+            </nav>
             <div class="card-body">
                 <h4 style="text-align: center;">Silakan pilih dan klik cara bayar.</h4>
                 <!-- <br> -->
