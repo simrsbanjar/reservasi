@@ -78,7 +78,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
-                                            <input type="text" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -180,7 +180,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="text" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas" name="noidentitas" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas" name="noidentitas" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -196,7 +196,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="text" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -204,7 +204,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="text" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -252,7 +252,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="text" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp" name="notlp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp" name="notlp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -260,7 +260,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="text" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos" name="kodepos" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos" name="kodepos" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -338,7 +338,7 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
+                                            <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -413,7 +413,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Email</strong></label>
-                                            <input type="text" placeholder="Email" class="form-control" id="email" name="email">
+                                            <input type="email" placeholder="Email" class="form-control" id="email" name="email">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -477,7 +477,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Nomor RM" class="form-control" name="norm2" id="norm2">
+                                            <input type="number" placeholder="Nomor RM" class="form-control" name="norm2" id="norm2">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -578,7 +578,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas2" name="noidentitas2">
+                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas2" name="noidentitas2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -594,7 +594,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt2" name="rt2">
+                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt2" name="rt2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -602,7 +602,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw2" name="rw2">
+                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw2" name="rw2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -650,7 +650,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp2" name="notlp2">
+                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp2" name="notlp2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -658,7 +658,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos2" name="kodepos2">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos2" name="kodepos2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -745,7 +745,7 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta2" name="nopeserta2">
+                                            <input type="number" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta2" name="nopeserta2">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -810,7 +810,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Email</strong></label>
-                                            <input type="text" placeholder="Email" class="form-control" id="email2" name="email2">
+                                            <input type="email" placeholder="Email" class="form-control" id="email2" name="email2">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -871,7 +871,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No. RM / NIK" class="form-control" name="norm3" id="norm3">
+                                            <input type="number" placeholder="No. RM / NIK" class="form-control" name="norm3" id="norm3">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -972,7 +972,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas3" name="noidentitas3">
+                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas3" name="noidentitas3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -988,7 +988,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3">
+                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -996,7 +996,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3">
+                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1044,7 +1044,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3">
+                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1052,7 +1052,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="text" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1187,7 +1187,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Email</strong></label>
-                                            <input type="text" placeholder="Email" class="form-control" id="email3" name="email3">
+                                            <input type="email" placeholder="Email" class="form-control" id="email3" name="email3">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>

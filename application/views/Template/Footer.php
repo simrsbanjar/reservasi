@@ -340,7 +340,7 @@
             var statuspasien = $('#statuspasienval' + numtab).text();
         }
 
-        var url = "assets/img/cetakan/RSUBANJAR_" + nobooking + ".pdf";
+        var url = "assets/pdf/RSUBANJAR_" + nobooking + ".pdf";
         var name = "RSUBANJAR_" + nobooking + ".pdf";
         var a = $("<a>")
             .attr("href", url)
@@ -383,7 +383,34 @@
                         } else {
                             a[0].click();
                             a.remove();
-                            message('success', data.hasil['message'], 'Informasi', false);
+
+                            $.ajax({
+                                url: "<?= base_url('CariReservasi/RemoveFile') ?>",
+                                method: "POST",
+                                data: {
+                                    "kodebooking": nobooking
+                                },
+                                dataType: 'json',
+                                success: function(data) {
+                                    swal.close();
+                                    if (data.hasil['code'] != '200') {
+                                        message('info', data.hasil['message'], 'Informasi', false);
+                                    }
+
+                                },
+                                error: function() {
+                                    swal.close();
+                                    message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+                                }
+                            });
+
+                            // unlink('assets/pdf/' . $nobooking . '.pdf');
+
+                            // setInterval(unlink('assets/img/qrcode/' + nobooking + '.png'), 100);
+                            // setInterval(unlink('assets/pdf/' + nobooking) + '.pdf', 100);
+
+
+                            // message('success', data.hasil['message'], 'Informasi', false);
                         }
 
                     },
@@ -668,16 +695,9 @@
                             $('#statuspasien').text('-');
                             $("#btnhapus").attr("disabled", true);
                             $("#btncetak").attr("disabled", true);
+                            $("#btnunduh").attr("disabled", true);
 
-                            document.getElementById("kodebookingval").value = '';
-                            document.getElementById("nopendaftaranval").value = '';
-                            document.getElementById("nocmval").value = '';
-                            document.getElementById("nomorantreanval").value = '';
-                            document.getElementById("jenisantreanval").value = '';
-                            document.getElementById("estimasidilayanival").value = '';
-                            document.getElementById("namapolival").value = '';
-                            document.getElementById("namadokterval").value = '';
-                            document.getElementById("statuspasienval").value = '';
+                            document.getElementById("nopendaftaran").value = "";
                         }
 
                     },
@@ -728,53 +748,57 @@
         var doktertujuan = $('#doktertujuan').text();
         var statuspasien = $('#statuspasien').text();
 
-        Swal.fire({
-            title: 'Konfirmasi',
-            text: "Apakah yakin dikirim ke alamat email " + gantiemail(id) + " ?",
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonText: 'Ya',
-            cancelButtonText: 'Tidak'
-        }).then((result) => {
-            if (result.value) {
-                // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.   
-                LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Data.....');
+        if (id == '' || id == null) {
+            message('info', 'Alamat Email tidak Ditemukan.', 'Informasi', false);
+        } else {
+            Swal.fire({
+                title: 'Konfirmasi',
+                text: "Apakah yakin dikirim ke alamat email " + gantiemail(id) + " ?",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Tidak'
+            }).then((result) => {
+                if (result.value) {
+                    // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.   
+                    LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Data.....');
 
-                $.ajax({
-                    url: "<?= base_url('CariReservasi/Cetak') ?>",
-                    method: "POST",
-                    data: {
-                        "email": id,
-                        "kodebookingval": nobooking,
-                        "nopendaftaranval": noreg,
-                        "nocmval": norm,
-                        "nomorantreanval": noantrian,
-                        "jenisantreanval": jenisantrian,
-                        "estimasidilayanival": estimasidilayani,
-                        "namapolival": politujuan,
-                        "namadokterval": doktertujuan,
-                        "statuspasienval": statuspasien,
-                        "idcetak": '1'
-                    },
-                    dataType: 'json',
-                    success: function(data) {
-                        swal.close();
-                        if (data.hasil['code'] != '200') {
-                            message('info', data.hasil['message'], 'Informasi', false);
-                        } else {
-                            message('success', data.hasil['message'], 'Informasi', false);
+                    $.ajax({
+                        url: "<?= base_url('CariReservasi/Cetak') ?>",
+                        method: "POST",
+                        data: {
+                            "email": id,
+                            "kodebookingval": nobooking,
+                            "nopendaftaranval": noreg,
+                            "nocmval": norm,
+                            "nomorantreanval": noantrian,
+                            "jenisantreanval": jenisantrian,
+                            "estimasidilayanival": estimasidilayani,
+                            "namapolival": politujuan,
+                            "namadokterval": doktertujuan,
+                            "statuspasienval": statuspasien,
+                            "idcetak": '1'
+                        },
+                        dataType: 'json',
+                        success: function(data) {
+                            swal.close();
+                            if (data.hasil['code'] != '200') {
+                                message('info', data.hasil['message'], 'Informasi', false);
+                            } else {
+                                message('success', data.hasil['message'], 'Informasi', false);
+                            }
+
+                        },
+                        error: function() {
+                            swal.close();
+                            message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
                         }
-
-                    },
-                    error: function() {
-                        swal.close();
-                        message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                    }
-                });
-            } else {
-                // jika klik batal
-            }
-        })
+                    });
+                } else {
+                    // jika klik batal
+                }
+            })
+        }
 
         // const {
         //     value: email
@@ -824,7 +848,7 @@
                 return
             }
         }
-        console.log(hasilnum);
+
         if (hasilnum == '1') {
             $("#btnlanjut" + numtab).html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
         } else {

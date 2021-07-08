@@ -22,7 +22,7 @@ class Pdfgenerator
         $dompdf->loadHtml($html);
         $dompdf->setPaper($paper, $orientation);
         $dompdf->render();
-        file_put_contents('assets/img/cetakan/' . $filename,  $dompdf->output());
+        file_put_contents('assets/pdf/' . $filename,  $dompdf->output());
         // if ($stream) {
         //     $dompdf->stream($filename . ".pdf", array("Attachment" => 0));
         // } else {

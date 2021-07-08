@@ -20,6 +20,7 @@ class CariReservasi extends CI_Controller
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->helper('download');
+        $this->load->helper("file");
     }
 
     public function time_convert($timestamp)
@@ -328,14 +329,39 @@ class CariReservasi extends CI_Controller
         // $this->load->view('Cetak_noantrian', $data);
 
         // 1. jika kirim email 2. jika unduh file
+        $filedata   =  'assets/pdf/' . $file_pdf;
         if ($idcetak == '1') {
-            $filedata   =  'assets/img/cetakan/' . $file_pdf;
-
             $data = $this->SendMail($email, $subject, $mesage, $filedata);
+            unlink($filedata);
+            unlink('assets/img/qrcode/' . $kodebooking . '.png');
         } else {
             $data['hasil'] =  array(
                 'code' => '200',
                 'message' => 'File Berhasil Diunduh'
+            );
+        }
+        echo json_encode($data);
+    }
+
+    function RemoveFile()
+    {
+        $kodebooking = $this->input->post('kodebooking');
+        if (unlink('assets/pdf/RSUBANJAR_' . $kodebooking . '.pdf')) {
+            if (unlink('assets/img/qrcode/' . $kodebooking . '.png')) {
+                $data['hasil'] =  array(
+                    'code' => '200',
+                    'message' => 'Email Berhasil Dikirim'
+                );
+            } else {
+                $data['hasil'] =  array(
+                    'code' => '201',
+                    'message' => $this->email->print_debugger()
+                );
+            }
+        } else {
+            $data['hasil'] =  array(
+                'code' => '201',
+                'message' => $this->email->print_debugger()
             );
         }
 
@@ -363,5 +389,10 @@ class CariReservasi extends CI_Controller
         $params['size'] = 10;
         $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
         $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+    }
+
+    function Hapus()
+    {
+        var_dump(unlink('assets/file/New Text Document.txt'));
     }
 }

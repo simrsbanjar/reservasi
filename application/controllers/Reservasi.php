@@ -679,6 +679,7 @@ class Reservasi extends CI_Controller
 
     function Cetak()
     {
+        $idcetak = $this->input->post('idcetak');
         $kodebooking = $this->input->post('kodebookingval');
         $nopendaftaran = $this->input->post('nopendaftaranval');
         $nocm = $this->input->post('nocmval');
@@ -724,8 +725,42 @@ class Reservasi extends CI_Controller
         $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
         // $this->load->view('Cetak_noantrian', $data);
 
-        $filedata   =  'assets/img/cetakan/' . $file_pdf;
-        $data = $this->SendMail($email, $subject, $mesage, $filedata);
+        // 1. jika kirim email 2. jika unduh file
+        $filedata   =  'assets/pdf/' . $file_pdf;
+        if ($idcetak == '1') {
+            $data = $this->SendMail($email, $subject, $mesage, $filedata);
+            unlink($filedata);
+            unlink('assets/img/qrcode/' . $kodebooking . '.png');
+        } else {
+            $data['hasil'] =  array(
+                'code' => '200',
+                'message' => 'File Berhasil Diunduh'
+            );
+        }
+        echo json_encode($data);
+    }
+
+    function RemoveFile()
+    {
+        $kodebooking = $this->input->post('kodebooking');
+        if (unlink('assets/pdf/RSUBANJAR_' . $kodebooking . '.pdf')) {
+            if (unlink('assets/img/qrcode/' . $kodebooking . '.png')) {
+                $data['hasil'] =  array(
+                    'code' => '200',
+                    'message' => 'Email Berhasil Dikirim'
+                );
+            } else {
+                $data['hasil'] =  array(
+                    'code' => '201',
+                    'message' => $this->email->print_debugger()
+                );
+            }
+        } else {
+            $data['hasil'] =  array(
+                'code' => '201',
+                'message' => $this->email->print_debugger()
+            );
+        }
 
         echo json_encode($data);
     }
