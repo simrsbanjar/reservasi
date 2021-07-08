@@ -72,13 +72,15 @@
         } else if (page == '1') {
             $("#daftar").hide();
             var html = '';
-            html += '<li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
+            html += '<li><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
             html += '<li><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
+            html += '<li class="active"><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
             $('#myList').html(html);
         } else {
             $("#daftar").hide();
             var html = '';
-            html += '<li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
+            html += '<li><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
+            html += '<li class="active"><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
             html += '<li><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
             $('#myList').html(html);
         }
