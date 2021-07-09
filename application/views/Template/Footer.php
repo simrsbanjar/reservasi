@@ -85,6 +85,10 @@
             $('#myList').html(html);
         }
 
+        var html = '';
+        html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
+        $('#stepprogress').html(html);
+
 
     });
 
@@ -553,6 +557,111 @@
         $("#carabayar").hide();
         $("#btncarabayar").hide();
         $("#btnlanjutcarabayar").hide();
+
+        var html = '';
+        html = "<li class='breadcrumb-item'><a href='#' onclick='StepCarabayar();'>Cara Bayar</a></li>";
+        html += '<li class="breadcrumb-item active" aria-current="page">Data Pasien</a></li>';
+        $('#stepprogress').html(html);
+    }
+
+    function StepCarabayar() {
+        var idtabs = $(".tab-pane.active").attr("id");
+        var numtab = '';
+        if (idtabs == 'tab-1') {
+            numtab = '';
+        } else if (idtabs == 'tab-2') {
+            numtab = '2';
+        } else {
+            numtab = '3';
+        }
+
+        var norm = document.getElementById("norm" + numtab);
+
+        Swal.fire({
+            title: 'Konfirmasi',
+            text: "Jika kembali data yang telah dimasukan akan hilang, Apakah anda yakin?",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Tidak'
+        }).then((result) => {
+            if (result.value) {
+                $("#pasienlama" + numtab).hide();
+                $("#btnlanjutcarabayar").show();
+                $("#carabayar").show();
+                $("#headerreservasi" + numtab).hide();
+                $("#isireservasi" + numtab).hide();
+                $("#headerdatapasien" + numtab).hide();
+                $("#isidatapasien" + numtab).hide();
+                $("#cardfooter" + numtab).hide();
+                $("#btnkembali" + numtab).hide();
+                $("#btnlanjut" + numtab).hide();
+                $("#carddata" + numtab).hide();
+                bersihkan(idtabs);
+
+                var html = '';
+                html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
+                $('#stepprogress').html(html);
+            }
+            document.getElementById("nilai" + numtab).value = '1';
+        })
+
+        $("#btnlanjut" + numtab).html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+
+        setSuccessFor(norm);
+
+    }
+
+    function StepDataPasien() {
+        var idtabs = $(".tab-pane.active").attr("id");
+        var numtab = '';
+        if (idtabs == 'tab-1') {
+            numtab = '';
+        } else if (idtabs == 'tab-2') {
+            numtab = '2';
+        } else {
+            numtab = '3';
+        }
+
+        var nilai = $("[name='nilai" + numtab + "']").val();
+        var statuspasien = $("input[name='flexRadioDefault" + numtab + "']:checked").val();
+        var norm = document.getElementById("norm" + numtab);
+
+        if (statuspasien == '1') {
+            $("#pasienlama" + numtab).show();
+            $("#pasienbaru" + numtab).hide();
+            $("#headerdatapasien" + numtab).show();
+            $("#isidatapasien" + numtab).show();
+            $("#headerreservasi" + numtab).hide();
+            $("#isireservasi" + numtab).hide();
+            $("#btnkembali" + numtab).show();
+            $("#btnlanjut" + numtab).show();
+            $("#carabayar").hide();
+            $("#btncarabayar").hide();
+            $("#btnlanjutcarabayar").hide();
+            $("#carddata" + numtab).show();
+        } else {
+            $("#headerdatapasien" + numtab).show();
+            $("#isidatapasien" + numtab).show();
+            $("#headerreservasi" + numtab).hide();
+            $("#isireservasi" + numtab).hide();
+            $("#pasienbaru" + numtab).show();
+        }
+        $("#btnkembali" + numtab).show();
+        $("#btnlanjut" + numtab).show();
+        document.getElementById("nilai" + numtab).value = '1';
+
+        var html = '';
+        html = "<li class='breadcrumb-item'><a href='#' onclick='StepCarabayar();'>Cara Bayar</a></li>";
+        html += "<li class='breadcrumb-item active' aria-current='page'><a href='#' onclick='StepDataPasien();'>Data Pasien</a></li>";
+        $('#stepprogress').html(html);
+
+        $("#btnlanjut" + numtab).html('<i class="fas fa-arrow-alt-circle-right"></i> Lanjut');
+    }
+
+    function StepSelesai() {
+        message('info', 'Langkah tidak dapat dikembalikan lagi, silahkan kembali ke Beranda.', 'Peringatan', false);
+        return;
     }
 
     function prosesKembali() {
@@ -593,6 +702,10 @@
                     $("#carddata" + numtab).hide();
                     bersihkan(idtabs);
                     document.getElementById("nilai" + numtab).value = Number(nilai) - 1;
+
+                    var html = '';
+                    html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
+                    $('#stepprogress').html(html);
                 } else {
                     document.getElementById("nilai" + numtab).value = '1';
                 }
@@ -622,6 +735,11 @@
             $("#btnkembali" + numtab).show();
             $("#btnlanjut" + numtab).show();
             document.getElementById("nilai" + numtab).value = Number(nilai) - 1;
+
+            var html = '';
+            html = "<li class='breadcrumb-item'><a href='#' onclick='StepCarabayar();'>Cara Bayar</a></li>";
+            html += "<li class='breadcrumb-item active' aria-current='page'><a href='#' onclick='StepDataPasien();'>Data Pasien</a></li>";
+            $('#stepprogress').html(html);
         }
 
         if (Number(nilai) - 1 <= '2') {
@@ -838,7 +956,6 @@
             hasilnum = Number(nilai) + 1;
         }
 
-
         if (validasi(statuspasien, nilai) == false) {
             return
         }
@@ -860,8 +977,15 @@
         // jika simpan terakhir
         if (hasilnum == '3') {
             SimpanRegistrasi()
+
         } else {
             document.getElementById("nilai" + numtab).value = hasilnum;
+
+            var html = '';
+            html = "<li class='breadcrumb-item'><a href='#' onclick='StepCarabayar();'>Cara Bayar</a></li>";
+            html += "<li class='breadcrumb-item'><a href='#' onclick='StepDataPasien();'>Data Pasien</a></li>";
+            html += "<li class='breadcrumb-item active' aria-current='page'>Data Registrasi</a></li>";
+            $('#stepprogress').html(html);
         }
 
         $("#headerdatapasien" + numtab).hide();
@@ -1687,6 +1811,13 @@
                                     // message('error', 'Gagal Kirim Email, Silahkan lakukan kirim ulang di halaman pencarian.', 'Peringatan', false);
                                 }
                             });
+
+                            var html = '';
+                            html = "<li class='breadcrumb-item'><a href='#' onclick='StepSelesai();'>Cara Bayar</a></li>";
+                            html += "<li class='breadcrumb-item'><a href='#' onclick='StepSelesai();'>Data Pasien</a></li>";
+                            html += "<li class='breadcrumb-item'><a href='#' onclick='StepSelesai();'>Data Registrasi</a></li>";
+                            html += "<li class='breadcrumb-item active' aria-current='page'>Selesai</a></li>";
+                            $('#stepprogress').html(html);
 
                         }
 
