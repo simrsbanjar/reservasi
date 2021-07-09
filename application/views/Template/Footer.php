@@ -984,7 +984,7 @@
             var html = '';
             html = "<li class='breadcrumb-item'><a href='#' onclick='StepCarabayar();'>Cara Bayar</a></li>";
             html += "<li class='breadcrumb-item'><a href='#' onclick='StepDataPasien();'>Data Pasien</a></li>";
-            html += "<li class='breadcrumb-item active' aria-current='page'>Data Registrasi</a></li>";
+            html += "<li class='breadcrumb-item active' aria-current='page'>Data Pendaftaran</a></li>";
             $('#stepprogress').html(html);
         }
 
@@ -1815,7 +1815,7 @@
                             var html = '';
                             html = "<li class='breadcrumb-item'><a href='#' onclick='StepSelesai();'>Cara Bayar</a></li>";
                             html += "<li class='breadcrumb-item'><a href='#' onclick='StepSelesai();'>Data Pasien</a></li>";
-                            html += "<li class='breadcrumb-item'><a href='#' onclick='StepSelesai();'>Data Registrasi</a></li>";
+                            html += "<li class='breadcrumb-item'><a href='#' onclick='StepSelesai();'>Data Pendaftaran</a></li>";
                             html += "<li class='breadcrumb-item active' aria-current='page'>Selesai</a></li>";
                             $('#stepprogress').html(html);
 

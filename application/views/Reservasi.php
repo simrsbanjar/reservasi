@@ -19,10 +19,10 @@
         <input type="hidden" name="reservasi" id="reservasi" value="1">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" id="stepprogress">
-                <li class="breadcrumb-item">Cara Bayar</a></li>
+                <!-- <li class="breadcrumb-item">Cara Bayar</a></li>
                 <li class="breadcrumb-item "><a href="#" id="datapasienlink"> Data Pasien</a></li>
                 <li class="breadcrumb-item"><a href="#" id="dataregistrasilink">Data Registrasi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Selesai</li>
+                <li class="breadcrumb-item active" aria-current="page">Selesai</li> -->
             </ol>
         </nav>
         <div class="card" id="carabayar">
@@ -276,7 +276,7 @@
                                 </div>
                             </div>
                             <div class="card-header bg-primary  text-white" id="headerreservasi">
-                                Data Registrasi
+                                Data Pendaftaran
                             </div>
                             <div class="card-body" id="isireservasi">
                                 <input type="hidden" name="nilai" id="nilai" value="1">
@@ -674,7 +674,7 @@
                                 </div>
                             </div>
                             <div class="card-header bg-primary  text-white" id="headerreservasi2">
-                                Data Registrasi
+                                Data Pendaftaran
                             </div>
                             <div class="card-body" id="isireservasi2">
                                 <input type="hidden" name="nilai" id="nilai" value="1">
@@ -822,7 +822,7 @@
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
-                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti registrasi.</label>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti Pendaftaran.</label>
                                     </div>
                                 </div>
                             </div>
@@ -1068,7 +1068,7 @@
                                 </div>
                             </div>
                             <div class="card-header bg-primary  text-white" id="headerreservasi3">
-                                Data Registrasi
+                                Data Pendaftaran
                             </div>
                             <div class="card-body" id="isireservasi3">
                                 <input type="hidden" name="nilai3" id="nilai3" value="1">
