@@ -17,15 +17,15 @@
     <!-- <section id="featuresok" class="featuresok"> -->
     <div class="container">
         <input type="hidden" name="reservasi" id="reservasi" value="1">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" id="stepprogress">
+                <!-- <li class="breadcrumb-item">Cara Bayar</a></li>
+                <li class="breadcrumb-item "><a href="#" id="datapasienlink"> Data Pasien</a></li>
+                <li class="breadcrumb-item"><a href="#" id="dataregistrasilink">Data Registrasi</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Selesai</li> -->
+            </ol>
+        </nav>
         <div class="card" id="carabayar">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="Home">Home</a></li>
-                    <li class="breadcrumb-item"><a href=" Reservasi">Daftar</a></li>
-                    <li class="breadcrumb-item"><a href="#"> Data Pasien</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Data Registrasi</li>
-                </ol>
-            </nav>
             <div class="card-body">
                 <h4 style="text-align: center;">Silakan pilih dan klik cara bayar.</h4>
                 <!-- <br> -->
@@ -60,7 +60,7 @@
                 <div class="row justify-content-md-center">
                     <!-- <section id="featured-services1" class="featured-services1"> -->
                     <!-- <div style="padding: 2rem 3rem; text-align: left;"> -->
-                    <div class="col-lg-11">
+                    <div class="col-lg-12">
                         <div class="card" id="carddata">
                             <div class="card-header bg-primary  text-white" id="headerdatapasien">
                                 Data Pasien
@@ -276,7 +276,7 @@
                                 </div>
                             </div>
                             <div class="card-header bg-primary  text-white" id="headerreservasi">
-                                Data Registrasi
+                                Data Pendaftaran
                             </div>
                             <div class="card-body" id="isireservasi">
                                 <input type="hidden" name="nilai" id="nilai" value="1">
@@ -459,7 +459,7 @@
             <div class="tab-pane" id="tab-2" hidden>
                 <div class="row justify-content-md-center">
                     <!-- <section id="featured-services1" class="featured-services1"> -->
-                    <div class="col-lg-11">
+                    <div class="col-lg-12">
                         <div class="card" id="carddata2">
                             <div class="card-header bg-primary  text-white" id="headerdatapasien2">
                                 Data Pasien
@@ -674,7 +674,7 @@
                                 </div>
                             </div>
                             <div class="card-header bg-primary  text-white" id="headerreservasi2">
-                                Data Registrasi
+                                Data Pendaftaran
                             </div>
                             <div class="card-body" id="isireservasi2">
                                 <input type="hidden" name="nilai" id="nilai" value="1">
@@ -822,7 +822,7 @@
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
-                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti registrasi.</label>
+                                        <label class="label-control" style="font-size: 11px; color: red;"> * Pastikan Email terisi dengan benar karena untuk menerima bukti Pendaftaran.</label>
                                     </div>
                                 </div>
                             </div>
@@ -853,7 +853,7 @@
             <div class="tab-pane" id="tab-3">
                 <div class="row justify-content-md-center">
                     <!-- <section id="featured-services1" class="featured-services1"> -->
-                    <div class="col-lg-11">
+                    <div class="col-lg-12">
                         <div class="card" id="carddata3">
                             <div class="card-header bg-primary  text-white" id="headerdatapasien3">
                                 Data Pasien
@@ -1068,7 +1068,7 @@
                                 </div>
                             </div>
                             <div class="card-header bg-primary  text-white" id="headerreservasi3">
-                                Data Registrasi
+                                Data Pendaftaran
                             </div>
                             <div class="card-body" id="isireservasi3">
                                 <input type="hidden" name="nilai3" id="nilai3" value="1">

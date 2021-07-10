@@ -17,12 +17,12 @@
         <div class="col-lg-8 mt-3">
             <div class="card">
                 <!-- penambahan breadcrumb -->
-                <nav aria-label="breadcrumb">
+                <!-- <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="Home">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Cari</li>
                     </ol>
-                </nav>
+                </nav> -->
                 <div class="card-header bg-primary text-white">
                     Cari Data Pendaftaran
                 </div>
@@ -146,9 +146,9 @@
                 </div>
 
                 <div class="d-flex justify-content-end card-footer">
-                    <button id="btnhapus" type="button" onclick="HapusBooking()" class="btn btn-sm btn-danger mr-2" disabled value="1"><i class="fa fa-trash"></i> Batalkan Data Registrasi</button>
-                    <button id="btncetak" type="button" onclick="CetakBooking()" class="btn btn-sm btn-danger mr-1" disabled value="2"><i class="fas fa-print"></i> Kirim Bukti Registasi</button>
-                    <button id="btnunduh" type="button" onclick="down_file('1')" class="btn btn-sm btn-danger mr-1" disabled value="3"><i class="fas fa-download"></i> Unduh Bukti Registasi</button>
+                    <button id="btnhapus" type="button" onclick="HapusBooking()" class="btn btn-sm btn-danger mr-2" disabled value="1"><i class="fa fa-trash"></i> Batalkan Data Pendaftaran</button>
+                    <button id="btncetak" type="button" onclick="CetakBooking()" class="btn btn-sm btn-danger mr-1" disabled value="2"><i class="fas fa-print"></i> Kirim Bukti Pendaftaran</button>
+                    <button id="btnunduh" type="button" onclick="down_file('1')" class="btn btn-sm btn-danger mr-1" disabled value="3"><i class="fas fa-download"></i> Unduh Bukti Pendaftaran</button>
                 </div>
             </div>
         </div>
