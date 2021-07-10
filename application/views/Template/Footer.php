@@ -1782,7 +1782,8 @@
                                     "estimasidilayanival": data.hasil['estimasidilayani'],
                                     "namapolival": data.hasil['namapoli'],
                                     "namadokterval": data.hasil['namadokter'],
-                                    "statuspasienval": data.hasil['statuspasien']
+                                    "statuspasienval": data.hasil['statuspasien'],
+                                    "idcetak": '1'
                                 },
                                 dataType: 'json',
                                 // async = false,
