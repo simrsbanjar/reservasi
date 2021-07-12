@@ -36,6 +36,14 @@
 
   <!-- Styling slick slider vendor -->
   <style>
+    .align-left {
+      text-align: justify;
+    }
+
+    .swal-wide {
+      width: 550px !important;
+    }
+
     .slider .slick-slide {
       border: solid 1px #000;
     }
