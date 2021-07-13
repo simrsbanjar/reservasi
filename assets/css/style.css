@@ -1929,7 +1929,7 @@ section {
 	position: absolute;
 	bottom: 0;
 	left: 15px;
-	top: 67px;  
+	top: 67px;
 	visibility: hidden;
 }
 
@@ -2065,22 +2065,22 @@ section {
 }
 
 /*step bar*/
-#stepProgressBar  {
-	display:  flex;
-	justify-content:  space-between;
-	align-items:  flex-end;
-	width:  70%;
-	margin:  0  auto;
-	margin-bottom:  40px;
+#stepProgressBar {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 40px;
 }
 
-.step  {
-text-align:  center;
+.step {
+	text-align: center;
 }
 
-.step-text  {
-margin-bottom:  20px;
-color:rgb(0, 0, 0);
+.step-text {
+	margin-bottom: 20px;
+	color: rgb(0, 0, 0);
 }
 
 
@@ -2093,13 +2093,13 @@ color:rgb(0, 0, 0);
 	display: inline-block;
 	position: relative;
 	transition: background-color 500ms;
-  line-height:30px;
+	line-height: 30px;
 }
 
 
-.bullet.completed  {
-	color:  white;
-	background-color:  #28a745;
+.bullet.completed {
+	color: white;
+	background-color: #28a745;
 }
 
 
@@ -2115,31 +2115,31 @@ color:rgb(0, 0, 0);
 }
 
 /* Base styles and helper stuff */
-.hidden  {
-	display:  none;
-}
- 
-button  {
-	padding:  5px  10px;
-	border:  1px  solid  black;
-	transition:  250ms background-color;
+.hidden {
+	display: none;
 }
 
-button:hover  {
-	cursor:  pointer;
-	background-color:  black;
-	color:  white;
+button {
+	padding: 5px 10px;
+	border: 1px solid black;
+	transition: 250ms background-color;
 }
 
-button:disabled:hover  {
-	opacity:  0.6;
-	cursor:  not-allowed;
+button:hover {
+	cursor: pointer;
+	background-color: black;
+	color: white;
 }
 
-.text-center  {
-	text-align:  center;
+button:disabled:hover {
+	opacity: 0.6;
+	cursor: not-allowed;
 }
-  
+
+.text-center {
+	text-align: center;
+}
+
 /* .container  {
 	max-width:  400px;
 	margin:  0  auto;
@@ -2147,3 +2147,38 @@ button:disabled:hover  {
 	padding:  40px;
 } */
 
+
+/* Blink class */
+.blink {
+	animation: blinker 0.6s linear infinite;
+	color: #1c87c9;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: sans-serif;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+
+.blink-one {
+	animation: blinker-one 1s linear infinite;
+}
+
+@keyframes blinker-one {
+	0% {
+		opacity: 0;
+	}
+}
+
+.blink-two {
+	animation: blinker-two 1.4s linear infinite;
+}
+
+@keyframes blinker-two {
+	100% {
+		opacity: 0;
+	}
+}
