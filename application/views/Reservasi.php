@@ -16,6 +16,7 @@
     <!-- ======= Features Section ======= -->
     <!-- <section id="featuresok" class="featuresok"> -->
     <div class="container">
+
         <input type="hidden" name="reservasi" id="reservasi" value="1">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb" id="stepprogress">
@@ -83,6 +84,22 @@
                                     </div>
                                 </div>
                                 <div class="row" id="pasienlama">
+                                    <div class="col-md-9">
+                                        <div class="form-group">
+                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan" value="2" id="radiojeniskunjungan2" checked>
+                                                <label class="form-check-label mr-4" for="radiojeniskunjungan">
+                                                    Berdasarkan Rujukan
+                                                </label>
+                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan" value="1" id="radiojeniskunjungan1">
+                                                <label class="form-check-label" for="radiojeniskunjungan">
+                                                    Kontrol
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
@@ -291,7 +308,11 @@
                             </div>
                             <div class="card-header bg-primary  text-white" id="headerreservasi">
                                 Data Pendaftaran
+                                <div class="card-footer" style="text-align: center; background-color: white; font-size: 25px;">
+                                    <b id="polifaskes" class="blink">Poli Rujukan :</b>
+                                </div>
                             </div>
+
                             <div class="card-body" id="isireservasi">
                                 <input type="hidden" name="nilai" id="nilai" value="1">
                                 <div class="row">
@@ -366,31 +387,6 @@
                                             <small>Error Message</small>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label class="label-control"><strong>Jenis Kunjungan</strong></label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan" value="2" id="radiojeniskunjungan2" checked>
-                                                <label class="form-check-label" for="radiojeniskunjungan">
-                                                    Berdasarkan Rujukan
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="radiojeniskunjungan" value="1" id="radiojeniskunjungan1">
-                                                <label class="form-check-label" for="radiojeniskunjungan">
-                                                    Kontrol
-                                                </label>
-                                            </div>
-
-                                            <!-- <select name="jeniskunjungan" id="jeniskunjungan" class="form-control form-control-user" title="Pilih Jenis Kunjungan">
-                                                <option value="">-PILIH-</option>
-                                                <option value="1">Kontrol</option>
-                                                <option value="2">Berdasarkan Rujukan</option>
-                                            </select> -->
-                                            <!-- <small>Error Message</small> -->
-                                        </div>
-                                    </div>
-
 
                                     <div class="col-md-4">
                                         <div class="form-group">

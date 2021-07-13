@@ -124,7 +124,7 @@
                         var tgllahirpasien = data.hasil['tglLahir'];
                         var noidentitaspasien = data.hasil['nik'];
                         var notelppasien = data.hasil['telepon'];
-
+                        $('#polifaskes').text('Poli Rujukan : ' + data.hasil['nmpoli']);
                         $.ajax({
                             url: "<?= base_url('Reservasi/GetPasienLama') ?>",
                             method: "POST",
@@ -1255,7 +1255,7 @@
         if (nilai == '1') {
 
             // jika carabayar bpjs
-            if (numtab == '' || numtab == null) {
+            if ((numtab == '' || numtab == null) && statuspasien == '1') {
                 var norm = document.getElementById('norm');
                 var normValue = norm.value.trim();
                 if (normValue === '') {

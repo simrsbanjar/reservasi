@@ -2151,7 +2151,7 @@ button:disabled:hover {
 /* Blink class */
 .blink {
 	animation: blinker 0.6s linear infinite;
-	color: #1c87c9;
+	color: #000000;
 	font-size: 30px;
 	font-weight: bold;
 	font-family: sans-serif;
