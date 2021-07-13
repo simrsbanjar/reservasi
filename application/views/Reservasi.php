@@ -63,11 +63,11 @@
                     <div class="col-lg-12">
                         <div class="card" id="carddata">
                             <div class="card-header bg-primary  text-white" id="headerdatapasien">
-                                Data Pasien
+                                Data Kepesertaan & Data Pasien
                             </div>
                             <div class="card-body" id="isidatapasien">
                                 <input type="hidden" name="nilai" id="nilai" value="0">
-                                <div class="row">
+                                <div class="row" hidden>
                                     <div class="col-md-9">
                                         <label class="label-control"><strong>Status Pasien</strong></label>
                                         <div class="form-check">
@@ -82,16 +82,30 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row mt-4" id="pasienlama">
-                                    <div class="col-md-4">
+                                <div class="row" id="pasienlama">
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
                                             <input type="number" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <small>Error Message</small>
-                                            <!---->
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
+                                        <div class=" form-group">
+                                            <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
+                                            <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
+                                            <small>Error Message</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class=" form-group">
+                                            <label class="label-control"><strong>No. Surat Rujukan</strong></label>
+                                            <input type="text" placeholder="No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan" oninput="this.value = this.value.toUpperCase()">
+                                            <small>Error Message</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
                                             <input type="date" value="<?= date("Y-m-d") ?>" class="form-control" name="tgllahir" id="tgllahir">
@@ -100,7 +114,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-5">
+                                    <div class="col-md-9">
                                         <div class="form-group">
                                             <button id="btncari" name="btncari" type="button" onclick="prosesCari()" class="btn btn-sm btn-primary"><i class="fas fa-search"></i> Cari</button>
                                         </div>
@@ -353,21 +367,6 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <div class=" form-group">
-                                            <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                            <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
-                                            <small>Error Message</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-4">
-                                        <div class=" form-group">
-                                            <label class="label-control"><strong>No. Surat Rujukan</strong></label>
-                                            <input type="text" placeholder="No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan" oninput="this.value = this.value.toUpperCase()">
-                                            <small>Error Message</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Kunjungan</strong></label>
                                             <div class="form-check">
@@ -437,6 +436,17 @@
 
                             <div class="card-body " id="sukses" style="text-align: center;">
                                 <div class="form-group">
+                                    <h1 id="email" hidden>-</h1>
+                                    <h1 id="kodebookingval" hidden>-</h1>
+                                    <h1 id="nopendaftaranval" hidden>-</h1>
+                                    <h1 id="nocmval" hidden>-</h1>
+                                    <h1 id="nomorantreanval" hidden>-</h1>
+                                    <h1 id="jenisantreanval" hidden>-</h1>
+                                    <h1 id="estimasidilayanival" hidden>-</h1>
+                                    <h1 id="namapolival" hidden>-</h1>
+                                    <h1 id="namadokterval" hidden>-</h1>
+                                    <h1 id="statuspasienval" hidden>-</h1>
+
                                     <i class="far fa-check-circle fa-10x" style="color: green;"></i>
                                     <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
                                     <h6 style="padding-top: 10px;" id="nobookingsimpan">No. Booking : 2003190003</h6>
@@ -834,6 +844,17 @@
 
                             <div class="card-body " id="sukses2" style="text-align: center;">
                                 <div class="form-group">
+                                    <h1 id="email2" hidden>-</h1>
+                                    <h1 id="kodebookingval2" hidden>-</h1>
+                                    <h1 id="nopendaftaranval2" hidden>-</h1>
+                                    <h1 id="nocmval2" hidden>-</h1>
+                                    <h1 id="nomorantreanval2" hidden>-</h1>
+                                    <h1 id="jenisantreanval2" hidden>-</h1>
+                                    <h1 id="estimasidilayanival2" hidden>-</h1>
+                                    <h1 id="namapolival2" hidden>-</h1>
+                                    <h1 id="namadokterval2" hidden>-</h1>
+                                    <h1 id="statuspasienval2" hidden>-</h1>
+
                                     <i class="far fa-check-circle fa-10x" style="color: green;"></i>
                                     <h4 style="padding-top: 10px;">Data Berhasil Disimpan.</h4>
                                     <h6 style="padding-top: 10px;" id="nobookingsimpan">No. Booking : -</h6>

@@ -419,8 +419,8 @@ class Reservasi extends CI_Controller
     {
         $norm = $this->input->post('nocm');
         $tgllahir = $this->input->post('tgllahir');
-        // $norm = '3279040404910001'; //'386123'; //'417191';
-        // $tgllahir = '1991-04-04'; //'1961-03-15'; //'1991-04-04';
+        // $norm = '384600'; //'386123'; //'417191';
+        // $tgllahir = '1968-01-16'; //'1961-03-15'; //'1991-04-04';
 
         $token     =  $this->GetToken();
         if (strlen(trim($norm)) <= '6') {
@@ -786,5 +786,70 @@ class Reservasi extends CI_Controller
         $params['size'] = 10;
         $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
         $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
+    }
+
+    function AmbilDataPasienBPJS()
+    {
+        $nosrtrujukan = $this->input->post('nosrtrujukan');
+        // $nosrtrujukan = '102312020721P000038';
+        $token     =  $this->GetToken();
+        $url = $this->API . '/getpolirujukan';
+        $headers = array(
+            'x-token:' . $token . "",
+        );
+
+        /* Init cURL resource */
+        $ch = curl_init($url);
+
+        /* Array Parameter Data */
+        $parm =  ['NoRujukan' => "" . $nosrtrujukan . ""];
+
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
+
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        /* execute request */
+        $result = curl_exec($ch);
+
+        /* close cURL resource */
+        curl_close($ch);
+        $hasil = json_decode($result);
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data['hasil'] = null;
+
+        if ($metadata->code == '200') {
+            // if ($response->jk == 'L') {
+            //     $jeniskelamin = 'Laki-laki';
+            // } else {
+            //     $jeniskelamin = 'Perempuan';
+            // };
+
+            $data['hasil'] = array(
+                'noKartu' => $response->noKartu,
+                'nik' => $response->nik,
+                'noRM' => $response->noRM,
+                'nama' => $response->nama,
+                'tglLahir' => $response->tglLahir,
+                'telepon' => $response->telepon,
+                'jk' => $response->jk,
+                'statuspeserta' => $response->statuspeserta,
+                'kdpoli' => $response->kdpoli,
+                'nmpoli' => $response->nmpoli
+            );
+        }
+
+        $data['codedata'] = array(
+            'code' => $metadata->code,
+            'message' => $metadata->message
+        );
+
+        echo json_encode($data);
     }
 }
