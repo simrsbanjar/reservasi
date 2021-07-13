@@ -390,9 +390,4 @@ class CariReservasi extends CI_Controller
         $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/
         $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
     }
-
-    function Hapus()
-    {
-        var_dump(unlink('assets/file/New Text Document.txt'));
-    }
 }
