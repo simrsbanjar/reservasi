@@ -100,34 +100,42 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
                                             <input type="number" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class=" form-group">
-                                            <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                            <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
-                                            <small>Error Message</small>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class=" form-group">
-                                            <label class="label-control"><strong>No. Surat Rujukan</strong></label>
-                                            <input type="text" placeholder="No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan" oninput="this.value = this.value.toUpperCase()">
-                                            <small>Error Message</small>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
                                             <input type="date" value="<?= date("Y-m-d") ?>" class="form-control" name="tgllahir" id="tgllahir">
                                             <small>Error Message</small>
                                             <!---->
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class=" form-group">
+                                            <label class="label-control"><strong>No. Kartu BPJS / No. Surat Rujukan</strong></label>
+                                            <input type="text" placeholder="No Peserta / No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopesertaparm" name="nopesertaparm" oninput="this.value = this.value.toUpperCase()">
+                                            <small>Error Message</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4" hidden>
+                                        <div class=" form-group">
+                                            <label class="label-control"><strong>No. Kartu BPJS</strong></label>
+                                            <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta / No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
+                                            <small>Error Message</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4" hidden>
+                                        <div class=" form-group">
+                                            <label class="label-control"><strong>No. Surat Rujukan</strong></label>
+                                            <input type="text" placeholder="No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan" oninput="this.value = this.value.toUpperCase()">
+                                            <small>Error Message</small>
                                         </div>
                                     </div>
 
