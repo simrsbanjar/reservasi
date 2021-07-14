@@ -12,8 +12,8 @@ class Reservasi extends CI_Controller
     {
         parent::__construct();
         // $this->API = "http://simrs.rsukotabanjar.co.id/ws-rsubanjar";
-        // $this->API = "http://172.16.0.3/wg-rsubanjar";
-        $this->API = "http://172.16.0.3/wg-rsubanjar_dani";
+        $this->API = "http://172.16.0.3/wg-rsubanjar";
+        // $this->API = "http://172.16.0.3/wg-rsubanjar_dani";
         // $this->API = "http://localhost/wg-rsubanjar";
         $this->load->library('session');
         $this->load->library('curl');
@@ -873,7 +873,7 @@ class Reservasi extends CI_Controller
         // $nopeserta = $this->input->post('nopeserta');
         // $nosrtrujukan = '102312020721P000038';
         $token     =  $this->GetToken();
-        $url = $this->API . '/getpesertabpjs';
+        $url = $this->API . '/getrujukanbpjspeserta';
 
         $headers = array(
             'x-token:' . $token . "",
