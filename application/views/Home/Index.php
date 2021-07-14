@@ -124,7 +124,7 @@
     <section id="alur" class="alur">
         <div class="container align-center">
 
-            <div class="section-title col-md-12 col">
+            <div class="alurtitle">
                 <h2>Alur</h2>
                 <p>Sementara ieu mah bari ngantosan proses bisnisna rapih</p>
                 <img src="<?= base_url('assets/'); ?>img/construction.png" width="75%">
@@ -554,7 +554,7 @@
     <section id="lokasi" class="contact">
         <div class="container">
 
-            <div class="section-title">
+            <div class="lokasititle">
                 <h2>Lokasi RSUD Kota Banjar</h2>
             </div>
         </div>
@@ -570,7 +570,7 @@
     <section id="contact" class="contact">
         <div class="container">
 
-            <div class="section-title">
+            <div class="kontaktitle">
                 <h2>Kontak</h2>
             </div>
         </div>
