@@ -124,10 +124,10 @@
     <section id="alur" class="alur">
         <div class="container align-center">
 
-            <div class="section-title">
+            <div class="section-title col-md-12 col">
                 <h2>Alur</h2>
                 <p>Sementara ieu mah bari ngantosan proses bisnisna rapih</p>
-                <img src="<?= base_url('assets/'); ?>img/construction.png">
+                <img src="<?= base_url('assets/'); ?>img/construction.png" width="75%">
             </div>
 
 
