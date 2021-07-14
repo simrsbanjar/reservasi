@@ -12,7 +12,8 @@ class Reservasi extends CI_Controller
     {
         parent::__construct();
         // $this->API = "http://simrs.rsukotabanjar.co.id/ws-rsubanjar";
-        $this->API = "http://172.16.0.3/wg-rsubanjar";
+        // $this->API = "http://172.16.0.3/wg-rsubanjar";
+        $this->API = "http://172.16.0.3/wg-rsubanjar_dani";
         // $this->API = "http://localhost/wg-rsubanjar";
         $this->load->library('session');
         $this->load->library('curl');
@@ -790,10 +791,24 @@ class Reservasi extends CI_Controller
 
     function AmbilDataPasienBPJS()
     {
-        $nosrtrujukan = $this->input->post('nosrtrujukan');
+        $parmpeserta = $this->input->post('nopeserta');
+        if (strlen(trim($parmpeserta)) > '13') {
+            $data = $this->GetBPJSByNoRujukan($parmpeserta);
+        } else {
+            $data = $this->GetBPJSByNoPeserta($parmpeserta);
+        }
+
+        echo json_encode($data);
+    }
+
+    function GetBPJSByNoRujukan($nosrtrujukan)
+    {
+        // $nosrtrujukan = $this->input->post('nosrtrujukan');
         // $nosrtrujukan = '102312020721P000038';
+
         $token     =  $this->GetToken();
         $url = $this->API . '/getpolirujukan';
+
         $headers = array(
             'x-token:' . $token . "",
         );
@@ -850,6 +865,74 @@ class Reservasi extends CI_Controller
             'message' => $metadata->message
         );
 
-        echo json_encode($data);
+        return $data;
+    }
+
+    function GetBPJSByNoPeserta($nopeserta)
+    {
+        // $nopeserta = $this->input->post('nopeserta');
+        // $nosrtrujukan = '102312020721P000038';
+        $token     =  $this->GetToken();
+        $url = $this->API . '/getpesertabpjs';
+
+        $headers = array(
+            'x-token:' . $token . "",
+        );
+
+        /* Init cURL resource */
+        $ch = curl_init($url);
+
+        /* Array Parameter Data */
+        $parm =  ['NoPeserta' => "" . $nopeserta . ""];
+
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
+
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        /* execute request */
+        $result = curl_exec($ch);
+
+        /* close cURL resource */
+        curl_close($ch);
+        $hasil = json_decode($result);
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data['hasil'] = null;
+
+        if ($metadata->code == '200') {
+            // if ($response->jk == 'L') {
+            //     $jeniskelamin = 'Laki-laki';
+            // } else {
+            //     $jeniskelamin = 'Perempuan';
+            // };
+
+            $data['hasil'] = array(
+                'noKartu' => $response->noKartu,
+                'noKunjungan' => $response->noKunjungan,
+                'nik' => $response->nik,
+                'noRM' => $response->noRM,
+                'nama' => $response->nama,
+                'tglLahir' => $response->tglLahir,
+                'telepon' => $response->telepon,
+                'jk' => $response->jk,
+                'statuspeserta' => $response->statuspeserta,
+                'kdpoli' => $response->kdpoli,
+                'nmpoli' => $response->nmpoli
+            );
+        }
+
+        $data['codedata'] = array(
+            'code' => $metadata->code,
+            'message' => $metadata->message
+        );
+        // var_dump($data);
+        // die;
+        return $data;
     }
 }
