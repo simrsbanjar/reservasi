@@ -556,7 +556,7 @@ section {
 }
 
 .section-bg {
-	background-color: #f1f7fd;
+	background-color: #fdf1f1;
 }
 
 .section-title {
@@ -1206,6 +1206,134 @@ section {
 		transform: rotate(360deg);
 	}
 }
+
+/* Alur Title  */
+.alurtitle {
+	text-align: center;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+.alurtitle h2 {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	color: #2c4964;
+}
+
+.alurtitle h2::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 1px;
+	background: #ddd;
+	bottom: 1px;
+	left: calc(50% - 60px);
+}
+
+.alurtitle h2::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 3px;
+	background: #1977cc;
+	bottom: 0;
+	left: calc(50% - 20px);
+}
+
+.alurtitle p {
+	margin-bottom: 0;
+}
+
+/* Kontak Title  */
+.kontaktitle {
+	text-align: center;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+.kontaktitle h2 {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	color: #2c4964;
+}
+
+.kontaktitle h2::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 1px;
+	background: #ddd;
+	bottom: 1px;
+	left: calc(50% - 60px);
+}
+
+.kontaktitle h2::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 3px;
+	background: #1977cc;
+	bottom: 0;
+	left: calc(50% - 20px);
+}
+
+.kontaktitle p {
+	margin-bottom: 0;
+}
+
+
+/* Lokasi Title  */
+.lokasititle {
+	text-align: center;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+.lokasititle h2 {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	position: relative;
+	color: #2c4964;
+}
+
+.lokasititle h2::before {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 1px;
+	background: #ddd;
+	bottom: 1px;
+	left: calc(50% - 60px);
+}
+
+.lokasititle h2::after {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 3px;
+	background: #1977cc;
+	bottom: 0;
+	left: calc(50% - 20px);
+}
+
+.lokasititle p {
+	margin-bottom: 0;
+}
+
 
 /*--------------------------------------------------------------
 # Footer
