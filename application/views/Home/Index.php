@@ -292,80 +292,6 @@
         </section> -->
     <!-- End Appointment Section -->
 
-    <section id="contact" class="contact">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Kontak</h2>
-            </div>
-        </div>
-        </div>
-
-        <section id="counts" class="counts">
-            <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-3 mt-5">
-                        <div class="count-box">
-                            <i class="icofont-ui-dial-phone"></i>
-                            <a href="tel:0265741032">
-                                <span>0265-741032</span>
-                            </a>
-                            <p>Telpon</p>
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-auto mt-5">
-                        <div class="count-box">
-                            <i class="icofont-envelope"></i>
-                            <a href="mailto:contact@example.com">
-                                <span>rsu_kotabanjar@yahoo.co.id</span>
-                            </a>
-                            <p>Email</p>
-                        </div>
-
-                    </div>
-
-                    <div class="col col-lg-3 mt-5">
-
-                        <div class="count-box">
-                            <i class="icofont-ui-dial-phone"></i>
-                            <a href="tel:0265741032">
-                                <span>0265-7482204</span>
-                            </a>
-                            <p>Ponek 24 Jam</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row justify-content-md-center">
-                    <div class="col col-lg-2 mt-5">
-                        <div class="count-box">
-                            <i class="icofont-whatsapp"></i>
-                            <a href="https://api.whatsapp.com/send?phone=628112111146" target="_blank">
-                                <span>08112111146</span>
-                            </a>
-                            <p>Whatsapp</p>
-                        </div>
-
-                    </div>
-
-                    <div class="col col-lg-2 mt-5">
-
-                        <div class="count-box">
-                            <i class="icofont-fax"></i>
-                            <a href="tel:02657482204 ">
-                                <span>0265744730</span>
-                            </a>
-                            <p>Fax</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Counts Section -->
-    </section><!-- End Contact Section -->
-
     <!-- ======= Departments/alur Section ======= -->
     <section id="alur" class="alur">
         <div class="container align-center">
@@ -876,6 +802,79 @@
         <!-- End Counts Section -->
     </section><!-- End Contact Section -->
 
+    <section id="contact" class="contact">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Kontak</h2>
+            </div>
+        </div>
+        </div>
+
+        <section id="counts" class="counts">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-3 mt-5">
+                        <div class="count-box">
+                            <i class="icofont-ui-dial-phone"></i>
+                            <a href="tel:0265741032">
+                                <span>0265-741032</span>
+                            </a>
+                            <p>Telpon</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-auto mt-5">
+                        <div class="count-box">
+                            <i class="icofont-envelope"></i>
+                            <a href="mailto:contact@example.com">
+                                <span>rsu_kotabanjar@yahoo.co.id</span>
+                            </a>
+                            <p>Email</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col col-lg-3 mt-5">
+
+                        <div class="count-box">
+                            <i class="icofont-ui-dial-phone"></i>
+                            <a href="tel:0265741032">
+                                <span>0265-7482204</span>
+                            </a>
+                            <p>Ponek 24 Jam</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="col col-lg-2 mt-5">
+                        <div class="count-box">
+                            <i class="icofont-whatsapp"></i>
+                            <a href="https://api.whatsapp.com/send?phone=628112111146" target="_blank">
+                                <span>08112111146</span>
+                            </a>
+                            <p>Whatsapp</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col col-lg-2 mt-5">
+
+                        <div class="count-box">
+                            <i class="icofont-fax"></i>
+                            <a href="tel:02657482204 ">
+                                <span>0265744730</span>
+                            </a>
+                            <p>Fax</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Counts Section -->
+    </section><!-- End Contact Section -->
 
 </main><!-- End #main -->
 
