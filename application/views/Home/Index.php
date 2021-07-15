@@ -223,7 +223,7 @@
     <!-- ======= Doctors Section ======= -->
     <section class="slidedokter" id="dokter">
         <div class="container">
-            <div class="slidersection">
+            <div class="doktertitle">
                 <h2>Dokter Spesialis</h2>
                 <p>Berikut adalah list dokter spesialis :</p>
             </div>
