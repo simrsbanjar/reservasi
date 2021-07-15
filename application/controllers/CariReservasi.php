@@ -295,6 +295,7 @@ class CariReservasi extends CI_Controller
         $email = $this->input->post('email');
         $subject    = 'Bukti Registrasi Online';
         $mesage     = 'Silahkan bawa bukti hasil registrasi online ini saat daftar ulang ke Rumah Sakit.';
+
         $this->GenerateQrcode($kodebooking);
 
         $data['cetak'] = [
@@ -370,6 +371,8 @@ class CariReservasi extends CI_Controller
 
     function GenerateQrcode($kodebooking)
     {
+        // $estimasidilayani= date('dmY', strtotime($estimasidilayani));
+
         $this->load->library('ciqrcode'); //pemanggilan library QR CODE
 
         $config['cacheable']    = true; //boolean, the default is true

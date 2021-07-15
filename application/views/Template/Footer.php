@@ -373,7 +373,8 @@
         document.getElementById("kelurahan" + numtab).value = "";
         document.getElementById("notlp" + numtab).value = "";
         document.getElementById("kodepos" + numtab).value = "";
-        document.getElementById("tglregistrasi" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tglregistrasi" + numtab).value = "<?php $Date = date("Y-m-d");
+                                                                    echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>";
         document.getElementById("poli" + numtab).value = "";
         document.getElementById("rujukanasal" + numtab).value = "";
         document.getElementById("email" + numtab).value = "";

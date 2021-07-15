@@ -327,8 +327,12 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="date" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" name="tglregistrasi" id="tglregistrasi" onchange="GetPoli(this.value)">
+                                            <input type="date" placeholder="Tanggal Reservasi" class="form-control" min="<?php $Date = date("Y-m-d");
+                                                                                                                            echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" max="<?php $Date = date("Y-m-d");
+                                                                                                                                                                                        echo date('Y-m-d', strtotime($Date . ' + 7 days')) ?>" value="<?php $Date = date("Y-m-d");
+                                                                                                                                                                                                                                                        echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" name="tglregistrasi" id="tglregistrasi" onchange="GetPoli(this.value)">
                                             <!---->
+                                            <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -696,8 +700,12 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="date" name="tglregistrasi2" id="tglregistrasi2" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" onchange="GetPoli(this.value)">
+                                            <input type="date" name="tglregistrasi2" id="tglregistrasi2" placeholder="Tanggal Reservasi" class="form-control" min="<?php $Date = date("Y-m-d");
+                                                                                                                                                                    echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" max="<?php $Date = date("Y-m-d");
+                                                                                                                                                                                                                                echo date('Y-m-d', strtotime($Date . ' + 7 days')) ?>" value="<?php $Date = date("Y-m-d");
+                                                                                                                                                                                                                                                                                                echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" onchange="GetPoli(this.value)">
                                             <!---->
+                                            <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -1101,8 +1109,13 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="date" name="tglregistrasi3" id="tglregistrasi3" placeholder="Tanggal Reservasi" class="form-control" value="<?= date("Y-m-d") ?>" onchange="GetPoli(this.value)">
+                                            <input type="date" name="tglregistrasi3" id="tglregistrasi3" placeholder="Tanggal Reservasi" class="form-control" min="<?php $Date = date("Y-m-d");
+                                                                                                                                                                    echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" max="<?php $Date = date("Y-m-d");
+                                                                                                                                                                                                                                echo date('Y-m-d', strtotime($Date . ' + 7 days')) ?>" value="<?php $Date = date("Y-m-d");
+                                                                                                                                                                                                                                                                                                echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" onchange="GetPoli(this.value)">
+
                                             <!---->
+                                            <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
