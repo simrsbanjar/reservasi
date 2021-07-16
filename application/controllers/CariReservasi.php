@@ -296,7 +296,7 @@ class CariReservasi extends CI_Controller
         $subject    = 'Bukti Registrasi Online';
         $mesage     = 'Silahkan bawa bukti hasil registrasi online ini saat daftar ulang ke Rumah Sakit.';
 
-        $this->GenerateQrcode($kodebooking);
+        $this->GenerateQrcode($kodebooking, $estimasidilayani);
 
         $data['cetak'] = [
             'kodebooking' => $kodebooking,
@@ -369,10 +369,8 @@ class CariReservasi extends CI_Controller
         echo json_encode($data);
     }
 
-    function GenerateQrcode($kodebooking)
+    function GenerateQrcode($kodebooking, $estimasidilayani)
     {
-        // $estimasidilayani= date('dmY', strtotime($estimasidilayani));
-
         $this->load->library('ciqrcode'); //pemanggilan library QR CODE
 
         $config['cacheable']    = true; //boolean, the default is true
@@ -385,9 +383,9 @@ class CariReservasi extends CI_Controller
         $config['white']        = array(70, 130, 180); // array, default is array(0,0,0)
         $this->ciqrcode->initialize($config);
 
-        $image_name = $kodebooking . '.png'; //buat name dari qr code sesuai dengan kodebooking
+        $image_name = $kodebooking  . '.png'; //buat name dari qr code sesuai dengan kodebooking
 
-        $params['data'] = $kodebooking; //data yang akan di jadikan QR CODE
+        $params['data'] = $kodebooking . date('dmY', strtotime($estimasidilayani)); //data yang akan di jadikan QR CODE
         $params['level'] = 'H'; //H=High
         $params['size'] = 10;
         $params['savename'] = FCPATH . $config['imagedir'] . $image_name; //simpan image QR CODE ke folder assets/images/

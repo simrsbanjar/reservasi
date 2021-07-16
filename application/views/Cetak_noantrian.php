@@ -104,7 +104,7 @@
         <!-- tutup div gambar barcode -->
 
         <div>
-            <p style="font-size: 35px; font-weight: bold; margin-bottom: 0px; line-height: 0px;"><?= $cetak['kodebooking'] ?></p>
+            <p style="font-size: 25px; font-weight: bold; margin-bottom: 0px; line-height: 0px;"><?= $cetak['kodebooking'] . date('dmY', strtotime($cetak['estimasidilayani'])) ?></p>
         </div>
         <!-- tutup kode booking -->
 
