@@ -110,7 +110,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" value="<?= date("Y-m-d") ?>" class="form-control" name="tgllahir" id="tgllahir">
+                                            <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" name="tgllahir" id="tgllahir">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -201,7 +201,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahirbaru" name="tgllahirbaru" onchange="HitungUmur(this.value)">
+                                            <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" id="tgllahirbaru" name="tgllahirbaru" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -327,11 +327,8 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="date" placeholder="Tanggal Reservasi" class="form-control" min="<?php $Date = date("Y-m-d");
-                                                                                                                            echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" max="<?php $Date = date("Y-m-d");
-                                                                                                                                                                                        echo date('Y-m-d', strtotime($Date . ' + 7 days')) ?>" value="<?php $Date = date("Y-m-d");
-                                                                                                                                                                                                                                                        echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" name="tglregistrasi" id="tglregistrasi" onchange="GetPoli(this.value)">
-                                            <!---->
+                                            <input type="text" placeholder="DD/MM/YYYY" value="<?php $Date = date("d-m-Y");
+                                                                                                echo date('d-m-Y', strtotime($Date . ' + 1 days')) ?>" class=" form-control" name="tglregistrasi" id="tglregistrasi" onchange="GetPoli(this.value)">
                                             <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>
@@ -511,7 +508,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" value="<?= date("Y-m-d") ?>" class="form-control" name="tgllahir2" id="tgllahir2">
+                                            <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" name="tgllahir2" id="tgllahir2">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -578,7 +575,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahirbaru2" name="tgllahirbaru2" onchange="HitungUmur(this.value)">
+                                            <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" id="tgllahirbaru2" name="tgllahirbaru2" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -700,11 +697,8 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="date" name="tglregistrasi2" id="tglregistrasi2" placeholder="Tanggal Reservasi" class="form-control" min="<?php $Date = date("Y-m-d");
-                                                                                                                                                                    echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" max="<?php $Date = date("Y-m-d");
-                                                                                                                                                                                                                                echo date('Y-m-d', strtotime($Date . ' + 7 days')) ?>" value="<?php $Date = date("Y-m-d");
-                                                                                                                                                                                                                                                                                                echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" onchange="GetPoli(this.value)">
-                                            <!---->
+                                            <input type="text" name="tglregistrasi2" id="tglregistrasi2" value="<?php $Date = date("d-m-Y");
+                                                                                                                echo date('d-m-Y', strtotime($Date . ' + 1 days')) ?>" placeholder="DD/MM/YYYY" class="form-control" onchange="GetPoli(this.value)">
                                             <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>
@@ -920,7 +914,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" value="<?= date("Y-m-d") ?>" class="form-control" name="tgllahir3" id="tgllahir3">
+                                            <input placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" name="tgllahir3" id="tgllahir3">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -987,7 +981,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tanggal Lahir</strong></label>
-                                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" value="<?= date("Y-m-d") ?>" id="tgllahirbaru3" name="tgllahirbaru3" onchange="HitungUmur(this.value)">
+                                            <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" id="tgllahirbaru3" name="tgllahirbaru3" onchange="HitungUmur(this.value)">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1109,12 +1103,8 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="date" name="tglregistrasi3" id="tglregistrasi3" placeholder="Tanggal Reservasi" class="form-control" min="<?php $Date = date("Y-m-d");
-                                                                                                                                                                    echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" max="<?php $Date = date("Y-m-d");
-                                                                                                                                                                                                                                echo date('Y-m-d', strtotime($Date . ' + 7 days')) ?>" value="<?php $Date = date("Y-m-d");
-                                                                                                                                                                                                                                                                                                echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>" onchange="GetPoli(this.value)">
-
-                                            <!---->
+                                            <input type="text" class="form-control form-control-user" value="<?php $Date = date("d-m-Y");
+                                                                                                                echo date('d-m-Y', strtotime($Date . ' + 1 days')) ?>" name="tglregistrasi3" id="tglregistrasi3" placeholder="DD/MM/YYYY" onchange="GetPoli(this.value)">
                                             <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>

@@ -37,6 +37,8 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="assets/js/slide.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+
 <script>
     $(document).ready(function() {
         // $("#loadingsimpan").style.visibility = 'hidden';
@@ -89,14 +91,155 @@
         html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
         $('#stepprogress').html(html);
 
+        daycount();
+    });
 
+    function daycount() {
+        return <?php
+                $jumlah = 0;
+                for ($x = 1; $x <= 8; $x++) {
+                    $Date = date("Y-m-d");
+                    $timestamp = strtotime($Date . ' + ' . $x . ' days');
+                    // echo date('N', $timestamp);
+                    if (date('N', $timestamp) == 7) {
+                        $jumlah = (int)$jumlah + 1;
+                    }
+                }
+                echo $jumlah;
+                ?>;
+    }
+
+    $("#tgllahir").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        maxDate: new Date(),
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
+
+    $("#tgllahir2").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        maxDate: new Date(),
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
+
+    $("#tgllahir3").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        maxDate: new Date(),
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
+
+    $("#tgllahirbaru").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        maxDate: new Date(),
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
+
+    $("#tgllahirbaru2").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        maxDate: new Date(),
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
+
+    $("#tgllahirbaru3").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        maxDate: new Date(),
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
+
+    $("#tglregistrasi").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        minDate: new Date().fp_incr(1),
+        maxDate: new Date().fp_incr(7 + daycount()), // 7 days from now
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "disable": [
+            function(date) {
+                return (date.getDay() === 0); // disable sunday
+            }
+        ],
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
+
+    $("#tglregistrasi2").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        minDate: new Date().fp_incr(1),
+        maxDate: new Date().fp_incr(7 + daycount()), // 7 days from now
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "disable": [
+            function(date) {
+                return (date.getDay() === 0); // disable sunday
+            }
+        ],
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
+
+    $("#tglregistrasi3").flatpickr({
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        minDate: new Date().fp_incr(1),
+        maxDate: new Date().fp_incr(7 + daycount()), // 7 days from now
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "disable": [
+            function(date) {
+                return (date.getDay() === 0); // disable sunday
+            }
+        ],
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
     });
 
     function AmbilDataPasienBPJS() {
         $("#loading").addClass("overlay");
         $('#loading').fadeIn();
         // var nosrtrujukan = $('#nosuratrujukan').val();
-        var nopeserta = $('#nopesertaparm').val();
+        var nopesertaparm = $('#nopesertaparm').val();
         var tgllahir = $('#tgllahir').val();
         var norm = $('#norm').val();
 
@@ -104,7 +247,7 @@
             url: "<?= base_url('Reservasi/AmbilDataPasienBPJS') ?>",
             method: "POST",
             data: {
-                "nopeserta": nopeserta
+                "nopeserta": nopesertaparm
             },
             // async: false,
             dataType: 'json',
@@ -120,10 +263,15 @@
                     //     message('info', 'No. Peserta / No. Kartu Tidak Sesuai Dengan Data Rujukan.', 'Informasi', false);
                     // } else {
                     if (data.hasil['statuspeserta'] == 'AKTIF') {
-                        var nosrtrujukan = data.hasil['noKunjungan'];
+                        if (data.hasil['noKunjungan'] == '' || data.hasil['noKunjungan'] == null) {
+                            var nosrtrujukan = nopesertaparm;
+                        } else {
+                            var nosrtrujukan = data.hasil['noKunjungan'];
+                        }
                         nopeserta = data.hasil['noKartu'];
                         document.getElementById("nosuratrujukan").value = nosrtrujukan;
                         document.getElementById("nopeserta").value = nopeserta;
+                        document.getElementById("nopesertaparm").value = nopesertaparm;
                         var namapasien = data.hasil['nama'];
                         var kelaminpasien = data.hasil['jk'];
                         var tgllahirpasien = data.hasil['tglLahir'];
@@ -162,6 +310,7 @@
                                             $("#pasienbaru").show();
                                             $('input:radio[name=flexRadioDefault][id=flexRadioDefault2]').click();
                                             document.getElementById("norm").value = norm;
+                                            document.getElementById("nopesertaparm").value = nopesertaparm;
                                             document.getElementById("nopeserta").value = nopeserta;
                                             document.getElementById("nosuratrujukan").value = nosrtrujukan;
                                             document.getElementById("tgllahir").value = tgllahir;
@@ -205,6 +354,7 @@
                                             $("#pasienbaru").hide();
                                             $('input:radio[name=flexRadioDefault][id=flexRadioDefault1]').click();
                                             document.getElementById("norm").value = norm;
+                                            document.getElementById("nopesertaparm").value = nopesertaparm;
                                             document.getElementById("nopeserta").value = nopeserta;
                                             document.getElementById("nosuratrujukan").value = nosrtrujukan;
                                             document.getElementById("tgllahir").value = tgllahir;
@@ -259,6 +409,7 @@
                                             $("#pasienbaru").show();
                                             $('input:radio[name=flexRadioDefault][id=flexRadioDefault2]').click();
                                             document.getElementById("norm").value = norm;
+                                            document.getElementById("nopesertaparm").value = nopesertaparm;
                                             document.getElementById("nopeserta").value = nopeserta;
                                             document.getElementById("nosuratrujukan").value = nosrtrujukan;
                                             document.getElementById("tgllahir").value = tgllahir;
@@ -291,6 +442,7 @@
                                             // jika klik batal
                                             // message('info', 'batal', 'Informasi', false);
                                             document.getElementById("norm").value = norm;
+                                            document.getElementById("nopesertaparm").value = nopesertaparm;
                                             document.getElementById("nopeserta").value = nopeserta;
                                             document.getElementById("nosuratrujukan").value = nosrtrujukan;
                                             document.getElementById("tgllahir").value = tgllahir;
@@ -354,12 +506,12 @@
         document.getElementById("normhiddenbaru" + numtab).value = "";
         document.getElementById("normhiddenlama" + numtab).value = "";
         document.getElementById("norm" + numtab).value = "";
-        document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tgllahir" + numtab).value = "<?= date("d-m-Y") ?>";
         document.getElementById("gelar" + numtab).value = "";
         document.getElementById("namalengkap" + numtab).value = "";
         document.getElementById("kelamin" + numtab).value = "";
         document.getElementById("tempatlahir" + numtab).value = "";
-        document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tgllahirbaru" + numtab).value = "<?= date("d-m-Y") ?>";
         document.getElementById("tahun" + numtab).value = "";
         document.getElementById("bulan" + numtab).value = "";
         document.getElementById("hari" + numtab).value = "";
@@ -373,12 +525,13 @@
         document.getElementById("kelurahan" + numtab).value = "";
         document.getElementById("notlp" + numtab).value = "";
         document.getElementById("kodepos" + numtab).value = "";
-        document.getElementById("tglregistrasi" + numtab).value = "<?php $Date = date("Y-m-d");
-                                                                    echo date('Y-m-d', strtotime($Date . ' + 1 days')) ?>";
+        document.getElementById("tglregistrasi" + numtab).value = "<?php $Date = date('d-m-Y');
+                                                                    echo date('d-m-Y', strtotime($Date . ' + 1 days')) ?>";
         document.getElementById("poli" + numtab).value = "";
         document.getElementById("rujukanasal" + numtab).value = "";
         document.getElementById("email" + numtab).value = "";
         if (tab == 'tab-1') {
+            document.getElementById("nopesertaparm" + numtab).value = "";
             document.getElementById("nopeserta" + numtab).value = "";
             document.getElementById("nosuratrujukan" + numtab).value = "";
             $('input:radio[name=flexRadioDefault][id=flexRadioDefault1]').click();
@@ -532,12 +685,12 @@
         setSuccessFor(norm);
 
         document.getElementById("norm" + numtab).value = "";
-        document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tgllahir" + numtab).value = "<?= date("d-m-Y") ?>";
         document.getElementById("gelar" + numtab).value = "";
         document.getElementById("namalengkap" + numtab).value = "";
         document.getElementById("kelamin" + numtab).value = "";
         document.getElementById("tempatlahir" + numtab).value = "";
-        document.getElementById("tgllahir" + numtab).value = "<?= date("Y-m-d") ?>";
+        document.getElementById("tgllahir" + numtab).value = "<?= date("d-m-Y") ?>";
         document.getElementById("tahun" + numtab).value = "";
         document.getElementById("bulan" + numtab).value = "";
         document.getElementById("hari" + numtab).value = "";
@@ -694,6 +847,8 @@
             setSuccessFor(document.getElementById('nopendaftaran'));
             var kriteriacari = $('input[name="radiokriteria"]:checked').val();
 
+            $("#loading").addClass("overlay");
+            $('#loading').fadeIn();
             $.ajax({
                 url: "<?= base_url('CariReservasi/GetBookingPasien') ?>",
                 method: "POST",
@@ -720,6 +875,10 @@
                         $("#btncetak").attr("disabled", true);
                         $("#btnunduh").attr("disabled", true);
                         // document.getElementById("kdbookingsubmit").value = '';
+                        setTimeout(() => {
+                            $("#loading").removeClass("overlay");
+                        }, 100);
+                        $('#loading').fadeOut();
                     } else {
                         $('#kodebooking').text(data.hasil['kodebooking']);
                         $('#noreg').text(data.hasil['nopendaftaran']);
@@ -735,6 +894,10 @@
                         $("#btnhapus").attr("disabled", false);
                         $("#btncetak").attr("disabled", false);
                         $("#btnunduh").attr("disabled", false);
+                        setTimeout(() => {
+                            $("#loading").removeClass("overlay");
+                        }, 100);
+                        $('#loading').fadeOut();
                     }
 
                 },
@@ -753,6 +916,10 @@
                     $("#btnhapus").attr("disabled", true);
                     $("#btncetak").attr("disabled", true);
                     $("#btnunduh").attr("disabled", true);
+                    setTimeout(() => {
+                        $("#loading").removeClass("overlay");
+                    }, 100);
+                    $('#loading').fadeOut();
                 }
             });
 
@@ -1806,6 +1973,7 @@
             tgllahir = $('#tgllahir3').val();
             numtab = '3';
         }
+
 
         $.ajax({
             url: "<?= base_url('Reservasi/GetPasienLama') ?>",

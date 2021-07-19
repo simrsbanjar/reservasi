@@ -6,3 +6,5 @@ RewriteRule ^(.*)$ index.php/$1 [L]
  <ifModule !cgid_module>
 	php_value date.timezone "Asia/Jakarta"
  </ifModule>
+
+ Options -Indexes

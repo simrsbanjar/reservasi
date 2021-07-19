@@ -317,7 +317,7 @@ class Reservasi extends CI_Controller
 
     function GetPoli()
     {
-        $tglregistrasi = $this->input->post('tglregistrasi');
+        $tglregistrasi = date('Y-m-d', strtotime($this->input->post('tglregistrasi')));
         $token     =  $this->GetToken();
         $url = $this->API . '/getlistpoli';
         $headers = array(
@@ -419,7 +419,7 @@ class Reservasi extends CI_Controller
     function GetPasienLama()
     {
         $norm = $this->input->post('nocm');
-        $tgllahir = $this->input->post('tgllahir');
+        $tgllahir = date('Y-m-d', strtotime($this->input->post('tgllahir')));
         // $norm = '384600'; //'386123'; //'417191';
         // $tgllahir = '1968-01-16'; //'1961-03-15'; //'1991-04-04';
 
@@ -503,7 +503,7 @@ class Reservasi extends CI_Controller
         $namapasien = $this->input->post('namapasien');
         $titlepasien = $this->input->post('titlepasien');
         $tempatlahir = $this->input->post('tempatlahir');
-        $tgllahir = $this->input->post('tgllahir');
+        $tgllahir = date('Y-m-d', strtotime($this->input->post('tgllahir')));
         $jeniskelamin = $this->input->post('jeniskelamin');
         $alamat = $this->input->post('alamat');
         $propinsi = $this->input->post('propinsi');
@@ -516,7 +516,7 @@ class Reservasi extends CI_Controller
         $nomorkartu = $this->input->post('nomorkartu');
         $nik = $this->input->post('nik');
         $notelp = $this->input->post('notelp');
-        $tanggalperiksa = $this->input->post('tanggalperiksa');
+        $tanggalperiksa = date('Y-m-d', strtotime($this->input->post('tanggalperiksa')));
         $kodepoli = $this->input->post('kodepoli');
         $kdrujukanasal = $this->input->post('kdrujukanasal');
         $nomorreferensi = $this->input->post('nomorreferensi');
@@ -849,6 +849,7 @@ class Reservasi extends CI_Controller
 
             $data['hasil'] = array(
                 'noKartu' => $response->noKartu,
+                'noKunjungan' => '',
                 'nik' => $response->nik,
                 'noRM' => $response->noRM,
                 'nama' => $response->nama,
