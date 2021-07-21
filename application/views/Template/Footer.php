@@ -53,6 +53,7 @@
         GetRujukanAsal();
         GetPoli(date);
         GetCarabayar();
+        GetHariLibur();
         // const content = document.getElementById('content');
         // const bullets = [...document.querySelectorAll('.bullet')];
 
@@ -97,7 +98,7 @@
     function daycount() {
         return <?php
                 $jumlah = 0;
-                for ($x = 1; $x <= 8; $x++) {
+                for ($x = 0; $x <= 7; $x++) {
                     $Date = date("Y-m-d");
                     $timestamp = strtotime($Date . ' + ' . $x . ' days');
                     // echo date('N', $timestamp);
@@ -181,59 +182,68 @@
         }
     });
 
-    $("#tglregistrasi").flatpickr({
-        enableTime: false,
-        dateFormat: "d-m-Y",
-        minDate: new Date().fp_incr(1),
-        maxDate: new Date().fp_incr(7 + daycount()), // 7 days from now
-        onOpen: function(selectedDates, dateStr, instance) {
-            instance.setDate(instance.input.value, false);
-        },
-        "disable": [
-            function(date) {
-                return (date.getDay() === 0); // disable sunday
+    function GetHariLibur() {
+        var hasil = '';
+        var jumlah = 0;
+        $.ajax({
+            url: "<?= base_url('Reservasi/GetHariLibur') ?>",
+            data: {
+                "jumlahhari": 7 + daycount()
+            },
+            method: "POST",
+            async: false,
+            dataType: 'json',
+            success: function(data) {
+                hasil = data;
+                jumlah = hasil.length;
+            },
+            error: function() {
+                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
             }
-        ],
-        "locale": {
-            "firstDayOfWeek": 1 // set start day of week to Monday
-        }
-    });
+        });
 
-    $("#tglregistrasi2").flatpickr({
-        enableTime: false,
-        dateFormat: "d-m-Y",
-        minDate: new Date().fp_incr(1),
-        maxDate: new Date().fp_incr(7 + daycount()), // 7 days from now
-        onOpen: function(selectedDates, dateStr, instance) {
-            instance.setDate(instance.input.value, false);
-        },
-        "disable": [
-            function(date) {
-                return (date.getDay() === 0); // disable sunday
+        $("#tglregistrasi").flatpickr({
+            enableTime: false,
+            dateFormat: "d-m-Y",
+            minDate: new Date().fp_incr(1),
+            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+            onOpen: function(selectedDates, dateStr, instance) {
+                instance.setDate(instance.input.value, false);
+            },
+            "disable": hasil,
+            "locale": {
+                "firstDayOfWeek": 1 // set start day of week to Monday
             }
-        ],
-        "locale": {
-            "firstDayOfWeek": 1 // set start day of week to Monday
-        }
-    });
+        });
 
-    $("#tglregistrasi3").flatpickr({
-        enableTime: false,
-        dateFormat: "d-m-Y",
-        minDate: new Date().fp_incr(1),
-        maxDate: new Date().fp_incr(7 + daycount()), // 7 days from now
-        onOpen: function(selectedDates, dateStr, instance) {
-            instance.setDate(instance.input.value, false);
-        },
-        "disable": [
-            function(date) {
-                return (date.getDay() === 0); // disable sunday
+        $("#tglregistrasi2").flatpickr({
+            enableTime: false,
+            dateFormat: "d-m-Y",
+            minDate: new Date().fp_incr(1),
+            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+            onOpen: function(selectedDates, dateStr, instance) {
+                instance.setDate(instance.input.value, false);
+            },
+            "disable": hasil,
+            "locale": {
+                "firstDayOfWeek": 1 // set start day of week to Monday
             }
-        ],
-        "locale": {
-            "firstDayOfWeek": 1 // set start day of week to Monday
-        }
-    });
+        });
+
+        $("#tglregistrasi3").flatpickr({
+            enableTime: false,
+            dateFormat: "d-m-Y",
+            minDate: new Date().fp_incr(1),
+            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+            onOpen: function(selectedDates, dateStr, instance) {
+                instance.setDate(instance.input.value, false);
+            },
+            "disable": hasil,
+            "locale": {
+                "firstDayOfWeek": 1 // set start day of week to Monday
+            }
+        });
+    }
 
     function AmbilDataPasienBPJS() {
         $("#loading").addClass("overlay");

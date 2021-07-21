@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Reservasi extends CI_Controller
@@ -936,5 +937,32 @@ class Reservasi extends CI_Controller
         // var_dump($data);
         // die;
         return $data;
+    }
+
+    function GetHariLibur()
+    {
+        $jumlahhari = $this->input->post('jumlahhari');
+        // $jumlahhari     = 30;
+
+        date_default_timezone_set("Asia/Jakarta");
+        $array = json_decode(file_get_contents("https://raw.githubusercontent.com/guangrei/Json-Indonesia-holidays/master/calendar.json"), true);
+
+        $tglawal        = date('Ymd');
+
+
+        $a = 1;
+        while ($a <= $jumlahhari) {
+            $tanggal = date('Ymd', strtotime($tglawal . ' + ' . $a . ' days'));
+
+            //jika hari libur atau hari minggu
+            if (isset($array[$tanggal]) || Date('N', strtotime($tanggal)) === '7') {
+                $hasiltanggal[] = date('Y-m-d', strtotime($tanggal));
+            }
+            $a++;
+        }
+        // var_dump($hasiltanggal);
+        // die;
+
+        echo json_encode($hasiltanggal);
     }
 }
