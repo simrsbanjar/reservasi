@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <div class="tab-content">
+        <div class="tab-content" id="tabcarabayar" hidden>
             <div class="tab-pane active show" id="tab-1">
                 <div class="row justify-content-md-center">
                     <!-- <section id="featured-services1" class="featured-services1"> -->

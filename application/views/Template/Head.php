@@ -105,7 +105,6 @@
       right: 0;
       background: #e0e0e0 url('assets/img/loading-gif-png-5.gif') no-repeat center;
       text-align: center;
-      z-index: 1;
       opacity: 0.6;
       background-size: 8%;
     }

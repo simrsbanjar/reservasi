@@ -4,7 +4,9 @@
         <div class="container">
             <div class="mr-md-auto text-center text-md-left">
                 <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; <strong> RSUD KOTA BANJAR </strong> <?= date('Y'); ?>. All Rights Reserved</span>
+                    <span>Copyright &copy; <strong> RSUD KOTA BANJAR </strong> <?= date('Y'); ?></span>
+                    <br>
+                    <span>Powered by SIMRS</span>
                 </div>
             </div>
         </div>
@@ -41,14 +43,13 @@
 
 <script>
     $(document).ready(function() {
-        // $("#loadingsimpan").style.visibility = 'hidden';
-        $('#load').fadeOut(500);
         var page = $("[name='reservasi']").val();
         var date = new Date().toDateString("yyyy-MM-dd");
         $("#btnlanjutcarabayar").show();
         hidetab1();
         hidetab2();
         hidetab3();
+        daycount();
         getpropinsi();
         GetRujukanAsal();
         GetPoli(date);
@@ -91,8 +92,7 @@
         var html = '';
         html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
         $('#stepprogress').html(html);
-
-        daycount();
+        $('#load').fadeOut();
     });
 
     function daycount() {
@@ -990,6 +990,8 @@
         html = "<li class='breadcrumb-item'><a href='#' onclick='StepCarabayar();'>Cara Bayar</a></li>";
         html += "<li class='breadcrumb-item active' aria-current='page'>" + nametab + "</a></li>";
         $('#stepprogress').html(html);
+
+        $("#tabcarabayar").attr("hidden", false);
     }
 
     function StepCarabayar() {
