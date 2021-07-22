@@ -8,3 +8,7 @@ RewriteRule ^(.*)$ index.php/$1 [L]
  </ifModule>
 
  Options -Indexes
+
+ <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+</IfModule>
