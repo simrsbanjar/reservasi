@@ -33,19 +33,19 @@
                 <ul class="nav nav-pills nav-justified row justify-content-md-center d-flex ">
                     <li class="nav-item col-lg-3 mt-5 ">
                         <a class="nav-link active show" data-toggle="tab" href="#tab-1">
-                            <div class="icon"><img src="<?= base_url("assets/img/BPJS.png"); ?>" width="170px" height="170px"></div>
+                            <div class="icon"><img src="assets/img/BPJS.png" width="170px" height="170px"></div>
                             <h4 style="text-align: center;">BPJS</h4>
                         </a>
                     </li>
                     <li class="nav-item col-lg-3 mt-5" hidden>
                         <a class="nav-link " data-toggle="tab" href="#tab-2">
-                            <div class="icon"><img src="<?= base_url("assets/img/ASURANSI.png"); ?>" width="170px" height="170px"></div>
+                            <div class="icon"><img src="assets/img/ASURANSI.png" width="170px" height="170px"></div>
                             <h4 style="text-align: center;">JAMINAN LAIN</h4>
                         </a>
                     </li>
                     <li class="nav-item col-lg-3 mt-5">
                         <a class="nav-link" data-toggle="tab" href="#tab-3">
-                            <div class="icon"><img src="<?= base_url("assets/img/AVATAR_CEKLIS.png"); ?>" width="170px" height="170px"></div>
+                            <div class="icon"><img src="assets/img/AVATAR_CEKLIS.png" width="170px" height="170px"></div>
                             <h4 style="text-align: center;">UMUM (MANDIRI)</h4>
                         </a>
                     </li>

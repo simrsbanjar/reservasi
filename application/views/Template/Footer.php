@@ -298,6 +298,10 @@
                             // async: false,
                             dataType: 'json',
                             success: function(data) {
+                                setTimeout(() => {
+                                    $("#loading").removeClass("overlay");
+                                }, 100);
+                                $('#loading').fadeOut();
                                 if (data.codedata['code'] != '200') {
                                     Swal.fire({
                                         title: 'Konfirmasi',
@@ -310,12 +314,7 @@
                                         cancelButtonText: 'Daftar Sebagai Pasien Baru',
                                         customClass: 'swal-wide'
                                     }).then((result) => {
-                                        if (result.value) {
-                                            setTimeout(() => {
-                                                $("#loading").removeClass("overlay");
-                                            }, 100);
-                                            $('#loading').fadeOut();
-                                        } else {
+                                        if (result.value) {} else {
                                             // jika klik batal
                                             $("#pasienbaru").show();
                                             $('input:radio[name=flexRadioDefault][id=flexRadioDefault2]').click();
@@ -334,10 +333,6 @@
 
                                             HitungUmur(tgllahirpasien);
                                             $('#kelamin').change();
-                                            setTimeout(() => {
-                                                $("#loading").removeClass("overlay");
-                                            }, 100);
-                                            $('#loading').fadeOut();
                                         }
                                     });
                                 } else {
@@ -409,11 +404,6 @@
                                             html += "</table>"
                                             $('#tabletab').html(html);
                                             document.getElementById("normhiddenlama").value = data.hasil['nocm'];
-
-                                            setTimeout(() => {
-                                                $("#loading").removeClass("overlay");
-                                            }, 100);
-                                            $('#loading').fadeOut();
                                         } else if (result.value === false) {
                                             // jika klik pasien baru
                                             $("#pasienbaru").show();
@@ -444,10 +434,6 @@
                                             // $("#noidentitas").attr("disabled", true);
                                             // $("#notlp").attr("disabled", true);
 
-                                            setTimeout(() => {
-                                                $("#loading").removeClass("overlay");
-                                            }, 100);
-                                            $('#loading').fadeOut();
                                         } else {
                                             // jika klik batal
                                             // message('info', 'batal', 'Informasi', false);
@@ -456,10 +442,6 @@
                                             document.getElementById("nopeserta").value = nopeserta;
                                             document.getElementById("nosuratrujukan").value = nosrtrujukan;
                                             document.getElementById("tgllahir").value = tgllahir;
-                                            setTimeout(() => {
-                                                $("#loading").removeClass("overlay");
-                                            }, 100);
-                                            $('#loading').fadeOut();
                                         }
                                     })
                                 }
@@ -467,29 +449,17 @@
                             },
                             error: function() {
                                 message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                                setTimeout(() => {
-                                    $("#loading").removeClass("overlay");
-                                }, 100);
-                                $('#loading').fadeOut();
                             }
                         });
                         // }
                         // var tmptgllahir = data.hasil['tgllahir'];
                     } else {
                         message('info', 'Status Peserta : ' + data.hasil['statuspeserta'], 'Informasi', false);
-                        setTimeout(() => {
-                            $("#loading").removeClass("overlay");
-                        }, 100);
-                        $('#loading').fadeOut();
                     }
                 }
             },
             error: function() {
                 message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                setTimeout(() => {
-                    $("#loading").removeClass("overlay");
-                }, 100);
-                $('#loading').fadeOut();
             }
         });
 
@@ -1016,22 +986,23 @@
             cancelButtonText: 'Tidak'
         }).then((result) => {
             if (result.value) {
-                $("#pasienlama" + numtab).hide();
-                $("#btnlanjutcarabayar").show();
-                $("#carabayar").show();
-                $("#headerreservasi" + numtab).hide();
-                $("#isireservasi" + numtab).hide();
-                $("#headerdatapasien" + numtab).hide();
-                $("#isidatapasien" + numtab).hide();
-                $("#cardfooter" + numtab).hide();
-                $("#btnkembali" + numtab).hide();
-                $("#btnlanjut" + numtab).hide();
-                $("#carddata" + numtab).hide();
-                bersihkan(idtabs);
+                // $("#pasienlama" + numtab).hide();
+                // $("#btnlanjutcarabayar").show();
+                // $("#carabayar").show();
+                // $("#headerreservasi" + numtab).hide();
+                // $("#isireservasi" + numtab).hide();
+                // $("#headerdatapasien" + numtab).hide();
+                // $("#isidatapasien" + numtab).hide();
+                // $("#cardfooter" + numtab).hide();
+                // $("#btnkembali" + numtab).hide();
+                // $("#btnlanjut" + numtab).hide();
+                // $("#carddata" + numtab).hide();
+                // bersihkan(idtabs);
 
-                var html = '';
-                html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
-                $('#stepprogress').html(html);
+                // var html = '';
+                // html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
+                // $('#stepprogress').html(html);
+                prosesHome();
             }
             document.getElementById("nilai" + numtab).value = '1';
         })
@@ -1123,23 +1094,24 @@
                 cancelButtonText: 'Tidak'
             }).then((result) => {
                 if (result.value) {
-                    $("#pasienlama" + numtab).hide();
-                    $("#btnlanjutcarabayar").show();
-                    $("#carabayar").show();
-                    $("#headerreservasi" + numtab).hide();
-                    $("#isireservasi" + numtab).hide();
-                    $("#headerdatapasien" + numtab).hide();
-                    $("#isidatapasien" + numtab).hide();
-                    $("#cardfooter" + numtab).hide();
-                    $("#btnkembali" + numtab).hide();
-                    $("#btnlanjut" + numtab).hide();
-                    $("#carddata" + numtab).hide();
-                    bersihkan(idtabs);
-                    document.getElementById("nilai" + numtab).value = Number(nilai) - 1;
+                    // $("#pasienlama" + numtab).hide();
+                    // $("#btnlanjutcarabayar").show();
+                    // $("#carabayar").show();
+                    // $("#headerreservasi" + numtab).hide();
+                    // $("#isireservasi" + numtab).hide();
+                    // $("#headerdatapasien" + numtab).hide();
+                    // $("#isidatapasien" + numtab).hide();
+                    // $("#cardfooter" + numtab).hide();
+                    // $("#btnkembali" + numtab).hide();
+                    // $("#btnlanjut" + numtab).hide();
+                    // $("#carddata" + numtab).hide();
+                    // bersihkan(idtabs);
+                    // document.getElementById("nilai" + numtab).value = Number(nilai) - 1;
 
-                    var html = '';
-                    html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
-                    $('#stepprogress').html(html);
+                    // var html = '';
+                    // html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
+                    // $('#stepprogress').html(html);
+                    prosesHome();
                 } else {
                     document.getElementById("nilai" + numtab).value = '1';
                 }
@@ -1404,6 +1376,10 @@
             if (numtab != '' || numtab != null) {
                 if (document.getElementById("tabelpaslama" + numtab) == null) {
                     message('info', 'Silahkan lakukan pencarian pasien terlebih dahulu.', 'Peringatan', false);
+                    setTimeout(() => {
+                        $("#loading").removeClass("overlay");
+                    }, 100);
+                    $('#loading').fadeOut();
                     return
                 }
             }
