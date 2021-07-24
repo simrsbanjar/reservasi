@@ -644,13 +644,14 @@ class Reservasi extends CI_Controller
         // configurasi library email
         $config = [
             'protocol'  => 'smtp',
-            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_host' => 'ssl://smtp.googlemail.com', //(ganti dengan nama : domain anda) 
             'smtp_user' => 'simrsrsukotabanjar@gmail.com',
             'smtp_pass' => 'Simrs321',
-            'smtp_port' => 465,
+            'smtp_port' => 465, //(ganti : 25)
             'mailtype'  => 'html',
             'charset'   => 'utf-8',
             'newline'   => "\r\n"
+            // 'smtp_timeout'=> "5"
         ];
 
 
@@ -944,23 +945,51 @@ class Reservasi extends CI_Controller
         $jumlahhari = $this->input->post('jumlahhari');
         // $jumlahhari     = 30;
 
-        date_default_timezone_set("Asia/Jakarta");
-        $array = json_decode(file_get_contents("https://raw.githubusercontent.com/guangrei/Json-Indonesia-holidays/master/calendar.json"), true);
+        // date_default_timezone_set("Asia/Jakarta");
+        // $array = json_decode(file_get_contents("https://raw.githubusercontent.com/guangrei/Json-Indonesia-holidays/master/calendar.json"), true);
+        $array = json_decode(file_get_contents("https://www.googleapis.com/calendar/v3/calendars/id.indonesian.official%23holiday%40group.v.calendar.google.com/events?key=AIzaSyC3Bcn-hLwhY_lhffxKLvFjIT7vwhLKqu8"), true);
+        // var_dump(count($array["items"]));
+        // var_dump($array["items"][0]["start"]["date"]);
+        // var_dump(array_search('2020-08-17', array_column($array["items"][1], 'date')));
+        // die;
 
-        $tglawal        = date('Ymd');
-
+        $tglawal        = date('Y-m-d');
 
         $a = 1;
         while ($a <= $jumlahhari) {
-            $tanggal = date('Ymd', strtotime($tglawal . ' + ' . $a . ' days'));
+            $tanggal = date('Y-m-d', strtotime($tglawal . ' + ' . $a . ' days'));
 
+            foreach ($array["items"] as $key => $value) {
+                // var_dump($value["summary"], date($value["start"]["date"]), $value["end"]["date"]);
+                if (date($value["start"]["date"]) <= $tanggal &&  date($value["end"]["date"] > $tanggal)) {
+                    $tanggallibur = $tanggal;
+                    goto end;
+                } else {
+                    $tanggallibur = '';
+                }
+            }
+
+            // die;
             //jika hari libur atau hari minggu
-            if (isset($array[$tanggal]) || Date('N', strtotime($tanggal)) === '7') {
+            end:
+            if (($tanggallibur != '' && $tanggallibur != null) || Date('N', strtotime($tanggal)) === '7') {
                 $hasiltanggal[] = date('Y-m-d', strtotime($tanggal));
             }
             $a++;
         }
-        // var_dump($hasiltanggal);
+
+
+        // $a = 1;
+        // while ($a <= $jumlahhari) {
+        //     $tanggal = date('Ymd', strtotime($tglawal . ' + ' . $a . ' days'));
+
+        //     //jika hari libur atau hari minggu
+        //     if (isset($array[$tanggal]) || Date('N', strtotime($tanggal)) === '7') {
+        //         $hasiltanggal[] = date('Y-m-d', strtotime($tanggal));
+        //     }
+        //     $a++;
+        // }
+        // var_dump($jumlahhari);
         // die;
 
         echo json_encode($hasiltanggal);

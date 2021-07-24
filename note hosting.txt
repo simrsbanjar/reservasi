@@ -1,0 +1,1 @@
+kalau mau di hosting sebaiknya ganti dengan email domain saja, berikut ynag harus di edit $config['smtp_host']= "ssl://smtp.gmail.com"; (ganti dengan nama : domain anda) $config['smtp_port']= "465"; (ganti : 25) $config['smtp_timeout']= "5"; $config['smtp_user']= "emailanda"; //isi dengan email anda

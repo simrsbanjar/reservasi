@@ -54,7 +54,6 @@
         GetRujukanAsal();
         GetPoli(date);
         GetCarabayar();
-        GetHariLibur();
         // const content = document.getElementById('content');
         // const bullets = [...document.querySelectorAll('.bullet')];
 
@@ -80,6 +79,7 @@
             html += '<li><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
             html += '<li class="active"><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
             $('#myList').html(html);
+            GetHariLibur();
         } else {
             $("#daftar").hide();
             var html = '';
@@ -108,6 +108,38 @@
                 }
                 echo $jumlah;
                 ?>;
+    }
+
+    function daystart() {
+        return <?php
+                $Date = date("Y-m-d");
+                $timestamp = strtotime($Date . ' + 1 days');
+                // echo date('N', $timestamp);
+                if (date('N', $timestamp) == 7) {
+                    $jumlah = 2;
+                } else {
+                    $jumlah = 1;
+                }
+                echo $jumlah;
+                ?>;
+
+    }
+
+    function daystarttgl() {
+
+        return "<?php
+                $Date = date("Y-m-d");
+                $timestamp = strtotime($Date . ' + 1 days');
+                // echo date('N', $timestamp);
+                if (date('N', $timestamp) == 7) {
+                    $tanggal =  date('Y-m-d', strtotime($Date . ' + 2 days'));
+                } else {
+                    $tanggal =  date('Y-m-d', strtotime($Date . ' + 1 days'));
+                }
+
+                echo date('d-m-Y', strtotime($tanggal));
+                ?>";
+
     }
 
     $("#tgllahir").flatpickr({
@@ -205,7 +237,7 @@
         $("#tglregistrasi").flatpickr({
             enableTime: false,
             dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(1),
+            minDate: new Date().fp_incr(daystart()),
             maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
             onOpen: function(selectedDates, dateStr, instance) {
                 instance.setDate(instance.input.value, false);
@@ -219,7 +251,7 @@
         $("#tglregistrasi2").flatpickr({
             enableTime: false,
             dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(1),
+            minDate: new Date().fp_incr(daystart()),
             maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
             onOpen: function(selectedDates, dateStr, instance) {
                 instance.setDate(instance.input.value, false);
@@ -233,7 +265,7 @@
         $("#tglregistrasi3").flatpickr({
             enableTime: false,
             dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(1),
+            minDate: new Date().fp_incr(daystart()),
             maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
             onOpen: function(selectedDates, dateStr, instance) {
                 instance.setDate(instance.input.value, false);
@@ -243,6 +275,10 @@
                 "firstDayOfWeek": 1 // set start day of week to Monday
             }
         });
+
+        document.getElementById("tglregistrasi").value = daystarttgl();
+        document.getElementById("tglregistrasi2").value = daystarttgl();
+        document.getElementById("tglregistrasi3").value = daystarttgl();
     }
 
     function AmbilDataPasienBPJS() {
@@ -505,8 +541,7 @@
         document.getElementById("kelurahan" + numtab).value = "";
         document.getElementById("notlp" + numtab).value = "";
         document.getElementById("kodepos" + numtab).value = "";
-        document.getElementById("tglregistrasi" + numtab).value = "<?php $Date = date('d-m-Y');
-                                                                    echo date('d-m-Y', strtotime($Date . ' + 1 days')) ?>";
+        document.getElementById("tglregistrasi" + numtab).value = daystarttgl();
         document.getElementById("poli" + numtab).value = "";
         document.getElementById("rujukanasal" + numtab).value = "";
         document.getElementById("email" + numtab).value = "";

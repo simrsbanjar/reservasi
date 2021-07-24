@@ -327,8 +327,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="text" placeholder="DD/MM/YYYY" value="<?php $Date = date("d-m-Y");
-                                                                                                echo date('d-m-Y', strtotime($Date . ' + 1 days')) ?>" class=" form-control" name="tglregistrasi" id="tglregistrasi" onchange="GetPoli(this.value)">
+                                            <input type="text" placeholder="DD/MM/YYYY" class=" form-control" name="tglregistrasi" id="tglregistrasi" onchange="GetPoli(this.value)">
                                             <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>
@@ -697,8 +696,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="text" name="tglregistrasi2" id="tglregistrasi2" value="<?php $Date = date("d-m-Y");
-                                                                                                                echo date('d-m-Y', strtotime($Date . ' + 1 days')) ?>" placeholder="DD/MM/YYYY" class="form-control" onchange="GetPoli(this.value)">
+                                            <input type="text" name="tglregistrasi2" id="tglregistrasi2" placeholder="DD/MM/YYYY" class="form-control" onchange="GetPoli(this.value)">
                                             <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>
@@ -1103,8 +1101,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tgl. Pemeriksaan</strong></label>
-                                            <input type="text" class="form-control form-control-user" value="<?php $Date = date("d-m-Y");
-                                                                                                                echo date('d-m-Y', strtotime($Date . ' + 1 days')) ?>" name="tglregistrasi3" id="tglregistrasi3" placeholder="DD/MM/YYYY" onchange="GetPoli(this.value)">
+                                            <input type="text" class="form-control form-control-user" name="tglregistrasi3" id="tglregistrasi3" placeholder="DD/MM/YYYY" onchange="GetPoli(this.value)">
                                             <label class="label-control" style="font-size: 11px; color: red;"> * Periode Pemeriksaan H+1 s.d H+7 Setelah Melakukan Pendaftaran Online. </label>
                                         </div>
                                     </div>
