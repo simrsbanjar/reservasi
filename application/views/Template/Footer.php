@@ -218,7 +218,7 @@
         var hasil = '';
         var jumlah = 0;
         $.ajax({
-            url: "<?= base_url('Reservasi/GetHariLibur') ?>",
+            url: "Reservasi/GetHariLibur",
             data: {
                 "jumlahhari": 7 + daycount()
             },
@@ -290,7 +290,7 @@
         var norm = $('#norm').val();
 
         $.ajax({
-            url: "<?= base_url('Reservasi/AmbilDataPasienBPJS') ?>",
+            url: "Reservasi/AmbilDataPasienBPJS",
             method: "POST",
             data: {
                 "nopeserta": nopesertaparm
@@ -325,7 +325,7 @@
                         var notelppasien = data.hasil['telepon'];
                         $('#polifaskes').text('Poli Rujukan : ' + data.hasil['nmpoli']);
                         $.ajax({
-                            url: "<?= base_url('Reservasi/GetPasienLama') ?>",
+                            url: "Reservasi/GetPasienLama",
                             method: "POST",
                             data: {
                                 "nocm": norm,
@@ -594,7 +594,7 @@
         }
         var kelamin = $('#kelamin' + numtab).val();
         $.ajax({
-            url: "<?= base_url('Reservasi/hitung_umur') ?>",
+            url: "Reservasi/hitung_umur",
             method: "POST",
             data: {
                 "tgllahir": tgllahir
@@ -781,7 +781,7 @@
                 LoadingPopup('Mohon Tunggu', 'Sedang Mengunduh Data.....');
 
                 $.ajax({
-                    url: "<?= base_url('CariReservasi/Cetak') ?>",
+                    url: "CariReservasi/Cetak",
                     method: "POST",
                     data: {
                         "email": id,
@@ -806,7 +806,7 @@
                             a.remove();
 
                             $.ajax({
-                                url: "<?= base_url('CariReservasi/RemoveFile') ?>",
+                                url: "CariReservasi/RemoveFile",
                                 method: "POST",
                                 data: {
                                     "kodebooking": nobooking
@@ -865,7 +865,7 @@
             $("#loading").addClass("overlay");
             $('#loading').fadeIn();
             $.ajax({
-                url: "<?= base_url('CariReservasi/GetBookingPasien') ?>",
+                url: "CariReservasi/GetBookingPasien",
                 method: "POST",
                 data: {
                     "nopendaftaran": nopendaftaran,
@@ -1237,7 +1237,7 @@
                 var nobooking = $('#kodebooking').text();
 
                 $.ajax({
-                    url: "<?= base_url('CariReservasi/HapusBooking') ?>",
+                    url: "CariReservasi/HapusBooking",
                     method: "POST",
                     data: {
                         "nobooking": nobooking
@@ -1330,7 +1330,7 @@
                     LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Data.....');
 
                     $.ajax({
-                        url: "<?= base_url('CariReservasi/Cetak') ?>",
+                        url: "CariReservasi/Cetak",
                         method: "POST",
                         data: {
                             "email": id,
@@ -1708,7 +1708,7 @@
 
     function getpropinsi() {
         $.ajax({
-            url: "<?= base_url('Reservasi/GetPropinsi') ?>",
+            url: "Reservasi/GetPropinsi",
             method: "POST",
             // async: false,
             dataType: 'json',
@@ -1752,7 +1752,7 @@
         }
 
         $.ajax({
-            url: "<?= base_url('Reservasi/GetKota') ?>",
+            url: "Reservasi/GetKota",
             method: "POST",
             data: {
                 "propinsi": id
@@ -1795,7 +1795,7 @@
         }
 
         $.ajax({
-            url: "<?= base_url('Reservasi/GetKecamatan') ?>",
+            url: "Reservasi/GetKecamatan",
             method: "POST",
             data: {
                 "kota": id
@@ -1838,7 +1838,7 @@
         }
 
         $.ajax({
-            url: "<?= base_url('Reservasi/GetKelurahan') ?>",
+            url: "Reservasi/GetKelurahan",
             method: "POST",
             data: {
                 "kecamatan": id
@@ -1867,7 +1867,7 @@
 
     function GetRujukanAsal() {
         $.ajax({
-            url: "<?= base_url('Reservasi/GetRujukanAsal') ?>",
+            url: "Reservasi/GetRujukanAsal",
             method: "POST",
             // async: false,
             dataType: 'json',
@@ -1897,7 +1897,7 @@
 
     function GetPoli(id) {
         $.ajax({
-            url: "<?= base_url('Reservasi/GetPoli') ?>",
+            url: "Reservasi/GetPoli",
             method: "POST",
             data: {
                 "tglregistrasi": id
@@ -1930,7 +1930,7 @@
 
     function GetCarabayar() {
         $.ajax({
-            url: "<?= base_url('Reservasi/GetCarabayar') ?>",
+            url: "Reservasi/GetCarabayar",
             method: "POST",
             // async: false,
             dataType: 'json',
@@ -1999,7 +1999,7 @@
 
 
         $.ajax({
-            url: "<?= base_url('Reservasi/GetPasienLama') ?>",
+            url: "Reservasi/GetPasienLama",
             method: "POST",
             data: {
                 "nocm": nocm,
@@ -2152,7 +2152,7 @@
                 LoadingPopup('Mohon Tunggu', 'Sedang Menyimpan Data.....');
 
                 $.ajax({
-                    url: "<?= base_url('Reservasi/SimpanRegistrasi') ?>",
+                    url: "Reservasi/SimpanRegistrasi",
                     method: "POST",
                     data: {
                         "statuspasien": statuspasien,
@@ -2231,7 +2231,7 @@
                             // LoadingPopup('Mohon Tunggu', 'Sedang Mengirim Bukti Pendaftarakan ke Email.');
                             // kirim bukti registrasi ke email
                             $.ajax({
-                                url: "<?= base_url('Reservasi/Cetak') ?>",
+                                url: "Reservasi/Cetak",
                                 method: "POST",
                                 data: {
                                     "email": email,
