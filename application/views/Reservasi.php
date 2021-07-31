@@ -103,7 +103,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
-                                            <input type="number" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="NIK / No. RM" class="form-control" name="norm" id="norm" onchange="updateInput(this.value,'norm')">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Kartu BPJS / No. Surat Rujukan</strong></label>
-                                            <input type="text" placeholder="No Peserta / No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopesertaparm" name="nopesertaparm" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="No Peserta / No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopesertaparm" name="nopesertaparm" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'nopesertaparm')">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                     <div class="col-md-4" hidden>
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Kartu BPJS</strong></label>
-                                            <input type="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="No Peserta / No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta">
+                                            <input type="number" placeholder="No Peserta / No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta" name="nopeserta" onchange="updateInput(this.value,'nopeserta')">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                     <div class="col-md-4" hidden>
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Surat Rujukan</strong></label>
-                                            <input type="text" placeholder="No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nosuratrujukan" name="nosuratrujukan" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'nosuratrujukan')">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Depan</strong></label>
-                                            <select name="gelar" id="gelar" class="form-control" title="Pilih Gelar">
+                                            <select name="gelar" id="gelar" class="form-control" title="Pilih Gelar" onchange="updateInput(this.value,'gelar')">
                                                 <option value="">-PILIH-</option>
                                                 <option value="Bayi">Bayi</option>
                                                 <option value="Anak">Anak</option>
@@ -174,7 +174,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap" id="namalengkap" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap" id="namalengkap" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'namalengkap')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -182,7 +182,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Kelamin</strong></label>
-                                            <select name="kelamin" id="kelamin" class="form-control form-control-user" title="Pilih Jenis Kelamin">
+                                            <select name="kelamin" id="kelamin" class="form-control form-control-user" title="Pilih Jenis Kelamin" onchange="updateInput(this.value,'kelamin')">
                                                 <option value="">-PILIH-</option>
                                                 <option value="L">Laki-laki</option>
                                                 <option value="P">Perempuan</option>
@@ -193,7 +193,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir" name="tempatlahir" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir" name="tempatlahir" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'tempatlahir')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -227,7 +227,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas" name="noidentitas" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas" name="noidentitas" onchange="updateInput(this.value,'noidentitas')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -235,7 +235,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Alamat</strong></label>
-                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat" name="alamat" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat" name="alamat" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'alamat')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -243,7 +243,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt" name="rt" onchange="updateInput(this.value,'rt')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -251,7 +251,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw" name="rw" onchange="updateInput(this.value,'rw')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -259,7 +259,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Propinsi</strong></label>
-                                            <select name="propinsi" id="propinsi" class="form-control form-control-user" title="Pilih Propinsi">
+                                            <select name="propinsi" id="propinsi" class="form-control form-control-user" title="Pilih Propinsi" onchange="updateInput(this.value,'propinsi')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -269,7 +269,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
-                                            <select name="kota" id="kota" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
+                                            <select name="kota" id="kota" class="form-control form-control-user" title="Pilih Kota (Kabupaten)" onchange="updateInput(this.value,'kota')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -279,7 +279,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kecamatan</strong></label>
-                                            <select name="kecamatan" id="kecamatan" class="form-control form-control-user" title="Pilih Kecamatan">
+                                            <select name="kecamatan" id="kecamatan" class="form-control form-control-user" title="Pilih Kecamatan" onchange="updateInput(this.value,'kecamatan')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -289,7 +289,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
-                                            <select name="kelurahan" id="kelurahan" class="form-control form-control-user" title="Pilih Kelurahan">
+                                            <select name="kelurahan" id="kelurahan" class="form-control form-control-user" title="Pilih Kelurahan" onchange="updateInput(this.value,'kelurahan')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -299,7 +299,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp" name="notlp" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp" name="notlp" onchange="updateInput(this.value,'notlp')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -307,7 +307,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos" name="kodepos" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos" name="kodepos" onchange="updateInput(this.value,'kodepos')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -334,7 +334,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli" id="poli" class="form-control" title="Pilih Poli">
+                                            <select name="poli" id="poli" class="form-control" title="Pilih Poli" onchange="updateInput(this.value,'poli')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -389,7 +389,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Rujukan Asal</strong></label>
-                                            <select name="rujukanasal" id="rujukanasal" class="form-control form-control-user" title="Pilih Rujukan Asal">
+                                            <select name="rujukanasal" id="rujukanasal" class="form-control form-control-user" title="Pilih Rujukan Asal" onchange="updateInput(this.value,'rujukanasal')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -424,7 +424,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Email</strong></label>
-                                            <input type="email" placeholder="Email" class="form-control" id="email" name="email">
+                                            <input type="email" placeholder="Email" class="form-control" id="email" name="email" onchange="updateInput(this.value,'email')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -499,7 +499,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nomor Rekam Medik</strong></label>
-                                            <input type="number" placeholder="Nomor RM" class="form-control" name="norm2" id="norm2">
+                                            <input type="number" placeholder="Nomor RM" class="form-control" name="norm2" id="norm2" onchange="updateInput(this.value,'norm2')">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -533,7 +533,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Depan</strong></label>
-                                            <select name="gelar2" id="gelar2" class="form-control" title="Pilih Gelar">
+                                            <select name="gelar2" id="gelar2" class="form-control" title="Pilih Gelar" onchange="updateInput(this.value,'gelar2')">
                                                 <option value="">-PILIH-</option>
                                                 <option value="Bayi">Bayi</option>
                                                 <option value="Anak">Anak</option>
@@ -547,7 +547,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap2" id="namalengkap2" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap2" id="namalengkap2" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'namalengkap2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -555,7 +555,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Kelamin</strong></label>
-                                            <select name="kelamin2" id="kelamin2" class="form-control form-control-user" title="Pilih Jenis Kelamin">
+                                            <select name="kelamin2" id="kelamin2" class="form-control form-control-user" title="Pilih Jenis Kelamin" onchange="updateInput(this.value,'kelamin2')">
                                                 <option value="">-PILIH-</option>
                                                 <option value="L">Laki-laki</option>
                                                 <option value="P">Perempuan</option>
@@ -566,7 +566,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir2" name="tempatlahir2" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir2" name="tempatlahir2" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'tempatlahir2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -600,7 +600,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas2" name="noidentitas2">
+                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas2" name="noidentitas2" onchange="updateInput(this.value,'noidentitas2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -608,7 +608,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Alamat</strong></label>
-                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat2" name="alamat2" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat2" name="alamat2" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'alamat2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -616,7 +616,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt2" name="rt2">
+                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt2" name="rt2" onchange="updateInput(this.value,'rt2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -624,7 +624,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw2" name="rw2">
+                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw2" name="rw2" onchange="updateInput(this.value,'rw2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -632,7 +632,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Propinsi</strong></label>
-                                            <select name="propinsi2" id="propinsi2" class="form-control form-control-user" title="Pilih Propinsi">
+                                            <select name="propinsi2" id="propinsi2" class="form-control form-control-user" title="Pilih Propinsi" onchange="updateInput(this.value,'propinsi2')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -642,7 +642,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
-                                            <select name="kota2" id="kota2" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
+                                            <select name="kota2" id="kota2" class="form-control form-control-user" title="Pilih Kota (Kabupaten)" onchange="updateInput(this.value,'kota2')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -652,7 +652,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kecamatan</strong></label>
-                                            <select name="kecamatan2" id="kecamatan2" class="form-control form-control-user" title="Pilih Kecamatan">
+                                            <select name="kecamatan2" id="kecamatan2" class="form-control form-control-user" title="Pilih Kecamatan" onchange="updateInput(this.value,'kecamatan2')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -662,7 +662,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
-                                            <select name="kelurahan2" id="kelurahan2" class="form-control form-control-user" title="Pilih Kelurahan">
+                                            <select name="kelurahan2" id="kelurahan2" class="form-control form-control-user" title="Pilih Kelurahan" onchange="updateInput(this.value,'kelurahan2')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -672,7 +672,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp2" name="notlp2">
+                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp2" name="notlp2" onchange="updateInput(this.value,'notlp2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -680,7 +680,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos2" name="kodepos2">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos2" name="kodepos2" onchange="updateInput(this.value,'kodepos2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -703,7 +703,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli2" id="poli2" class="form-control form-control-user" title="Pilih Poli">
+                                            <select name="poli2" id="poli2" class="form-control form-control-user" title="Pilih Poli" onchange="updateInput(this.value,'poli2')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -758,7 +758,7 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Cara Bayar</strong></label>
-                                            <select name="carabayar2" id="carabayar2" class="form-control form-control-user" title="Pilih Cara Bayar">
+                                            <select name="carabayar2" id="carabayar2" class="form-control form-control-user" title="Pilih Cara Bayar" onchange="updateInput(this.value,'carabayar2')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -767,7 +767,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Rujukan Asal</strong></label>
-                                            <select name="rujukanasal2" id="rujukanasal2" class="form-control form-control-user" title="Pilih Rujukan Asal">
+                                            <select name="rujukanasal2" id="rujukanasal2" class="form-control form-control-user" title="Pilih Rujukan Asal" onchange="updateInput(this.value,'rujukanasal2')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -776,7 +776,7 @@
                                     <div class="col-md-4">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>No. Peserta / No. Kartu</strong></label>
-                                            <input type="number" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta2" name="nopeserta2">
+                                            <input type="number" placeholder="No Peserta" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopeserta2" name="nopeserta2" onchange="updateInput(this.value,'nopeserta2')">
                                             <small>Error Message</small>
                                         </div>
                                     </div>
@@ -832,7 +832,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Email</strong></label>
-                                            <input type="email" placeholder="Email" class="form-control" id="email2" name="email2">
+                                            <input type="email" placeholder="Email" class="form-control" id="email2" name="email2" onchange="updateInput(this.value,'email2')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -904,7 +904,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>NIK / No. Rekam Medik</strong></label>
-                                            <input type="number" placeholder="No. RM / NIK" class="form-control" name="norm3" id="norm3">
+                                            <input type="number" placeholder="No. RM / NIK" class="form-control" name="norm3" id="norm3" onchange="updateInput(this.value,'norm3')">
                                             <small>Error Message</small>
                                             <!---->
                                         </div>
@@ -938,7 +938,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Depan</strong></label>
-                                            <select name="gelar3" id="gelar3" class="form-control" title="Pilih Gelar">
+                                            <select name="gelar3" id="gelar3" class="form-control" title="Pilih Gelar" onchange="updateInput(this.value,'gelar3')">
                                                 <option value="">-PILIH-</option>
                                                 <option value="Bayi">Bayi</option>
                                                 <option value="Anak">Anak</option>
@@ -952,7 +952,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Nama Lengkap</strong></label>
-                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap3" id="namalengkap3" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Nama Pasien" class="form-control" maxlength="50" name="namalengkap3" id="namalengkap3" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'namalengkap3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -960,7 +960,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Jenis Kelamin</strong></label>
-                                            <select name="kelamin3" id="kelamin3" class="form-control form-control-user" title="Pilih Jenis Kelamin">
+                                            <select name="kelamin3" id="kelamin3" class="form-control form-control-user" title="Pilih Jenis Kelamin" onchange="updateInput(this.value,'kelamin3')">
                                                 <option value="">-PILIH-</option>
                                                 <option value="L">Laki-laki</option>
                                                 <option value="P">Perempuan</option>
@@ -971,7 +971,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Tempat Lahir</strong></label>
-                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir3" name="tempatlahir3" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Tempat Lahir" class="form-control" maxlength="50" id="tempatlahir3" name="tempatlahir3" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'tempatlahir3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1005,7 +1005,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>No. Identitas (KTP/SIM/...)</strong></label>
-                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas3" name="noidentitas3">
+                                            <input type="number" placeholder="No. Identitas" class="form-control" maxlength="20" id="noidentitas3" name="noidentitas3" onchange="updateInput(this.value,'noidentitas3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1013,7 +1013,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Alamat</strong></label>
-                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat3" name="alamat3" oninput="this.value = this.value.toUpperCase()">
+                                            <input type="text" placeholder="Alamat" class="form-control" maxlength="100" id="alamat3" name="alamat3" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'alamat3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1021,7 +1021,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RT</strong></label>
-                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3">
+                                            <input type="number" placeholder="RT" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rt3" name="rt3" onchange="updateInput(this.value,'rt3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1029,7 +1029,7 @@
                                     <div class="col-md-1">
                                         <div class="form-group">
                                             <label class="label-control"><strong>RW</strong></label>
-                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3">
+                                            <input type="number" placeholder="RW" class="form-control" onKeyPress="if(this.value.length==3) return false;" id="rw3" name="rw3" onchange="updateInput(this.value,'rw3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1037,7 +1037,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Propinsi</strong></label>
-                                            <select name="propinsi3" id="propinsi3" class="form-control form-control-user" title="Pilih Propinsi">
+                                            <select name="propinsi3" id="propinsi3" class="form-control form-control-user" title="Pilih Propinsi" onchange="updateInput(this.value,'propinsi3')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -1047,7 +1047,7 @@
                                     <div class="col-md-5">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kota (Kabupaten)</strong></label>
-                                            <select name="kota3" id="kota3" class="form-control form-control-user" title="Pilih Kota (Kabupaten)">
+                                            <select name="kota3" id="kota3" class="form-control form-control-user" title="Pilih Kota (Kabupaten)" onchange="updateInput(this.value,'kota3')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -1057,7 +1057,7 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kecamatan</strong></label>
-                                            <select name="kecamatan3" id="kecamatan3" class="form-control form-control-user" title="Pilih Kecamatan">
+                                            <select name="kecamatan3" id="kecamatan3" class="form-control form-control-user" title="Pilih Kecamatan" onchange="updateInput(this.value,'kecamatan3')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -1067,7 +1067,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kelurahan (Desa)</strong></label>
-                                            <select name="kelurahan3" id="kelurahan3" class="form-control form-control-user" title="Pilih Kelurahan">
+                                            <select name="kelurahan3" id="kelurahan3" class="form-control form-control-user" title="Pilih Kelurahan" onchange="updateInput(this.value,'kelurahan3')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -1077,7 +1077,7 @@
                                     <div class="col-md-5">
                                         <div class=" form-group">
                                             <label class="label-control"><strong>Telepon</strong></label>
-                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3">
+                                            <input type="number" placeholder="Telepon" class="form-control" onKeyPress="if(this.value.length==15) return false;" id="notlp3" name="notlp3" onchange="updateInput(this.value,'notlp3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1085,7 +1085,7 @@
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Kode Pos</strong></label>
-                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3">
+                                            <input type="number" placeholder="Kode Pos" class="form-control" onKeyPress="if(this.value.length==5) return false;" id="kodepos3" name="kodepos3" onchange="updateInput(this.value,'kodepos3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>
@@ -1108,7 +1108,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Poli</strong></label>
-                                            <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli">
+                                            <select name="poli3" id="poli3" class="form-control form-control-user" title="Pilih Poli" onchange="updateInput(this.value,'poli3')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -1163,7 +1163,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Rujukan Asal</strong></label>
-                                            <select name="rujukanasal3" id="rujukanasal3" class="form-control form-control-user" title="Pilih Rujukan Asal">
+                                            <select name="rujukanasal3" id="rujukanasal3" class="form-control form-control-user" title="Pilih Rujukan Asal" onchange="updateInput(this.value,'rujukanasal3')">
                                                 <option value="">-PILIH-</option>
                                             </select>
                                             <small>Error Message</small>
@@ -1220,7 +1220,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label class="label-control"><strong>Email</strong></label>
-                                            <input type="email" placeholder="Email" class="form-control" id="email3" name="email3">
+                                            <input type="email" placeholder="Email" class="form-control" id="email3" name="email3" onchange="updateInput(this.value,'email3')">
                                             <!---->
                                             <small>Error Message</small>
                                         </div>

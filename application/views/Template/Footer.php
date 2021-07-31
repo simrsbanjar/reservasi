@@ -2407,6 +2407,21 @@
         var gelar = SetValueGelar(kelamin, tahun, bulan, hari);
         document.getElementById("gelar3").value = gelar;
     });
+
+    function updateInput(id, getid) {
+        if (id != '' || id != null) {
+            setSuccessFor(document.getElementById(getid));
+        }
+    }
+
+    // semua input number akan dihilangkan karakter  "-", "e", "+", "E"
+    var invalidChars = ["-", "e", "+", "E"];
+
+    $("input[type='number']").on("keydown", function(e) {
+        if (invalidChars.includes(e.key)) {
+            e.preventDefault();
+        }
+    });
 </script>
 
 </body>

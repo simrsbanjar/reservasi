@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="Kode Booking / No. Pendaftaran">
+                                    <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="Kode Booking / No. Pendaftaran" onchange="updateInput(this.value,'nopendaftaran')">
                                     <small>Error Message</small>
                                 </div>
                             </div>
