@@ -292,8 +292,8 @@
                                     Swal.fire({
                                         title: 'Konfirmasi',
                                         // text: "Data Ditemukan didalam Sistem RSU Kota Banjar<br>Nama Pasien : " + data.hasil['namapasien'] + "",
-                                        html: "Data Ditemukan Didalam Sistem Namun <b>" + data.codedata['message'] +
-                                            "</b><br>Apakah Akan Memperbaiki Pencarian ?",
+                                        html: "Data Ditemukan Didalam Sistem BPJS Namun <b>" + data.codedata['message'] +
+                                            " di Sistem Rumah Sakit</b><br>Apakah Akan Memperbaiki Pencarian ?",
                                         icon: 'question',
                                         showCancelButton: true,
                                         confirmButtonText: 'Ya',
