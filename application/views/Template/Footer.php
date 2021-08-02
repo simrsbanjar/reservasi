@@ -39,62 +39,12 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="assets/js/slide.js"></script>
 
+<script src="assets/js/function/f_getharilibur.js"></script>
+<script src="assets/js/function/f_documentready.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 
 <script>
-    $(document).ready(function() {
-        var page = $("[name='reservasi']").val();
-        var date = new Date().toDateString("yyyy-MM-dd");
-        $("#btnlanjutcarabayar").show();
-        hidetab1();
-        hidetab2();
-        hidetab3();
-        daycount();
-        getpropinsi();
-        GetRujukanAsal();
-        GetPoli(date);
-        GetCarabayar();
-        // const content = document.getElementById('content');
-        // const bullets = [...document.querySelectorAll('.bullet')];
-
-        // const MAX_STEPS = 4;
-        // let currentStep = 1;
-        // bullets[currentStep - 1].classList.add('completed');
-        // currentStep += 1;
-
-        if (page == null) {
-            $("#daftar").show();
-            var html = '';
-            html += '<li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
-            html += '<li><a href="#tentangkita"><i class="far fa-list-alt"></i> Visi dan Misi</a></li>';
-            html += '<li><a href="#contact"><i class="fab fa-hubspot"></i> Kontak</a></li>';
-            html += '<li><a href="#alur"><i class="fas fa-user-md"></i> Alur </a></li>';
-            html += '<li><a href="#dokter"><i class="far fa-address-book"></i> Dokter </a></li>';
-            html += '<li><a href="#lokasi"><i class="fas fa-map-marked-alt"></i> Lokasi</a></li>';
-            $('#myList').html(html);
-        } else if (page == '1') {
-            $("#daftar").hide();
-            var html = '';
-            html += '<li><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
-            html += '<li><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
-            html += '<li class="active"><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
-            $('#myList').html(html);
-            GetHariLibur();
-        } else {
-            $("#daftar").hide();
-            var html = '';
-            html += '<li><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
-            html += '<li class="active"><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
-            html += '<li><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
-            $('#myList').html(html);
-        }
-
-        var html = '';
-        html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
-        $('#stepprogress').html(html);
-        $('#load').fadeOut();
-    });
-
     function daycount() {
         return <?php
                 $jumlah = 0;
@@ -214,72 +164,72 @@
         }
     });
 
-    function GetHariLibur() {
-        var hasil = '';
-        var jumlah = 0;
-        $.ajax({
-            url: "Reservasi/GetHariLibur",
-            data: {
-                "jumlahhari": 7 + daycount()
-            },
-            method: "POST",
-            async: false,
-            dataType: 'json',
-            success: function(data) {
-                hasil = data;
-                jumlah = hasil.length;
-            },
-            error: function() {
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-            }
-        });
+    // function GetHariLibur() {
+    //     var hasil = '';
+    //     var jumlah = 0;
+    //     $.ajax({
+    //         url: "Reservasi/GetHariLibur",
+    //         data: {
+    //             "jumlahhari": 7 + daycount()
+    //         },
+    //         method: "POST",
+    //         async: false,
+    //         dataType: 'json',
+    //         success: function(data) {
+    //             hasil = data;
+    //             jumlah = hasil.length;
+    //         },
+    //         error: function() {
+    //             message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+    //         }
+    //     });
 
-        $("#tglregistrasi").flatpickr({
-            enableTime: false,
-            dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(daystart()),
-            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
-            onOpen: function(selectedDates, dateStr, instance) {
-                instance.setDate(instance.input.value, false);
-            },
-            "disable": hasil,
-            "locale": {
-                "firstDayOfWeek": 1 // set start day of week to Monday
-            }
-        });
+    //     $("#tglregistrasi").flatpickr({
+    //         enableTime: false,
+    //         dateFormat: "d-m-Y",
+    //         minDate: new Date().fp_incr(daystart()),
+    //         maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+    //         onOpen: function(selectedDates, dateStr, instance) {
+    //             instance.setDate(instance.input.value, false);
+    //         },
+    //         "disable": hasil,
+    //         "locale": {
+    //             "firstDayOfWeek": 1 // set start day of week to Monday
+    //         }
+    //     });
 
-        $("#tglregistrasi2").flatpickr({
-            enableTime: false,
-            dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(daystart()),
-            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
-            onOpen: function(selectedDates, dateStr, instance) {
-                instance.setDate(instance.input.value, false);
-            },
-            "disable": hasil,
-            "locale": {
-                "firstDayOfWeek": 1 // set start day of week to Monday
-            }
-        });
+    //     $("#tglregistrasi2").flatpickr({
+    //         enableTime: false,
+    //         dateFormat: "d-m-Y",
+    //         minDate: new Date().fp_incr(daystart()),
+    //         maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+    //         onOpen: function(selectedDates, dateStr, instance) {
+    //             instance.setDate(instance.input.value, false);
+    //         },
+    //         "disable": hasil,
+    //         "locale": {
+    //             "firstDayOfWeek": 1 // set start day of week to Monday
+    //         }
+    //     });
 
-        $("#tglregistrasi3").flatpickr({
-            enableTime: false,
-            dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(daystart()),
-            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
-            onOpen: function(selectedDates, dateStr, instance) {
-                instance.setDate(instance.input.value, false);
-            },
-            "disable": hasil,
-            "locale": {
-                "firstDayOfWeek": 1 // set start day of week to Monday
-            }
-        });
+    //     $("#tglregistrasi3").flatpickr({
+    //         enableTime: false,
+    //         dateFormat: "d-m-Y",
+    //         minDate: new Date().fp_incr(daystart()),
+    //         maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+    //         onOpen: function(selectedDates, dateStr, instance) {
+    //             instance.setDate(instance.input.value, false);
+    //         },
+    //         "disable": hasil,
+    //         "locale": {
+    //             "firstDayOfWeek": 1 // set start day of week to Monday
+    //         }
+    //     });
 
-        document.getElementById("tglregistrasi").value = daystarttgl();
-        document.getElementById("tglregistrasi2").value = daystarttgl();
-        document.getElementById("tglregistrasi3").value = daystarttgl();
-    }
+    //     document.getElementById("tglregistrasi").value = daystarttgl();
+    //     document.getElementById("tglregistrasi2").value = daystarttgl();
+    //     document.getElementById("tglregistrasi3").value = daystarttgl();
+    // }
 
     function AmbilDataPasienBPJS() {
         $("#loading").addClass("overlay");
