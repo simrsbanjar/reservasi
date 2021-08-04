@@ -39,11 +39,14 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="assets/js/slide.js"></script>
 
+<!-- Pemanggilan Function -->
 <script src="assets/js/function/f_getharilibur.js"></script>
 <script src="assets/js/function/f_documentready.js"></script>
 <script src="assets/js/function/f_ambildatapasienbpjs.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+<!-- JS Faltpickr Tanggal  -->
+<script src="assets/js/flatpickr.js"></script>
+
 
 <script>
     function daycount() {
@@ -94,15 +97,20 @@
     }
 
     $("#tgllahir").flatpickr({
-        enableTime: false,
-        dateFormat: "d-m-Y",
-        maxDate: new Date(),
-        onOpen: function(selectedDates, dateStr, instance) {
-            instance.setDate(instance.input.value, false);
-        },
-        "locale": {
-            "firstDayOfWeek": 1 // set start day of week to Monday
-        }
+
+
+        dateFormat: "Y-m-d",
+        disable: [{
+                from: "2025-04-01",
+                to: "2025-05-01"
+            },
+            {
+                from: "2025-09-01",
+                to: "2025-12-01"
+            }
+        ]
+
+
     });
 
     $("#tgllahir2").flatpickr({
