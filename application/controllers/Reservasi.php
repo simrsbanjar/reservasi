@@ -973,7 +973,7 @@ class Reservasi extends CI_Controller
             //jika hari libur atau hari minggu
             end:
             if (($tanggallibur != '' && $tanggallibur != null) || Date('N', strtotime($tanggal)) === '7') {
-                $hasiltanggal[] = date('Y-m-d', strtotime($tanggal));
+                $hasiltanggal[] = date('d-m-Y', strtotime($tanggal));
             }
             $a++;
         }
