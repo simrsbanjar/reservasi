@@ -98,18 +98,15 @@
 
     $("#tgllahir").flatpickr({
 
-
-        dateFormat: "Y-m-d",
-        disable: [{
-                from: "2025-04-01",
-                to: "2025-05-01"
-            },
-            {
-                from: "2025-09-01",
-                to: "2025-12-01"
-            }
-        ]
-
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        maxDate: new Date(),
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
 
     });
 
