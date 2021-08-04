@@ -39,62 +39,16 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="assets/js/slide.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
+<!-- Pemanggilan Function -->
+<script src="assets/js/function/f_getharilibur.js"></script>
+<script src="assets/js/function/f_documentready.js"></script>
+<script src="assets/js/function/f_ambildatapasienbpjs.js"></script>
+
+<!-- JS Faltpickr Tanggal  -->
+<script src="assets/js/flatpickr.js"></script>
+
 
 <script>
-    $(document).ready(function() {
-        var page = $("[name='reservasi']").val();
-        var date = new Date().toDateString("yyyy-MM-dd");
-        $("#btnlanjutcarabayar").show();
-        hidetab1();
-        hidetab2();
-        hidetab3();
-        daycount();
-        getpropinsi();
-        GetRujukanAsal();
-        GetPoli(date);
-        GetCarabayar();
-        // const content = document.getElementById('content');
-        // const bullets = [...document.querySelectorAll('.bullet')];
-
-        // const MAX_STEPS = 4;
-        // let currentStep = 1;
-        // bullets[currentStep - 1].classList.add('completed');
-        // currentStep += 1;
-
-        if (page == null) {
-            $("#daftar").show();
-            var html = '';
-            html += '<li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
-            html += '<li><a href="#tentangkita"><i class="far fa-list-alt"></i> Visi dan Misi</a></li>';
-            html += '<li><a href="#contact"><i class="fab fa-hubspot"></i> Kontak</a></li>';
-            html += '<li><a href="#alur"><i class="fas fa-user-md"></i> Alur </a></li>';
-            html += '<li><a href="#dokter"><i class="far fa-address-book"></i> Dokter </a></li>';
-            html += '<li><a href="#lokasi"><i class="fas fa-map-marked-alt"></i> Lokasi</a></li>';
-            $('#myList').html(html);
-        } else if (page == '1') {
-            $("#daftar").hide();
-            var html = '';
-            html += '<li><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
-            html += '<li><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
-            html += '<li class="active"><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
-            $('#myList').html(html);
-            GetHariLibur();
-        } else {
-            $("#daftar").hide();
-            var html = '';
-            html += '<li><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
-            html += '<li class="active"><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
-            html += '<li><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
-            $('#myList').html(html);
-        }
-
-        var html = '';
-        html = '<li class="breadcrumb-item active" aria-current="page">Cara Bayar</a></li>';
-        $('#stepprogress').html(html);
-        $('#load').fadeOut();
-    });
-
     function daycount() {
         return <?php
                 $jumlah = 0;
@@ -143,15 +97,20 @@
     }
 
     $("#tgllahir").flatpickr({
-        enableTime: false,
-        dateFormat: "d-m-Y",
-        maxDate: new Date(),
-        onOpen: function(selectedDates, dateStr, instance) {
-            instance.setDate(instance.input.value, false);
-        },
-        "locale": {
-            "firstDayOfWeek": 1 // set start day of week to Monday
-        }
+
+
+        dateFormat: "Y-m-d",
+        disable: [{
+                from: "2025-04-01",
+                to: "2025-05-01"
+            },
+            {
+                from: "2025-09-01",
+                to: "2025-12-01"
+            }
+        ]
+
+
     });
 
     $("#tgllahir2").flatpickr({
@@ -214,297 +173,297 @@
         }
     });
 
-    function GetHariLibur() {
-        var hasil = '';
-        var jumlah = 0;
-        $.ajax({
-            url: "Reservasi/GetHariLibur",
-            data: {
-                "jumlahhari": 7 + daycount()
-            },
-            method: "POST",
-            async: false,
-            dataType: 'json',
-            success: function(data) {
-                hasil = data;
-                jumlah = hasil.length;
-            },
-            error: function() {
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-            }
-        });
+    // function GetHariLibur() {
+    //     var hasil = '';
+    //     var jumlah = 0;
+    //     $.ajax({
+    //         url: "Reservasi/GetHariLibur",
+    //         data: {
+    //             "jumlahhari": 7 + daycount()
+    //         },
+    //         method: "POST",
+    //         async: false,
+    //         dataType: 'json',
+    //         success: function(data) {
+    //             hasil = data;
+    //             jumlah = hasil.length;
+    //         },
+    //         error: function() {
+    //             message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+    //         }
+    //     });
 
-        $("#tglregistrasi").flatpickr({
-            enableTime: false,
-            dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(daystart()),
-            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
-            onOpen: function(selectedDates, dateStr, instance) {
-                instance.setDate(instance.input.value, false);
-            },
-            "disable": hasil,
-            "locale": {
-                "firstDayOfWeek": 1 // set start day of week to Monday
-            }
-        });
+    //     $("#tglregistrasi").flatpickr({
+    //         enableTime: false,
+    //         dateFormat: "d-m-Y",
+    //         minDate: new Date().fp_incr(daystart()),
+    //         maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+    //         onOpen: function(selectedDates, dateStr, instance) {
+    //             instance.setDate(instance.input.value, false);
+    //         },
+    //         "disable": hasil,
+    //         "locale": {
+    //             "firstDayOfWeek": 1 // set start day of week to Monday
+    //         }
+    //     });
 
-        $("#tglregistrasi2").flatpickr({
-            enableTime: false,
-            dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(daystart()),
-            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
-            onOpen: function(selectedDates, dateStr, instance) {
-                instance.setDate(instance.input.value, false);
-            },
-            "disable": hasil,
-            "locale": {
-                "firstDayOfWeek": 1 // set start day of week to Monday
-            }
-        });
+    //     $("#tglregistrasi2").flatpickr({
+    //         enableTime: false,
+    //         dateFormat: "d-m-Y",
+    //         minDate: new Date().fp_incr(daystart()),
+    //         maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+    //         onOpen: function(selectedDates, dateStr, instance) {
+    //             instance.setDate(instance.input.value, false);
+    //         },
+    //         "disable": hasil,
+    //         "locale": {
+    //             "firstDayOfWeek": 1 // set start day of week to Monday
+    //         }
+    //     });
 
-        $("#tglregistrasi3").flatpickr({
-            enableTime: false,
-            dateFormat: "d-m-Y",
-            minDate: new Date().fp_incr(daystart()),
-            maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
-            onOpen: function(selectedDates, dateStr, instance) {
-                instance.setDate(instance.input.value, false);
-            },
-            "disable": hasil,
-            "locale": {
-                "firstDayOfWeek": 1 // set start day of week to Monday
-            }
-        });
+    //     $("#tglregistrasi3").flatpickr({
+    //         enableTime: false,
+    //         dateFormat: "d-m-Y",
+    //         minDate: new Date().fp_incr(daystart()),
+    //         maxDate: new Date().fp_incr(7 + jumlah), // 7 days from now
+    //         onOpen: function(selectedDates, dateStr, instance) {
+    //             instance.setDate(instance.input.value, false);
+    //         },
+    //         "disable": hasil,
+    //         "locale": {
+    //             "firstDayOfWeek": 1 // set start day of week to Monday
+    //         }
+    //     });
 
-        document.getElementById("tglregistrasi").value = daystarttgl();
-        document.getElementById("tglregistrasi2").value = daystarttgl();
-        document.getElementById("tglregistrasi3").value = daystarttgl();
-    }
+    //     document.getElementById("tglregistrasi").value = daystarttgl();
+    //     document.getElementById("tglregistrasi2").value = daystarttgl();
+    //     document.getElementById("tglregistrasi3").value = daystarttgl();
+    // }
 
-    function AmbilDataPasienBPJS() {
-        $("#loading").addClass("overlay");
-        $('#loading').fadeIn();
-        // var nosrtrujukan = $('#nosuratrujukan').val();
-        var nopesertaparm = $('#nopesertaparm').val();
-        var tgllahir = $('#tgllahir').val();
-        var norm = $('#norm').val();
+    // function AmbilDataPasienBPJS() {
+    //     $("#loading").addClass("overlay");
+    //     $('#loading').fadeIn();
+    //     // var nosrtrujukan = $('#nosuratrujukan').val();
+    //     var nopesertaparm = $('#nopesertaparm').val();
+    //     var tgllahir = $('#tgllahir').val();
+    //     var norm = $('#norm').val();
 
-        $.ajax({
-            url: "Reservasi/AmbilDataPasienBPJS",
-            method: "POST",
-            data: {
-                "nopeserta": nopesertaparm
-            },
-            // async: false,
-            dataType: 'json',
-            success: function(data) {
-                if (data.codedata['code'] != '200') {
-                    message('info', data.codedata['message'], 'Informasi', false);
-                    setTimeout(() => {
-                        $("#loading").removeClass("overlay");
-                    }, 100);
-                    $('#loading').fadeOut();
-                } else {
-                    // if (nopeserta != data.hasil['noKartu']) {
-                    //     message('info', 'No. Peserta / No. Kartu Tidak Sesuai Dengan Data Rujukan.', 'Informasi', false);
-                    // } else {
-                    if (data.hasil['statuspeserta'] == 'AKTIF') {
-                        if (data.hasil['noKunjungan'] == '' || data.hasil['noKunjungan'] == null) {
-                            var nosrtrujukan = nopesertaparm;
-                        } else {
-                            var nosrtrujukan = data.hasil['noKunjungan'];
-                        }
-                        nopeserta = data.hasil['noKartu'];
-                        document.getElementById("nosuratrujukan").value = nosrtrujukan;
-                        document.getElementById("nopeserta").value = nopeserta;
-                        document.getElementById("nopesertaparm").value = nopesertaparm;
-                        var namapasien = data.hasil['nama'];
-                        var kelaminpasien = data.hasil['jk'];
-                        var tgllahirpasien = data.hasil['tglLahir'];
-                        var noidentitaspasien = data.hasil['nik'];
-                        var notelppasien = data.hasil['telepon'];
-                        $('#polifaskes').text('Poli Rujukan : ' + data.hasil['nmpoli']);
-                        $.ajax({
-                            url: "Reservasi/GetPasienLama",
-                            method: "POST",
-                            data: {
-                                "nocm": norm,
-                                "tgllahir": tgllahir
-                            },
-                            // async: false,
-                            dataType: 'json',
-                            success: function(data) {
-                                setTimeout(() => {
-                                    $("#loading").removeClass("overlay");
-                                }, 100);
-                                $('#loading').fadeOut();
-                                if (data.codedata['code'] != '200') {
-                                    Swal.fire({
-                                        title: 'Konfirmasi',
-                                        // text: "Data Ditemukan didalam Sistem RSU Kota Banjar<br>Nama Pasien : " + data.hasil['namapasien'] + "",
-                                        html: "Data Ditemukan Didalam Sistem BPJS Namun <b>" + data.codedata['message'] +
-                                            " di Sistem Rumah Sakit</b><br>Apakah Akan Memperbaiki Pencarian ?",
-                                        icon: 'question',
-                                        showCancelButton: true,
-                                        confirmButtonText: 'Ya',
-                                        cancelButtonText: 'Daftar Sebagai Pasien Baru',
-                                        customClass: 'swal-wide'
-                                    }).then((result) => {
-                                        if (result.value) {} else {
-                                            // jika klik batal
-                                            $("#pasienbaru").show();
-                                            $('input:radio[name=flexRadioDefault][id=flexRadioDefault2]').click();
-                                            document.getElementById("norm").value = norm;
-                                            document.getElementById("nopesertaparm").value = nopesertaparm;
-                                            document.getElementById("nopeserta").value = nopeserta;
-                                            document.getElementById("nosuratrujukan").value = nosrtrujukan;
-                                            document.getElementById("tgllahir").value = tgllahir;
+    //     $.ajax({
+    //         url: "Reservasi/AmbilDataPasienBPJS",
+    //         method: "POST",
+    //         data: {
+    //             "nopeserta": nopesertaparm
+    //         },
+    //         // async: false,
+    //         dataType: 'json',
+    //         success: function(data) {
+    //             if (data.codedata['code'] != '200') {
+    //                 message('info', data.codedata['message'], 'Informasi', false);
+    //                 setTimeout(() => {
+    //                     $("#loading").removeClass("overlay");
+    //                 }, 100);
+    //                 $('#loading').fadeOut();
+    //             } else {
+    //                 // if (nopeserta != data.hasil['noKartu']) {
+    //                 //     message('info', 'No. Peserta / No. Kartu Tidak Sesuai Dengan Data Rujukan.', 'Informasi', false);
+    //                 // } else {
+    //                 if (data.hasil['statuspeserta'] == 'AKTIF') {
+    //                     if (data.hasil['noKunjungan'] == '' || data.hasil['noKunjungan'] == null) {
+    //                         var nosrtrujukan = nopesertaparm;
+    //                     } else {
+    //                         var nosrtrujukan = data.hasil['noKunjungan'];
+    //                     }
+    //                     nopeserta = data.hasil['noKartu'];
+    //                     document.getElementById("nosuratrujukan").value = nosrtrujukan;
+    //                     document.getElementById("nopeserta").value = nopeserta;
+    //                     document.getElementById("nopesertaparm").value = nopesertaparm;
+    //                     var namapasien = data.hasil['nama'];
+    //                     var kelaminpasien = data.hasil['jk'];
+    //                     var tgllahirpasien = data.hasil['tglLahir'];
+    //                     var noidentitaspasien = data.hasil['nik'];
+    //                     var notelppasien = data.hasil['telepon'];
+    //                     $('#polifaskes').text('Poli Rujukan : ' + data.hasil['nmpoli']);
+    //                     $.ajax({
+    //                         url: "Reservasi/GetPasienLama",
+    //                         method: "POST",
+    //                         data: {
+    //                             "nocm": norm,
+    //                             "tgllahir": tgllahir
+    //                         },
+    //                         // async: false,
+    //                         dataType: 'json',
+    //                         success: function(data) {
+    //                             setTimeout(() => {
+    //                                 $("#loading").removeClass("overlay");
+    //                             }, 100);
+    //                             $('#loading').fadeOut();
+    //                             if (data.codedata['code'] != '200') {
+    //                                 Swal.fire({
+    //                                     title: 'Konfirmasi',
+    //                                     // text: "Data Ditemukan didalam Sistem RSU Kota Banjar<br>Nama Pasien : " + data.hasil['namapasien'] + "",
+    //                                     html: "Data Ditemukan Didalam Sistem BPJS Namun <b>" + data.codedata['message'] +
+    //                                         " di Sistem Rumah Sakit</b><br>Apakah Akan Memperbaiki Pencarian ?",
+    //                                     icon: 'question',
+    //                                     showCancelButton: true,
+    //                                     confirmButtonText: 'Ya',
+    //                                     cancelButtonText: 'Daftar Sebagai Pasien Baru',
+    //                                     customClass: 'swal-wide'
+    //                                 }).then((result) => {
+    //                                     if (result.value) {} else {
+    //                                         // jika klik batal
+    //                                         $("#pasienbaru").show();
+    //                                         $('input:radio[name=flexRadioDefault][id=flexRadioDefault2]').click();
+    //                                         document.getElementById("norm").value = norm;
+    //                                         document.getElementById("nopesertaparm").value = nopesertaparm;
+    //                                         document.getElementById("nopeserta").value = nopeserta;
+    //                                         document.getElementById("nosuratrujukan").value = nosrtrujukan;
+    //                                         document.getElementById("tgllahir").value = tgllahir;
 
-                                            // set pasien baru
-                                            document.getElementById("namalengkap").value = namapasien;
-                                            document.getElementById("kelamin").value = kelaminpasien;
-                                            document.getElementById("tgllahirbaru").value = tgllahirpasien;
-                                            document.getElementById("noidentitas").value = noidentitaspasien;
-                                            document.getElementById("notlp").value = notelppasien;
+    //                                         // set pasien baru
+    //                                         document.getElementById("namalengkap").value = namapasien;
+    //                                         document.getElementById("kelamin").value = kelaminpasien;
+    //                                         document.getElementById("tgllahirbaru").value = tgllahirpasien;
+    //                                         document.getElementById("noidentitas").value = noidentitaspasien;
+    //                                         document.getElementById("notlp").value = notelppasien;
 
-                                            HitungUmur(tgllahirpasien);
-                                            $('#kelamin').change();
-                                        }
-                                    });
-                                } else {
-                                    Swal.fire({
-                                        title: 'Konfirmasi',
-                                        // text: "Data Ditemukan didalam Sistem RSU Kota Banjar<br>Nama Pasien : " + data.hasil['namapasien'] + "",
-                                        html: "<div class='align-left'><b>Data Ditemukan Didalam Sistem.</b>" +
-                                            "<br><br>No. Rekam Medik : " + data.hasil['nocm'] +
-                                            "<br>Nama Pasien : " + data.hasil['namapasien'] +
-                                            "<br>Tanggal Lahir : " + data.hasil['tgllahir'] +
-                                            "<br>Jenis Kelamin : " + data.hasil['jeniskelamin'] +
-                                            "<br>Alamat : " + data.hasil['alamat'].toUpperCase() + " " + data.hasil['rtrw'].toUpperCase() + " " + data.hasil['kelurahan'].toUpperCase() + " " + data.hasil['kecamatan'].toUpperCase() + " " + data.hasil['kota'].toUpperCase() + " " + data.hasil['propinsi'].toUpperCase() +
-                                            "<br><br><b>Apakah Akan Menggunakan Data Ini ?</b></div>",
-                                        icon: 'question',
-                                        showCancelButton: true,
-                                        showDenyButton: true,
-                                        confirmButtonText: 'Gunakan Data Ini',
-                                        cancelButtonText: 'Batal',
-                                        denyButtonText: 'Buat Pasien Baru',
-                                        customClass: 'swal-wide'
-                                    }).then((result) => {
-                                        bersihkan('tab-1');
-                                        if (result.value) {
-                                            $("#pasienbaru").hide();
-                                            $('input:radio[name=flexRadioDefault][id=flexRadioDefault1]').click();
-                                            document.getElementById("norm").value = norm;
-                                            document.getElementById("nopesertaparm").value = nopesertaparm;
-                                            document.getElementById("nopeserta").value = nopeserta;
-                                            document.getElementById("nosuratrujukan").value = nosrtrujukan;
-                                            document.getElementById("tgllahir").value = tgllahir;
-                                            // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.   
-                                            if (data.hasil['tempatlahir'] === null) {
-                                                var tmptgllahir = data.hasil['tgllahir'];
-                                            } else {
-                                                var tmptgllahir = data.hasil['tempatlahir'] + ', ' + data.hasil['tgllahir'];
-                                            };
+    //                                         HitungUmur(tgllahirpasien);
+    //                                         $('#kelamin').change();
+    //                                     }
+    //                                 });
+    //                             } else {
+    //                                 Swal.fire({
+    //                                     title: 'Konfirmasi',
+    //                                     // text: "Data Ditemukan didalam Sistem RSU Kota Banjar<br>Nama Pasien : " + data.hasil['namapasien'] + "",
+    //                                     html: "<div class='align-left'><b>Data Ditemukan Didalam Sistem.</b>" +
+    //                                         "<br><br>No. Rekam Medik : " + data.hasil['nocm'] +
+    //                                         "<br>Nama Pasien : " + data.hasil['namapasien'] +
+    //                                         "<br>Tanggal Lahir : " + data.hasil['tgllahir'] +
+    //                                         "<br>Jenis Kelamin : " + data.hasil['jeniskelamin'] +
+    //                                         "<br>Alamat : " + data.hasil['alamat'].toUpperCase() + " " + data.hasil['rtrw'].toUpperCase() + " " + data.hasil['kelurahan'].toUpperCase() + " " + data.hasil['kecamatan'].toUpperCase() + " " + data.hasil['kota'].toUpperCase() + " " + data.hasil['propinsi'].toUpperCase() +
+    //                                         "<br><br><b>Apakah Akan Menggunakan Data Ini ?</b></div>",
+    //                                     icon: 'question',
+    //                                     showCancelButton: true,
+    //                                     showDenyButton: true,
+    //                                     confirmButtonText: 'Gunakan Data Ini',
+    //                                     cancelButtonText: 'Batal',
+    //                                     denyButtonText: 'Buat Pasien Baru',
+    //                                     customClass: 'swal-wide'
+    //                                 }).then((result) => {
+    //                                     bersihkan('tab-1');
+    //                                     if (result.value) {
+    //                                         $("#pasienbaru").hide();
+    //                                         $('input:radio[name=flexRadioDefault][id=flexRadioDefault1]').click();
+    //                                         document.getElementById("norm").value = norm;
+    //                                         document.getElementById("nopesertaparm").value = nopesertaparm;
+    //                                         document.getElementById("nopeserta").value = nopeserta;
+    //                                         document.getElementById("nosuratrujukan").value = nosrtrujukan;
+    //                                         document.getElementById("tgllahir").value = tgllahir;
+    //                                         // jika  berhasil simpan maka munculkan cetakan hasil booking, jika gagal booking maka diam di page tersebut.   
+    //                                         if (data.hasil['tempatlahir'] === null) {
+    //                                             var tmptgllahir = data.hasil['tgllahir'];
+    //                                         } else {
+    //                                             var tmptgllahir = data.hasil['tempatlahir'] + ', ' + data.hasil['tgllahir'];
+    //                                         };
 
-                                            if (data.hasil['kodepos'] === null) {
-                                                var alamat = data.hasil['alamat'] + ' RT/RW ' + data.hasil['rtrw'] + ' KELURAHAN ' + data.hasil['kelurahan'].toUpperCase() +
-                                                    ' KECAMATAN ' + data.hasil['kecamatan'].toUpperCase() + ' ' + data.hasil['kota'].toUpperCase() + ' ' + data.hasil['propinsi'].toUpperCase();
-                                            } else {
-                                                var alamat = data.hasil['alamat'] + ' RT/RW ' + data.hasil['rtrw'] + ' KELURAHAN ' + data.hasil['kelurahan'].toUpperCase() +
-                                                    ' KECAMATAN ' + data.hasil['kecamatan'].toUpperCase() + ' ' + data.hasil['kota'].toUpperCase() + ' ' + data.hasil['propinsi'].toUpperCase() + ' ' + data.hasil['kodepos'];
-                                            };
-                                            if (data.hasil['notelp'] === null) {
-                                                var notlp = '-';
-                                            } else {
-                                                var notlp = data.hasil['notelp'];
-                                            };
+    //                                         if (data.hasil['kodepos'] === null) {
+    //                                             var alamat = data.hasil['alamat'] + ' RT/RW ' + data.hasil['rtrw'] + ' KELURAHAN ' + data.hasil['kelurahan'].toUpperCase() +
+    //                                                 ' KECAMATAN ' + data.hasil['kecamatan'].toUpperCase() + ' ' + data.hasil['kota'].toUpperCase() + ' ' + data.hasil['propinsi'].toUpperCase();
+    //                                         } else {
+    //                                             var alamat = data.hasil['alamat'] + ' RT/RW ' + data.hasil['rtrw'] + ' KELURAHAN ' + data.hasil['kelurahan'].toUpperCase() +
+    //                                                 ' KECAMATAN ' + data.hasil['kecamatan'].toUpperCase() + ' ' + data.hasil['kota'].toUpperCase() + ' ' + data.hasil['propinsi'].toUpperCase() + ' ' + data.hasil['kodepos'];
+    //                                         };
+    //                                         if (data.hasil['notelp'] === null) {
+    //                                             var notlp = '-';
+    //                                         } else {
+    //                                             var notlp = data.hasil['notelp'];
+    //                                         };
 
-                                            var html = '';
-                                            html = "<table class='table' id ='tabelpaslama'> "
-                                            html += "<tr style='text-align: center;'> "
-                                            html += "<th scope='col'>No.RM </th> "
-                                            html += "<th scope='col'>Nama</th>"
-                                            html += "<th scope='col'>Tgl. Lahir</th> "
-                                            html += "<th scope='col'>Jenis Kelamin</th> "
-                                            html += "<th scope='col'>Alamat</th> "
-                                            html += "<th scope='col'>No. Telp</th> "
-                                            html += "</tr>"
-                                            html += "<tr>"
-                                            html += "<td>" + data.hasil['nocm'] + "</td>";
-                                            html += "<td>" + data.hasil['titlepasien'] + ' ' + data.hasil['namapasien'] + "</td>";
-                                            html += "<td>" + tmptgllahir + "</td>";
-                                            html += "<td>" + data.hasil['jeniskelamin'] + "</td>";
-                                            html += "<td>" + alamat + "</td>";
-                                            html += "<td>" + notlp + "</td>";
-                                            html += "</tr>"
-                                            html += "</table>"
-                                            $('#tabletab').html(html);
-                                            document.getElementById("normhiddenlama").value = data.hasil['nocm'];
-                                        } else if (result.value === false) {
-                                            // jika klik pasien baru
-                                            $("#pasienbaru").show();
-                                            $('input:radio[name=flexRadioDefault][id=flexRadioDefault2]').click();
-                                            document.getElementById("norm").value = norm;
-                                            document.getElementById("nopesertaparm").value = nopesertaparm;
-                                            document.getElementById("nopeserta").value = nopeserta;
-                                            document.getElementById("nosuratrujukan").value = nosrtrujukan;
-                                            document.getElementById("tgllahir").value = tgllahir;
+    //                                         var html = '';
+    //                                         html = "<table class='table' id ='tabelpaslama'> "
+    //                                         html += "<tr style='text-align: center;'> "
+    //                                         html += "<th scope='col'>No.RM </th> "
+    //                                         html += "<th scope='col'>Nama</th>"
+    //                                         html += "<th scope='col'>Tgl. Lahir</th> "
+    //                                         html += "<th scope='col'>Jenis Kelamin</th> "
+    //                                         html += "<th scope='col'>Alamat</th> "
+    //                                         html += "<th scope='col'>No. Telp</th> "
+    //                                         html += "</tr>"
+    //                                         html += "<tr>"
+    //                                         html += "<td>" + data.hasil['nocm'] + "</td>";
+    //                                         html += "<td>" + data.hasil['titlepasien'] + ' ' + data.hasil['namapasien'] + "</td>";
+    //                                         html += "<td>" + tmptgllahir + "</td>";
+    //                                         html += "<td>" + data.hasil['jeniskelamin'] + "</td>";
+    //                                         html += "<td>" + alamat + "</td>";
+    //                                         html += "<td>" + notlp + "</td>";
+    //                                         html += "</tr>"
+    //                                         html += "</table>"
+    //                                         $('#tabletab').html(html);
+    //                                         document.getElementById("normhiddenlama").value = data.hasil['nocm'];
+    //                                     } else if (result.value === false) {
+    //                                         // jika klik pasien baru
+    //                                         $("#pasienbaru").show();
+    //                                         $('input:radio[name=flexRadioDefault][id=flexRadioDefault2]').click();
+    //                                         document.getElementById("norm").value = norm;
+    //                                         document.getElementById("nopesertaparm").value = nopesertaparm;
+    //                                         document.getElementById("nopeserta").value = nopeserta;
+    //                                         document.getElementById("nosuratrujukan").value = nosrtrujukan;
+    //                                         document.getElementById("tgllahir").value = tgllahir;
 
-                                            // set pasien baru
-                                            document.getElementById("namalengkap").value = namapasien;
-                                            document.getElementById("kelamin").value = kelaminpasien;
-                                            document.getElementById("tgllahirbaru").value = tgllahirpasien;
-                                            document.getElementById("noidentitas").value = noidentitaspasien;
-                                            document.getElementById("notlp").value = notelppasien;
+    //                                         // set pasien baru
+    //                                         document.getElementById("namalengkap").value = namapasien;
+    //                                         document.getElementById("kelamin").value = kelaminpasien;
+    //                                         document.getElementById("tgllahirbaru").value = tgllahirpasien;
+    //                                         document.getElementById("noidentitas").value = noidentitaspasien;
+    //                                         document.getElementById("notlp").value = notelppasien;
 
-                                            HitungUmur(tgllahirpasien);
-                                            $('#kelamin').change();
+    //                                         HitungUmur(tgllahirpasien);
+    //                                         $('#kelamin').change();
 
-                                            // $("#norm").attr("disabled", true);
-                                            // $("#nopeserta").attr("disabled", true);
-                                            // $("#nosuratrujukan").attr("disabled", true);
-                                            // $("#tgllahir").attr("disabled", true);
-                                            // $("#namalengkap").attr("disabled", true);
-                                            // $("#kelamin").attr("disabled", true);
-                                            // $("#tgllahirbaru").attr("disabled", true);
-                                            // $("#noidentitas").attr("disabled", true);
-                                            // $("#notlp").attr("disabled", true);
+    //                                         // $("#norm").attr("disabled", true);
+    //                                         // $("#nopeserta").attr("disabled", true);
+    //                                         // $("#nosuratrujukan").attr("disabled", true);
+    //                                         // $("#tgllahir").attr("disabled", true);
+    //                                         // $("#namalengkap").attr("disabled", true);
+    //                                         // $("#kelamin").attr("disabled", true);
+    //                                         // $("#tgllahirbaru").attr("disabled", true);
+    //                                         // $("#noidentitas").attr("disabled", true);
+    //                                         // $("#notlp").attr("disabled", true);
 
-                                        } else {
-                                            // jika klik batal
-                                            // message('info', 'batal', 'Informasi', false);
-                                            document.getElementById("norm").value = norm;
-                                            document.getElementById("nopesertaparm").value = nopesertaparm;
-                                            document.getElementById("nopeserta").value = nopeserta;
-                                            document.getElementById("nosuratrujukan").value = nosrtrujukan;
-                                            document.getElementById("tgllahir").value = tgllahir;
-                                        }
-                                    })
-                                }
+    //                                     } else {
+    //                                         // jika klik batal
+    //                                         // message('info', 'batal', 'Informasi', false);
+    //                                         document.getElementById("norm").value = norm;
+    //                                         document.getElementById("nopesertaparm").value = nopesertaparm;
+    //                                         document.getElementById("nopeserta").value = nopeserta;
+    //                                         document.getElementById("nosuratrujukan").value = nosrtrujukan;
+    //                                         document.getElementById("tgllahir").value = tgllahir;
+    //                                     }
+    //                                 })
+    //                             }
 
-                            },
-                            error: function() {
-                                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-                            }
-                        });
-                        // }
-                        // var tmptgllahir = data.hasil['tgllahir'];
-                    } else {
-                        message('info', 'Status Peserta : ' + data.hasil['statuspeserta'], 'Informasi', false);
-                    }
-                }
-            },
-            error: function() {
-                message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
-            }
-        });
+    //                         },
+    //                         error: function() {
+    //                             message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+    //                         }
+    //                     });
+    //                     // }
+    //                     // var tmptgllahir = data.hasil['tgllahir'];
+    //                 } else {
+    //                     message('info', 'Status Peserta : ' + data.hasil['statuspeserta'], 'Informasi', false);
+    //                 }
+    //             }
+    //         },
+    //         error: function() {
+    //             message('error', 'Server gangguan, silahkan ulangi kembali.', 'Peringatan', false);
+    //         }
+    //     });
 
 
-        // setTimeout(() => {
-        //     $("#loading").removeClass("overlay");
-        // }, 100);
-        // $('#loading').fadeOut();
-    }
+    //     // setTimeout(() => {
+    //     //     $("#loading").removeClass("overlay");
+    //     // }, 100);
+    //     // $('#loading').fadeOut();
+    // }
 
     function bersihkan(tab) {
         var numtab = '';
