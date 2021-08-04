@@ -85,10 +85,10 @@
             wrap: !1,
         },
         i = {
-            weekdays: { shorthand: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], longhand: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] },
+            weekdays: { shorthand: ["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sabtu"], longhand: ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sab"] },
             months: {
-                shorthand: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-                longhand: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                shorthand: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Agu", "Sep", "Okt", "Nov", "Des"],
+                longhand: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
             },
             daysInMonth: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
             firstDayOfWeek: 0,
