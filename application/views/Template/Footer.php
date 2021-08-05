@@ -97,7 +97,8 @@
     }
 
     $("#tgllahir").flatpickr({
-
+        //disable mobile berfungsi sebagai settingan supaya ketika menggunakan mobile tidak memakai tampilan tgl mobile
+        disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
         maxDate: new Date(),
@@ -111,6 +112,7 @@
     });
 
     $("#tgllahir2").flatpickr({
+        disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
         maxDate: new Date(),
@@ -123,6 +125,7 @@
     });
 
     $("#tgllahir3").flatpickr({
+        disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
         maxDate: new Date(),
@@ -135,6 +138,7 @@
     });
 
     $("#tgllahirbaru").flatpickr({
+        disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
         maxDate: new Date(),
@@ -147,6 +151,7 @@
     });
 
     $("#tgllahirbaru2").flatpickr({
+        disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
         maxDate: new Date(),
@@ -159,6 +164,7 @@
     });
 
     $("#tgllahirbaru3").flatpickr({
+        disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
         maxDate: new Date(),
