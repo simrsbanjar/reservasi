@@ -129,7 +129,7 @@
                             Mata
                         </div>
                         <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1"><span class="text-sm">
-                                Nomor Urut
+                                Nomor Urut coy
                             </span></div>
                         <div class="pt-1 border-l border-r border-white bg-white"><span class="text-6xl font-bold leading-tight">
                                 016
