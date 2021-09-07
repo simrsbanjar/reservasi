@@ -101,6 +101,7 @@
         disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
+        minDate: '01-01-1900',
         maxDate: new Date(),
         onOpen: function(selectedDates, dateStr, instance) {
             instance.setDate(instance.input.value, false);
@@ -115,6 +116,7 @@
         disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
+        minDate: '01-01-1900',
         maxDate: new Date(),
         onOpen: function(selectedDates, dateStr, instance) {
             instance.setDate(instance.input.value, false);
@@ -128,6 +130,7 @@
         disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
+        minDate: '01-01-1900',
         maxDate: new Date(),
         onOpen: function(selectedDates, dateStr, instance) {
             instance.setDate(instance.input.value, false);
@@ -141,6 +144,7 @@
         disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
+        minDate: '01-01-1900',
         maxDate: new Date(),
         onOpen: function(selectedDates, dateStr, instance) {
             instance.setDate(instance.input.value, false);
@@ -154,6 +158,7 @@
         disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
+        minDate: '01-01-1900',
         maxDate: new Date(),
         onOpen: function(selectedDates, dateStr, instance) {
             instance.setDate(instance.input.value, false);
@@ -167,6 +172,7 @@
         disableMobile: "true",
         enableTime: false,
         dateFormat: "d-m-Y",
+        minDate: '01-01-1900',
         maxDate: new Date(),
         onOpen: function(selectedDates, dateStr, instance) {
             instance.setDate(instance.input.value, false);
