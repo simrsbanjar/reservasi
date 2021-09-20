@@ -1924,3 +1924,289 @@ button:disabled:hover {
 		opacity: 0;
 	}
 }
+
+
+
+/* Antrian Poliklinik */
+/* 
+.relative {
+	position: relative;
+}
+
+.bg-gray-100 {
+	background-color: #f7fafc;
+}
+
+.py-8 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.shadow-lg {
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+}
+
+.block {
+	display: block;
+}
+
+.rounded-t {
+	border-top-left-radius: .25rem;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.bg-red-500 {
+	background-color: #f56565;
+}
+
+.py-1 {
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+} */
+
+
+.relative {
+	position: relative;
+	width: 100%;
+}
+
+.bg-gray-100 {
+	background-color: #f7fafc;
+}
+
+.py-8 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.w-32 {
+	width: 8rem;
+}
+
+.w-full {
+	width: 100%;
+}
+
+.px-4 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.m-8 {
+	margin: 2rem;
+}
+
+.my-2 {
+	margin-top: .5rem;
+	margin-bottom: .5rem;
+}
+
+.text-3xl {
+	font-size: 1.875rem;
+}
+
+.text-gray-800 {
+	color: #2d3748;
+}
+
+
+.font-bold {
+	font-weight: 700;
+}
+
+.leading-tight {
+	line-height: 1.25;
+}
+
+
+/* garis dibawah antrian poliklinik */
+.mb-4 {
+	margin-bottom: 1rem;
+}
+
+.h-1 {
+	height: .25rem;
+}
+
+.bg-red-500 {
+	background-color: #f56565;
+}
+
+.bg-green-500 {
+	background-color: #48bb78;
+}
+
+.w-64 {
+	width: 16rem;
+}
+
+.opacity-25 {
+	opacity: .25;
+}
+
+.my-0 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.py-0 {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.rounded-r,
+.rounded-t {
+	border-top-right-radius: .25rem;
+}
+
+/* container antrian poliklinik */
+.bg-white {
+	background-color: #fff;
+}
+
+.shadow-lg {
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05);
+}
+
+.rounded-lg {
+	border-radius: .5rem;
+}
+
+.px-8 {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+
+.my-10 {
+	margin-top: 2.5rem;
+	margin-bottom: 2.5rem;
+}
+
+.p-3 {
+	padding: .75rem;
+}
+
+.items-center {
+	align-items: center;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+
+.shadow-md {
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+}
+
+.flex-none {
+	flex: none;
+}
+
+/* background garis */
+
+
+.py-1 {
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+}
+
+.text-white {
+	color: #fff;
+}
+
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+
+
+.border-l {
+	border-left-width: 1px;
+}
+
+.border-r {
+	border-right-width: 1px;
+}
+
+.border-b {
+	border-bottom-width: 1px;
+}
+
+.rounded-b-lg,
+.rounded-l-lg {
+	border-bottom-left-radius: .5rem;
+}
+
+.rounded-b-lg,
+.rounded-r-lg {
+	border-bottom-right-radius: .5rem;
+}
+
+.border-white {
+	border-color: #fff;
+}
+
+.text-sm {
+	font-size: .875rem;
+}
+
+a,
+span {
+	position: relative;
+	text-decoration: none;
+	transition: all .3s ease;
+}
+
+.pt-1 {
+	padding-top: .25rem;
+}
+
+.text-5xl {
+	font-size: 3rem;
+}
+
+.text-xs {
+	font-size: .75rem;
+}
+
+.leading-normal {
+	line-height: 1.5;
+}
+
+.mt-12 {
+	margin-top: 3rem;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.flex-wrap {
+	flex-wrap: wrap;
+}
+
+.font-medium {
+	font-weight: 500;
+}
+
+.overflow-hidden {
+	overflow: hidden;
+}
+
+.text-6xl {
+	font-size: 4rem;
+}
