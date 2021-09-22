@@ -2048,6 +2048,14 @@ button:disabled:hover {
 	background-color: #48bb78;
 }
 
+.bg-blue-500 {
+	background-color: #1997CC;
+}
+
+.bg-grey-500 {
+	background-color: #b3b4b4;
+}
+
 .w-64 {
 	width: 16rem;
 }

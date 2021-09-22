@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     var page = $("[name='reservasi']").val();
     var date = new Date().toDateString("yyyy-MM-dd");
     $("#btnlanjutcarabayar").show();
@@ -22,12 +22,14 @@ $(document).ready(function() {
         $("#daftar").show();
         var html = '';
         html += '<li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
-        html += '<li><a href="#tentangkita"><i class="far fa-list-alt"></i> Visi dan Misi</a></li>';
-        html += '<li><a href="#contact"><i class="fab fa-hubspot"></i> Kontak</a></li>';
-        html += '<li><a href="#alur"><i class="fas fa-user-md"></i> Alur </a></li>';
-        html += '<li><a href="#dokter"><i class="far fa-address-book"></i> Dokter </a></li>';
-        html += '<li><a href="#lokasi"><i class="fas fa-map-marked-alt"></i> Lokasi</a></li>';
+        html += '<li><a href="#tentangkita"><i class="fas fa-tasks"></i> Syarat dan Ketentuan</a></li>';
+        html += '<li><a href="#alur"><i class="fas fa-walking"></i> Alur </a></li>';
+        html += '<li><a href="#lokasi"><i class="fas fa-users"></i> Live Antrian Poli</a></li>';
+        html += '<li><a href="#dokter"><i class="fas fa-calendar-alt"></i> Jadwal Poliklinik </a></li>';
+        html += '<li><a href="#contact"><i class="far fa-address-book"></i> Kontak</a></li>';
         $('#myList').html(html);
+        GetAntrianLive();
+        GetJadwalPoliklinik();
     } else if (page == '1') {
         $("#daftar").hide();
         var html = '';

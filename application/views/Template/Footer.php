@@ -49,6 +49,149 @@
 
 
 <script>
+    function GetAntrianLive() {
+        var TglPeriksa = new Date().toDateString("yyyy-MM-dd");
+        var KodePoli = '';
+        var html = '';
+        var mod = 1;
+        var warna = '';
+        var sudahdilayani = 0;
+        var totalantrian = 0;
+
+        $.ajax({
+            url: "Home/GetAntrianLive",
+            method: "POST",
+            // async: false,
+            dataType: 'json',
+            data: {
+                "tglperiksa": TglPeriksa,
+                "kodepoli": KodePoli
+            },
+            success: function(data) {
+                for (i = 0; i < data.length; i++) {
+                    mod = i % 2
+
+                    if (mod == 0) {
+                        warna = 'bg-blue-500';
+                    } else {
+                        warna = 'bg-green-500';
+                    }
+                    // $("#NamaPoli").text(data[i].namapoli);
+                    // $("#NoUrut").text(data[i].jumlahterlayani);
+                    // $("#TotalAntrian").text("Total Antrian : " + data[i].totalantrian);
+                    html += "<div class='col-md-6 col-lg-4'>";
+                    html += "<div class='w-full p-3 mb-4 font-medium'>";
+                    html += "<div class='w-full flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center shadow-md '>";
+                    html += "<div class='block rounded-t overflow-hidden text-center'>";
+                    html += "<div class='" + warna + " text-white py-1 uppercase'>";
+                    html += "<span>" + data[i].namapoli + "</span>";
+                    html += "</div>";
+                    html += "<div class='border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1'>";
+                    html += "<span class='text-sm'>";
+                    html += "Nomor Urut";
+                    html += "</span>";
+                    html += "</div>";
+                    html += "<div class='pt-1 border-l border-r border-white bg-white'>";
+                    html += "<span class='text-6xl font-bold leading-tight' id='NoUrut'>";
+                    html += data[i].jumlahterlayani;
+                    html += "</span>";
+                    html += "</div>";
+                    html += "<div class='pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white'>";
+                    html += "<span class='text-xs leading-normal' id='TotalAntrian'>";
+                    html += "Total Antrian : " + data[i].totalantrian;
+                    html += "</span>";
+                    html += "</div>";
+                    html += "</div>";
+                    html += "</div>";
+                    html += "</div>";
+                    html += "</div>";
+                    $('#noantrianlive').html(html);
+
+                    sudahdilayani = (parseInt(sudahdilayani) + parseInt(data[i].jumlahterlayani));
+                    totalantrian = (parseInt(totalantrian) + parseInt(data[i].totalantrian));
+                }
+
+                $('#sudahdilayani').text(sudahdilayani);
+                $('#jumlahantrian').text('Total Antrian : ' + sudahdilayani);
+            },
+            error: function() {
+                html = "<div class='col-md-6 col-lg-4'>";
+                html += "<div class='w-full p-3 mb-4 font-medium'>";
+                html += "<div class='w-full flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center shadow-md '>";
+                html += "<div class='block rounded-t overflow-hidden text-center'>";
+                html += "<div class='bg-red-500 text-white py-1 uppercase'>";
+                html += "<span>-</span>";
+                html += "</div>";
+                html += "<div class='border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1'>";
+                html += "<span class='text-sm'>";
+                html += "Nomor Urut";
+                html += "</span>";
+                html += "</div>";
+                html += "<div class='pt-1 border-l border-r border-white bg-white'>";
+                html += "<span class='text-6xl font-bold leading-tight' id='NoUrut'>";
+                html += "-";
+                html += "</span>";
+                html += "</div>";
+                html += "<div class='pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white'>";
+                html += "<span class='text-xs leading-normal' id='TotalAntrian'>";
+                html += "Total Antrian : -";
+                html += "</span>";
+                html += "</div>";
+                html += "</div>";
+                html += "</div>";
+                html += "</div>";
+                html += "</div>";
+                $('#noantrianlive').html(html);
+
+                $('#sudahdilayani').text('-');
+                $('#jumlahantrian').text('-');
+            }
+        });
+        // setTimeout(GetAntrianLive, 100000)
+    }
+
+    function GetJadwalPoliklinik() {
+        var TglPeriksa = $("[name='tglperiksa']").val();
+        // var TglPeriksa = new Date().toDateString("yyyy-MM-dd");
+        var Parameter = $("[name='parameter']").val();
+        var html = "";
+        var nourut = 0;
+
+        $.ajax({
+            url: "Home/GetJadwalPoliklinik",
+            method: "POST",
+            // async: false,
+            dataType: 'json',
+            data: {
+                "tglperiksa": TglPeriksa,
+                "parameter": Parameter
+            },
+            success: function(data) {
+                for (i = 0; i < data.length; i++) {
+                    nourut++;
+
+                    html += "<tr>";
+                    html += "<td scope='row' style='text-align: center;'>" + nourut + "</td>";
+                    html += "<td>" + data[i].NamaRuangan + "</td>";
+                    html += "<td>" + data[i].Hari + "</td>";
+                    html += "<td>" + data[i].NamaPegawai + "</td>";
+                    html += "</tr>";
+                    $('#jadwalpoliklinik').html(html);
+                }
+            },
+            error: function() {
+                html += "<tr>";
+                html += "<td scope='row'>Tidak Ada Data</td>";
+                html += "<td>Tidak Ada Data</td>";
+                html += "<td>Tidak Ada Data</td>";
+                html += "<td>Tidak Ada Data</td>";
+                html += "</tr>";
+                $('#jadwalpoliklinik').html(html);
+            }
+        });
+        // setTimeout(GetAntrianLive, 100000)
+    }
+
     function daycount() {
         return <?php
                 $jumlah = 0;
@@ -95,6 +238,21 @@
                 ?>";
 
     }
+
+    $("#tglperiksa").flatpickr({
+        //disable mobile berfungsi sebagai settingan supaya ketika menggunakan mobile tidak memakai tampilan tgl mobile
+        disableMobile: "true",
+        enableTime: false,
+        dateFormat: "d-m-Y",
+        minDate: "<?= date("d-m-Y") ?>",
+        // maxDate: new Date().fp_incr(7),
+        onOpen: function(selectedDates, dateStr, instance) {
+            instance.setDate(instance.input.value, false);
+        },
+        "locale": {
+            "firstDayOfWeek": 1 // set start day of week to Monday
+        }
+    });
 
     $("#tgllahir").flatpickr({
         //disable mobile berfungsi sebagai settingan supaya ketika menggunakan mobile tidak memakai tampilan tgl mobile

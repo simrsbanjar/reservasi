@@ -9,6 +9,28 @@
 <?php $this->load->view('Template/Header', array('data' => '1')); ?>
 
 
+<style>
+    .gariscontainer {
+        width: 80%;
+    }
+
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    table {
+        table-layout: auto;
+        border-collapse: collapse;
+        /* width: max-content; */
+
+    }
+
+    /* table td {
+        overflow-wrap: break-word;
+    } */
+</style>
+
 <!-- ======= selamatdatang Section ======= -->
 <section id="selamatdatang" class="d-flex align-items-center">
     <div class="container">
@@ -22,7 +44,7 @@
 
     <!-- ======= tentangkita Us Section ======= -->
     <section id="tentangkita" class="tentangkita">
-        <div class="container">
+        <div class="container align-center">
 
             <div class="row justify-content-center">
                 <!-- <div class="col-lg-4 d-flex align-items-stretch">
@@ -36,17 +58,40 @@
                             </div>
                         </div>
                     </div> -->
-                <div class="col-lg-12 d-flex align-items-stretch">
-                    <div class="icon-boxes d-flex flex-column justify-content-center">
-                        <div class="row">
-                            <div class="col-xl-4 d-flex align-items-stretch">
-                                <div class="icon-box mt-4 mt-xl-0">
-                                    <i class="bx bx-cube-alt"></i>
-                                    <h4>Visi</h4>
-                                    <p>Menjadi Rumah Sakit Unggulan dan Terpercaya di Priangan Timur</p>
+                <!-- <div class="col-lg-12 d-flex align-items-stretch"> -->
+
+                <div class="icon-boxes d-flex flex-column justify-content-center">
+                    <div class="row">
+                        <div class="col-xl-12 d-flex align-items-stretch">
+                            <div class="icon-box mt-4 mt-xl-0">
+                                <!-- <i class="bx bx-cube-alt"></i> -->
+                                <div style="text-align: center;" class="alurtitle">
+                                    <h2>Syarat & Ketentuan</h2>
+                                </div>
+                                <div style="font-size: 16px;">
+                                    <b>PENDAFTARAN ONLINE :</b><br><br>
+
+                                    1. Reservasi minimal 1 (satu) hari sebelum kunjungan<br>
+                                    2. Kuota Pendaftaran Online dilakukan pembatasan untuk memberi kesempatan kepada pasien yang datang
+                                    langsung (Pendaftaran Offline) ke RSU Kota Banjar<br>
+                                    3. Jadwal Praktek Dokter sewaktu-waktu dapat berubah
+
+                                    <br><br><b>PASIEN LAMA :</b><br>
+                                    Nomor Rekam Medis, Tanggal Lahir Dan NIK merupakan data validasi pada sistem, apabila GAGAL, segera menghubungi petugas Pendaftaran untuk melalukan pemutakhiran data.
+
+                                    <br><br><b>PRASYARAT SAAT DATANG KE RUMAH SAKIT:</b><br>
+                                    1. Bukti Pendaftaran Online <br>
+                                    1. KTP atau kartu identitas lainnya<br>
+                                    2. Kartu berobat bila sudah pernah berobat ke RSU Kota Banjar<br>
+                                    3. Jika anda peserta BPJS/KIS siapkan kartu yang asli<br>
+                                    4. Surat rujukan Faskes atau pengantar atau keterangan kontrol
+
                                 </div>
                             </div>
-                            <div class="col-xl-4 d-flex align-items-stretch">
+                        </div>
+
+
+                        <!-- <div class="col-xl-4 d-flex align-items-stretch">
                                 <div class="icon-box mt-4 mt-xl-0">
                                     <i class="bx bx-cube-alt"></i>
                                     <h4>Misi</h4>
@@ -65,21 +110,22 @@
                                         </li>
                                     </ol>
                                 </div>
-                            </div>
-                            <div class="col-xl-4 d-flex align-items-stretch">
+                            </div> -->
+                        <!-- <div class="col-xl-4 d-flex align-items-stretch">
                                 <div class="icon-box mt-4 mt-xl-0">
                                     <i class="bx bx-cube-alt"></i>
                                     <h4>Motto</h4>
                                     <p>Pelayanan yang Baik untuk Semua</p>
                                 </div>
-                            </div>
-                        </div>
-                    </div><!-- End .content-->
-                </div>
+                            </div> -->
+                    </div>
+                </div><!-- End .content-->
+                <!-- </div> -->
             </div>
 
         </div>
     </section><!-- End tentangkita Section -->
+
 
     <!-- ======= About Section ======= -->
     <!-- <section id="about" class="about">
@@ -220,171 +266,217 @@
         </div>
     </section><!-- End Departments Section -->
 
+    <section id="lokasi" class="contact">
+        <div class="container">
+            <div class="lokasititle">
+                <!-- <h2>Lokasi RSUD Kota Banjar</h2> -->
+                <h2>Live Antrian Poliklinik</h2>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="w-full p-3 mb-4 font-medium">
+                        <div class="w-full flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center shadow-md ">
+                            <div class="block rounded-t overflow-hidden text-center">
+                                <div class="bg-red-500 text-white py-1 uppercase">
+                                    TOTAL SELURUH ANTRIAN
+                                </div>
+                                <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1">
+                                    <span class="text-sm">
+                                        Sudah Dilayani
+                                    </span>
+                                </div>
+                                <div class="pt-1 border-l border-r border-white bg-white">
+                                    <span class="text-6xl font-bold leading-tight" id="sudahdilayani">
+                                        016
+                                    </span>
+                                </div>
+                                <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white">
+                                    <span class="text-xs leading-normal" id="jumlahantrian">
+                                        Jumlah Antrian : 181
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center" id="noantrianlive">
+                <!-- <div class="col-md-6 col-lg-3">
+                    <div class="w-full p-3 mb-4 font-medium">
+                        <div class="w-full flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center shadow-md ">
+                            <div class="block rounded-t overflow-hidden text-center">
+                                <div class="bg-red-500 text-white py-1 uppercase">
+                                    <span id="NamaPoli">Mata</span>
+                                </div>
+                                <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1">
+                                    <span class="text-sm">
+                                        Nomor Urut
+                                    </span>
+                                </div>
+                                <div class="pt-1 border-l border-r border-white bg-white">
+                                    <span class="text-6xl font-bold leading-tight" id="NoUrut">
+                                        016
+                                    </span>
+                                </div>
+                                <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white">
+                                    <span class="text-xs leading-normal" id="TotalAntrian">
+                                        Total Antrian : 181
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- <div class="col-md-6 col-lg-3">
+                    <div class="w-full p-3 mb-4 font-medium">
+                        <div class="w-full flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center shadow-md ">
+                            <div class="block rounded-t overflow-hidden text-center">
+                                <div class="bg-red-500 text-white py-1 uppercase">
+                                    Mata
+                                </div>
+                                <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1"><span class="text-sm">
+                                        Nomor Urut
+                                    </span></div>
+                                <div class="pt-1 border-l border-r border-white bg-white"><span class="text-6xl font-bold leading-tight">
+                                        016
+                                    </span></div>
+                                <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white"><span class="text-xs leading-normal">
+                                        Total Antrian : 181
+                                    </span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-md-6 col-lg-3">
+                    <div class="w-full p-3 mb-4 font-medium">
+                        <div class="w-full flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center shadow-md ">
+                            <div class="block rounded-t overflow-hidden text-center">
+                                <div class="bg-red-500 text-white py-1 uppercase">
+                                    Mata
+                                </div>
+                                <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1"><span class="text-sm">
+                                        Nomor Urut
+                                    </span></div>
+                                <div class="pt-1 border-l border-r border-white bg-white"><span class="text-6xl font-bold leading-tight">
+                                        016
+                                    </span></div>
+                                <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white"><span class="text-xs leading-normal">
+                                        Total Antrian : 181
+                                    </span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="w-full p-3 mb-4 font-medium">
+                        <div class="w-full flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center shadow-md ">
+                            <div class="block rounded-t overflow-hidden text-center">
+                                <div class="bg-red-500 text-white py-1 uppercase">
+                                    Mata
+                                </div>
+                                <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1"><span class="text-sm">
+                                        Nomor Urut
+                                    </span></div>
+                                <div class="pt-1 border-l border-r border-white bg-white"><span class="text-6xl font-bold leading-tight">
+                                        016
+                                    </span></div>
+                                <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white"><span class="text-xs leading-normal">
+                                        Total Antrian : 181
+                                    </span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="w-full p-3 mb-4 font-medium">
+                        <div class="w-full flex-none rounded-t lg:rounded-t-none lg:rounded-l text-center shadow-md ">
+                            <div class="block rounded-t overflow-hidden text-center">
+                                <div class="bg-red-500 text-white py-1 uppercase">
+                                    Mata
+                                </div>
+                                <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1"><span class="text-sm">
+                                        Nomor Urut
+                                    </span></div>
+                                <div class="pt-1 border-l border-r border-white bg-white"><span class="text-6xl font-bold leading-tight">
+                                        016
+                                    </span></div>
+                                <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white"><span class="text-xs leading-normal">
+                                        Total Antrian : 18111
+                                    </span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+
+
+        <!-- <div>
+            <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?q=RSU%20KOTA%20BANJAR&t=m&z=10&output=embed&iwloc=near" frameborder="0" allowfullscreen></iframe>
+        </div> -->
+        <!-- End Counts Section -->
+    </section><!-- End Contact Section -->
+
     <!-- ======= Doctors Section ======= -->
     <section class="slidedokter" id="dokter">
         <div class="container">
             <div class="doktertitle">
-                <h2>Dokter Spesialis</h2>
-                <p>Berikut adalah list dokter spesialis :</p>
+                <h2>Jadwal Poliklinik</h2>
+            </div>
+            <div class="gariscontainer center">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label for="">Tanggal</label>
+                        <input type="text" placeholder="Tanggal Periksa" value="<?= date('d-m-Y') ?>" class="form-control" name="tglperiksa" id="tglperiksa" onchange="GetJadwalPoliklinik()">
+
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="">Poliklinik</label>
+                        <input type="text" placeholder="Poliklinik" class="form-control" onchange="GetJadwalPoliklinik()" name="parameter" id="parameter">
+
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr style="text-align: center;">
+                                <th scope="col">No</th>
+                                <th scope="col">Poliklinik</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Dokter</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jadwalpoliklinik">
+                            <!-- <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
-            <div class="slidercuy">
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/dalam/emansulaeman.jpg" alt="Eman Sulaeman">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/dalam/juliankarundeng.jpg" alt="Julian Karundeng">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/dalam/siskadewiroslani.jpg" alt="Siska Dewi Rosalani">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/anak/mahesa.jpg" alt="Mahes">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/anak/niaadriani.jpg" alt="Nia Adriani">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/bedah/juliawan.jpg" alt="Juliawan">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/bedah/rendifitra.jpg" alt="Rendifitra">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/jantung/asepsopandiana.jpg" alt="Rendifitra">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/kulitkelamin/andinidwi.jpg" alt="Andini Dwi">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/kulitkelamin/bowo.jpg" alt="Bowo">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/anestesi/doniarif.jpg" alt="Doni Arif">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/anestesi/teguhbudiman.jpg" alt="Teguh Budiman">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/kandungan/aguskurnia.jpg" alt="Agus Kurnia">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/kandungan/dennis.jpg" alt="Dennis">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/kandungan/imamwahyudi.jpg" alt="Imam Wahyudi">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/mata/retysugiarti.jpg" alt="Rety Sugiarti">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/radiologi/nunuheryana.jpg" alt="Nunu Heryana">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/rm/tinasusilawati.jpg" alt="Tina Susilawati">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/saraf/danyerlangga.jpg" alt="Dany Erlangga">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/saraf/fuadhanif.jpg" alt="Fuad Hanif">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/saraf/marisaayu.jpg" alt="Marisa Ayu">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/ortopedi/isaridwan.jpg" alt="Isa Ridwan">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/tht/rini.jpg" alt="Rini">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/forensik/hendrik.jpg" alt="Hendrik">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/paru/dilalaswantina.jpg" alt="Dila Laswantina">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/jiwa/nununurkholis.jpg" alt="Nunu Nur Kholis">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/jiwa/dyah.jpg" alt="Dyah">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/akupuntur/feliciaadriani.jpg" alt="Felicia Adriani">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/mulut/megarafika.jpg" alt="Mega Rafika">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/pa/yukeireka.jpg" alt="Yuke Ireka">
-                    </a>
-                </div>
-                <div>
-                    <a href="">
-                        <img src="assets/img/doctors/pk/adenovita.jpg" alt="Ade Novita">
-                    </a>
-                </div>
-            </div>
         </div>
 
     </section>
@@ -550,22 +642,6 @@
         </section>End Gallery Section -->
 
     <!-- ======= Contact Section ======= -->
-
-    <section id="lokasi" class="contact">
-        <div class="container">
-
-            <div class="lokasititle">
-                <h2>Lokasi RSUD Kota Banjar</h2>
-            </div>
-        </div>
-        </div>
-
-
-        <div>
-            <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?q=RSU%20KOTA%20BANJAR&t=m&z=10&output=embed&iwloc=near" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <!-- End Counts Section -->
-    </section><!-- End Contact Section -->
 
     <section id="contact" class="contact">
         <div class="container">

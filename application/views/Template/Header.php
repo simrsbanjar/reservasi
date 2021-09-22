@@ -31,11 +31,11 @@
                 <?php if ($data == '1') { ?>
                     <!-- home -->
                     <li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#tentangkita"><i class="far fa-list-alt"></i> Visi dan Misi</a></li>
-                    <li><a href="#contact"><i class="fab fa-hubspot"></i> Kontak</a></li>
-                    <li><a href="#alur"><i class="fas fa-user-md"></i> Alur </a></li>
-                    <li><a href="#dokter"><i class="far fa-address-book"></i> Dokter </a></li>
-                    <li><a href="#lokasi"><i class="fas fa-map-marked-alt"></i> Lokasi</a></li>
+                    <li><a href="#tentangkita"><i class="fas fa-tasks"></i> Syarat dan Ketentuan</a></li>
+                    <li><a href="#alur"><i class="fas fa-walking"></i> Alur </a></li>
+                    <li><a href="#lokasi"><i class="fas fa-users"></i> Live Antrian Poli</a></li>
+                    <li><a href="#dokter"><i class="fas fa-calendar-alt"></i> Jadwal Poliklinik </a></li>
+                    <li><a href="#contact"><i class="far fa-address-book"></i> Kontak</a></li>
 
                 <?php } elseif ($data == '2') { ?>
                     <!-- daftar -->
