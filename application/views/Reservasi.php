@@ -121,6 +121,11 @@
                                             <input type="text" placeholder="No Peserta / No. Surat Rujukan" class="form-control" onKeyPress="if(this.value.length==20) return false;" id="nopesertaparm" name="nopesertaparm" oninput="this.value = this.value.toUpperCase()" onchange="updateInput(this.value,'nopesertaparm')">
                                             <small>Error Message</small>
                                         </div>
+
+                                        <h6 style="font-size: 10px; color: red;"><b><u>Syarat dan Ketentuan </u></b></h6>
+                                        <h6 style="font-size: 10px; color: red;"><b>* Harus mempunyai rujukan dari faskes 1 (Puskesmas/Klinik)</b></h6>
+                                        <h6 style="font-size: 10px; color: red;"><b>* Masa berlaku rujukan 90 Hari dari tanggal rujukan asalnya.</b></h6>
+                                        <h6 style="font-size: 10px; color: red;"><b>* Pemilihan poli pendaftaran harus sesuai dengan poli rujukannya.</b></h6>
                                     </div>
 
                                     <div class="col-md-4" hidden>
