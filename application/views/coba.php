@@ -17,6 +17,17 @@
         width: 80%;
     }
 
+    table {
+        table-layout: fixed;
+        border-collapse: collapse;
+        width: fit-content;
+
+    }
+
+    table th {
+        overflow-wrap: break-word;
+    }
+
     .center {
         margin-left: auto;
         margin-right: auto;
@@ -27,12 +38,12 @@
 
 <div class="gariscontainer center">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-md-6 col-lg-6">
             <label for="">Tanggal</label>
             <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" name="tgllahir" id="tgllahir">
 
         </div>
-        <div class="col-lg-6">
+        <div class="col-md-6 col-lg-6">
             <label for="">Klinik</label>
             <input type="text" placeholder="Pencarian Jadwal Dokter" class="form-control">
 
@@ -54,9 +65,9 @@
         <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <td>Markdadwadsaawadsadsadsa</td>
+                <td>Ottoawdawdasddadsgafadawdawdadawd</td>
+                <td>@mdoadadawdadfafsadajhkdjhakjhdkjhkahkudhahdkuwajdkhakuda</td>
             </tr>
             <tr>
                 <th scope="row">2</th>
