@@ -112,7 +112,7 @@
                 }
 
                 $('#sudahdilayani').text(sudahdilayani);
-                $('#jumlahantrian').text('Total Antrian : ' + sudahdilayani);
+                $('#jumlahantrian').text('Total Antrian : ' + totalantrian);
             },
             error: function() {
                 html = "<div class='col-md-6 col-lg-4'>";
