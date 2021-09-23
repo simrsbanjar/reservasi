@@ -144,7 +144,7 @@
                 $('#noantrianlive').html(html);
 
                 $('#sudahdilayani').text('-');
-                $('#jumlahantrian').text('-');
+                $('#jumlahantrian').text('Total Antrian : ' + '-');
             }
         });
         // setTimeout(GetAntrianLive, 100000)
