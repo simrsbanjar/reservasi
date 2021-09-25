@@ -112,7 +112,7 @@
                 }
 
                 $('#sudahdilayani').text(sudahdilayani);
-                $('#jumlahantrian').text('Total Antrian : ' + sudahdilayani);
+                $('#jumlahantrian').text('Total Antrian : ' + totalantrian);
             },
             error: function() {
                 html = "<div class='col-md-6 col-lg-4'>";
@@ -144,7 +144,7 @@
                 $('#noantrianlive').html(html);
 
                 $('#sudahdilayani').text('-');
-                $('#jumlahantrian').text('-');
+                $('#jumlahantrian').text('Total Antrian : ' + '-');
             }
         });
         // setTimeout(GetAntrianLive, 100000)
