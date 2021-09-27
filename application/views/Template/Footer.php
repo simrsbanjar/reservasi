@@ -49,6 +49,36 @@
 
 
 <script>
+    function checkRadioCari(value) {
+        if (value == '0') { // kode booking
+            $("#txtnoboking").attr("hidden", true);
+            $("#tglperiksahead").attr("hidden", true);
+            document.getElementById("classinputkodebooking").className =
+                document.getElementById("classinputkodebooking").className.replace(/(?:^|\s)col-lg-6(?!\S)/g, ' col-lg-12')
+            document.getElementsByName('nopendaftaran')[0].placeholder = 'Kode Booking';
+            document.getElementById("nopendaftaran").value = '';
+        } else if (value == '1') { // no pendaftaran
+            $("#txtnoboking").attr("hidden", true);
+            $("#tglperiksahead").attr("hidden", true);;
+            document.getElementById("classinputkodebooking").className =
+                document.getElementById("classinputkodebooking").className.replace(/(?:^|\s)col-lg-6(?!\S)/g, ' col-lg-12')
+            document.getElementsByName('nopendaftaran')[0].placeholder = 'No. Pendaftaran';
+            document.getElementById("nopendaftaran").value = '';
+        } else { // nik/norm
+            $('#txtnoboking').text('No. Pendaftaran');
+            $('#txtnoboking').text('NIK / No. Rekam Medik');
+            $("#txtnoboking").attr("hidden", false);
+            $("#tglperiksahead").attr("hidden", false);
+            document.getElementById("classinputkodebooking").className =
+                document.getElementById("classinputkodebooking").className.replace(/(?:^|\s)col-lg-12(?!\S)/g, ' col-lg-6')
+            document.getElementsByName('nopendaftaran')[0].placeholder = 'NIK / No. Rekam Medik';
+            document.getElementById("nopendaftaran").value = '';
+            document.getElementById("tglperiksacari").value = daystarttgl();
+        }
+
+        setSuccessFor(document.getElementById('nopendaftaran'));
+    }
+
     function GetAntrianLive() {
         var TglPeriksa = new Date().toDateString("yyyy-MM-dd");
         var KodePoli = '';
@@ -975,11 +1005,21 @@
 
     function caripasienbooking() {
         var nopendaftaran = $("[name='nopendaftaran']").val();
+        var kriteria = $("input[name='radiokriteria']:checked").val();
+        var text = '';
+        if (kriteria == '0') {
+            text = "No. Booking Tidak Boleh Kosong";
+        } else if (kriteria == '1') {
+            text = "No. Pendaftaran Tidak Boleh Kosong";
+        } else {
+            text = "NIK / No. Rekam Medik Tidak Boleh Kosong";
+        }
+
         if (nopendaftaran == null || nopendaftaran == '') {
             var nopendaftaran = document.getElementById('nopendaftaran');
             var nopendaftaranValue = nopendaftaran.value.trim();
             if (nopendaftaranValue === '') {
-                setErrorFor(nopendaftaran, 'No. Booking / No. Pendaftaran Tidak Boleh Kosong');
+                setErrorFor(nopendaftaran, text);
                 return;
             } else {
                 setSuccessFor(nopendaftaran);
@@ -987,6 +1027,7 @@
         } else {
             setSuccessFor(document.getElementById('nopendaftaran'));
             var kriteriacari = $('input[name="radiokriteria"]:checked').val();
+            var tglperiksa = $('#tglperiksacari').val();
 
             $("#loading").addClass("overlay");
             $('#loading').fadeIn();
@@ -995,7 +1036,8 @@
                 method: "POST",
                 data: {
                     "nopendaftaran": nopendaftaran,
-                    "kriteria": kriteriacari
+                    "kriteria": kriteriacari,
+                    "tglperiksa": tglperiksa
                 },
                 // async: false,
                 dataType: 'json',

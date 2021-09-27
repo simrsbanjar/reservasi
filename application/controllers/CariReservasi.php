@@ -177,16 +177,156 @@ class CariReservasi extends CI_Controller
         return $data;
     }
 
+    function GetBookingPasienbyNoCm($nopendaftaran, $tglperiksa)
+    {
+        $nopendaftaran = substr(('000000' . $nopendaftaran), -6);
+        $tglperiksa = date('Y-m-d', strtotime($this->input->post('tglperiksa')));
+
+        $token     =  $this->GetToken();
+
+        $url = $this->API . '/getdataregistrasibynocm';
+        $parm =  ['NoCm' => "" . $nopendaftaran . "", 'TglPeriksa' => "" . $tglperiksa . ""];
+
+        $headers = array(
+            'x-token:' . $token . "",
+        );
+
+        /* Init cURL resource */
+        $ch = curl_init($url);
+
+        /* Array Parameter Data */
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
+
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        /* execute request */
+        $result = curl_exec($ch);
+
+        /* close cURL resource */
+        curl_close($ch);
+        $hasil = json_decode($result);
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data['hasil'] = null;
+
+        if ($metadata->code == '200') {
+            $estimasidilayani   = $this->time_convert($response->estimasidilayani);
+            if ($response->jenisantrean == '1') {
+                $jenisantrian = 'Antrian Registrasi';
+            } else {
+                $jenisantrian = 'Antrian Poli';
+            }
+            $data['hasil'] = array(
+                'kodebooking' => $response->kodebooking,
+                'nomorantrean' => $response->nomorantrean,
+                'nopendaftaran' => $response->nopendaftaran,
+                'jenisantrean' => $jenisantrian,
+                'estimasidilayani' => $estimasidilayani,
+                'namapoli' => $response->namapoli,
+                'namadokter' => $response->namadokter,
+                'nocm' => $response->nocm,
+                'statuspasien' => $response->statuspasien,
+                'email' => $response->email
+            );
+        }
+
+        $data['codedata'] = array(
+            'code' => $metadata->code,
+            'message' => $metadata->message
+        );
+
+        return $data;
+    }
+
+    function GetBookingPasienbyNik($nopendaftaran, $tglperiksa)
+    {
+        $tglperiksa = date('Y-m-d', strtotime($this->input->post('tglperiksa')));
+
+        $token     =  $this->GetToken();
+
+        $url = $this->API . '/getdataregistrasibynik';
+        $parm =  ['Nik' => "" . $nopendaftaran . "", 'TglPeriksa' => "" . $tglperiksa . ""];
+
+        $headers = array(
+            'x-token:' . $token . "",
+        );
+
+        /* Init cURL resource */
+        $ch = curl_init($url);
+
+        /* Array Parameter Data */
+        /* pass encoded JSON string to the POST fields */
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $parm);
+
+        /* set the content type json */
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+        /* set return type json */
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        /* execute request */
+        $result = curl_exec($ch);
+
+        /* close cURL resource */
+        curl_close($ch);
+        $hasil = json_decode($result);
+        $response = $hasil->response;
+        $metadata = $hasil->metadata;
+
+        $data['hasil'] = null;
+
+        if ($metadata->code == '200') {
+            $estimasidilayani   = $this->time_convert($response->estimasidilayani);
+            if ($response->jenisantrean == '1') {
+                $jenisantrian = 'Antrian Registrasi';
+            } else {
+                $jenisantrian = 'Antrian Poli';
+            }
+            $data['hasil'] = array(
+                'kodebooking' => $response->kodebooking,
+                'nomorantrean' => $response->nomorantrean,
+                'nopendaftaran' => $response->nopendaftaran,
+                'jenisantrean' => $jenisantrian,
+                'estimasidilayani' => $estimasidilayani,
+                'namapoli' => $response->namapoli,
+                'namadokter' => $response->namadokter,
+                'nocm' => $response->nocm,
+                'statuspasien' => $response->statuspasien,
+                'email' => $response->email
+            );
+        }
+
+        $data['codedata'] = array(
+            'code' => $metadata->code,
+            'message' => $metadata->message
+        );
+
+        return $data;
+    }
+
     function GetBookingPasien()
     {
         $nopendaftaran = $this->input->post('nopendaftaran');
         $kriteria = $this->input->post('kriteria');
+        $tglperiksa = $this->input->post('tglperiksa');
         // $nopendaftaran = '2105100010';
 
         if ($kriteria == '0') {
             $data = $this->GetBookingPasienbynobooking($nopendaftaran);
-        } else {
+        } else if ($kriteria == '1') {
             $data = $this->GetBookingPasienbynoreg($nopendaftaran);
+        } else {
+            if (strlen(trim($nopendaftaran)) <= '6') {
+                $data = $this->GetBookingPasienbyNoCm($nopendaftaran, $tglperiksa);
+            } else {
+                $data = $this->GetBookingPasienbyNik($nopendaftaran, $tglperiksa);
+            }
         }
 
         echo json_encode($data);

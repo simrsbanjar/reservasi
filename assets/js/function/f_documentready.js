@@ -37,7 +37,7 @@ $(document).ready(function () {
         html += '<li><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
         html += '<li class="active"><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
         $('#myList').html(html);
-        GetHariLibur();
+        GetHariLibur('1');
     } else {
         $("#daftar").hide();
         var html = '';
@@ -45,6 +45,7 @@ $(document).ready(function () {
         html += '<li class="active"><a href="CariReservasi"><i class="fas fa-search"></i> Cari</a></li>';
         html += '<li><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
         $('#myList').html(html);
+        GetHariLibur('0');
     }
 
     var html = '';
