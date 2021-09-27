@@ -172,7 +172,7 @@
 
             <div class="alurtitle">
                 <h2>Alur</h2>
-                <p>Acan Rapih engke antosan heula lah sakedap</p>
+                <p>Adapun alur pendaftaran online adalah sebagai berikut :</p>
                 <img src="<?= base_url('assets/'); ?>img/uconstruction.gif" width="55%">
             </div>
 
