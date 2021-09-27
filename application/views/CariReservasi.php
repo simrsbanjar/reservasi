@@ -41,15 +41,21 @@
                                     <div class="form-check">
                                         <div class="row">
                                             <div class="col col-6 col-lg-4">
-                                                <input class="form-check-input" type="radio" name="radiokriteria" value="0" id="radiokriteriakdbooking" checked>
+                                                <input class="form-check-input" type="radio" name="radiokriteria" value="0" id="radiokriteriakdbooking" checked onclick="checkRadioCari(value)">
                                                 <label class="form-check-label" for="radiokriteria">
                                                     Kode Booking
                                                 </label>
                                             </div>
                                             <div class="col col-6 col-lg-4">
-                                                <input class="form-check-input" type="radio" name="radiokriteria" value="1" id="radiokriterianopendaftaran">
+                                                <input class="form-check-input" type="radio" name="radiokriteria" value="1" id="radiokriterianopendaftaran" onclick="checkRadioCari(value)">
                                                 <label class="form-check-label" for="radiokriteria">
                                                     No. Pendaftaran
+                                                </label>
+                                            </div>
+                                            <div class="col col-6 col-lg-4">
+                                                <input class="form-check-input" type="radio" name="radiokriteria" value="2" id="radiokriterianopendaftaran" onclick="checkRadioCari(value)">
+                                                <label class="form-check-label" for="radiokriteria">
+                                                    NIK / No. Rekam Medik
                                                 </label>
                                             </div>
                                         </div>
@@ -59,19 +65,17 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6 col-lg-6">
-                                <label class="form-check-label" for="radiokriteria">No. Pendaftaran
-                                </label>
+                            <div class="col-md-6 col-lg-12" id="classinputkodebooking">
+                                <label class="form-check-label" for="radiokriteria" id="txtnoboking" hidden>Kode Booking</label>
                                 <div class="form-group">
-                                    <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="Kode Booking / No. Pendaftaran" onchange="updateInput(this.value,'nopendaftaran')">
+                                    <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="Kode Booking" onchange="updateInput(this.value,'nopendaftaran')">
                                     <small>Error Message</small>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-6">
-                                <label class="form-check-label" for="radiokriteria">Tgl. Periksa
-                                </label>
+                            <div class="col-md-6 col-lg-6" id="tglperiksahead" hidden>
+                                <label class="form-check-label" for="radiokriteria">Tgl. Periksa</label>
                                 <div class="form-group">
-                                    <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" name="tgllahir" id="tgllahir">
+                                    <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" name="tglperiksacari" id="tglperiksacari">
                                     <small>Error Message</small>
                                 </div>
                             </div>
