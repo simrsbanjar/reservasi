@@ -288,12 +288,12 @@
                                 </div>
                                 <div class="pt-1 border-l border-r border-white bg-white">
                                     <span class="text-6xl font-bold leading-tight" id="sudahdilayani">
-                                        016
+                                        -
                                     </span>
                                 </div>
                                 <div class="pb-2 border-l border-r border-b rounded-b-lg text-center border-white bg-white">
                                     <span class="text-xs leading-normal" id="jumlahantrian">
-                                        Jumlah Antrian : 181
+                                        Jumlah Antrian : -
                                     </span>
                                 </div>
                             </div>

@@ -147,7 +147,7 @@
                 $('#jumlahantrian').text('Total Antrian : ' + '-');
             }
         });
-        // setTimeout(GetAntrianLive, 100000)
+        // setTimeout(GetAntrianLive, 1000000)
     }
 
     function GetJadwalPoliklinik() {
