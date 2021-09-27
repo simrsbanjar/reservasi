@@ -646,7 +646,7 @@
 
     <!-- ======= Contact Section ======= -->
 
-    <section id="services" class="contact">
+    <!-- <section id="services" class="contact">
         <div class="container">
 
             <div class="kontaktitle">
@@ -717,9 +717,9 @@
                 </div>
             </div>
         </section>
-        <!-- End Counts Section -->
-    </section>
-    <!-- End Contact Section -->
+
+    </section> -->
+
 
     <!-- <section class="relative">
         <div class="container">
