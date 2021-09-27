@@ -57,13 +57,25 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6 col-lg-6">
+                                <label class="form-check-label" for="radiokriteria">No. Pendaftaran
+                                </label>
                                 <div class="form-group">
                                     <input type="number" name="nopendaftaran" id="nopendaftaran" class="form-control" placeholder="Kode Booking / No. Pendaftaran" onchange="updateInput(this.value,'nopendaftaran')">
                                     <small>Error Message</small>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-lg-6">
+                                <label class="form-check-label" for="radiokriteria">Tgl. Periksa
+                                </label>
+                                <div class="form-group">
+                                    <input type="text" placeholder="DD/MM/YYYY" value="<?= date('d-m-Y') ?>" class="form-control" name="tgllahir" id="tgllahir">
+                                    <small>Error Message</small>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
