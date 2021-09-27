@@ -646,7 +646,7 @@
 
     <!-- ======= Contact Section ======= -->
 
-    <section id="contact" class="contact">
+    <section id="services" class="contact">
         <div class="container">
 
             <div class="kontaktitle">
@@ -751,7 +751,7 @@
     </section> -->
 
     <!-- ======= Kontak Section ======= -->
-    <section id="services" class="services">
+    <section id="contact" class="services">
         <div class="container">
 
             <div class="section-title">
