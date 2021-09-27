@@ -172,8 +172,8 @@
 
             <div class="alurtitle">
                 <h2>Alur</h2>
-                <p>Sementara ieu mah bari ngantosan proses bisnisna rapih</p>
-                <img src="<?= base_url('assets/'); ?>img/construction.png" width="75%">
+                <p>Acan Rapih engke antosan heula lah sakedap</p>
+                <img src="<?= base_url('assets/'); ?>img/uconstruction.gif" width="55%">
             </div>
 
 
