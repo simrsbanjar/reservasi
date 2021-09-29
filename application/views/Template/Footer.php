@@ -6,7 +6,7 @@
                 <div class="copyright text-center my-auto">
                     <span>Copyright &copy; <strong> RSUD KOTA BANJAR </strong> <?= date('Y'); ?></span>
                     <br>
-                    <span>Powered by SIMRS</span>
+                    <span>Powered by SIMRS. <strong> Version 1.0 </strong></span>
                 </div>
             </div>
         </div>
