@@ -141,8 +141,11 @@
                     totalantrian = (parseInt(totalantrian) + parseInt(data[i].totalantrian));
                 }
 
-                $('#sudahdilayani').text(sudahdilayani);
-                $('#jumlahantrian').text('Total Antrian : ' + totalantrian);
+                sudahdilayani = '000' + sudahdilayani.toString();
+                totalantrian = '000' + totalantrian.toString();
+
+                $('#sudahdilayani').text(sudahdilayani.substr(-3));
+                $('#jumlahantrian').text('Total Antrian : ' + totalantrian.substr(-3));
             },
             error: function() {
                 html = "<div class='col-md-6 col-lg-4'>";
