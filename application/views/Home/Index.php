@@ -31,19 +31,51 @@
     } */
 </style>
 
+
+
 <!-- ======= selamatdatang Section ======= -->
-<section id="selamatdatang" class="d-flex align-items-center">
+<!-- <section id="selamatdatang" class="d-flex align-items-center">
     <div class="container">
         <h1>Selamat Datang</h1>
         <h2>Di Pendaftaran Pasien Rawat Jalan</h2>
         <a href="#alur" class="btn-get-started scrollto">Cek Alur</a>
     </div>
-</section><!-- End selamatdatang -->
+</section> -->
+<!-- End selamatdatang -->
 
 <main id="main">
+    <!-- ======= Doctors Section ======= -->
+    <section class="slidedokter " id="dokter">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <!-- <div class="doktertitle">
+            <h2>Dokter Spesialis</h2>
+            <p>Berikut adalah list dokter spesialis :</p>
+        </div> -->
+            <div class="slidercuy">
+                <div>
+                    <a href="">
+                        <img src="assets/img/slide 1.png" alt="slide 1">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/slide 2.png" alt="slide 2">
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="assets/img/slide 3.png" alt="slide 3">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ======= tentangkita Us Section ======= -->
-    <section id="tentangkita" class="tentangkita">
+    <div id="tentangkita" class="tentangkita">
         <div class="container align-center">
 
             <div class="row justify-content-center">
@@ -65,7 +97,7 @@
                         <div class="col-xl-12 d-flex align-items-stretch">
                             <div class="icon-box mt-4 mt-xl-0">
                                 <!-- <i class="bx bx-cube-alt"></i> -->
-                                <div style="text-align: center;" class="alurtitle">
+                                <div style="text-align: center;" class="tentangkitatitle">
                                     <h2>Syarat & Ketentuan</h2>
                                 </div>
                                 <div style="font-size: 16px;">
@@ -124,7 +156,7 @@
             </div>
 
         </div>
-    </section><!-- End tentangkita Section -->
+    </div><!-- End tentangkita Section -->
 
 
     <!-- ======= About Section ======= -->
@@ -164,6 +196,11 @@
             </div>
         </section> -->
     <!-- End About Section -->
+
+
+
+
+
 
 
     <!-- ======= Departments/alur Section ======= -->

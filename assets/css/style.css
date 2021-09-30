@@ -731,6 +731,12 @@ section {
 	color: #848484;
 }
 
+.tentangkitatitle {
+	text-align: center;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
 /*--------------------------------------------------------------
 # Counts
 --------------------------------------------------------------*/
@@ -1710,7 +1716,7 @@ section {
 .slidersection {
 	text-align: center;
 	padding-bottom: 0px;
-	padding-top: 0px;
+	padding-top: 80px;
 }
 
 
