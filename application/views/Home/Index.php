@@ -45,7 +45,7 @@
 
 <main id="main">
     <!-- ======= Doctors Section ======= -->
-    <section class="slidedokter " id="dokter">
+    <section class="slidedokter " id="home">
         <div class="container">
             <br>
             <br>
@@ -303,7 +303,7 @@
         </div>
     </section><!-- End Departments Section -->
 
-    <section id="lokasi" class="contact">
+    <section id="liveantrian" class="contact">
         <div class="container">
             <div class="lokasititle">
                 <!-- <h2>Lokasi RSUD Kota Banjar</h2> -->
@@ -462,7 +462,7 @@
 
 
     <!-- ======= Doctors Section ======= -->
-    <section class="slidedokter" id="dokter">
+    <section class="slidedokter" id="jadwaldokter">
         <div class="container">
             <div class="doktertitle">
                 <h2>Jadwal Poliklinik</h2>
@@ -792,7 +792,7 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Kontak Baru Banget</h2>
+                <h2>Kontak</h2>
             </div>
 
             <div class="row justify-content-center">

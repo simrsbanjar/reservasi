@@ -33,8 +33,8 @@
                     <li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>
                     <li><a href="#tentangkita"><i class="fas fa-tasks"></i> Syarat dan Ketentuan</a></li>
                     <li><a href="#alur"><i class="fas fa-walking"></i> Alur </a></li>
-                    <li><a href="#lokasi"><i class="fas fa-users"></i> Live Antrian Poli</a></li>
-                    <li><a href="#dokter"><i class="fas fa-calendar-alt"></i> Jadwal Poliklinik </a></li>
+                    <li><a href="#liveantrian"><i class="fas fa-users"></i> Live Antrian Poli</a></li>
+                    <li><a href="#jadwaldokter"><i class="fas fa-calendar-alt"></i> Jadwal Poliklinik </a></li>
                     <li><a href="#contact"><i class="far fa-address-book"></i> Kontak</a></li>
 
                 <?php } elseif ($data == '2') { ?>
