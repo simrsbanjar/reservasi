@@ -180,7 +180,7 @@
                 $('#jumlahantrian').text('Total Antrian : ' + '-');
             }
         });
-        // setTimeout(GetAntrianLive, 1000000)
+        setTimeout(GetAntrianLive, 90000)
     }
 
     function GetJadwalPoliklinik() {
@@ -667,14 +667,18 @@
 
     function bersihkan(tab) {
         var numtab = '';
+        var setvalue = '';
         if (tab == 'tab-1') {
             numtab = '';
+            setvalue = '02';
             $('#tabletab').html('');
         } else if (tab == 'tab-2') {
             numtab = '2';
+            setvalue = '01';
             $('#tabletab2').html('');
         } else {
             numtab = '3';
+            setvalue = '01';
             $('#tabletab3').html('');
         }
 
@@ -702,7 +706,7 @@
         document.getElementById("kodepos" + numtab).value = "";
         document.getElementById("tglregistrasi" + numtab).value = daystarttgl();
         document.getElementById("poli" + numtab).value = "";
-        document.getElementById("rujukanasal" + numtab).value = "";
+        document.getElementById("rujukanasal" + numtab).value = setvalue;
         document.getElementById("email" + numtab).value = "";
         if (tab == 'tab-1') {
             document.getElementById("nopesertaparm" + numtab).value = "";
@@ -2053,6 +2057,9 @@
                 $('#rujukanasal2').html(html);
                 $('#rujukanasal3').html(html);
 
+                document.getElementById("rujukanasal").value = '02';
+                document.getElementById("rujukanasal2").value = '01';
+                document.getElementById("rujukanasal3").value = '01';
             },
             error: function() {
                 var html = '';

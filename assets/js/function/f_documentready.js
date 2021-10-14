@@ -2,14 +2,7 @@ $(document).ready(function () {
     var page = $("[name='reservasi']").val();
     var date = new Date().toDateString("yyyy-MM-dd");
     $("#btnlanjutcarabayar").show();
-    hidetab1();
-    hidetab2();
-    hidetab3();
-    daycount();
-    getpropinsi();
-    GetRujukanAsal();
-    GetPoli(date);
-    GetCarabayar();
+    
     // const content = document.getElementById('content');
     // const bullets = [...document.querySelectorAll('.bullet')];
 
@@ -38,6 +31,14 @@ $(document).ready(function () {
         html += '<li class="active"><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
         $('#myList').html(html);
         GetHariLibur('1');
+        hidetab1();
+        hidetab2();
+        hidetab3();
+        daycount();
+        getpropinsi();
+        GetRujukanAsal();
+        GetPoli(date);
+        GetCarabayar();
     } else {
         $("#daftar").hide();
         var html = '';
