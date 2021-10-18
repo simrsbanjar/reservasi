@@ -308,6 +308,15 @@
             <div class="lokasititle">
                 <!-- <h2>Lokasi RSUD Kota Banjar</h2> -->
                 <h2>Live Antrian Poliklinik</h2>
+
+                <div class="alert alert-warning text-center">
+                    <b>Data Tanggal : <span id="dt-wkturespon">15-10-2021 09:55:10</span></b>
+                    <br>
+                    <br>
+                    <progress value="10" max="10" id="pageBeginCountdown"></progress>
+                    <br>
+                    <h10>Diperbaharui Dalam Waktu <span id="pageBeginCountdownText" style="color: red;">10 </span> detik.</h10>
+                </div>
             </div>
 
             <div class="row justify-content-center">
@@ -449,6 +458,12 @@
                     </div>
                 </div> -->
             </div>
+
+            <!-- <div class="lokasititle"> -->
+            <!-- <h12 id="realtime">* Data akan diperbarui otomatis dalam 00 detik</h12> -->
+            <!-- <progress value="10" max="10" id="pageBeginCountdown"></progress>
+                <p> Begining in <span id="pageBeginCountdownText">10 </span> seconds</p>
+            </div> -->
         </div>
 
 
