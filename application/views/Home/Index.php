@@ -329,7 +329,7 @@
                                 </div>
                                 <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1">
                                     <span class="text-sm">
-                                        Sudah Dilayani
+                                        Antrian Sudah Dilayani
                                     </span>
                                 </div>
                                 <div class="pt-1 border-l border-r border-white bg-white">

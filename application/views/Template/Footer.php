@@ -163,7 +163,7 @@
                     html += "</div>";
                     html += "<div class='border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1'>";
                     html += "<span class='text-sm'>";
-                    html += "Nomor Urut";
+                    html += "Antrian Saat Ini";
                     html += "</span>";
                     html += "</div>";
                     html += "<div class='pt-1 border-l border-r border-white bg-white'>";
@@ -214,7 +214,7 @@
                 html += "</div>";
                 html += "<div class='border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1'>";
                 html += "<span class='text-sm'>";
-                html += "Nomor Urut";
+                html += "Antrian Saat Ini";
                 html += "</span>";
                 html += "</div>";
                 html += "<div class='pt-1 border-l border-r border-white bg-white'>";
