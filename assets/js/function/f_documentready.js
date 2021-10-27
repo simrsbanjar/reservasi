@@ -2,14 +2,7 @@ $(document).ready(function () {
     var page = $("[name='reservasi']").val();
     var date = new Date().toDateString("yyyy-MM-dd");
     $("#btnlanjutcarabayar").show();
-    hidetab1();
-    hidetab2();
-    hidetab3();
-    daycount();
-    getpropinsi();
-    GetRujukanAsal();
-    GetPoli(date);
-    GetCarabayar();
+    
     // const content = document.getElementById('content');
     // const bullets = [...document.querySelectorAll('.bullet')];
 
@@ -24,10 +17,11 @@ $(document).ready(function () {
         html += '<li class="active"><a href="Home"><i class="fas fa-home"></i> Home</a></li>';
         html += '<li><a href="#tentangkita"><i class="fas fa-tasks"></i> Syarat dan Ketentuan</a></li>';
         html += '<li><a href="#alur"><i class="fas fa-walking"></i> Alur </a></li>';
-        html += '<li><a href="#lokasi"><i class="fas fa-users"></i> Live Antrian Poli</a></li>';
-        html += '<li><a href="#dokter"><i class="fas fa-calendar-alt"></i> Jadwal Poliklinik </a></li>';
+        html += '<li><a href="#liveantrian"><i class="fas fa-users"></i> Live Antrian Poli</a></li>';
+        html += '<li><a href="#jadwaldokter"><i class="fas fa-calendar-alt"></i> Jadwal Poliklinik </a></li>';
         html += '<li><a href="#contact"><i class="far fa-address-book"></i> Kontak</a></li>';
         $('#myList').html(html);
+        ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText');
         GetAntrianLive();
         GetJadwalPoliklinik();
     } else if (page == '1') {
@@ -38,6 +32,14 @@ $(document).ready(function () {
         html += '<li class="active"><a href="Reservasi"><i class="fas fa-clipboard-list"></i> Daftar</a></li>';
         $('#myList').html(html);
         GetHariLibur('1');
+        hidetab1();
+        hidetab2();
+        hidetab3();
+        daycount();
+        getpropinsi();
+        GetRujukanAsal();
+        GetPoli(date);
+        GetCarabayar();
     } else {
         $("#daftar").hide();
         var html = '';

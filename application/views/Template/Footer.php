@@ -47,6 +47,7 @@
 <!-- JS Faltpickr Tanggal  -->
 <script src="assets/js/flatpickr.js"></script>
 
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script> -->
 
 <script>
     function checkRadioCari(value) {
@@ -79,6 +80,40 @@
         setSuccessFor(document.getElementById('nopendaftaran'));
     }
 
+    function GedateRealtime() {
+        var hari = '00' + new Date().getDate().toString();
+        var bulan = ("00" + (new Date().getMonth() + 1)).toString();
+        var tahun = '0000' + new Date().getFullYear().toString();
+        var jam = '00' + new Date().getHours().toString();
+        var menit = '00' + new Date().getMinutes().toString();
+        var detik = '00' + new Date().getSeconds().toString();
+
+        return hari.substr(-2) + "-" + bulan.substr(-2) + "-" + tahun.substr(-4) + " " + jam.substr(-2) + ":" + menit.substr(-2) + ":" + detik.substr(-2);
+    }
+
+    function ProgressCountdown(timeleft, bar, text) {
+        var timeleftlocal = timeleft + 1;
+        return new Promise((resolve, reject) => {
+            var countdownTimer = setInterval(() => {
+                timeleft--;
+
+                timeleft = '00' + timeleft;
+
+                document.getElementById(bar).value = timeleft.substr(-2);
+                document.getElementById(text).textContent = timeleft.substr(-2);
+
+                if (timeleft <= 0) {
+                    timeleft = timeleftlocal;
+                    GetAntrianLive();
+                    // clearInterval(countdownTimer);
+                    // resolve(true);
+                }
+            }, 1000);
+        });
+    }
+
+
+
     function GetAntrianLive() {
         var TglPeriksa = new Date().toDateString("yyyy-MM-dd");
         var KodePoli = '';
@@ -87,6 +122,16 @@
         var warna = '';
         var sudahdilayani = 0;
         var totalantrian = 0;
+        // var hari = '00' + new Date().getDate().toString();
+        // var bulan = '00' + new Date().getMonth().toString();
+        // var tahun = '0000' + new Date().getFullYear().toString();
+        // var jam = '00' + new Date().getHours().toString();
+        // var menit = '00' + new Date().getMinutes().toString();
+        // var detik = '00' + new Date().getSeconds().toString();
+
+
+        $('#dt-wkturespon').text(GedateRealtime);
+        // $('#dt-wkturespon').text((new Date().getDate() + "-" + new Date().getMonth() + "-" + new Date().getFullYear() + " " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds()));
 
         $.ajax({
             url: "Home/GetAntrianLive",
@@ -118,7 +163,7 @@
                     html += "</div>";
                     html += "<div class='border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1'>";
                     html += "<span class='text-sm'>";
-                    html += "Nomor Urut";
+                    html += "Antrian Saat Ini";
                     html += "</span>";
                     html += "</div>";
                     html += "<div class='pt-1 border-l border-r border-white bg-white'>";
@@ -139,10 +184,25 @@
 
                     sudahdilayani = (parseInt(sudahdilayani) + parseInt(data[i].jumlahterlayani));
                     totalantrian = (parseInt(totalantrian) + parseInt(data[i].totalantrian));
+
+                    // $('#NoUrut')
+                    //     .animateNumber({
+                    //             number: parseInt(data[i].jumlahterlayani)
+                    //         },
+                    //         'normal',
+                    //         function() {
+                    //             $('#NoUrut').text('001')
+                    //         }
+                    //     );
                 }
 
-                $('#sudahdilayani').text(sudahdilayani);
-                $('#jumlahantrian').text('Total Antrian : ' + totalantrian);
+                sudahdilayani = '000' + sudahdilayani.toString();
+                totalantrian = '000' + totalantrian.toString();
+
+                $('#sudahdilayani').text(sudahdilayani.substr(-3));
+                $('#jumlahantrian').text('Total Antrian : ' + totalantrian.substr(-3));
+
+
             },
             error: function() {
                 html = "<div class='col-md-6 col-lg-4'>";
@@ -154,7 +214,7 @@
                 html += "</div>";
                 html += "<div class='border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1'>";
                 html += "<span class='text-sm'>";
-                html += "Nomor Urut";
+                html += "Antrian Saat Ini";
                 html += "</span>";
                 html += "</div>";
                 html += "<div class='pt-1 border-l border-r border-white bg-white'>";
@@ -177,8 +237,9 @@
                 $('#jumlahantrian').text('Total Antrian : ' + '-');
             }
         });
-        // setTimeout(GetAntrianLive, 1000000)
+        // setTimeout(GetAntrianLive, 10000)
     }
+
 
     function GetJadwalPoliklinik() {
         var TglPeriksa = $("[name='tglperiksa']").val();
@@ -664,14 +725,18 @@
 
     function bersihkan(tab) {
         var numtab = '';
+        var setvalue = '';
         if (tab == 'tab-1') {
             numtab = '';
+            setvalue = '02';
             $('#tabletab').html('');
         } else if (tab == 'tab-2') {
             numtab = '2';
+            setvalue = '01';
             $('#tabletab2').html('');
         } else {
             numtab = '3';
+            setvalue = '01';
             $('#tabletab3').html('');
         }
 
@@ -699,7 +764,7 @@
         document.getElementById("kodepos" + numtab).value = "";
         document.getElementById("tglregistrasi" + numtab).value = daystarttgl();
         document.getElementById("poli" + numtab).value = "";
-        document.getElementById("rujukanasal" + numtab).value = "";
+        document.getElementById("rujukanasal" + numtab).value = setvalue;
         document.getElementById("email" + numtab).value = "";
         if (tab == 'tab-1') {
             document.getElementById("nopesertaparm" + numtab).value = "";
@@ -2050,6 +2115,9 @@
                 $('#rujukanasal2').html(html);
                 $('#rujukanasal3').html(html);
 
+                document.getElementById("rujukanasal").value = '02';
+                document.getElementById("rujukanasal2").value = '01';
+                document.getElementById("rujukanasal3").value = '01';
             },
             error: function() {
                 var html = '';

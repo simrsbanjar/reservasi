@@ -45,9 +45,17 @@
 
 <main id="main">
     <!-- ======= Doctors Section ======= -->
+<<<<<<< HEAD
     <section class="slidedokter " id="dokter">
         <div class="container mt-5">
 
+=======
+    <section class="slidedokter " id="home">
+        <div class="container">
+            <br>
+            <br>
+            <br>
+>>>>>>> b4dc704b3c5f27cf7156cc2fda6eb9a0edd8cd45
             <!-- <div class="doktertitle">
             <h2>Dokter Spesialis</h2>
             <p>Berikut adalah list dokter spesialis :</p>
@@ -101,20 +109,19 @@
                                 <div style="font-size: 16px;">
                                     <b>PENDAFTARAN ONLINE :</b><br><br>
 
-                                    1. Reservasi minimal 1 (satu) hari sebelum kunjungan<br>
-                                    2. Kuota Pendaftaran Online dilakukan pembatasan untuk memberi kesempatan kepada pasien yang datang
-                                    langsung (Pendaftaran Offline) ke RSU Kota Banjar<br>
-                                    3. Jadwal Praktek Dokter sewaktu-waktu dapat berubah
+                                    1. Pendaftaran Online minimal 1 (satu) hari sebelum kunjungan dan maksimal 7 hari.<br>
+                                    2. Jadwal Praktek Dokter sewaktu-waktu dapat berubah
 
                                     <br><br><b>PASIEN LAMA :</b><br>
-                                    Nomor Rekam Medis, Tanggal Lahir Dan NIK merupakan data validasi pada sistem, apabila GAGAL, segera menghubungi petugas Pendaftaran untuk melalukan pemutakhiran data.
+                                    Nomor Rekam Medis, Tanggal Lahir Dan NIK merupakan data validasi pada sistem, apabila GAGAL, segera menghubungi petugas Pendaftaran untuk melalukan pemutakhiran data yang terdapat di Rumah Sakit.
 
                                     <br><br><b>PRASYARAT SAAT DATANG KE RUMAH SAKIT:</b><br>
                                     1. Bukti Pendaftaran Online <br>
-                                    1. KTP atau kartu identitas lainnya<br>
-                                    2. Kartu berobat bila sudah pernah berobat ke RSU Kota Banjar<br>
-                                    3. Jika anda peserta BPJS/KIS siapkan kartu yang asli<br>
-                                    4. Surat rujukan Faskes atau pengantar atau keterangan kontrol
+                                    2. KTP Asli + Fotocopy<br>
+                                    3. Kartu Keluarga Asli + Fotocopy<br>
+                                    4. Jika anda peserta BPJS/KIS siapkan kartu yang asli + fotocopy<br>
+                                    5. Kartu berobat bila sudah pernah berobat ke RSU Kota Banjar<br>
+                                    6. Surat rujukan Faskes atau pengantar atau keterangan kontrol asli + fotocopy
 
                                 </div>
                             </div>
@@ -301,11 +308,20 @@
         </div>
     </section><!-- End Departments Section -->
 
-    <section id="lokasi" class="contact">
+    <section id="liveantrian" class="contact">
         <div class="container">
             <div class="lokasititle">
                 <!-- <h2>Lokasi RSUD Kota Banjar</h2> -->
                 <h2>Live Antrian Poliklinik</h2>
+
+                <div class="alert alert-warning text-center">
+                    <b>Data Tanggal : <span id="dt-wkturespon">15-10-2021 09:55:10</span></b>
+                    <br>
+                    <br>
+                    <progress value="10" max="10" id="pageBeginCountdown"></progress>
+                    <br>
+                    <h10>Diperbaharui Dalam Waktu <span id="pageBeginCountdownText" style="color: red;">10 </span> detik.</h10>
+                </div>
             </div>
 
             <div class="row justify-content-center">
@@ -318,7 +334,7 @@
                                 </div>
                                 <div class="border-l border-r border-b rounded-b-lg text-center border-white bg-white -pt-2 -mb-1">
                                     <span class="text-sm">
-                                        Sudah Dilayani
+                                        Antrian Sudah Dilayani
                                     </span>
                                 </div>
                                 <div class="pt-1 border-l border-r border-white bg-white">
@@ -447,6 +463,12 @@
                     </div>
                 </div> -->
             </div>
+
+            <!-- <div class="lokasititle"> -->
+            <!-- <h12 id="realtime">* Data akan diperbarui otomatis dalam 00 detik</h12> -->
+            <!-- <progress value="10" max="10" id="pageBeginCountdown"></progress>
+                <p> Begining in <span id="pageBeginCountdownText">10 </span> seconds</p>
+            </div> -->
         </div>
 
 
@@ -460,7 +482,7 @@
 
 
     <!-- ======= Doctors Section ======= -->
-    <section class="slidedokter" id="dokter">
+    <section class="slidedokter" id="jadwaldokter">
         <div class="container">
             <div class="doktertitle">
                 <h2>Jadwal Poliklinik</h2>
@@ -790,7 +812,7 @@
         <div class="container">
 
             <div class="section-title">
-                <h2>Kontak Baru Banget</h2>
+                <h2>Kontak</h2>
             </div>
 
             <div class="row justify-content-center">
