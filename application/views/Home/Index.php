@@ -45,17 +45,9 @@
 
 <main id="main">
     <!-- ======= Doctors Section ======= -->
-<<<<<<< HEAD
     <section class="slidedokter " id="dokter">
         <div class="container mt-5">
 
-=======
-    <section class="slidedokter " id="home">
-        <div class="container">
-            <br>
-            <br>
-            <br>
->>>>>>> b4dc704b3c5f27cf7156cc2fda6eb9a0edd8cd45
             <!-- <div class="doktertitle">
             <h2>Dokter Spesialis</h2>
             <p>Berikut adalah list dokter spesialis :</p>
