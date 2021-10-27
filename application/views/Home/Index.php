@@ -103,20 +103,19 @@
                                 <div style="font-size: 16px;">
                                     <b>PENDAFTARAN ONLINE :</b><br><br>
 
-                                    1. Reservasi minimal 1 (satu) hari sebelum kunjungan<br>
-                                    2. Kuota Pendaftaran Online dilakukan pembatasan untuk memberi kesempatan kepada pasien yang datang
-                                    langsung (Pendaftaran Offline) ke RSU Kota Banjar<br>
-                                    3. Jadwal Praktek Dokter sewaktu-waktu dapat berubah
+                                    1. Pendaftaran Online minimal 1 (satu) hari sebelum kunjungan dan maksimal 7 hari.<br>
+                                    2. Jadwal Praktek Dokter sewaktu-waktu dapat berubah
 
                                     <br><br><b>PASIEN LAMA :</b><br>
-                                    Nomor Rekam Medis, Tanggal Lahir Dan NIK merupakan data validasi pada sistem, apabila GAGAL, segera menghubungi petugas Pendaftaran untuk melalukan pemutakhiran data.
+                                    Nomor Rekam Medis, Tanggal Lahir Dan NIK merupakan data validasi pada sistem, apabila GAGAL, segera menghubungi petugas Pendaftaran untuk melalukan pemutakhiran data yang terdapat di Rumah Sakit.
 
                                     <br><br><b>PRASYARAT SAAT DATANG KE RUMAH SAKIT:</b><br>
                                     1. Bukti Pendaftaran Online <br>
-                                    1. KTP atau kartu identitas lainnya<br>
-                                    2. Kartu berobat bila sudah pernah berobat ke RSU Kota Banjar<br>
-                                    3. Jika anda peserta BPJS/KIS siapkan kartu yang asli<br>
-                                    4. Surat rujukan Faskes atau pengantar atau keterangan kontrol
+                                    2. KTP Asli + Fotocopy<br>
+                                    3. Kartu Keluarga Asli + Fotocopy<br>
+                                    4. Jika anda peserta BPJS/KIS siapkan kartu yang asli + fotocopy<br>
+                                    5. Kartu berobat bila sudah pernah berobat ke RSU Kota Banjar<br>
+                                    6. Surat rujukan Faskes atau pengantar atau keterangan kontrol asli + fotocopy
 
                                 </div>
                             </div>

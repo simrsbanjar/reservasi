@@ -82,7 +82,7 @@
 
     function GedateRealtime() {
         var hari = '00' + new Date().getDate().toString();
-        var bulan = '00' + new Date().getMonth().toString();
+        var bulan = ("00" + (new Date().getMonth() + 1)).toString();
         var tahun = '0000' + new Date().getFullYear().toString();
         var jam = '00' + new Date().getHours().toString();
         var menit = '00' + new Date().getMinutes().toString();
@@ -240,7 +240,6 @@
         // setTimeout(GetAntrianLive, 10000)
     }
 
-    ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText');
 
     function GetJadwalPoliklinik() {
         var TglPeriksa = $("[name='tglperiksa']").val();
