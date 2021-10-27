@@ -46,10 +46,8 @@
 <main id="main">
     <!-- ======= Doctors Section ======= -->
     <section class="slidedokter " id="dokter">
-        <div class="container">
-            <br>
-            <br>
-            <br>
+        <div class="container mt-5">
+
             <!-- <div class="doktertitle">
             <h2>Dokter Spesialis</h2>
             <p>Berikut adalah list dokter spesialis :</p>
@@ -97,7 +95,7 @@
                         <div class="col-xl-12 d-flex align-items-stretch">
                             <div class="icon-box mt-4 mt-xl-0">
                                 <!-- <i class="bx bx-cube-alt"></i> -->
-                                <div style="text-align: center;" class="tentangkitatitle">
+                                <div style="text-align: center;" class="syaratketentuan">
                                     <h2>Syarat & Ketentuan</h2>
                                 </div>
                                 <div style="font-size: 16px;">
