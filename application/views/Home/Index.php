@@ -206,8 +206,8 @@
 
             <div class="alurtitle">
                 <h2>Alur</h2>
-                <p>Adapun alur pendaftaran online adalah sebagai berikut :</p>
-                <img src="<?= base_url('assets/'); ?>img/uconstruction.gif" width="55%">
+                <p style="padding-bottom: 25px;">Adapun alur pendaftaran online adalah sebagai berikut :</p>
+                <img src="<?= base_url('assets/'); ?>img/alur.png" width="65%">
             </div>
 
 
