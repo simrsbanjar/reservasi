@@ -102,7 +102,11 @@
                                     <b>PENDAFTARAN ONLINE :</b><br><br>
 
                                     1. Pendaftaran Online minimal 1 (satu) hari sebelum kunjungan dan maksimal 7 hari.<br>
-                                    2. Jadwal Praktek Dokter sewaktu-waktu dapat berubah
+                                    2. Jadwal Praktek Dokter sewaktu-waktu dapat berubah.<br>
+                                    3. Untuk melakukan pembatalan pendaftaran online dapat melakukan di lakukan di bagian Cari Pasien lalu masukan kode boking/kode pendaftaran/nik/no.rm pasien.<br>
+                                    4. Maksimal pembatalan H-1 dari tanggal periksa.<br>
+                                    5. No.antrian Periksa dokter adalah sesuai dengan no.antrian yang didapatkan saat melakukan pendaftaran online.<br>
+                                    6. Pasien yang telah melakukan registrasi online diharapkan datang tepat waktu (Minimal 10 menit s.d 30 menit sesuai dengan estimasi yang telah di tentukan pada bukti pendaftaran).<br>
 
                                     <br><br><b>PASIEN LAMA :</b><br>
                                     Nomor Rekam Medis, Tanggal Lahir Dan NIK merupakan data validasi pada sistem, apabila GAGAL, segera menghubungi petugas Pendaftaran untuk melalukan pemutakhiran data yang terdapat di Rumah Sakit.
