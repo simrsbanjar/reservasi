@@ -207,7 +207,7 @@
 
             <div class="row mt-5 icon-boxes">
                 <div class="col-lg-7 col-sm-7">
-                    <img class="img-responsive img-thumbnail" src="<?= base_url('assets/'); ?>img/uconstruction.gif" alt="">
+                    <img class="img-responsive img-thumbnail" src="<?= base_url('assets/'); ?>img/alur.png" alt="">
                 </div>
                 <div class="col-lg-5 col-sm-6">
                     <!-- <h2 class="section-heading">Alur Pendaftaran Online</h2>
