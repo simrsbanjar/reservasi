@@ -737,7 +737,7 @@
                     <div class="icon-box">
                         <div class="icon"><i class="icofont-email"></i></div>
                         <h4><span>Email Kami</span></h4>
-                        <a href="mailto:contact@example.com">
+                        <a href="mailto:rsu_kotabanjar@yahoo.co.id">
                             <span>rsu_kotabanjar@yahoo.co.id</span>
                             <br>
                         </a>
