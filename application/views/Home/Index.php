@@ -731,39 +731,6 @@
             <div class="section-title">
                 <h2>Kontak & Saran</h2>
             </div>
-<<<<<<< HEAD
-
-            <div class="row justify-content-center">
-                <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <div class="icon"><i class="icofont-email"></i></div>
-                        <h4><span>Email Kami</span></h4>
-                        <a href="mailto:rsu_kotabanjar@yahoo.co.id">
-                            <span>rsu_kotabanjar@yahoo.co.id</span>
-                            <br>
-                        </a>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <div class="icon"><i class="icofont-ui-dial-phone"></i></div>
-                        <h4><span>Telpon</span></h4>
-                        <a href="tel:0265741032">
-                            <span>0265-741032</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="icon-box">
-                        <div class="icon"><i class="icofont-dna-alt-2"></i></div>
-                        <h4><span>Ponek 24 Jam</span></h4>
-                        <a href="tel:0265741032">
-                            <span>0265-7482204</span>
-                        </a>
-=======
             <!-- Div Buka row -->
             <div class="row">
                 <div class="row">
@@ -819,7 +786,6 @@
                                 </div>
                             </div>
                         </div>
->>>>>>> add529faf263e9967a78976ea743881b6649727b
                     </div>
                     <div class="col-lg-5 col-sm-6">
                         <div class="services-title">
