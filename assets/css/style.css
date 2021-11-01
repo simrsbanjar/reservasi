@@ -2446,16 +2446,16 @@ span {
 
 
 
-.services .php-email-form {
+.services .formphp-email {
 	width: 100%;
 	background: #fff;
 }
 
-.services .php-email-form .form-group {
+.services .formphp-email .form-group {
 	padding-bottom: 8px;
 }
 
-.services .php-email-form .validate {
+.services .formphp-email .validate {
 	display: none;
 	color: red;
 	margin: 0 0 15px 0;
@@ -2463,7 +2463,7 @@ span {
 	font-size: 13px;
 }
 
-.services .php-email-form .error-message {
+.services .formphp-email .error-message {
 	display: none;
 	color: #fff;
 	background: #ed3c0d;
@@ -2472,11 +2472,11 @@ span {
 	font-weight: 600;
 }
 
-.services .php-email-form .error-message br+br {
+.services .formphp-email .error-message br+br {
 	margin-top: 25px;
 }
 
-.services .php-email-form .sent-message {
+.services .formphp-email .sent-message {
 	display: none;
 	color: #fff;
 	background: #18d26e;
@@ -2485,14 +2485,14 @@ span {
 	font-weight: 600;
 }
 
-.services .php-email-form .loading {
+.services .formphp-email .loading {
 	display: none;
 	background: #fff;
 	text-align: center;
 	padding: 15px;
 }
 
-.services .php-email-form .loading:before {
+.services .formphp-email .loading:before {
 	content: "";
 	display: inline-block;
 	border-radius: 50%;
@@ -2505,22 +2505,22 @@ span {
 	animation: animate-loading 1s linear infinite;
 }
 
-.services .php-email-form input,
-.services .php-email-form textarea {
+.services .formphp-email input,
+.services .formphp-email textarea {
 	border-radius: 0;
 	box-shadow: none;
 	font-size: 14px;
 }
 
-.services .php-email-form input {
+.services .formphp-email input {
 	height: 44px;
 }
 
-.services .php-email-form textarea {
+.services .formphp-email textarea {
 	padding: 10px 12px;
 }
 
-.services .php-email-form button[type="submit"] {
+.services .formphp-email button[type="submit"] {
 	background: #1977cc;
 	border: 0;
 	padding: 10px 35px;
@@ -2529,7 +2529,7 @@ span {
 	border-radius: 50px;
 }
 
-.services .php-email-form button[type="submit"]:hover {
+.services .formphp-email button[type="submit"]:hover {
 	background: #1c84e3;
 }
 
