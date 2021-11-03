@@ -36,6 +36,7 @@ class Home extends CI_Controller
         $this->load->library('curl');
         $this->load->helper('form');
         $this->load->helper('url');
+        $this->load->library('form_validation');
     }
 
     function GetToken()
@@ -167,5 +168,65 @@ class Home extends CI_Controller
             );
         }
         echo json_encode($data);
+    }
+
+    function upload_file()
+    {
+        $config['upload_path'] = 'uploads/';
+        $config['allowed_types'] = 'png|jpg|jpeg';
+        $this->load->library('upload', $config);
+        if ($this->upload->do_upload('attachment')) {
+            return $this->upload->data();
+        } else {
+            return $this->upload->display_errors();
+        }
+    }
+
+    public function KirimEmail()
+    {
+        $file_data = $this->upload_file();
+        // configurasi library email
+        $name = $this->input->post('name');
+        $email = $this->input->post('email');
+        $subject = $this->input->post('subject');
+        $pesan = $this->input->post('message');
+
+        $pesan = 'Nama : ' . $name . '; Email : ' . $email . '; Subject : ' . $subject . '; Pesan : ' . $pesan;
+
+        if (is_array($file_data)) {
+            $config = [
+                'protocol'  => 'smtp',
+                'smtp_host' => 'ssl://smtp.googlemail.com',
+                'smtp_user' => 'saranregistrasionline@gmail.com',
+                'smtp_pass' => 'Simrs321',
+                'smtp_port' => 465,
+                'mailtype'  => 'html',
+                'charset'   => 'utf-8',
+                'newline'   => "\r\n"
+            ];
+
+
+            $this->load->library('email', $config);
+            $this->email->initialize($config);
+
+            // send email
+            $this->email->from('saranregistrasionline@gmail.com', $name);
+            $this->email->to("simrsrsukotabanjar@gmail.com");
+            $this->email->subject($subject);
+            $this->email->message($pesan);
+            $this->email->attach($file_data['full_path']);
+
+            if ($this->email->send()) {
+                if (delete_files($file_data['file_path'])) {
+                    $this->session->set_flashdata('message', 'Data Berhasil Dikirim.');
+                    redirect('Home');
+                }
+            } else {
+                if (delete_files($file_data['file_path'])) {
+                    $this->session->set_flashdata('message', 'Data Gagal Dikirim.');
+                    redirect('Home');
+                }
+            };
+        };
     }
 }
