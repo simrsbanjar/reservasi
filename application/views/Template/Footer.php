@@ -50,6 +50,60 @@
 <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script> -->
 
 <script>
+    //start kebutuhan enable/disable kirim saran di home
+    $('#name').change(function() {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+
+        if ((name != null && name != '') && (email != null && email != '') && (subject != null && subject != '') && (message != null && message != '')) {
+            $("#btnkirim").attr("disabled", false);
+        } else {
+            $("#btnkirim").attr("disabled", true);
+        }
+    });
+
+    $('#email').change(function() {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+
+        if ((name != null && name != '') && (email != null && email != '') && (subject != null && subject != '') && (message != null && message != '')) {
+            $("#btnkirim").attr("disabled", false);
+        } else {
+            $("#btnkirim").attr("disabled", true);
+        }
+    });
+
+    $('#subject').change(function() {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+
+        if ((name != null && name != '') && (email != null && email != '') && (subject != null && subject != '') && (message != null && message != '')) {
+            $("#btnkirim").attr("disabled", false);
+        } else {
+            $("#btnkirim").attr("disabled", true);
+        }
+    });
+
+    $('#message').change(function() {
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+
+        if ((name != null && name != '') && (email != null && email != '') && (subject != null && subject != '') && (message != null && message != '')) {
+            $("#btnkirim").attr("disabled", false);
+        } else {
+            $("#btnkirim").attr("disabled", true);
+        }
+    });
+    //end kebutuhan enable/disable kirim saran di home
+
     function checkRadioCari(value) {
         if (value == '0') { // kode booking
             $("#txtnoboking").attr("hidden", true);

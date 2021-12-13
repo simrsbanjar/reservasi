@@ -1726,6 +1726,9 @@ section {
 	visibility: visible;
 }
 
+.form-group.error textarea {
+	border-color: #e74c3c;
+}
 
 /* Slider Section  */
 .slidedokter .container {
